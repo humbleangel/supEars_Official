@@ -1,0 +1,31 @@
+name: Bug report
+description: Something broken in supEars
+body:
+  - type: input
+    id: version
+    attributes:
+      label: supEars version
+      placeholder: "e.g. v0.8.5 (see Settings, top right)"
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      placeholder: "e.g. Windows 11 23H2"
+    validations:
+      required: true
+  - type: input
+    id: mic
+    attributes:
+      label: Microphone (as shown in Settings)
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce

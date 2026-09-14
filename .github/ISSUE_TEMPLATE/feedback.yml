@@ -1,0 +1,18 @@
+name: Feedback
+description: Tell us what you like and what should change
+body:
+  - type: input
+    id: version
+    attributes:
+      label: supEars version
+      placeholder: "e.g. v0.8.5 (see Settings, top right)"
+  - type: textarea
+    id: like
+    attributes:
+      label: What works well
+  - type: textarea
+    id: change
+    attributes:
+      label: What should change
+    validations:
+      required: true
