@@ -1,30 +1,15 @@
-<img src="assets/supEarsLogoV3.png" alt="supEars logo" width="240"/>
+![supEars logo](assets/supEarsLogoV3.png)
 
-# supEars
+# supEars - The Ear that understands your language.
 
-**Speak in your language.** A tiny floating ear for Windows — talk normally, clean text lands where you were typing.
+Stop paying for subscribtion services.
+Talk in your native language. supEars translate and transcribe to you. All private.
+No voice or prompt sent to MegaCorps. 😈
 
-## How it works
+17 languages supported.
+97% accuracy measured.
+100% offline. Your Privacy 100% respected.
+Free to use.
 
-1. Click supEars and Talk
-2. Stop Talking or Click
-3. Cancel by Clicking Again
-4. Right-Click to Settings/History
-
-## Why supEars
-
-- 17 languages, any-to-English translate
-- 100% offline — no account, no cloud, your voice never leaves the PC
-- Knows when you finished, keeps a history with one-click re-paste
-
-## Download
-
-First public release coming soon — no download yet. Open an Issue and we will notify you.
-
-## Feedback & bugs
-
-Open an [Issue](https://github.com/humbleangel/supEars_Official/issues) — reports with app version, Windows version, and microphone get fixed fastest.
-
-## License
-
-Free 14-day trial at launch; full license terms ship with the first release. (c) supEars.
+Download Now - Windows, Mac and Linux.
+supEars (c). Developed by HumbleAngel 👼
