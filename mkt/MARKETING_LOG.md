@@ -113,3 +113,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-15 06:40 UTC — Landing: emblem swapped, nothing else
 - Channel: repo. Owner correction: ONLY the emblem file changes. Reverted my size/hero extras; `mkt/landing-v1.html` now differs from the rebuild by exactly one line (masthead src → `assets/supEarsEmblem.png`). Rename kept: `mkt/assets/logov1.png` → `supEarsEmblem.png`. Reopened in Firefox.
 - Cost: 0. Result: done; awaiting owner review.
+
+## 2026-09-15 06:45 UTC — Landing: badge restored in masthead
+- Channel: repo. Owner correction: the flag badge stays in the HTML masthead. Reverted src to `assets/supEarsLogoV3.png`. Emblem file kept in `mkt/assets/supEarsEmblem.png` for later use. Reopened in Firefox.
+- Cost: 0. Result: done; awaiting owner review.
