@@ -121,3 +121,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-15 06:45 UTC — Standing correction: literal orders, no assumptions
 - Channel: repo. Owner: follow orders literally, no alien assumptions (emblem saga: 4 wasted commits on one instruction). Adopted rule: execute the literal instruction, change nothing adjacent; if ambiguous, ask first with the exact interpretation stated. Logged here as permanent behavior note.
 - Cost: 0. Result: noted.
+
+## 2026-09-15 06:50 UTC — Landing resolved: emblem small, logo big (session restore point)
+- Channel: repo. Final arrangement per owner: v1 emblem small in masthead (`assets/supEarsEmblem.png`, 40px), v3 flag logo big in hero (`assets/supEarsLogoV3.png`, 300px figure). Commits `cc1c07b` (arrangement) + `ec80ad6` (standing-rule log) pushed. Session compacted after this; context re-read from handoff/log/landing.
+- Cost: 0. Result: done; awaiting next orders.
