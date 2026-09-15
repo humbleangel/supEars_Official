@@ -163,3 +163,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-15 11:39 UTC — Motto finalized by owner
 - Channel: repo. Owner final wording: **"Escape the Subscriptions Traps"** (verbatim, plural kept, no `~`). Updated `mkt/MARKETING_HANDOFF.md` §3 and `mkt/research/2026-09-15-1130-UTC-motto-no-subscription.md`. Prior `~` open item closed.
 - Cost: 0. Result: applied; pushed.
+
+## 2026-09-15 19:05 UTC — Launch plan filed: 10/10 countdown (owner idea, corrected)
+- Channel: repo. Filed `mkt/research/2026-09-15-1905-UTC-launch-plan-1010-countdown.md`. **Kept:** launch 2026-10-10 ("10 out of 10") + daily regressive-countdown videos. **Rejected:** fabricating user comments/testimonials — FTC Endorsement Guides, YouTube/X/Meta/TikTok authenticity rules, and pre-alpha has zero users so it is false on its face; our own alt-accounts policy already bans fake fans. Distinction recorded: owned fiction (dev-journey narrative) is fine; inventing people is not. Replaced with 3 legitimate formats: dated dev log, "promise cards" (our claims, never attributed to users), consented real tester quotes after alpha. 24 days to 10/10; recommended tightening countdown to the last 10 (better joke, easier to sustain). Blockers: dev must confirm alpha readiness, accounts still uncreated, owner approval to start.
+- Cost: 0. Result: filed; awaiting owner.
