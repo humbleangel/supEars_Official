@@ -75,3 +75,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-15 04:35 UTC — Q&A: what "learn from MacWhisper" means
 - Channel: repo (Q&A, no file). Explained 5 lessons: (1) pay-once €64 lifetime proves users buy offline privacy without subscription — validates our posture; (2) channel price discrimination (lifetime on web via Gumroad, subscription on App Store); (3) free Tiny/Base tier as funnel to Pro; (4) product gap — file-first, weak live-paste, our opening; (5) solo-dev precedent wins niche.
 - Cost: 0. Result: answered; no public post.
+
+## 2026-09-15 05:00 UTC — First action agreed: Gmail + YouTube channel + video #1
+- Channel: repo (planning). Owner creates Gmail hub + YouTube channel; first piece to publish there. Agent recommendation: channel as Brand channel under the hub Gmail (handle @supEars, banner "100% offline · Alpha 0.90 soon"); video #1 = Short "Offline Proof" (wifi-off dictate→paste, ≤30s, burned-in captions, waitlist link in desc + pinned comment, NO download link). "How to become a vibecoder" reserved as first long-form (needs script first).
+- Cost: 0. Result: agreed; owner acts on account creation.
