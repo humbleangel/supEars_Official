@@ -109,3 +109,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-15 06:30 UTC — Landing fix: logo at legible size
 - Channel: repo. Owner screenshot: 40px emblem illegible (file itself is 1152×918, verified). Fixed `mkt/landing-v1.html`: masthead emblem 40→76px + wordmark 22→30px, plus new hero emblem figure at 300px so the mark is actually seen. Reopened in Firefox.
 - Cost: 0. Result: fixed; awaiting owner review.
+
+## 2026-09-15 06:40 UTC — Landing: emblem swapped, nothing else
+- Channel: repo. Owner correction: ONLY the emblem file changes. Reverted my size/hero extras; `mkt/landing-v1.html` now differs from the rebuild by exactly one line (masthead src → `assets/supEarsEmblem.png`). Rename kept: `mkt/assets/logov1.png` → `supEarsEmblem.png`. Reopened in Firefox.
+- Cost: 0. Result: done; awaiting owner review.
