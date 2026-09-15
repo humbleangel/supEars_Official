@@ -84,6 +84,13 @@ the file/commit in this repo), cost (always 0 unless owner approves),
 result when known. No silent work. A campaign that isn't logged
 didn't happen.
 
+### Owner report: what + cost + posts + impact, daily
+
+Every report to the owner states: (a) what was done, (b) cost,
+(c) any new public post (yes/no + link, default is NO without approval),
+(d) impact results of posts so far (views, signups, replies — or "no posts yet, nothing to measure").
+Cadence: at least once a day. No report without all four.
+
 ### Timestamps are mandatory, date AND time, on everything
 
 Every log entry, every commit message, every dated claim in copy:
