@@ -15,7 +15,9 @@ to dev) — never invent them.
 | Positioning, copy, storefront, landing, channels, launch | **You** | This repo (public) |
 | Final word on claims, dates, money | The owner (human) | — |
 
-## 2. Product truth (do not overclaim — this list overrules old copy)
+## 2. Product truth: NOW vs ROADMAP (never confuse the two in public)
+
+NOW (pre-alpha v0.8.71, verified — safe to state as fact):
 
 - **What:** supEars, a floating ear on the Windows desktop. Click (or hotkey),
   speak, it transcribes/translates and pastes where you type. Splash entry
@@ -23,19 +25,22 @@ to dev) — never invent them.
 - **Stage: PRE-ALPHA (v0.8.71). No public download exists yet.** Alpha
   (0.90) = first public test round. Do not publish download links until
   the owner declares alpha.
-- **Platform: Windows only, today.** Mac/Linux are future wishes, never
-  promises. (The old README below promises them — fixing that is task #1.)
+- **Platform: Windows today.** Mac/Linux are the roadmap — market them
+  as "coming", never with a date or a download button.
 - **26 talk languages:** en, pt (BR), pt-PT, es, fr, de, it, ru, uk, nl,
   pl, tr, zh (Simplified), ja, ko, hi, cs, hu, el, ro, sv, id, vi, th,
-  ur, ar.
+  ur, ar. (Old copy says 17 — that number is simply outdated.)
 - **Privacy story (verified, safe to say):** 100% offline transcription,
   no voice or text leaves the machine, no account, no telemetry.
   Never name or attack specific companies in public copy
   (keep the 😈 out of the storefront).
 - **Price story:** free during pre-alpha/beta testing; paid license with a
   60-day trial starts at alpha. Never announce a price or date yourself.
-- **Unverified — never claim:** "97% accuracy", any speed numbers,
-  "Mac/Linux downloads". These are in the old README and must go.
+
+ROADMAP (our public ambition — say it as future, not as shipped):
+Mac + Linux builds, 97% measured accuracy, public downloads at alpha
+(0.90). Rule: vision words ("coming", "targeting", "on the roadmap"),
+never past tense, never a date you invented.
 
 ## 3. Approved voice: localized taglines (blind-tested, use verbatim)
 
@@ -81,10 +86,11 @@ didn't happen.
 
 ## 5. First backlog (in this order)
 
-1. **Fix `README.md` to §2 truth:** 26 languages, Windows-only pre-alpha,
-   no download links yet, drop "97%", drop Mac/Linux, keep tone
-   friendly, drop the 😈. Commit as "storefront: truthful pre-alpha copy".
-2. **Bring `index.html` to the same truth**, EN + the taglines above
+1. **Refresh `README.md`:** update the count to 26 languages, wire in
+   the §3 taglines, keep the vision (Mac/Linux, accuracy goal) worded
+   as roadmap per §2, and state pre-alpha status (no downloads yet).
+   Commit as "storefront: 26 languages + roadmap wording".
+2. **Bring `index.html` to the same standard**, EN + the taglines above
    wired for its language switcher if it has one.
 3. **Screenshots:** request them from the owner (you cannot run the app);
    store finals in `assets/`, reference from README + landing.
@@ -107,6 +113,6 @@ didn't happen.
 
 ## 7. Accept the baton
 
-Reply (to the owner, via your first log entry) with: (a) the three
-README claims you removed and why, (b) your 30-day plan draft.
+Reply (to the owner, via your first log entry) with: (a) a one-line
+summary of your README refresh, (b) your 30-day plan draft.
 Then start task #1.
