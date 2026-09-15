@@ -133,3 +133,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-15 10:40 UTC — Brand name insights filed (owner observations)
 - Channel: repo. Filed `mkt/research/2026-09-15-1040-UTC-brand-name-insights.md` — (A) "supEars" reads as the greeting "sup? / what's up?" and as the compliment "super ears"; (B) same sound carries "disappear" — offline means the user disappears from the mega corporations (appears / disappears pair). Linked to the story project; related layers (appears, super) marked as marketing additions for owner to cut; one-line caution not to hammer all meanings at once. Internal only.
 - Cost: 0. Result: filed; no public post.
+
+## 2026-09-15 10:46 UTC — Research: is the floating ear unique? (owner question)
+- Channel: repo. Filed `mkt/research/2026-09-15-1046-UTC-floating-ear-uniqueness.md`. Verdict: **half right** — a floating always-on-top control is category standard (orbs: VoicePad/Voxa; pill: OpenWhisper; island: Talky; bar: Wispr/Willow/Aqua; "floating dictation orb" Android tutorials), but a floating EAR is unclaimed anywhere → the ear form + name + metaphor is our signature ("the floating ear" is safe to claim). Bonus: 9 direct/adjacent rivals missing from our map (Float, HushQuill 99-langs, OpenWhisper, Whisperstream, Eve, SpeakoFlow, FlowDictate, Talky, whisperflow.app name-squat) — Windows+offline is crowding. Method: DDG HTML webfetch (websearch 429), bot-check cut it to two queries; flagged as directional not exhaustive.
+- Cost: 0. Result: filed; no public post.
