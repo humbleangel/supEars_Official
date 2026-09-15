@@ -92,3 +92,8 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 
 - Channel: dev repo folder `D:\WORK_B\PRJS\supEars\mkt req\` (existed, was empty). Wrote `2026-09-15-0605-UTC-marketing-questions.txt`: Q1 = live partials vs paste-on-release (+ Hindi parity) — blocks landing claims; Q2 = standing rule that dev checks this folder each session. No code touched. Owner: please tell the dev agent to read that folder.
 - Cost: 0. Result: filed; awaiting dev answer via owner.
+
+## 2026-09-15 06:10 UTC — Dev answered: BATCH, copy fixed
+- Channel: dev repo (`mkt req/2026-09-15-0605-UTC-dev-answers.txt`, dev clock 05:58 — 7-min skew noted, harmless). A1: BATCH, not live — mic records to memory, only live feedback is wave meter; paste on click/hotkey/silence; latency "seconds", no measured numbers (never quote); Hindi/Hinglish identical pipeline, no special-casing. Marketing rule adopted: never claim live word-by-word; honest line "speak, release, your words appear." A2: channel protocol acknowledged by dev.
+- Fix applied: `index.html` play-note "Words land one by one" → "Speak, release — your words appear, cleaned and translated." (word animation stays as illustrative). Copy audit: no other live-display claims found (checked "one by one", "live", "stream", "as you speak").
+- Cost: 0. Result: fixed; no public post.
