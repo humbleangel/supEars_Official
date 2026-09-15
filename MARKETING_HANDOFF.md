@@ -84,6 +84,14 @@ the file/commit in this repo), cost (always 0 unless owner approves),
 result when known. No silent work. A campaign that isn't logged
 didn't happen.
 
+### Timestamps are mandatory, date AND time, on everything
+
+Every log entry, every commit message, every dated claim in copy:
+`YYYY-MM-DD HH:MM UTC` (24h, e.g. `2026-09-15 14:30 UTC`).
+Date alone is not enough — entries without a time are rejected, fix
+them when you spot them. Same rule applies to filenames or headings
+that carry a date: they carry the time too.
+
 ## 5. First backlog (in this order)
 
 1. **Refresh `README.md`:** update the count to 26 languages, wire in
