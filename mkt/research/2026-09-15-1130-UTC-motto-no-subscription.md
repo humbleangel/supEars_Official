@@ -38,9 +38,13 @@ Recommendation: lead with **#1 or #2**, keep **#3** as a supporting line. Attack
 - Never name or attack competitors; the motto speaks about *us*, not them.
 - Do not combine with price figures or dates — marketing never announces a price.
 
-## Blocker for owner
+## Blocker for owner — UPDATE 2026-09-15 11:31 UTC
 
-**Confirm: is the alpha paid license a one-time purchase (perpetual) or a subscription?** Everything above is inert until that is answered. If one-time → the motto is safe and strong. If subscription or undecided → do not use any "no subscription" line.
+Partly resolved. Dev answers round 2 (owner-approved, see `2026-09-15-1131-UTC-dev-answers-round2-ingest.md`) gives four seats — **$4.99 / $15 / $50 / founding $25** — and frames the category as **"rent vs own" / "forever with us"**, which describes a **one-time** purchase. That backs a "no subscription" line in direction.
+
+Still needs one explicit confirmation: **are all four seats one-time with no recurring tier anywhere?** Recommend asking the owner to state it plainly once (question 2 in that file). Until then the motto stays internal.
+
+Also do not merge the **60-day trial** (handoff §2) with the **30-day money-back** guarantee (dev trust kit) — two different facts.
 
 ---
 *Filed 2026-09-15 11:30 UTC · cost 0 · no public post · internal.*
