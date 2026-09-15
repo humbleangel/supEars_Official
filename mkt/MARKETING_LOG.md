@@ -125,3 +125,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-15 06:50 UTC — Landing resolved: emblem small, logo big (session restore point)
 - Channel: repo. Final arrangement per owner: v1 emblem small in masthead (`assets/supEarsEmblem.png`, 40px), v3 flag logo big in hero (`assets/supEarsLogoV3.png`, 300px figure). Commits `cc1c07b` (arrangement) + `ec80ad6` (standing-rule log) pushed. Session compacted after this; context re-read from handoff/log/landing.
 - Cost: 0. Result: done; awaiting next orders.
+
+## 2026-09-15 10:36 UTC — Dev communication #3: India market findings (with URLs)
+- Channel: dev repo folder `mkt req\2026-09-15-1036-UTC-marketing-india-findings.txt`. Findings only, no code request: (1) live visible words is the #1 unmet India ask, not faster batch; (2) Hindi accuracy bar is ElevenLabs Scribe 5.5% WER, not Whisper 33.3%; (3) Quill Flow — Hinglish-first iOS rival; (4) Kapwing adjacent; (5) six micro-competitors incl. DictaFlow, Voicedash, SpeakType, Dicta, BolNote, Freeflow. All source URLs included. Re-raised open Q3 (live display feasibility). No code touched.
+- Cost: 0. Result: filed; awaiting dev answer via owner.
