@@ -26,3 +26,8 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo. Changed `index.html` only: meta + pill (14-day → free-during-testing / 60-day testers), counts 17→26 (demo labeled a sample of 26; kept 14 embedded-flag demo — new flags needed for full 26, flagged below), trial section carries pre-alpha v0.8.71 + Windows-first/Mac+Linux-coming, FAQ language list → full 26, offline wording tightened.
 - Cost: 0. Result: uncommitted.
 - Blocker for owner: full 26-voice demo needs 12 more flag embeds + example sentences (en, uk, cs, hu, el, ro, sv, id, vi, th, ur, pt-PT) — say the word and I'll draft, or keep the 14-sample.
+
+## 2026-09-15 00:47 UTC — Pushed to main
+
+- Channel: repo. Pushed `c701020` (README + log) + `2e68d38` (index) to `origin/main`. Identity: `marketing-agent` (empty email, per-owner). Working tree clean.
+- Cost: 0. Still open: screenshots (#3), auto-detect confirm, 26-flag demo decision, 30-day plan approval.
