@@ -97,3 +97,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: dev repo (`mkt req/2026-09-15-0605-UTC-dev-answers.txt`, dev clock 05:58 — 7-min skew noted, harmless). A1: BATCH, not live — mic records to memory, only live feedback is wave meter; paste on click/hotkey/silence; latency "seconds", no measured numbers (never quote); Hindi/Hinglish identical pipeline, no special-casing. Marketing rule adopted: never claim live word-by-word; honest line "speak, release, your words appear." A2: channel protocol acknowledged by dev.
 - Fix applied: `index.html` play-note "Words land one by one" → "Speak, release — your words appear, cleaned and translated." (word animation stays as illustrative). Copy audit: no other live-display claims found (checked "one by one", "live", "stream", "as you speak").
 - Cost: 0. Result: fixed; no public post.
+
+## 2026-09-15 06:03 UTC — Dev request round 2: live display feasibility
+- Channel: dev repo folder. Wrote `mkt req/2026-09-15-0603-UTC-marketing-questions-2.txt`: Q3 = is live word-by-word display feasible later (architecture? cost? Hindi accuracy trade-off? priority read?). Asked for truthful possible/hard/no for roadmap wording only — no commitment, no claim. No code touched.
+- Cost: 0. Result: filed; awaiting dev answer via owner.
