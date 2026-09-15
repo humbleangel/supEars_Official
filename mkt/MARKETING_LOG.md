@@ -71,3 +71,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 
 - Channel: repo. Covered: 10 direct rivals (Wispr $15/mo, SuperWhisper $8.49 + $250 lifetime, Willow $15, Aqua $10, Voicy $8.49 + $260 lifetime, Dragon $699 dying, Voice In, Talon $0, free pads), 7 big-tech built-ins (all cloud/app-locked), 17 adjacent tools, pricing anchors ($15 = premium, $250 ≈ 3-yr lifetime, 14-day trial norm vs our 60-day), Lemon Squeezy recommendation, 16 complaint threads → top 6 weaknesses with counters. Filed as NEW file only: `mkt/research/2026-09-15-0425-UTC-competitors.html`. Opened in Firefox per-owner.
 - Cost: 0. Result: filed; no public post.
+
+## 2026-09-15 04:35 UTC — Q&A: what "learn from MacWhisper" means
+- Channel: repo (Q&A, no file). Explained 5 lessons: (1) pay-once €64 lifetime proves users buy offline privacy without subscription — validates our posture; (2) channel price discrimination (lifetime on web via Gumroad, subscription on App Store); (3) free Tiny/Base tier as funnel to Pro; (4) product gap — file-first, weak live-paste, our opening; (5) solo-dev precedent wins niche.
+- Cost: 0. Result: answered; no public post.
