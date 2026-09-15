@@ -36,4 +36,9 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 
 - Channel: repo. Moved `MARKETING_HANDOFF.md`, `MARKETING_LOG.md` (this file), `SESSION_PROMPT.md`, `assets/` → `mkt/` via `git mv`. Root now holds only `README.md` + `index.html` (kept at root per-owner so Pages stays live) plus `.github/` (templates must stay at root).
 - Fixed `README.md` logo path → `mkt/assets/supEarsLogoV3.png`; handoff `assets/` ref → `mkt/assets/`. Old log entries above still cite pre-move paths — history, left as-is.
-- Cost: 0. Result: uncommitted.
+- Cost: 0. Result: committed + pushed as `7432923`.
+
+## 2026-09-15 01:20 UTC — Research: worldwide distribution channels (free-first)
+
+- Channel: repo. Ran 7 research subagents (round 1: direct channels, launch platforms, communities/social, partners/press, paid+waitlist+analytics; round 2: regional free venues, free outreach/production stack). Synthesized into one self-contained file: `mkt/research/2026-09-15-0120-UTC-distribution-channels.html` (free-first: FREE NOW / FREE AT-ALPHA / PAID-LATER appendix). Opened in Firefox per-owner.
+- Cost: 0. Result: filed; awaiting owner green light on the NOW-batch (tester call, RSI answers, Launching Next queue) before any public post.
