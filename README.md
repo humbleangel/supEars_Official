@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/supEarsLogoV3.png" alt="supEars logo"/>
+  <img src="mkt/assets/supEarsLogoV3.png" alt="supEars logo"/>
 </p>
 
 <h1 align="center">supEars - The Ear that understands your language.</h1>

@@ -77,7 +77,7 @@ normal logical order):
 - ur: اپنی زبان میں بات کریں۔
 - ar: تحدث بلغتك الأم.
 
-## 4. Your register: log EVERYTHING in `MARKETING_LOG.md`
+## 4. Your register: log EVERYTHING in `mkt/MARKETING_LOG.md`
 
 Every effort gets one entry: date, channel, what went out (or link to
 the file/commit in this repo), cost (always 0 unless owner approves),
@@ -101,7 +101,7 @@ that carry a date: they carry the time too.
 2. **Bring `index.html` to the same standard**, EN + the taglines above
    wired for its language switcher if it has one.
 3. **Screenshots:** request them from the owner (you cannot run the app);
-   store finals in `assets/`, reference from README + landing.
+   store finals in `mkt/assets/`, reference from README + landing.
 4. **Propose a 30-day pre-alpha plan** (landing, waitlist via GitHub
    Issues/Discussions, dev-community seeding, 26-language social
    snippets reusing §3) and wait for owner approval before posting
@@ -117,7 +117,7 @@ that carry a date: they carry the time too.
 - Never edit product behavior claims without re-checking §2 with the owner.
 - Small commits, one topic each, push to `main`.
 - When blocked on a product fact or asset, log the blocker in
-  `MARKETING_LOG.md` and ask the owner — do not guess in public.
+  `mkt/MARKETING_LOG.md` and ask the owner — do not guess in public.
 
 ## 7. Accept the baton
 
