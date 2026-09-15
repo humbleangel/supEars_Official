@@ -79,3 +79,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-15 05:00 UTC — First action agreed: Gmail + YouTube channel + video #1
 - Channel: repo (planning). Owner creates Gmail hub + YouTube channel; first piece to publish there. Agent recommendation: channel as Brand channel under the hub Gmail (handle @supEars, banner "100% offline · Alpha 0.90 soon"); video #1 = Short "Offline Proof" (wifi-off dictate→paste, ≤30s, burned-in captions, waitlist link in desc + pinned comment, NO download link). "How to become a vibecoder" reserved as first long-form (needs script first).
 - Cost: 0. Result: agreed; owner acts on account creation.
+
+## 2026-09-15 05:35 UTC — Landing v1 drafted (campaign waitlist page)
+- Channel: repo. Built NEW lean single-file page `mkt/landing-v1.html` (hero + 3 steps + 26 langs + waitlist CTA → GitHub Issues + 5 FAQs; approved copy only, no download buttons, Mac/Linux as roadmap). Root `index.html` untouched — v1 is the campaign/link-in-bio candidate until owner picks a winner. Opened in Firefox per-owner.
+- Cost: 0. Result: drafted; awaiting owner review.

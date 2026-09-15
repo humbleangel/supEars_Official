@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>supEars — The Ear that understands your language</title>
+<meta name="description" content="supEars is a floating ear for Windows. Speak in your own native language — clean text lands where you were typing. 100% offline. Join the alpha waitlist."/>
+<meta name="color-scheme" content="dark"/>
+<style>
+:root{--bg:#0a0d11;--panel:#141922;--line:rgba(255,255,255,.08);--line2:rgba(255,255,255,.14);--text:#eef1f4;--muted:#99a2ae;--faint:#6b7480;--accent:#10b981;--accent2:#38bdf8;--r:16px;--max:960px}
+*{box-sizing:border-box}body{margin:0;color:var(--text);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:radial-gradient(900px 480px at 85% -5%,rgba(16,185,129,.1),transparent 60%),radial-gradient(760px 420px at 5% 5%,rgba(56,189,248,.08),transparent 60%),var(--bg);-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 22px}a{color:inherit}
+.hero{text-align:center;padding:84px 0 40px}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;color:#b8f0da;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.35);padding:8px 16px;border-radius:999px;margin-bottom:22px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:p 2.2s infinite}@keyframes p{0%{box-shadow:0 0 0 0 rgba(16,185,129,.55)}70%{box-shadow:0 0 0 9px rgba(16,185,129,0)}100%{box-shadow:0 0 0 0 rgba(16,185,129,0)}}
+.ear{font-size:88px;line-height:1;filter:grayscale(1) brightness(1.15)}
+h1{font-size:clamp(34px,5vw,56px);line-height:1.08;letter-spacing:-.03em;margin:18px 0 14px}
+h1 .g{background:linear-gradient(100deg,#34d399,#38bdf8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{color:var(--muted);font-size:18px;max-width:34em;margin:0 auto 30px}.lede b{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:15px;padding:13px 28px;border-radius:12px;background:linear-gradient(180deg,#14c98d,#0da271);color:#04120c;box-shadow:0 10px 26px -10px rgba(16,185,129,.6)}
+.btn:hover{transform:translateY(-1px)}
+.micro{margin-top:16px;color:var(--faint);font-size:13px}
+section{padding:44px 0 8px}h2{font-size:clamp(23px,3vw,32px);letter-spacing:-.02em;text-align:center;margin:0 0 8px}
+.sub{color:var(--muted);text-align:center;max-width:34em;margin:0 auto 26px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}@media(max-width:700px){.steps{grid-template-columns:1fr}}
+.step{background:linear-gradient(180deg,var(--panel),#12161c);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.step .n{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--accent);margin-bottom:8px}
+.step h3{margin:0 0 6px;font-size:17px}.step p{margin:0;color:var(--muted);font-size:14px}.step p b{color:var(--text)}
+.langs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:6px}
+.langs span{font-size:13px;color:var(--muted);border:1px solid var(--line);background:rgba(255,255,255,.03);padding:6px 13px;border-radius:999px}
+.wait{background:linear-gradient(120deg,rgba(56,189,248,.1),rgba(16,185,129,.08) 60%,rgba(255,255,255,.02));border:1px solid rgba(56,189,248,.28);border-radius:20px;padding:44px 36px;text-align:center;margin-top:52px}
+.wait h2{margin-bottom:8px}.wait p{color:#c4cbd3;margin:0 auto 24px;max-width:32em}
+.wait ul{margin:0 0 26px;padding:0;list-style:none;display:grid;gap:8px;color:var(--muted);font-size:14.5px}.wait li b{color:var(--text)}
+.wait li::before{content:"✓";color:var(--accent2);font-weight:800;margin-right:8px}
+.faq{max-width:640px;margin:26px auto 0}
+details{border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.02);padding:15px 18px;margin-bottom:8px}
+summary{cursor:pointer;font-weight:700;font-size:14.5px}
+details p{color:var(--muted);font-size:14px;margin:10px 0 2px}
+footer{margin:52px 0 0;border-top:1px solid var(--line);padding:24px 0 36px;color:var(--faint);font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero">
+<div class="badge"><span class="dot"></span>Pre-alpha v0.8.71 · Alpha waitlist open</div>
+<div class="ear">👂</div>
+<h1>The Ear that understands<br/><span class="g">your language.</span></h1>
+<p class="lede">A floating ear for Windows. <b>Speak in your own native language</b> — clean text lands where you were typing. 100% offline. No account.</p>
+<p><a class="btn" href="https://github.com/humbleangel/supEars_Official/issues">Join the alpha waitlist</a></p>
+<p class="micro">Free during testing · 60 days for testers · No credit card</p>
+</div>
+
+<section>
+<h2>Thought to text in three seconds.</h2>
+<p class="sub">No new app to learn. The ear floats above your work.</p>
+<div class="steps">
+<div class="step"><div class="n">01</div><h3>Click the ear.</h3><p>Red means listening. Click again — <b>or just go quiet.</b></p></div>
+<div class="step"><div class="n">02</div><h3>Talk like yourself.</h3><p>Your language, your words. <b>Want it written in another? Set it once.</b></p></div>
+<div class="step"><div class="n">03</div><h3>There's your text.</h3><p>It lands where your cursor was. <b>Nothing to copy.</b></p></div>
+</div>
+</section>
+
+<section>
+<h2>26 talk languages.</h2>
+<p class="sub">Speak in your own native language — including Hinglish.</p>
+<div class="langs">
+<span>English</span><span>Português (BR)</span><span>Português (PT)</span><span>Español</span><span>Français</span><span>Deutsch</span><span>Italiano</span><span>Русский</span><span>Українська</span><span>Nederlands</span><span>Polski</span><span>Türkçe</span><span>中文 (简体)</span><span>日本語</span><span>한국어</span><span>हिन्दी</span><span>Čeština</span><span>Magyar</span><span>Ελληνικά</span><span>Română</span><span>Svenska</span><span>Bahasa Indonesia</span><span>Tiếng Việt</span><span>ไทย</span><span>اردو</span><span>العربية</span>
+</div>
+</section>
+
+<section>
+<div class="wait">
+<h2>First release coming soon.</h2>
+<p>Windows first. Mac + Linux on the roadmap. Leave an Issue and we will notify you at alpha (0.90).</p>
+<ul>
+<li><b>60 days free,</b> everything unlocked for testers.</li>
+<li><b>Your feedback</b> decides what ships next.</li>
+<li><b>Offline by design</b> — no voice or text leaves your PC.</li>
+</ul>
+<p><a class="btn" href="https://github.com/humbleangel/supEars_Official/issues">Notify me</a></p>
+</div>
+<div class="faq">
+<details open><summary>When can I download it?</summary><p>At alpha (0.90). Pre-alpha builds are private. Join the waitlist and we'll notify you.</p></details>
+<details><summary>Which languages can I speak?</summary><p>26 — see the list above, plus auto-detect. Speak one, write another.</p></details>
+<details><summary>Does it need internet?</summary><p>Only to download the app and get your key. Transcription itself runs fully offline on your PC.</p></details>
+<details><summary>How much will it cost?</summary><p>Free during pre-alpha/beta testing. A paid license with a 60-day trial starts at alpha.</p></details>
+<details><summary>Mac or Linux?</summary><p>Windows first. Mac + Linux are on the roadmap — coming, no date yet.</p></details>
+</div>
+</section>
+
+<footer>👂 supEars — speak in your own language. · Made for people who think faster than they type.</footer>
+
+</div>
+</body>
+</html>
