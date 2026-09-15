@@ -44,5 +44,13 @@ Recommendation: lead with **#1 or #2**, keep **#3** as a supporting line. Attack
 
 Recorded not as a debate but as fact: the paid tiers are prepaid per period ($4.99/1mo, $15/6mo) with no auto-renewal, so the motto's claim is about the **trap** (auto-renewing subscriptions), which we do not have. Owner accepts the wording risk; the decision is his.
 
+## Second motto (owner-added 2026-09-15 19:10 UTC)
+
+**"Stop feeding the MegaCorps."** — owner wording, verbatim.
+
+- Consistent with the name insights: *disappear* = you vanish from the industry; this says the same thing as an instruction.
+- Does **not** name a specific company → the §2 no-naming rule is intact. But it is an attack in tone, and it reverses the 2026-09-15 00:44 UTC removal of the "MegaCorps/😈" line from the storefront. Owner's call, recorded.
+- Use sparingly. It fits the dev-journey/story pieces better than the storefront or the ledger-style landing.
+
 ---
 *Filed 2026-09-15 11:30 UTC · cost 0 · no public post · internal.*

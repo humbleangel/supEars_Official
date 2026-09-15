@@ -167,3 +167,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-15 19:05 UTC — Launch plan filed: 10/10 countdown (owner idea, corrected)
 - Channel: repo. Filed `mkt/research/2026-09-15-1905-UTC-launch-plan-1010-countdown.md`. **Kept:** launch 2026-10-10 ("10 out of 10") + daily regressive-countdown videos. **Rejected:** fabricating user comments/testimonials — FTC Endorsement Guides, YouTube/X/Meta/TikTok authenticity rules, and pre-alpha has zero users so it is false on its face; our own alt-accounts policy already bans fake fans. Distinction recorded: owned fiction (dev-journey narrative) is fine; inventing people is not. Replaced with 3 legitimate formats: dated dev log, "promise cards" (our claims, never attributed to users), consented real tester quotes after alpha. 24 days to 10/10; recommended tightening countdown to the last 10 (better joke, easier to sustain). Blockers: dev must confirm alpha readiness, accounts still uncreated, owner approval to start.
 - Cost: 0. Result: filed; awaiting owner.
+
+## 2026-09-15 19:10 UTC — Second motto added: "Stop feeding the MegaCorps."
+- Channel: repo. Owner-added second motto, verbatim, in `mkt/MARKETING_HANDOFF.md` §3 and the motto doc. Recorded: generic term, names no specific company, so §2 no-naming rule intact; but it reverses the 2026-09-15 00:44 UTC removal of the "MegaCorps/😈" storefront line — owner's call. Advised using it in story/dev-journey pieces, sparingly, not on the ledger landing.
+- Cost: 0. Result: applied; pushed.

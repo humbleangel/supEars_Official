@@ -57,6 +57,11 @@ Motto (owner-locked 2026-09-15 11:37 UTC, finalized 11:39 UTC): **"Escape the
 Subscriptions Traps"** — use verbatim as the owner wrote it (including the
 plural), no `~`. Supporting proof lines are "no auto-renewal, ever" and
 "rent vs own".
+Second motto (owner-added 2026-09-15 19:10 UTC): **"Stop feeding the
+MegaCorps."** — owner wording, verbatim. Note vs §2: "MegaCorps" is generic,
+it names no specific company, so it does not break the no-naming rule; it does
+reverse the earlier removal of the "MegaCorps/😈" line from the storefront
+(2026-09-15 00:44 UTC). Owner decision — keep as motto, use sparingly.
 
 Per-language supporting lines (each picked by a native-speaker judge
 over the alternative — reuse as store/social copy; AR/UR shown in
