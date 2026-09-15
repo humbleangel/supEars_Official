@@ -38,13 +38,11 @@ Recommendation: lead with **#1 or #2**, keep **#3** as a supporting line. Attack
 - Never name or attack competitors; the motto speaks about *us*, not them.
 - Do not combine with price figures or dates — marketing never announces a price.
 
-## FINAL — owner decision 2026-09-15 11:37 UTC
+## FINAL — owner decision 2026-09-15 11:37 UTC, finalized 11:39 UTC
 
-**Motto is: "escape subs trap"** (owner's wording, verbatim). My "No auto-renewal. Ever." recommendation is rejected; do not re-argue it. Keep "no auto-renewal, ever" only as a *supporting proof line* under the motto, and "rent vs own" for the forever tiers.
+**Motto is: "Escape the Subscriptions Traps"** (owner's wording, verbatim — keep the plural exactly as written, capital S on Subscriptions, capital T on Traps, no `~`). My "No auto-renewal. Ever." recommendation is rejected; do not re-argue it. Keep "no auto-renewal, ever" only as a *supporting proof line* under the motto, and "rent vs own" for the forever tiers.
 
 Recorded not as a debate but as fact: the paid tiers are prepaid per period ($4.99/1mo, $15/6mo) with no auto-renewal, so the motto's claim is about the **trap** (auto-renewing subscriptions), which we do not have. Owner accepts the wording risk; the decision is his.
-
-Minor open item: the leading `~` in "~escape subs trap" — kept pending a one-line clarification (part of the motto, or shorthand?). Until answered, treat the motto as **escape subs trap**.
 
 ---
 *Filed 2026-09-15 11:30 UTC · cost 0 · no public post · internal.*

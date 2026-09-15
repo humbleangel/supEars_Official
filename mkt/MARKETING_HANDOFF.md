@@ -53,8 +53,9 @@ never past tense, never a date you invented.
 
 English brand line: **"The Ear that understands your language."**
 Supporting line: **"Speak in your own native language."**
-Motto (owner-locked 2026-09-15 11:37 UTC): **"escape subs trap"** — use verbatim
-as the owner wrote it; supporting proof lines are "no auto-renewal, ever" and
+Motto (owner-locked 2026-09-15 11:37 UTC, finalized 11:39 UTC): **"Escape the
+Subscriptions Traps"** — use verbatim as the owner wrote it (including the
+plural), no `~`. Supporting proof lines are "no auto-renewal, ever" and
 "rent vs own".
 
 Per-language supporting lines (each picked by a native-speaker judge
