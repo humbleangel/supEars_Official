@@ -57,3 +57,8 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 
 - Channel: repo. Owner directive: accelerator pedal on videos. Filed as NEW file: `mkt/video-plan.md` (cadence + idea #1 "How to become a vibecoder" collected, concept TBD). No videos shot or posted yet.
 - Cost: 0. Result: filed; awaiting owner brief/script direction.
+
+## 2026-09-15 02:50 UTC — Research: alt accounts under other names (policy check)
+
+- Channel: repo. Question: can we run other-named accounts posting clips/GIFs on X/YouTube/IG/FB/TikTok? Answer: yes to multiple accounts, NO to fake independence — all 5 platforms ban it (X deception/spam, YT coordinated networks + 3-strike termination, Meta CIB + one-personal-account, TikTok authenticity) + FTC disclosure duty on every post. Safe playbook filed (branded shows, language editions, founder account, UGC reposts). Filed as NEW file only: `mkt/research/2026-09-15-0250-UTC-alt-accounts-policy.md`.
+- Cost: 0. Result: filed; no public post.
