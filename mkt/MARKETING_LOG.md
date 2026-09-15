@@ -87,3 +87,8 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-15 05:50 UTC — Research: India deep-dive (owner's 4 leads)
 - Channel: repo. Owner proved prior round shallow — investigated all 4: Reddit thread FULLY captured via archive API (live-words gap, nobody found a Hindi tool), ElevenLabs Scribe (Hindi 5.5% vs Whisper 33% — bar, not rival), Kapwing (creator subtitles, adjacent), Quill Flow (Hinglish-first iPhone keyboard — closest India rival, no Windows). Bonus: 7 new micro-competitors (DictaFlow, Voicedash, SpeakType, Dicta, BolNote…). Corrections filed: LIVE display gap, Scribe accuracy bar, per-language honesty, one deep-dive per market next. Filed as NEW file only: `mkt/research/2026-09-15-0550-UTC-india-deep-dive.md`. Open question for dev/owner: does supEars stream partials live or paste on release?
 - Cost: 0. Result: filed; no public post.
+
+## 2026-09-15 06:05 UTC — Dev request filed: live-vs-batch question
+
+- Channel: dev repo folder `D:\WORK_B\PRJS\supEars\mkt req\` (existed, was empty). Wrote `2026-09-15-0605-UTC-marketing-questions.txt`: Q1 = live partials vs paste-on-release (+ Hindi parity) — blocks landing claims; Q2 = standing rule that dev checks this folder each session. No code touched. Owner: please tell the dev agent to read that folder.
+- Cost: 0. Result: filed; awaiting dev answer via owner.
