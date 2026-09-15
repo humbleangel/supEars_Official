@@ -105,3 +105,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-15 06:20 UTC — Landing v1 rebuilt anti-slop (Hallmark rules)
 - Channel: repo. Owner verdict: v1 was AI slop. Read Hallmark SKILL.md + no-ai-slop patterns, rebuilt `mkt/landing-v1.html` as Ledger Document: light newsprint paper, roman serif display, flat green accent, real logo asset, transcript sheet labeled as illustration, 26 langs as ledger table, status box with roadmap marked, no invented numbers ("three seconds" removed), locked CSS tokens, mobile single-column. Opened in Firefox per-owner.
 - Cost: 0. Result: rebuilt; awaiting owner review.
+
+## 2026-09-15 06:30 UTC — Landing fix: logo at legible size
+- Channel: repo. Owner screenshot: 40px emblem illegible (file itself is 1152×918, verified). Fixed `mkt/landing-v1.html`: masthead emblem 40→76px + wordmark 22→30px, plus new hero emblem figure at 300px so the mark is actually seen. Reopened in Firefox.
+- Cost: 0. Result: fixed; awaiting owner review.
