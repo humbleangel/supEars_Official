@@ -83,3 +83,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-15 05:35 UTC — Landing v1 drafted (campaign waitlist page)
 - Channel: repo. Built NEW lean single-file page `mkt/landing-v1.html` (hero + 3 steps + 26 langs + waitlist CTA → GitHub Issues + 5 FAQs; approved copy only, no download buttons, Mac/Linux as roadmap). Root `index.html` untouched — v1 is the campaign/link-in-bio candidate until owner picks a winner. Opened in Firefox per-owner.
 - Cost: 0. Result: drafted; awaiting owner review.
+
+## 2026-09-15 05:50 UTC — Research: India deep-dive (owner's 4 leads)
+- Channel: repo. Owner proved prior round shallow — investigated all 4: Reddit thread FULLY captured via archive API (live-words gap, nobody found a Hindi tool), ElevenLabs Scribe (Hindi 5.5% vs Whisper 33% — bar, not rival), Kapwing (creator subtitles, adjacent), Quill Flow (Hinglish-first iPhone keyboard — closest India rival, no Windows). Bonus: 7 new micro-competitors (DictaFlow, Voicedash, SpeakType, Dicta, BolNote…). Corrections filed: LIVE display gap, Scribe accuracy bar, per-language honesty, one deep-dive per market next. Filed as NEW file only: `mkt/research/2026-09-15-0550-UTC-india-deep-dive.md`. Open question for dev/owner: does supEars stream partials live or paste on release?
+- Cost: 0. Result: filed; no public post.
