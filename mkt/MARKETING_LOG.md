@@ -62,3 +62,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 
 - Channel: repo. Question: can we run other-named accounts posting clips/GIFs on X/YouTube/IG/FB/TikTok? Answer: yes to multiple accounts, NO to fake independence — all 5 platforms ban it (X deception/spam, YT coordinated networks + 3-strike termination, Meta CIB + one-personal-account, TikTok authenticity) + FTC disclosure duty on every post. Safe playbook filed (branded shows, language editions, founder account, UGC reposts). Filed as NEW file only: `mkt/research/2026-09-15-0250-UTC-alt-accounts-policy.md`.
 - Cost: 0. Result: filed; no public post.
+
+## 2026-09-15 02:55 UTC — Advisory: dedicated Gmail hub for show accounts
+- Channel: repo (Q&A, no file). Advice: create ONE new Gmail (e.g. `supears.show@`) as hub; use plus-addressing per platform (`...show+yt@`, `...+x@`, `...+ig@`) — Gmail delivers all to one inbox, platforms accept them as distinct emails. YouTube extra channels need no new email at all (brand channels under one Google login); FB Pages need none either (live under personal account). Real constraint is phone verification per X/TikTok/IG account, not email. Security: authenticator 2FA + saved recovery codes. Don't bulk-create Gmails (Google flags it) — one hub is enough; extra Gmails only for partial ban-isolation.
+- Cost: 0. Result: answered; owner to create the address.
