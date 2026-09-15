@@ -117,3 +117,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-15 06:45 UTC — Landing: badge restored in masthead
 - Channel: repo. Owner correction: the flag badge stays in the HTML masthead. Reverted src to `assets/supEarsLogoV3.png`. Emblem file kept in `mkt/assets/supEarsEmblem.png` for later use. Reopened in Firefox.
 - Cost: 0. Result: done; awaiting owner review.
+
+## 2026-09-15 06:45 UTC — Standing correction: literal orders, no assumptions
+- Channel: repo. Owner: follow orders literally, no alien assumptions (emblem saga: 4 wasted commits on one instruction). Adopted rule: execute the literal instruction, change nothing adjacent; if ambiguous, ask first with the exact interpretation stated. Logged here as permanent behavior note.
+- Cost: 0. Result: noted.
