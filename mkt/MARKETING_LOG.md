@@ -101,3 +101,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-15 06:03 UTC — Dev request round 2: live display feasibility
 - Channel: dev repo folder. Wrote `mkt req/2026-09-15-0603-UTC-marketing-questions-2.txt`: Q3 = is live word-by-word display feasible later (architecture? cost? Hindi accuracy trade-off? priority read?). Asked for truthful possible/hard/no for roadmap wording only — no commitment, no claim. No code touched.
 - Cost: 0. Result: filed; awaiting dev answer via owner.
+
+## 2026-09-15 06:20 UTC — Landing v1 rebuilt anti-slop (Hallmark rules)
+- Channel: repo. Owner verdict: v1 was AI slop. Read Hallmark SKILL.md + no-ai-slop patterns, rebuilt `mkt/landing-v1.html` as Ledger Document: light newsprint paper, roman serif display, flat green accent, real logo asset, transcript sheet labeled as illustration, 26 langs as ledger table, status box with roadmap marked, no invented numbers ("three seconds" removed), locked CSS tokens, mobile single-column. Opened in Firefox per-owner.
+- Cost: 0. Result: rebuilt; awaiting owner review.
