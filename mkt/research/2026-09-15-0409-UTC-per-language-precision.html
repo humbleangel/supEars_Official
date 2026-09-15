@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>supEars — per-language transcription precision needs</title>
+<style>
+  body { background:#141414; color:#e8e8e8; font-family:"Segoe UI",Arial,sans-serif; max-width:1000px; margin:2em auto; padding:0 1.5em; line-height:1.55; }
+  h1 { color:#fff; border-bottom:2px solid #67b2d0; padding-bottom:.3em; }
+  h2 { color:#67b2d0; margin-top:2em; }
+  table { border-collapse:collapse; width:100%; margin:1em 0; font-size:.92em; }
+  th,td { border:1px solid #444; padding:.45em .7em; text-align:left; vertical-align:top; }
+  th { background:#222; color:#fff; }
+  .meta { color:#888; font-size:.9em; }
+  .tier1 { color:#8fd694; font-weight:700; } .tier2 { color:#ffd479; font-weight:700; } .tier3 { color:#ff9d9d; font-weight:700; }
+  .warn { background:#1c1c1c; border-left:3px solid #ffd479; padding:.7em 1em; margin:1em 0; }
+  code { background:#222; padding:.1em .35em; border-radius:4px; }
+</style>
+</head>
+<body>
+<h1>supEars — per-language transcription precision needs</h1>
+<p class="meta">Prepared 2026-09-15 04:09 UTC · From dev research (<code>docs/whisper_models.html</code>, journal #69–#71) for the marketing agent</p>
+
+<div class="warn"><b>Honesty rule — read first.</b> Every figure below comes from <b>third-party published benchmarks</b> on public test sets (Common Voice, Fleurs, MLS, VIVOS). They are <b>not supEars measurements</b>. Our measured claim stays exactly what it is: <b>targeting 97% measured accuracy</b>, with per-language measurement at alpha. Never present these numbers as our results; present them as <i>why each language gets its own precision plan</i>.</div>
+
+<h2>How to read this</h2>
+<p><b>Base WER</b> = word error rate of the stock multilingual base model on that language (lower is better; CER for Chinese/Japanese where noted). <b>Need</b> = how much that language gains from its dedicated upgrade pick. Every language below has a drop-in upgrade path — no engine change needed for any of them.</p>
+
+<h2>Tier 1 — solid on the bundled base (base WER ≤ 50)</h2>
+<table>
+<tr><th>Language</th><th>Base WER*</th><th>Need</th><th>Upgrade path (exists, drop-in)</th></tr>
+<tr><td>English</td><td>25</td><td class="tier1">Low — polish only</td><td>large-v3 + verbatim alt; English-only fast distil for speed</td></tr>
+<tr><td>Thai</td><td>33</td><td class="tier1">Low</td><td>th-large-v3-combined (6.59 vs 12.8); dialect pick for regional speech</td></tr>
+<tr><td>Dutch</td><td>37</td><td class="tier1">Low</td><td>high-mixed-nl (4.43%)</td></tr>
+<tr><td>German</td><td>38</td><td class="tier1">Low–medium (−40% WER available)</td><td>large-v3-german (3.00%, CER 0.81)</td></tr>
+<tr><td>Vietnamese</td><td>40</td><td class="tier1">Low (SOTA line exists)</td><td>PhoWhisper-large (8.14 / 4.67); 244M small beats official large</td></tr>
+<tr><td>Japanese</td><td>43 (CER)</td><td class="tier1">Low</td><td>large-v3 stock (8.5 / 7.1); no trustworthy fine-tune — stock is the pick</td></tr>
+<tr><td>Polish</td><td>43</td><td class="tier1">Low</td><td>large-v2-pl series (most-used)</td></tr>
+<tr><td>Indonesian</td><td>43</td><td class="tier1">Low (medium-size win)</td><td>medium-id (3.83 vs 12.62) — half the download; 244M small beats 3× larger stock</td></tr>
+<tr><td>Russian</td><td>44</td><td class="tier1">Low</td><td>large-v3-russian (6.39 vs 9.84)</td></tr>
+<tr><td>Italian</td><td>46</td><td class="tier1">Low (no standard fine-tune beats stock)</td><td>large-v3 stock is the pick</td></tr>
+<tr><td>Swedish</td><td>46</td><td class="tier1">Low — best size/quality trade found</td><td>kb-whisper-small (244M) beats official large-v3 at 1/6 the size</td></tr>
+<tr><td>Korean</td><td>49</td><td class="tier1">Low</td><td>large-v3 stock (unverified claimants — do not default)</td></tr>
+<tr><td>Portuguese</td><td>49</td><td class="tier1">Low</td><td>large-v3-pt (~4.7 vs 7.7); mixed-pt best cross-domain</td></tr>
+<tr><td>Spanish / French</td><td>— (strong EU coverage)</td><td class="tier1">Low</td><td>large-v3-es (4.93%); large-v3-french (3.98 / 4.84) + medium fallback</td></tr>
+</table>
+
+<h2>Tier 2 — elevated need (base WER 50–75)</h2>
+<table>
+<tr><th>Language</th><th>Base WER*</th><th>Need</th><th>Upgrade path (exists, drop-in)</th></tr>
+<tr><td>Turkish</td><td>52</td><td class="tier2">Medium</td><td>large-v3-turkish (12.80)</td></tr>
+<tr><td>Chinese</td><td>54 (CER)</td><td class="tier2">Medium</td><td>large-zh (CER 9.55 vs 29.9)</td></tr>
+<tr><td>Romanian</td><td>54</td><td class="tier2">Medium</td><td>romanian-finetune; proven medium fallback; small (12.2 vs 33.2)</td></tr>
+<tr><td>Greek</td><td>55</td><td class="tier2">Medium</td><td>large-v2-greek (17.74)</td></tr>
+<tr><td>Ukrainian</td><td>58</td><td class="tier2">Medium</td><td>large-uk-2 (only standard-arch pick with traction)</td></tr>
+<tr><td>Urdu</td><td>59</td><td class="tier2">Medium (start simple)</td><td>large-v3-urdu plain fine-tune; fancier alt needs custom work — later</td></tr>
+<tr><td>Czech</td><td>67</td><td class="tier2">Medium</td><td>large-v3-czech (11.36 mix)</td></tr>
+<tr><td>Hungarian</td><td>71</td><td class="tier2">Medium</td><td>large-v3-hu (8.86)</td></tr>
+<tr><td>Arabic</td><td>72</td><td class="tier2">Medium — buys dialects (MSA already strong)</td><td>large-v3-arabic-dialectal-v2, per-dialect numbers published</td></tr>
+</table>
+
+<h2>Tier 3 — weak stock, upgrade close to mandatory (base WER ≥ 100)</h2>
+<table>
+<tr><th>Language</th><th>Base WER*</th><th>Need</th><th>Upgrade path (exists, drop-in)</th></tr>
+<tr><td>Hindi (in app)</td><td>102</td><td class="tier3">High — swap close to mandatory</td><td>large-v2-hindi (5.3% / 13.1%) or robust-spontaneous alt; CC-BY-4.0 needs attribution shipped</td></tr>
+<tr><td>Bengali (parked)</td><td>101</td><td class="tier3">High — unparks the language</td><td>large-v3-bn (9.65% vs 55.5%)</td></tr>
+<tr><td>Marathi (parked)</td><td>103</td><td class="tier3">High</td><td>large-v2-marathi (13.6%); needs one offline conversion + flag question still open</td></tr>
+<tr><td>Persian (parked)</td><td>104</td><td class="tier3">High — usable, not great</td><td>large-v3-farsi (23.5%)</td></tr>
+<tr><td>Swahili (parked)</td><td>107</td><td class="tier3">High — unparks the language</td><td>large-v2-swahili (12.4% vs ~39%, noisy-robust)</td></tr>
+</table>
+
+<h2>What this means for messaging</h2>
+<ul>
+<li><b>Every language has a path to excellence</b> — the story is never "language X is bad", it is "language X gets its own precision pick". Biggest wins are the Tier 3 comebacks (Bengali 55.5→9.65, Hindi 102→~5–13, Swahili ~39 vs ~100 base).</li>
+<li><b>Small-model story:</b> 244M fine-tunes match or beat 6×-larger stock in sv/id/ur/vi/th/hi/ar/sw — precision without giant downloads. Users never see model names (Settings shows Fast/Balance/Precise only).</li>
+<li><b>Do not promise:</b> per-language accuracy numbers as ours, dates, prices, downloads. Those come at alpha with real measurements.</li>
+</ul>
+<p class="meta">* WER = word error rate on public sets (Common Voice / Fleurs / MLS / VIVOS as published by model authors). CER where character-based scripts make WER meaningless. “—” = no published stock figure; tier by upgrade-path strength.</p>
+</body>
+</html>
