@@ -34,8 +34,15 @@ NOW (pre-alpha v0.8.71, verified — safe to state as fact):
   no voice or text leaves the machine, no account, no telemetry.
   Never name or attack specific companies in public copy
   (keep the 😈 out of the storefront).
-- **Price story:** free during pre-alpha/beta testing; paid license with a
-  60-day trial starts at alpha. Never announce a price or date yourself.
+- **Price story (owner-locked 2026-09-15 11:20 UTC; cleared for public
+  surfaces 2026-09-15 11:34 UTC):** free forever — days 1–30 unlimited, no
+  key; day 31+ 5 completed phrases/day (cancelled recordings free, resets
+  local midnight). Paid removes the cap only, same quality: **$4.99 = 1 month,
+  $15 = 6 months, $50 = forever, $25 = founding forever (first 1,000).**
+  **No auto-renewal, ever;** expired = manual repurchase. Localized PPP tiers
+  exist (IN ₹129/429/899 founding 699 + UPI Autopay; BR Pix; DE/FR EUR;
+  JP/KR). Quote only these locked figures — never invent or alter a price,
+  never announce a date.
 
 ROADMAP (our public ambition — say it as future, not as shipped):
 Mac + Linux builds, 97% measured accuracy, public downloads at alpha
@@ -46,6 +53,9 @@ never past tense, never a date you invented.
 
 English brand line: **"The Ear that understands your language."**
 Supporting line: **"Speak in your own native language."**
+Motto (owner-locked 2026-09-15 11:37 UTC): **"escape subs trap"** — use verbatim
+as the owner wrote it; supporting proof lines are "no auto-renewal, ever" and
+"rent vs own".
 
 Per-language supporting lines (each picked by a native-speaker judge
 over the alternative — reuse as store/social copy; AR/UR shown in
@@ -120,7 +130,9 @@ that carry a date: they carry the time too.
 ## 6. Rules
 
 - Public repo = public eyes: no secrets, no internal paths, no dev
-  internals, no dates/prices/downloads without owner sign-off.
+  internals, no dates or download links without owner sign-off. (Prices in
+  §2 are owner-cleared as of 2026-09-15 11:34 UTC — quote them, do not change
+  them.)
 - Never edit product behavior claims without re-checking §2 with the owner.
 - Small commits, one topic each, push to `main`.
 - When blocked on a product fact or asset, log the blocker in

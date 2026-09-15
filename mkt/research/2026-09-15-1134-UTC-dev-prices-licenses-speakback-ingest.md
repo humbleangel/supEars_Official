@@ -45,6 +45,8 @@ No live-display claim ("speak, release, appear"). No Hindi % until measured (bar
 
 # PART B — Speak-back (language learners) — ROADMAP, future tense only
 
+> **Owner decision 2026-09-15 11:37 UTC: "just a nice feature."** Not a headline, not a campaign. Mention it as a small roadmap item at most; do not build positioning around it. The constraints below still bind if it is mentioned at all.
+
 ## The angle (dev-confirmed)
 
 Speak-back (the app reads the transcription aloud) turns supEars from a dictation tool into a **language loop: speak → see → hear → compare → repeat.** That loop is what enthusiasts (shadowing), students (pronunciation self-check) and teachers (classroom demo) already do by hand. Offline + 26 talk languages makes it special: a student drills pt↔en, es↔en, fr↔en on a plane or in class with no account and nothing leaving the machine. **No cloud rival can claim that sentence.**

@@ -154,3 +154,8 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - **Speak-back:** roadmap only, future tense; offline-first; online Edge TTS reference will never ship; no ship/date/numbers/demo. Copy seeds + use cases captured.
 - Flagged: handoff §2 "60-day trial" now outdated (30 days unlimited + 5/day forever) — asked owner before editing standing orders. Public price clearance still asked.
 - Cost: 0. Result: ingested; 4 owner questions.
+
+## 2026-09-15 11:37 UTC — Owner decisions applied (handoff §2 updated, motto locked)
+- Channel: repo. Owner: (1) confirmed §2 price update → replaced "60-day trial" with the locked free/paid model (30 days unlimited → 5 phrases/day forever; paid removes cap; no auto-renewal; localized tiers); (2) **prices cleared for public surfaces** → §2 now states it, §6 rule updated (prices cleared; dates/downloads still need sign-off); (3) motto = **"escape subs trap"** (owner wording) — added verbatim to §3, my "No auto-renewal. Ever." recommendation rejected and closed (kept only as supporting proof line + "rent vs own"); (4) speak-back = **"just a nice feature"** — demoted in `2026-09-15-1134-...-speakback-ingest.md` to a minor roadmap mention, no positioning.
+- Open minor: whether the leading `~` in "~escape subs trap" is part of the motto — one line asked.
+- Cost: 0. Result: applied; pushed.

@@ -38,17 +38,13 @@ Recommendation: lead with **#1 or #2**, keep **#3** as a supporting line. Attack
 - Never name or attack competitors; the motto speaks about *us*, not them.
 - Do not combine with price figures or dates — marketing never announces a price.
 
-## Blocker for owner — UPDATE 2026-09-15 11:34 UTC (RESOLVED, with a wording correction)
+## FINAL — owner decision 2026-09-15 11:37 UTC
 
-The locked model is in (`2026-09-15-1134-UTC-dev-prices-licenses-speakback-ingest.md`). It is **not** a subscription in the auto-renew sense, but paid time **is** sold per period: **$4.99/month · $15/6 months · $50 forever · $25 founding forever.** And explicitly: **"No auto-renewal, ever."**
+**Motto is: "escape subs trap"** (owner's wording, verbatim). My "No auto-renewal. Ever." recommendation is rejected; do not re-argue it. Keep "no auto-renewal, ever" only as a *supporting proof line* under the motto, and "rent vs own" for the forever tiers.
 
-Consequences:
+Recorded not as a debate but as fact: the paid tiers are prepaid per period ($4.99/1mo, $15/6mo) with no auto-renewal, so the motto's claim is about the **trap** (auto-renewing subscriptions), which we do not have. Owner accepts the wording risk; the decision is his.
 
-1. **Precise motto = "No auto-renewal. Ever."** — true and unbeatable. Avoid "No subscription, ever." as the primary line: a $4.99/month tier invites the "that *is* a subscription" objection.
-2. **Keep "rent vs own"** for the forever tiers ($50 / $25) — that framing is solid.
-3. Also true and strong: **"Same quality free. Cancelled doesn't count."** (free tier: 30 days unlimited, then 5 phrases/day forever).
-
-Replaces the earlier one-time/perpetual assumption above. Still awaiting owner confirmation on the exact public wording (question 3 in the ingest file).
+Minor open item: the leading `~` in "~escape subs trap" — kept pending a one-line clarification (part of the motto, or shorthand?). Until answered, treat the motto as **escape subs trap**.
 
 ---
 *Filed 2026-09-15 11:30 UTC · cost 0 · no public post · internal.*
