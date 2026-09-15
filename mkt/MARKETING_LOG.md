@@ -42,3 +42,8 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 
 - Channel: repo. Ran 7 research subagents (round 1: direct channels, launch platforms, communities/social, partners/press, paid+waitlist+analytics; round 2: regional free venues, free outreach/production stack). Synthesized into one self-contained file: `mkt/research/2026-09-15-0120-UTC-distribution-channels.html` (free-first: FREE NOW / FREE AT-ALPHA / PAID-LATER appendix). Opened in Firefox per-owner.
 - Cost: 0. Result: filed; awaiting owner green light on the NOW-batch (tester call, RSI answers, Launching Next queue) before any public post.
+
+## 2026-09-15 01:29 UTC — Research round 2: organic visibility (divulgation, not distribution)
+
+- Channel: repo. Per-owner redirect: 5 new subagents (social playbooks, forums/groups, $0 GIF tooling, 24-audience discovery, content engine). Synthesized into NEW file only: `mkt/research/2026-09-15-0129-UTC-organic-visibility.html` — distribution files untouched. Opened in Firefox per-owner.
+- Cost: 0. Result: filed; awaiting owner pick of series #1 (recommendation: 26 Tongues day 1) before any public post.
