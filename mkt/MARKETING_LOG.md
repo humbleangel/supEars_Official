@@ -52,3 +52,8 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 
 - Channel: repo. Question: do Indians struggle with Wispr Flow due to strong Indian accent? Answer: yes, documented but nuanced (accent + Hinglish code-switch + auto-detect = weak spot; mild accents fine). Filed as NEW file only: `mkt/research/2026-09-15-0159-UTC-wispr-flow-indian-accent.md`. Existing research files untouched. Note: `websearch` API 429'd throughout; used `webfetch` via DuckDuckGo HTML + primary docs instead.
 - Cost: 0. Result: filed; no public post.
+
+## 2026-09-15 02:12 UTC — Video plan opened (3 Shorts/day + 2 longs/week)
+
+- Channel: repo. Owner directive: accelerator pedal on videos. Filed as NEW file: `mkt/video-plan.md` (cadence + idea #1 "How to become a vibecoder" collected, concept TBD). No videos shot or posted yet.
+- Cost: 0. Result: filed; awaiting owner brief/script direction.
