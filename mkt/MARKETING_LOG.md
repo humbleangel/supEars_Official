@@ -66,3 +66,8 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-15 02:55 UTC — Advisory: dedicated Gmail hub for show accounts
 - Channel: repo (Q&A, no file). Advice: create ONE new Gmail (e.g. `supears.show@`) as hub; use plus-addressing per platform (`...show+yt@`, `...+x@`, `...+ig@`) — Gmail delivers all to one inbox, platforms accept them as distinct emails. YouTube extra channels need no new email at all (brand channels under one Google login); FB Pages need none either (live under personal account). Real constraint is phone verification per X/TikTok/IG account, not email. Security: authenticator 2FA + saved recovery codes. Don't bulk-create Gmails (Google flags it) — one hub is enough; extra Gmails only for partial ban-isolation.
 - Cost: 0. Result: answered; owner to create the address.
+
+## 2026-09-15 04:25 UTC — Research: competitor battle map (5 passes)
+
+- Channel: repo. Covered: 10 direct rivals (Wispr $15/mo, SuperWhisper $8.49 + $250 lifetime, Willow $15, Aqua $10, Voicy $8.49 + $260 lifetime, Dragon $699 dying, Voice In, Talon $0, free pads), 7 big-tech built-ins (all cloud/app-locked), 17 adjacent tools, pricing anchors ($15 = premium, $250 ≈ 3-yr lifetime, 14-day trial norm vs our 60-day), Lemon Squeezy recommendation, 16 complaint threads → top 6 weaknesses with counters. Filed as NEW file only: `mkt/research/2026-09-15-0425-UTC-competitors.html`. Opened in Firefox per-owner.
+- Cost: 0. Result: filed; no public post.
