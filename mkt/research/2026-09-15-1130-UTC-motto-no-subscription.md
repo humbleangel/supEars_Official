@@ -38,13 +38,17 @@ Recommendation: lead with **#1 or #2**, keep **#3** as a supporting line. Attack
 - Never name or attack competitors; the motto speaks about *us*, not them.
 - Do not combine with price figures or dates — marketing never announces a price.
 
-## Blocker for owner — UPDATE 2026-09-15 11:31 UTC
+## Blocker for owner — UPDATE 2026-09-15 11:34 UTC (RESOLVED, with a wording correction)
 
-Partly resolved. Dev answers round 2 (owner-approved, see `2026-09-15-1131-UTC-dev-answers-round2-ingest.md`) gives four seats — **$4.99 / $15 / $50 / founding $25** — and frames the category as **"rent vs own" / "forever with us"**, which describes a **one-time** purchase. That backs a "no subscription" line in direction.
+The locked model is in (`2026-09-15-1134-UTC-dev-prices-licenses-speakback-ingest.md`). It is **not** a subscription in the auto-renew sense, but paid time **is** sold per period: **$4.99/month · $15/6 months · $50 forever · $25 founding forever.** And explicitly: **"No auto-renewal, ever."**
 
-Still needs one explicit confirmation: **are all four seats one-time with no recurring tier anywhere?** Recommend asking the owner to state it plainly once (question 2 in that file). Until then the motto stays internal.
+Consequences:
 
-Also do not merge the **60-day trial** (handoff §2) with the **30-day money-back** guarantee (dev trust kit) — two different facts.
+1. **Precise motto = "No auto-renewal. Ever."** — true and unbeatable. Avoid "No subscription, ever." as the primary line: a $4.99/month tier invites the "that *is* a subscription" objection.
+2. **Keep "rent vs own"** for the forever tiers ($50 / $25) — that framing is solid.
+3. Also true and strong: **"Same quality free. Cancelled doesn't count."** (free tier: 30 days unlimited, then 5 phrases/day forever).
+
+Replaces the earlier one-time/perpetual assumption above. Still awaiting owner confirmation on the exact public wording (question 3 in the ingest file).
 
 ---
 *Filed 2026-09-15 11:30 UTC · cost 0 · no public post · internal.*
