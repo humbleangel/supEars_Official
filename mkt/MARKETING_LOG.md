@@ -171,3 +171,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-15 19:10 UTC — Second motto added: "Stop feeding the MegaCorps."
 - Channel: repo. Owner-added second motto, verbatim, in `mkt/MARKETING_HANDOFF.md` §3 and the motto doc. Recorded: generic term, names no specific company, so §2 no-naming rule intact; but it reverses the 2026-09-15 00:44 UTC removal of the "MegaCorps/😈" storefront line — owner's call. Advised using it in story/dev-journey pieces, sparingly, not on the ledger landing.
 - Cost: 0. Result: applied; pushed.
+
+## 2026-09-19 10:50 UTC — YouTube channel registered
+- Channel: repo. Owner supplied the channel: ID `UCdSxsiTM6vCfoE2qwVmj6gQ`, studio https://studio.youtube.com/channel/UCdSxsiTM6vCfoE2qwVmj6gQ. Created `mkt/channels.md` (account register; no secrets — handle/account-type/Gmail hub still to confirm). Updated the 10/10 launch plan: the "no channel" blocker is cleared. **Clock anomaly noted in the register:** Get-Date returned 2026-09-15 earlier this session and 2026-09-19 now; earlier entries carry the Sep-15 stamps the clock gave. 21 days to 2026-10-10.
+- Cost: 0. Result: registered; awaiting handle confirmation.

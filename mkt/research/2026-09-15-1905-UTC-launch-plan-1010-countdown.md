@@ -37,7 +37,7 @@ Do **not** use "illustrative" or "sample" quotes that look real; that is the sam
 ## Dependencies / blockers (do not publish the countdown until these clear)
 
 1. **Dev confirms alpha is actually ready for 2026-10-10.** If 0.90 can't ship that day, the countdown must wait or the date moves. Owner to relay to dev.
-2. **Accounts do not exist yet.** Gmail hub + YouTube channel are still outstanding (agreed 2026-09-15 05:00 UTC). No channel = nowhere to run the countdown.
+2. **Accounts — YouTube channel now exists (owner, 2026-09-19).** Channel ID `UCdSxsiTM6vCfoE2qwVmj6gQ`; register in `mkt/channels.md`. Still unknown: the handle, the account type (Brand vs personal), and the Gmail hub. No longer a hard blocker — remaining setup is handle/banner + the hub.
 3. **Public price clearance:** done 2026-09-15 11:34 UTC.
 4. **Motto:** locked as "Escape the Subscriptions Traps."
 5. **Owner approval to start the series** — nothing posts without it (handoff §6).
