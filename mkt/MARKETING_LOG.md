@@ -175,3 +175,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-19 10:50 UTC — YouTube channel registered
 - Channel: repo. Owner supplied the channel: ID `UCdSxsiTM6vCfoE2qwVmj6gQ`, studio https://studio.youtube.com/channel/UCdSxsiTM6vCfoE2qwVmj6gQ. Created `mkt/channels.md` (account register; no secrets — handle/account-type/Gmail hub still to confirm). Updated the 10/10 launch plan: the "no channel" blocker is cleared. **Clock anomaly noted in the register:** Get-Date returned 2026-09-15 earlier this session and 2026-09-19 now; earlier entries carry the Sep-15 stamps the clock gave. 21 days to 2026-10-10.
 - Cost: 0. Result: registered; awaiting handle confirmation.
+
+## 2026-09-19 10:52 UTC — Q&A: owner can't create a new Gmail
+- Channel: repo (Q&A, no file). Owner blocked creating a new Gmail. Advice given: (1) a YouTube Brand channel needs no new email — a second channel can live under the existing Google account, so the Gmail hub may be unnecessary; (2) desktop browser, VPN off, one at a time; (3) phone verification is the usual wall (one number verifies only a handful of accounts; VoIP rejected); (4) "too many attempts" → wait 24h, clear cookies, change network; (5) signup's "Use my current email address instead" makes a Google Account without a new @gmail; (6) plus-addressing `you+yt@gmail.com` as a fallback. Asked owner for the exact error text.
+- Cost: 0. Result: guidance given; awaiting error detail.
