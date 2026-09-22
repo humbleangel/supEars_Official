@@ -249,3 +249,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-22 02:23 UTC — Promo piece 5 added: "AI will not replace humans"
 - Channel: repo. Owner: AI won't replace humans — proof is his own feedback-videos idea, which the AI never had; agent developed the wording. Added Piece 5 draft to `mkt/research/2026-09-22-0214-UTC-promo-qa-cloud-feedback.md` (fixed my own "it964" typo before commit); TASKS.md promo line updated 4→5. Placed with story pieces, off the ledger landing.
 - Cost: 0. Result: filed; needs owner approval before any public use. No public post.
+
+## 2026-09-22 02:27 UTC — Founder bypass (dev Q6) + promo piece 6 filed
+- Channel: repo + dev folder. Owner: more free/unrestricted days for HumbleAngel's own install — both a dev functionality and a piece. Filed `mkt req/2026-09-22-0227-UTC-marketing-questions-5.txt` (Q6 founder bypass, internal until owner says publish); added Piece 6 draft ("The founder uses his own tool") to the promo file; TASKS.md promo line 5→6 + founder-bypass task.
+- Cost: 0. Result: filed; piece angle is my interpretation (maker dogfoods, first to feel flaws) — owner to correct. No public post.

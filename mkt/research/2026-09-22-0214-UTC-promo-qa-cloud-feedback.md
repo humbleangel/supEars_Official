@@ -36,6 +36,14 @@ Founder proof (owner's example, agent's shaping — owner to approve wording):
 
 Notes: meta-piece — it demonstrates its own claim (human idea, AI only shaped the words). Slightly different context per owner: philosophical, not a user objection. Keep it off the ledger landing; belongs to story/dev-journey pieces with the "Stop feeding the MegaCorps" motto family.
 
+## Piece 6 — "The founder uses his own tool" (owner-ordered 2026-09-22 02:27 UTC; angle = my interpretation, correct me)
+
+Founder beat (agent's shaping — owner to approve wording):
+
+> I asked the developer for more free days — for myself. I use supEars every day, the same tool you will use. If it ever wastes my time, you'll hear it from me first.
+
+Notes: dogfood piece; pairs with dev Q6 (founder bypass, asked 2026-09-22 02:27 UTC). Internal fact, not a selling point — publishes only if owner orders it. My interpretation of your piece angle: the maker on the same tool, first to feel its flaws. Say if you meant a different angle.
+
 ## Piece 2 — "I can use a cloud tool and get it done faster"
 
 User objection (owner wording): *I can use WhisperFlow and have it transcribed much faster.*
