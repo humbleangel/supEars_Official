@@ -289,6 +289,10 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo (verification, no file change besides this log). Fetched `https://humbleangel.github.io/supEars_Official/mkt/prelanding-countdown.html` → 404; root `https://humbleangel.github.io/supEars_Official/` → 404 too. So Pages is not serving this repo at that address (disabled, other source branch/folder, or custom domain). File is built + pushed and correct — going live needs owner: repo Settings → Pages → source, or send me the live URL and I'll re-verify.
 - Cost: 0. Result: blocked on Pages settings (owner action). No public post.
 
+## 2026-09-22 03:15 UTC — Prelanding opened in Firefox (owner request)
+- Channel: local preview only. Opened `mkt/prelanding-countdown.html` in Firefox per owner. No repo change except this log.
+- Cost: 0. Result: shown. No public post.
+
 ## 2026-09-22 03:06 UTC — Sales system brief filed (in-app + on-site, 3 rails)
 - Channel: repo + dev folder. Owner: buy both in-app and on-site; bundle everything into one dev communication. Filed `mkt req/2026-09-22-0306-UTC-marketing-sales-brief.txt`: 2 places × 3 rails (direct PIX manual / Stripe links / Polar MoR+keys), one license window for all keys, static landing + Releases at alpha, locked tiers untouched, Q5/Q6 gated. `mkt/TASKS.md` tracks it; awaiting dev (feasibility, key format, wording needs).
 - Cost: 0. Result: filed. No public post.
