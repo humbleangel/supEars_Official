@@ -314,6 +314,10 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Owner copy changes (verbatim): "goes alpha"→"goes live", "Windows today"→"Windows only", "Mac and Linux on the roadmap"→"Mac and Linux planned". Noted tension: "Windows only" narrows handoff §2 (Mac/Linux roadmap) and "goes live" softens alpha wording — owner is final word on claims; applied literally.
 - Cost: 0. Result: shown in Firefox; awaiting verdict. No public post.
 
+## 2026-09-22 03:26 UTC — Emblem bigger + additive (owner request)
+- Channel: repo + Firefox preview. Emblem 72–110px → 110–170px with `mix-blend-mode: screen` (additive glow over the dark bg — possible, done). Reopened in Firefox.
+- Cost: 0. Result: shown. No public post.
+
 ## 2026-09-22 03:21 UTC — Blur 12→6px + third question (CPU, no GPU)
 - Channel: repo + Firefox preview. Owner: less blur again + add CPU piece as third user question. Added ("My PC is old — no GPU. Can it run AI?" / CPU answer) beside the other two; still one screen. Reopened in Firefox.
 - Cost: 0. Result: shown. No public post.
