@@ -309,6 +309,10 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo + Firefox preview. Background flag: full-bleed cover 28px blur → contained 12px blur, opacity 0.10→0.14. Reopened in Firefox.
 - Cost: 0. Result: shown. No public post.
 
+## 2026-09-22 03:21 UTC — Blur 12→6px + third question (CPU, no GPU)
+- Channel: repo + Firefox preview. Owner: less blur again + add CPU piece as third user question. Added ("My PC is old — no GPU. Can it run AI?" / CPU answer) beside the other two; still one screen. Reopened in Firefox.
+- Cost: 0. Result: shown. No public post.
+
 ## 2026-09-22 03:06 UTC — Sales system brief filed (in-app + on-site, 3 rails)
 - Channel: repo + dev folder. Owner: buy both in-app and on-site; bundle everything into one dev communication. Filed `mkt req/2026-09-22-0306-UTC-marketing-sales-brief.txt`: 2 places × 3 rails (direct PIX manual / Stripe links / Polar MoR+keys), one license window for all keys, static landing + Releases at alpha, locked tiers untouched, Q5/Q6 gated. `mkt/TASKS.md` tracks it; awaiting dev (feasibility, key format, wording needs).
 - Cost: 0. Result: filed. No public post.
