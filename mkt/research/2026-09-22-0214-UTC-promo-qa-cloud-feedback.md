@@ -1,0 +1,38 @@
+# Promo Q&A pair + opt-in cloud endpoint + per-language feedback videos (owner-ordered)
+
+> Filed 2026-09-22 02:14 UTC. Owner directives from two messages: (1) answer the audience with 2 promo pieces framed as user questions; (2) add an opt-in cloud endpoint for speed (dev to consider); (3) feedback system = one YouTube video per language + daily comment review/relay. Internal drafts — nothing posts without owner approval.
+
+## Piece 1 — "I can build the same thing with AI"
+
+User objection (owner wording): *I can make the same tool with artificial intelligence.*
+Our answer (owner wording, tightened only for spelling):
+
+> OK — go make yours with AI. I spent months deciding and preparing this tool for the future, so it is ready to use now. If you want to build yours, spend your tokens, your time — or use this tool for all the possibilities.
+
+Notes: first person, founder voice, no begging, names no rival. Fits the dev-journey series.
+
+## Piece 2 — "I can use a cloud tool and get it done faster"
+
+User objection (owner wording): *I can use WhisperFlow and have it transcribed much faster.*
+Our answer (owner wording, tightened only for spelling):
+
+> In our tool you send no data — not your ideas, not your texts — to the big corporations. You work in private mode. Everything happens inside your computer. Things never fly around.
+
+⚠ **Naming flag for owner:** you said the rival's name ("whisperflow"). Standing rule (§2 + spirit brief restraints) bans competitor names in public copy. Draft above keeps it generic ("a cloud tool" / "big corporations"). Confirm: keep generic, or override the rule and name it?
+
+## Opt-in cloud endpoint for speed (ROADMAP — NOT shipped, dev to consider)
+
+Owner order: tell dev to think about a cloud alternative that is faster — an **opt-in** endpoint for users who want speed and accept the cloud.
+
+- Marketing framing (future tense only, never a promise): offline private mode stays the default; a faster cloud option may come later **by explicit user choice**.
+- ⚠ **Tension to resolve before any public word:** the standing promise is "no server — nothing leaves the machine." A cloud endpoint, even opt-in, touches that promise. Marketing will not mention it publicly until (a) dev confirms it is real and scheduled, (b) owner approves the exact wording.
+- Dev note filed: `mkt req/2026-09-22-0214-UTC-marketing-questions-4.txt` (Q5).
+
+## Feedback system: one video per language + daily comment duty (owner-created method)
+
+- **26 YouTube videos, one per talk language**: each is the designated place for comments, criticism, suggestions, feedback in that language.
+- **New daily marketing task**: read the comments on all feedback videos every day, answer them, and pass everything needed to dev via the `mkt req\` folder.
+- Added to `mkt/TASKS.md` Phase 3. Starts when the videos exist — nothing to review yet.
+
+---
+*Filed 2026-09-22 02:14 UTC · cost 0 · no public post · internal.*
