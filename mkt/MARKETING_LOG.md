@@ -190,3 +190,12 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: OS temp dir (not the repo), per the handoff skill: `C:\Users\777\AppData\Local\Temp\opencode\handoff-2026-09-22-0425-UTC.md`. Pointer sheet only — references repo artifacts by path, no duplicated specs; no secrets; includes a "suggested skills" section and the conversation-only first-video frame draft.
 - Owner decision captured: the existing YouTube channel is under **another** account and may be redone; **all channels are to be created under the hub** (`supears.app@gmail.com`, recorded in `mkt/channels.md`).
 - Cost: 0. Result: filed.
+
+## 2026-09-22 01:27 UTC — Channel register updated to hub-redo decision; 10/10 readiness asked; video still blocked
+- Channel: repo + dev folder (no public post, no spend).
+- (1) Channels: `mkt/channels.md` YouTube section rewritten per owner decision 2026-09-22 04:22 UTC — old channel `UCdSxsiTM6vCfoE2qwVmj6gQ` marked superseded (another account, NOT final), redo under the hub awaited; Gmail hub open question marked resolved. Countdown "no channel" blocker is open again until the redo lands.
+- (2) First video: NOT built — story text still awaited from owner ("I will write better text"). Render chain (Python 3.12 + PIL 12.3 + ffmpeg) already verified present; will build under `mkt/video/` once text lands.
+- (3) 10/10 countdown: advanced the dev-readiness half — filed `mkt req/2026-09-22-0127-UTC-marketing-questions-3.txt` (Q4: is alpha 0.90 shippable 2026-10-10? yes/no/conditional; countdown stays held until answer + owner approval). 18 days to 2026-10-10.
+- Found un-ingested: dev spirit brief `mkt req/2026-09-15-1405-UTC-dev-spirit-brief.txt` (owner-ordered) has no log/research entry. NOT ingested yet — flagging deltas for owner first: (a) "no refunds, participation not purchase" vs round-2 "30-day money-back" trust kit; (b) new roadmap item "rate each transcription inside the app" ("you asked, we built"); (c) "Never promise dates" restraint vs the 10/10 launch date. Owner: confirm which refund line is truth, whether in-app rating is cleared as roadmap copy, and whether 10/10 counts as a promised date.
+- Clock note: machine clock regressed again — handoff stamped 2026-09-22 04:25 UTC, `Get-Date` now reads 2026-09-22 01:27 UTC. Entries above keep the stamps the clock gave; not rewriting history.
+- Cost: 0. Result: register + dev question filed; video + countdown start both blocked on owner (story text, launch approval).
