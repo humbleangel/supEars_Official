@@ -318,6 +318,10 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo + Firefox preview. Emblem 72–110px → 110–170px with `mix-blend-mode: screen` (additive glow over the dark bg — possible, done). Reopened in Firefox.
 - Cost: 0. Result: shown. No public post.
 
+## 2026-09-22 03:26 UTC — Emblem bigger again (owner request)
+- Channel: repo + Firefox preview. Emblem 110–170px → 150–240px (screen blend kept). One-screen fit kept via vh sizing. Reopened in Firefox.
+- Cost: 0. Result: shown. No public post.
+
 ## 2026-09-22 03:21 UTC — Blur 12→6px + third question (CPU, no GPU)
 - Channel: repo + Firefox preview. Owner: less blur again + add CPU piece as third user question. Added ("My PC is old — no GPU. Can it run AI?" / CPU answer) beside the other two; still one screen. Reopened in Firefox.
 - Cost: 0. Result: shown. No public post.
