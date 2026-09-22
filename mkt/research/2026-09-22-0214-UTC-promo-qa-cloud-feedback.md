@@ -59,6 +59,16 @@ Notes: vulnerability piece; pairs with Piece 4 ("I need help from the world") as
 - Join button → free Polar "Founder register" product (Checkout Link, $0) → Polar auto-emails a real license key → page says "you're on the register." Validates the full license pipeline pre-alpha; no software shipped. Verified in Polar docs: free products + license-key benefit + no-code links all exist.
 - Rules: success message must say license-not-software ("your license is registered, the app arrives at launch"); register keys must differ from paid founder keys (beta-tester keys vs forever keys — dev formats). Owner thinking; gated until he approves + creates the Polar product + dev confirms key types.
 
+## Piece 8 — "How to become a vibecoder: the part nobody teaches" (owner-ordered 2026-09-22 04:01 UTC)
+
+Premise (owner wording, tightened): everyone teaches the one-prompt app — type once, get an app. Nobody teaches what happens after: the marketing steps, which resources to choose, how to write the texts, where ideas come from. That is this piece — and our public documents are its course material (every decision logged in `mkt/`).
+
+Draft (agent's shaping — owner to approve wording):
+
+> Everyone teaches you to build an app with one prompt. Nobody teaches the rest: the marketing steps, the resources to pick, how to write texts people believe, where the next idea comes from. I am learning it in public, with real documents, not a course. Watch and steal everything.
+
+Notes: pairs with `mkt/video-plan.md` idea #1 ("How to become a vibecoder", reserved as first long-form) — this piece is its thesis. Positions the repo itself as content: the journey IS the marketing. No claims beyond what's filed.
+
 ## Newcomer lock-in line for the new accounts (owner-ordered 2026-09-22 03:13 UTC)
 
 Text to carry on the new channel/account pages (bios, descriptions) for people arriving in the migration:

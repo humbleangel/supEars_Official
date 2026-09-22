@@ -354,6 +354,10 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo (no dev note — owner still deciding). Filed owner idea as decided: free Polar "Founder register" product + auto license keys + Join-link swap, with license-not-software honesty rule and register-vs-paid key distinction. Section in promo file + task in TASKS.md. Next needs: owner creates Polar product, dev confirms key types.
 - Cost: 0. Result: filed. No public post.
 
+## 2026-09-22 04:01 UTC — Promo piece 8: vibecoder, the part nobody teaches
+- Channel: repo. Owner: everyone teaches one-prompt apps; nobody teaches the after — marketing steps, resources, texts, ideas; our documents are the material. Added Piece 8 draft to promo file; TASKS.md 7→8. Links to video-plan idea #1 (reserved first long-form): this piece is its thesis; the public repo is positioned as the course.
+- Cost: 0. Result: filed; needs owner approval before any public use. No public post.
+
 ## 2026-09-22 03:53 UTC — Q&A: is the waitlist join real? (owner question)
 - Channel: repo (Q&A, no file change besides this log). Answered honestly: half-real — click opens the visitor's mail app with a prefilled email to the hub; nothing is stored or sent automatically; no mail client = dead click; only a manually-sent email reaches us. No capture, no confirmation, no list. Offered the $0 fix for launch: free form endpoint (Formspree/Basin 50/mo free, Formspark 250 free) replacing mailto before the page goes public. Awaiting owner decision.
 - Cost: 0. Result: answered. No public post.
