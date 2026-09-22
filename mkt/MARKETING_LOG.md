@@ -185,3 +185,8 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo. Owner created the hub: **supears.app@gmail.com**, display name **HumbleAngel**. Registered in `mkt/channels.md` (address + name only — no passwords/recovery codes ever in the repo). Plus-addressing plan applies for per-platform mail. Open: is YouTube channel `UCdSxsiTM6vCfoE2qwVmj6gQ` under this hub or a personal account?
 - Note: machine clock jumped again (Sep 15 → Sep 19 → Sep 22); environment date says Tue 2026-09-22. 18 days to 2026-10-10.
 - Cost: 0. Result: registered.
+
+## 2026-09-22 04:25 UTC — Handoff written for a fresh agent
+- Channel: OS temp dir (not the repo), per the handoff skill: `C:\Users\777\AppData\Local\Temp\opencode\handoff-2026-09-22-0425-UTC.md`. Pointer sheet only — references repo artifacts by path, no duplicated specs; no secrets; includes a "suggested skills" section and the conversation-only first-video frame draft.
+- Owner decision captured: the existing YouTube channel is under **another** account and may be redone; **all channels are to be created under the hub** (`supears.app@gmail.com`, recorded in `mkt/channels.md`).
+- Cost: 0. Result: filed.
