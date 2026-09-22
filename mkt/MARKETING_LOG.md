@@ -214,3 +214,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-22 01:54 UTC — Hub YouTube channel LIVE, registered
 - Channel: repo. Owner created the redo under the hub: ID `UCznNnUBltWG8lrSXC39e5lw`, name supEars, handle @supEars — public page verified live ("supEars - YouTube"), owner screenshot confirms ownership (customize + manage buttons). `mkt/channels.md` rewritten: new channel LIVE, old ID kept as one-line superseded history. Countdown "no channel" blocker cleared again; remaining launch blockers: dev Q4 answer + owner approval. Still open (cosmetic): banner.
 - Cost: 0. Result: registered; no public post.
+
+## 2026-09-22 01:59 UTC — Future-tasks file created (owner order)
+- Channel: repo. Owner: add future tasks as `mkt/TASKS.md` + mass-market/country-specific extras (CN/RU/IN/others). Ran 4 web research passes; filed NEW `mkt/TASKS.md`: Phase 1 (TikTok, IG, FB Page, X, Threads, Telegram channel, WhatsApp Channel, Kwai — OWNER creates under hub; agent cannot pass phone verification), Phase 2 (VK+Rutube+Dzen / Xiaohongshu-first-CN / Moj-ShareChat-IN-gated-on-local-number / LINE+Kakao-only-if-local-number), Phase 3 (video + countdown + copy pack), sources listed. YouTube + Reddit marked done/existing.
+- Cost: 0. Result: filed; account creation is owner's action — agent guides per platform on request. No public post.
