@@ -223,3 +223,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo (Q&A, no file). Owner: how are we supposed to be on those three — leaning to remove them.
 - Answer given: split them. Telegram + WhatsApp Channels are one-way broadcast rails (post the countdown video + one line, done; no replies owed, no algorithm to feed) and they are exactly where our target markets live (Telegram ~96M RU / 104M IN / 55.8% BR reach; WhatsApp 536M IN / 93.9% BR) — recommend KEEP as zero-effort announcement rails. Threads is a hungry text feed that demands native posting + replies and overlaps our IG audience — recommend CUT active posting, only park the handle (free, blocks squats). Same park-only logic offered for any Phase 2 handle. No file changed — awaiting owner decision before editing `mkt/TASKS.md`.
 - Cost: 0. Result: recommendation given; no public post.
+
+## 2026-09-22 02:08 UTC — TASKS.md updated: Threads cut, TG/WA kept as rails
+- Channel: repo. Owner approved ("ok go"): `mkt/TASKS.md` Phase 1 edited — Threads = handle parked only, no posting; Telegram + WhatsApp = broadcast rails (crosspost video + one line). Active posting stays on YouTube/TikTok/Instagram/Kwai/Facebook.
+- Cost: 0. Result: applied; no public post.
