@@ -25,6 +25,12 @@
 
 - X / Instagram / TikTok / Facebook: not created. Alt-account policy (`2026-09-15-0250-UTC-alt-accounts-policy.md`) applies if created.
 
+## Domains — owner asset + supEars plan (2026-09-22 03:00 UTC)
+
+- Owner holds **mytreex.app.dj** (free subdomain pattern; a real `.dj` registration costs $59+/yr, so this is near-certainly a free shared-domain subdomain, e.g. via FreeDNS/afraid.org-style sharing).
+- Plan: create **supears.app.dj** (same nickname, same provider) for the selling site, pointing at GitHub Pages (subdomain CNAME → github.io address + Pages custom-domain setting).
+- Caveats: shared subdomains live only while the domain owner allows (no ownership); fine to start, real domain later. `mytreex.app.dj` did not resolve on fetch 2026-09-22 (transport error) — owner to confirm it loads.
+
 ## Clock note (2026-09-19 10:50 UTC)
 
 System clock returned **2026-09-15** earlier in this session and **2026-09-19** now (the environment's stated date is Sat 2026-09-19). Earlier log entries carry 2026-09-15 stamps as the clock reported them. Flagging so the register is not read as time-travel. Days to 2026-10-10 from the current reading: **21**.

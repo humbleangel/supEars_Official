@@ -265,3 +265,9 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-22 02:58 UTC — Promo piece 7 (developer's anxiety) + Stripe-on-Pages answer
 - Channel: repo (Q&A, no dev note). Owner: (1) save piece 7 — solo-dev uncertainty (will it land, be accepted, tested). Added to promo file ("I built this alone, and I don't know if it will land..."); TASKS.md 6→7. Emotional twin of Piece 4. (2) Owner already holds his own domain via a free workaround (details pending — register when shared). (3) Asked: do GitHub Pages work with Stripe payment links? Answered yes (plain URLs in anchors, no backend; Stripe fee per transaction, no tax-MoR or license keys — Polar still recommended for those).
 - Cost: 0. Result: filed + answered. No public post.
+
+## 2026-09-22 03:00 UTC — Owner domain registered + Stripe+Polar answer
+- Channel: repo (Q&A + register). Owner holds `mytreex.app.dj`, asks (1) can we make a supEars domain with the same nickname? (2) can Stripe + Polar be used together?
+- Researched (2 passes): real `.dj` costs $59+/yr so his is a free shared subdomain (afraid.org-style: free account → up to 5 subdomains off shared domains); same-pattern `supears.app.dj` should be creatable the same way he made his, then CNAME to GitHub Pages. Registered both in `mkt/channels.md` (new Domains section); his URL didn't resolve on fetch — asked him to confirm it loads.
+- Answered (2): yes — Polar already pays out through Stripe Connect under the hood, and both link systems can run side by side; recommend Polar links for license sales (tax + keys) with Stripe optional later for extras (donations), not two parallel stores.
+- Cost: 0. Result: registered + answered. No public post.
