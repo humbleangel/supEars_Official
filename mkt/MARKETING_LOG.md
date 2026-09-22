@@ -374,6 +374,10 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo. Owner: deep-research forum pages like the one he found (confirmed first: r/developersIndia Hindi STT thread, "Nope, not yet"). 2 search passes → filed NEW `mkt/research/2026-09-22-0501-UTC-india-seeker-threads-round2.md`: r/learnmachinelearning Hindi STT seekers, Quora Hindi voice-typing asker, hargod/deshkit demand proof — and RIVAL ALERT Betterflo (on-device, floating mic, Hinglish, no account, Made in India — our positioning on Android; we keep Windows). No names in public copy.
 - Cost: 0. Result: filed. No public post.
 
+## 2026-09-22 05:33 UTC — Discussion: schools as institutional vertical (owner insight)
+- Channel: repo (discussion, no file change besides this log). Owner: the JP school generalizes — schools everywhere, government-funded, tax breaks — a financial opportunity. Agent agreed and stacked the fit (offline student-privacy, CPU old hardware, no accounts for kids, speak-back for language classes, accessibility); proposed education-vertical strategy + institutional pricing dimension for owner to approve before filing.
+- Cost: 0. Result: discussed. No public post.
+
 ## 2026-09-22 05:30 UTC — Discussion: demand-wave results (owner request)
 - Channel: repo (discussion, no file change besides this log). Owner: target reached, talk results through. substance lives in the report, not here.
 - Cost: 0. Result: discussed. No public post.
