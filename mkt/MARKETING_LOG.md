@@ -180,3 +180,8 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo (Q&A, no file). Owner blocked creating a new Gmail. Advice given: (1) a YouTube Brand channel needs no new email — a second channel can live under the existing Google account, so the Gmail hub may be unnecessary; (2) desktop browser, VPN off, one at a time; (3) phone verification is the usual wall (one number verifies only a handful of accounts; VoIP rejected); (4) "too many attempts" → wait 24h, clear cookies, change network; (5) signup's "Use my current email address instead" makes a Google Account without a new @gmail; (6) plus-addressing `you+yt@gmail.com` as a fallback. Asked owner for the exact error text.
 - Cost: 0. Result: guidance given; awaiting error detail.
 - Follow-up (10:53 UTC): no error — owner simply can't find the create-account button. Cause: Google hides it when signed in. Gave direct URL `https://accounts.google.com/signup` + switcher paths (Gmail avatar → Add another account → Create account → For my personal use; myaccount.google.com; YouTube avatar → Switch account → Add account). If it bounces back to the current account: use a different browser/profile.
+
+## 2026-09-22 04:22 UTC — Gmail hub created
+- Channel: repo. Owner created the hub: **supears.app@gmail.com**, display name **HumbleAngel**. Registered in `mkt/channels.md` (address + name only — no passwords/recovery codes ever in the repo). Plus-addressing plan applies for per-platform mail. Open: is YouTube channel `UCdSxsiTM6vCfoE2qwVmj6gQ` under this hub or a personal account?
+- Note: machine clock jumped again (Sep 15 → Sep 19 → Sep 22); environment date says Tue 2026-09-22. 18 days to 2026-10-10.
+- Cost: 0. Result: registered.

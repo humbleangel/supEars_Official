@@ -11,10 +11,13 @@
 - **Unknown / to confirm from owner:** actual handle, whether it is a Brand channel or created under a personal Google account, and the hub Gmail address. No secrets please — just the handle and account type.
 - Status: **unblocks the "no channel" blocker** in `2026-09-15-1905-UTC-launch-plan-1010-countdown.md`.
 
-## Gmail hub — status unknown
+## Gmail hub — CREATED (owner, 2026-09-22)
 
-- Plan (2026-09-15 02:55 UTC): one Gmail hub + plus-addressing per platform; not bulk-created. Owner action.
-- Confirm: does the YouTube channel sit under this hub, or under a personal account? Determines whether other channels are additive or need their own login.
+- Address: **supears.app@gmail.com**
+- Display name: **HumbleAngel**
+- Purpose: hub for the show/brand accounts; use plus-addressing (`supears.app+yt@gmail.com`, `+x@`, `+ig@`) so every platform's mail lands in one inbox (plan 2026-09-15 02:55 UTC).
+- Not needed here: password, recovery codes, 2FA secrets — never enter those in this repo. Owner uses authenticator 2FA + saved recovery codes per the earlier advisory.
+- Open question: does the existing YouTube channel (`UCdSxsiTM6vCfoE2qwVmj6gQ`) sit **under this hub** or under a personal account? If it's under a personal account, decide whether to move it or run the other channels under the hub.
 
 ## Other platforms — none yet
 
