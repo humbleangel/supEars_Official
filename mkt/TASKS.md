@@ -40,6 +40,7 @@ Why: global networks are banned or weak in CN/RU; India banned TikTok. Picks gro
 - [ ] DAILY: review all feedback-video comments, answer them, relay dev-relevant items via `mkt req\`. Starts when the videos exist.
 - [ ] Opt-in cloud endpoint for speed: ROADMAP only — gated on dev Q5 (asked 2026-09-22 02:14 UTC) + owner wording approval. Never mention publicly until then.
 - [ ] BR payments: THREE separate options (owner-corrected 2026-09-22 03:05 UTC): (1) direct PIX to owner's key — ~zero fee, manual key delivery (owner confirms each payment); (2) Stripe links — cards/global; (3) Polar links — MoR + auto keys, but owner finds 4%+40¢ high, use only where tax handling is worth it. BR Pix price line already locked in handoff §2 (no price change).
+- [ ] Sales system dev brief FILED (owner-ordered 2026-09-22 03:06 UTC): buy in-app AND on-site; 3 rails; one license window accepts all keys; static landing + GitHub Releases at alpha. Brief: `mkt req/2026-09-22-0306-UTC-marketing-sales-brief.txt`. Awaiting dev answer (feasibility, key format, wording needs).
 
 ## Sources for Phase 2 picks (all fetched 2026-09-22)
 

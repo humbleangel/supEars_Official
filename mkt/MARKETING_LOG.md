@@ -279,3 +279,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-22 03:05 UTC — Payments corrected: direct PIX, 3 separate options
 - Channel: repo (Q&A, no dev note). Owner correction: not PIX-via-Stripe (Stripe takes its cut) — DIRECT PIX bank-to-bank, ~zero fee. Three standalone options: direct PIX, Stripe, Polar. Owner finds Polar's 4%+40¢ high — use Polar only where MoR tax handling earns it. `mkt/TASKS.md` corrected (manual key delivery noted for direct PIX: owner confirms each payment).
 - Cost: 0. Result: corrected. No public post.
+
+## 2026-09-22 03:06 UTC — Sales system brief filed (in-app + on-site, 3 rails)
+- Channel: repo + dev folder. Owner: buy both in-app and on-site; bundle everything into one dev communication. Filed `mkt req/2026-09-22-0306-UTC-marketing-sales-brief.txt`: 2 places × 3 rails (direct PIX manual / Stripe links / Polar MoR+keys), one license window for all keys, static landing + Releases at alpha, locked tiers untouched, Q5/Q6 gated. `mkt/TASKS.md` tracks it; awaiting dev (feasibility, key format, wording needs).
+- Cost: 0. Result: filed. No public post.
