@@ -261,3 +261,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-22 02:42 UTC — Q6 corrected: "ask for more free days" USER button
 - Channel: repo + dev folder. Owner correction: not a founder perk — when a USER hits a free limit, a button lets them ask the developer for more free days. Filed `mkt req/2026-09-22-0242-UTC-marketing-questions-6.txt` (Q6 corrected, old founder-bypass reading discarded); rewrote Piece 6 draft ("When your free days run out, you don't hit a wall — you get a button..."); TASKS.md updated (bypass task replaced). Gated: nothing public until dev confirms + owner approves wording.
 - Cost: 0. Result: corrected and filed. No public post.
+
+## 2026-09-22 02:58 UTC — Promo piece 7 (developer's anxiety) + Stripe-on-Pages answer
+- Channel: repo (Q&A, no dev note). Owner: (1) save piece 7 — solo-dev uncertainty (will it land, be accepted, tested). Added to promo file ("I built this alone, and I don't know if it will land..."); TASKS.md 6→7. Emotional twin of Piece 4. (2) Owner already holds his own domain via a free workaround (details pending — register when shared). (3) Asked: do GitHub Pages work with Stripe payment links? Answered yes (plain URLs in anchors, no backend; Stripe fee per transaction, no tax-MoR or license keys — Polar still recommended for those).
+- Cost: 0. Result: filed + answered. No public post.

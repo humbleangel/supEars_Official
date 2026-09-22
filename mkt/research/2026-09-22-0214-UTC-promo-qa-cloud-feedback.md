@@ -46,6 +46,14 @@ Draft (agent's shaping — owner to approve wording):
 
 Notes: generosity as paywall strategy; pairs with dev Q6-corrected (asked 2026-09-22 02:42 UTC). Gated: never mention publicly until dev confirms + owner approves wording. Prior "founder uses his own tool" angle discarded per owner correction.
 
+## Piece 7 — "The developer's anxiety" (owner-ordered 2026-09-22 02:58 UTC)
+
+Founder confession (agent's shaping — owner to approve wording):
+
+> I built this alone, and I don't know if it will land. Will anyone test it? Will anyone accept it? Every developer who ships alone lives inside these questions. This is me, inside mine — shipping anyway.
+
+Notes: vulnerability piece; pairs with Piece 4 ("I need help from the world") as its emotional twin — anxiety asks, Piece 4 invites. Story/dev-journey placement, off the landing.
+
 ## Piece 2 — "I can use a cloud tool and get it done faster"
 
 User objection (owner wording): *I can use WhisperFlow and have it transcribed much faster.*
