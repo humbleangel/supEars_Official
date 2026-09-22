@@ -2,15 +2,16 @@
 
 > Started 2026-09-19 10:50 UTC. One place for every public account, its status, and who holds it. No secrets (no passwords, no recovery codes) — those never enter this repo.
 
-## YouTube — PENDING REDO under the hub (old channel superseded)
+## YouTube — LIVE under the hub (created by owner, 2026-09-22)
 
-- Old channel ID (under another account, NOT final): `UCdSxsiTM6vCfoE2qwVmj6gQ`
-- Studio URL (old): https://studio.youtube.com/channel/UCdSxsiTM6vCfoE2qwVmj6gQ
-- Public URL (old): https://www.youtube.com/channel/UCdSxsiTM6vCfoE2qwVmj6gQ
-- Owner decision (2026-09-22 04:22 UTC): **all channels created under the hub** (`supears.app@gmail.com`). Owner may redo this channel under the hub — do not treat the old ID as final.
-- Agreed setup (2026-09-15 05:00 UTC, still applies to the redo): Brand channel under the hub Gmail, handle `@supEars`, banner "100% offline · Alpha 0.90 soon".
-- **Awaiting owner:** new channel ID + handle once redone under the hub. No secrets please — just the handle and ID.
-- Status: countdown "no channel" blocker is open again until the redo lands (see `2026-09-15-1905-UTC-launch-plan-1010-countdown.md`).
+- Channel ID: `UCznNnUBltWG8lrSXC39e5lw`
+- Public URL: https://www.youtube.com/channel/UCznNnUBltWG8lrSXC39e5lw (verified: resolves as "supEars - YouTube")
+- Studio URL: https://studio.youtube.com/channel/UCznNnUBltWG8lrSXC39e5lw
+- Name: **supEars**, handle: **@supEars** (owner screenshot confirms owner view: "Personalizar o canal" + "Gerenciar vídeos").
+- Account: Brand channel under the hub (`supears.app@gmail.com`), per owner decision 2026-09-22 04:22 UTC.
+- Old channel (another account, superseded, do not use): `UCdSxsiTM6vCfoE2qwVmj6gQ`.
+- Still open (cosmetics, non-blocking): banner "100% offline · Alpha 0.90 soon" (agreed 2026-09-15 05:00 UTC).
+- Status: countdown "no channel" blocker is **cleared** again (see `2026-09-15-1905-UTC-launch-plan-1010-countdown.md`). Remaining launch blockers: dev alpha-readiness (Q4 asked 2026-09-22 01:27 UTC) + owner approval to start.
 
 ## Gmail hub — CREATED (owner, 2026-09-22)
 
