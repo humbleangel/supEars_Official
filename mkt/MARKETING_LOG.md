@@ -275,3 +275,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-22 03:03 UTC — PIX for Brazil researched + tasked
 - Channel: repo (Q&A, no dev note). Owner (in Brasil): add PIX too. Researched (2 passes, Stripe docs): Stripe supports PIX on Payment Links/Checkout — but BR accounts get it invite-only after 60 days processing history; no evidence Polar supports PIX. Plan filed in `mkt/TASKS.md`: Polar links for global cards, Stripe+PIX for Brazil, apply for PIX access early. BR Pix price line already locked in handoff §2 (no price change).
 - Cost: 0. Result: filed + answered. No public post.
+
+## 2026-09-22 03:05 UTC — Payments corrected: direct PIX, 3 separate options
+- Channel: repo (Q&A, no dev note). Owner correction: not PIX-via-Stripe (Stripe takes its cut) — DIRECT PIX bank-to-bank, ~zero fee. Three standalone options: direct PIX, Stripe, Polar. Owner finds Polar's 4%+40¢ high — use Polar only where MoR tax handling earns it. `mkt/TASKS.md` corrected (manual key delivery noted for direct PIX: owner confirms each payment).
+- Cost: 0. Result: corrected. No public post.
