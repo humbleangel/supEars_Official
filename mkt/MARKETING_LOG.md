@@ -421,3 +421,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-22 03:06 UTC — Sales system brief filed (in-app + on-site, 3 rails)
 - Channel: repo + dev folder. Owner: buy both in-app and on-site; bundle everything into one dev communication. Filed `mkt req/2026-09-22-0306-UTC-marketing-sales-brief.txt`: 2 places × 3 rails (direct PIX manual / Stripe links / Polar MoR+keys), one license window for all keys, static landing + Releases at alpha, locked tiers untouched, Q5/Q6 gated. `mkt/TASKS.md` tracks it; awaiting dev (feasibility, key format, wording needs).
 - Cost: 0. Result: filed. No public post.
+
+## 2026-09-22 05:40 UTC — Context re-read (owner order)
+- Channel: repo (no file change besides this log). Owner: reread files to regain context before continuing. Re-read `mkt/MARKETING_HANDOFF.md`, `mkt/TASKS.md`, `mkt/channels.md`, `mkt/MARKETING_LOG.md` tail. State confirmed: prelanding + demand wall built and previewed; 8 promo pieces filed; sales brief + Q4/Q5/Q6/Q7 with dev; education FUTURE filed; blockers = owner story text, dev answers, Pages 404, Polar product.
+- Cost: 0. Result: ready. No public post.
