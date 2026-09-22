@@ -358,6 +358,10 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo (research, no file besides this log). Findings (YT Help specs + 2026 policy docs): accepted fps = 24/25/30/48/50/60 ("others acceptable" but 1fps unsafe) — our plan (PNGs → 30fps MP4 with held frames) is technically fine; literal 1fps upload risks rejection. Bigger risk is POLICY: 2025-26 Inauthentic Content rules target mass-produced template videos + narration-less slideshows (demonetization, spam strikes); daily same-background text swaps match that pattern. Mitigations filed in report: narration/human, varied edits, verify account (15-min cap), Shorts ≤3min vertical.
 - Cost: 0. Result: answered. No public post.
 
+## 2026-09-22 04:25 UTC — 24fps locked for text-frame videos (owner decision)
+- Channel: repo. Owner: 24fps. `mkt/TASKS.md` first-video line updated (24fps locked; still blocked on story text). Render chain stays: PNG per line → ffmpeg MP4 at 24fps + narration per the anti-slop mitigations.
+- Cost: 0. Result: locked. No public post.
+
 ## 2026-09-22 04:01 UTC — Promo piece 8: vibecoder, the part nobody teaches
 - Channel: repo. Owner: everyone teaches one-prompt apps; nobody teaches the after — marketing steps, resources, texts, ideas; our documents are the material. Added Piece 8 draft to promo file; TASKS.md 7→8. Links to video-plan idea #1 (reserved first long-form): this piece is its thesis; the public repo is positioned as the course.
 - Cost: 0. Result: filed; needs owner approval before any public use. No public post.

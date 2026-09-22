@@ -30,7 +30,7 @@ Why: global networks are banned or weak in CN/RU; India banned TikTok. Picks gro
 
 ## Phase 3 — content + launch (AGENT drafts, OWNER approves, nothing posts without approval)
 
-- [ ] First video: 1920×1080 white-on-black text frames — blocked on owner story text.
+- [ ] First video: 1920×1080 white-on-black text frames at 24fps (owner-locked 2026-09-22 04:25 UTC; 30fps container also fine, 24 chosen) — blocked on owner story text.
 - [ ] "Policy vs Architecture" 60–90s cut — needs owner approval to start.
 - [ ] 10/10 countdown — blocked on dev Q4 (alpha readiness, asked 2026-09-22 01:27 UTC) + owner approval. 18 days out.
 - [ ] Per-channel copy pack (bios, banner lines, waitlist links) once Phase 1 accounts exist — approved voice only (§3 taglines, locked prices, no competitor names).
