@@ -366,6 +366,10 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo. Owner: 24fps. `mkt/TASKS.md` first-video line updated (24fps locked; still blocked on story text). Render chain stays: PNG per line → ffmpeg MP4 at 24fps + narration per the anti-slop mitigations.
 - Cost: 0. Result: locked. No public post.
 
+## 2026-09-22 04:35 UTC — ShareX portable installed from official release (owner order)
+- Channel: local machine (no repo file besides this log). Owner: expand the GIF tool so it's usable. Found his zip was source code only (no exe); fetched official portable v21.0.0 (199MB, two attempts — first truncated at timeout, resume double-wrote, clean re-download verified). Expanded to `Downloads\ShareX-portable\`, `ShareX.exe` confirmed. Not launched (registers hotkeys — owner's click).
+- Cost: 0. Result: ready. No public post.
+
 ## 2026-09-22 04:01 UTC — Promo piece 8: vibecoder, the part nobody teaches
 - Channel: repo. Owner: everyone teaches one-prompt apps; nobody teaches the after — marketing steps, resources, texts, ideas; our documents are the material. Added Piece 8 draft to promo file; TASKS.md 7→8. Links to video-plan idea #1 (reserved first long-form): this piece is its thesis; the public repo is positioned as the course.
 - Cost: 0. Result: filed; needs owner approval before any public use. No public post.
