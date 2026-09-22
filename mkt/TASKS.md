@@ -34,7 +34,7 @@ Why: global networks are banned or weak in CN/RU; India banned TikTok. Picks gro
 - [ ] "Policy vs Architecture" 60–90s cut — needs owner approval to start.
 - [ ] 10/10 countdown — blocked on dev Q4 (alpha readiness, asked 2026-09-22 01:27 UTC) + owner approval. 18 days out.
 - [ ] Per-channel copy pack (bios, banner lines, waitlist links) once Phase 1 accounts exist — approved voice only (§3 taglines, locked prices, no competitor names).
-- [ ] 4 promo Q&A pieces (owner-ordered 2026-09-22 02:14/02:19/02:21 UTC; drafts in `mkt/research/2026-09-22-0214-UTC-promo-qa-cloud-feedback.md`): "build it with AI" + "cloud tool is faster" + "runs on CPU, no GPU needed" + "I need help from the world". Piece 2 naming TBD (generic vs rival name — owner to confirm).
+- [ ] 5 promo pieces (owner-ordered 2026-09-22 02:14/02:19/02:21/02:23 UTC; drafts in `mkt/research/2026-09-22-0214-UTC-promo-qa-cloud-feedback.md`): "build it with AI" + "cloud tool is faster" + "runs on CPU, no GPU needed" + "I need help from the world" + "AI will not replace humans". Piece 2 naming TBD (generic vs rival name — owner to confirm).
 - [ ] 26 per-language YouTube feedback videos (one per talk language; users comment/criticize/suggest there).
 - [ ] DAILY: review all feedback-video comments, answer them, relay dev-relevant items via `mkt req\`. Starts when the videos exist.
 - [ ] Opt-in cloud endpoint for speed: ROADMAP only — gated on dev Q5 (asked 2026-09-22 02:14 UTC) + owner wording approval. Never mention publicly until then.

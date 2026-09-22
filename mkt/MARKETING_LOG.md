@@ -245,3 +245,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-22 02:21 UTC — Promo piece 4 added: "I need help from the world"
 - Channel: repo. Owner: solo dev catches errors in his own language but needs native speakers worldwide for the rest — feedback that feeds phrase-review corrections. Added Piece 4 draft to `mkt/research/2026-09-22-0214-UTC-promo-qa-cloud-feedback.md`; TASKS.md promo line updated 3→4. Links to the 26 feedback videos + spirit-brief "you asked, we built" loop. No accuracy % claimed.
 - Cost: 0. Result: filed; needs owner approval before any public use. No public post.
+
+## 2026-09-22 02:23 UTC — Promo piece 5 added: "AI will not replace humans"
+- Channel: repo. Owner: AI won't replace humans — proof is his own feedback-videos idea, which the AI never had; agent developed the wording. Added Piece 5 draft to `mkt/research/2026-09-22-0214-UTC-promo-qa-cloud-feedback.md` (fixed my own "it964" typo before commit); TASKS.md promo line updated 4→5. Placed with story pieces, off the ledger landing.
+- Cost: 0. Result: filed; needs owner approval before any public use. No public post.

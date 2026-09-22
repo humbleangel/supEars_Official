@@ -28,6 +28,14 @@ Founder call (owner wording, tightened only for spelling):
 
 Notes: pairs with the 26 per-language feedback videos (this piece sends people there) and the spirit-brief "rate each transcription / you asked, we built" loop. Honest solo-dev voice; asks for help, never begs. No accuracy % claimed (never, per restraints).
 
+## Piece 5 — "AI will not replace humans" (owner-ordered 2026-09-22 02:23 UTC, developed by agent)
+
+Founder proof (owner's example, agent's shaping — owner to approve wording):
+
+> Artificial intelligence will not replace the human being. Proof: the feedback videos — one YouTube video per language as our channel with the world. That was my idea, a human's idea. The AI never suggested it, and it hardly could. Use the machine for what it does; the ideas stay ours.
+
+Notes: meta-piece — it demonstrates its own claim (human idea, AI only shaped the words). Slightly different context per owner: philosophical, not a user objection. Keep it off the ledger landing; belongs to story/dev-journey pieces with the "Stop feeding the MegaCorps" motto family.
+
 ## Piece 2 — "I can use a cloud tool and get it done faster"
 
 User objection (owner wording): *I can use WhisperFlow and have it transcribed much faster.*
