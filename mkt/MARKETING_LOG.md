@@ -205,3 +205,8 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Answer given: YouTube keeps its own active account in the switcher — signing into Gmail is not enough. Desktop steps: youtube.com → avatar (top right) → Switch account → if the hub is listed, click it; if not, Add account → sign in with the hub address → then Switch account → hub → Create a channel (Brand channel, name supEars, handle @supEars). No transfer/move needed since the owner decision is a fresh redo (old channel has no content; moving would risk deleting the wrong channel and loses history anyway).
 - Awaiting owner: new channel ID + handle once created under the hub.
 - Cost: 0. Result: guidance given; no public post.
+
+## 2026-09-22 01:53 UTC — Hub channel creation in progress (owner relay)
+- Channel: repo (status note, no file). Owner relayed YouTube's message: "Seu canal está sendo criado. Verifique novamente em alguns instantes." (channel provisioning — normal, takes a few minutes).
+- Told owner: wait ~5 minutes, refresh youtube.com, check avatar → Switch account for the new supEars channel; then send channel ID + handle for `mkt/channels.md`. Nothing else to do on our side until it appears.
+- Cost: 0. Result: waiting on YouTube provisioning; no public post.
