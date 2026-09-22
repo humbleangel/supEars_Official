@@ -378,6 +378,10 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo (discussion, no file change besides this log). Owner: the JP school generalizes — schools everywhere, government-funded, tax breaks — a financial opportunity. Agent agreed and stacked the fit (offline student-privacy, CPU old hardware, no accounts for kids, speak-back for language classes, accessibility); proposed education-vertical strategy + institutional pricing dimension for owner to approve before filing.
 - Cost: 0. Result: discussed. No public post.
 
+## 2026-09-22 05:37 UTC — Education vertical filed as FUTURE (owner order)
+- Channel: repo. Owner: mark it for future work — direct email outreach to educational institutions worldwide. Only that. Added one FUTURE task to `mkt/TASKS.md` (email outreach worldwide; institutional tier, offline activation, classroom demo parked inside it). Note: I briefly deleted the sales-brief line with a bad edit and restored it — `git diff` verified final change is +1 line only.
+- Cost: 0. Result: filed. No public post.
+
 ## 2026-09-22 05:30 UTC — Discussion: demand-wave results (owner request)
 - Channel: repo (discussion, no file change besides this log). Owner: target reached, talk results through. substance lives in the report, not here.
 - Cost: 0. Result: discussed. No public post.
