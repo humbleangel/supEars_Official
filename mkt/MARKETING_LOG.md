@@ -199,3 +199,9 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Found un-ingested: dev spirit brief `mkt req/2026-09-15-1405-UTC-dev-spirit-brief.txt` (owner-ordered) has no log/research entry. NOT ingested yet — flagging deltas for owner first: (a) "no refunds, participation not purchase" vs round-2 "30-day money-back" trust kit; (b) new roadmap item "rate each transcription inside the app" ("you asked, we built"); (c) "Never promise dates" restraint vs the 10/10 launch date. Owner: confirm which refund line is truth, whether in-app rating is cleared as roadmap copy, and whether 10/10 counts as a promised date.
 - Clock note: machine clock regressed again — handoff stamped 2026-09-22 04:25 UTC, `Get-Date` now reads 2026-09-22 01:27 UTC. Entries above keep the stamps the clock gave; not rewriting history.
 - Cost: 0. Result: register + dev question filed; video + countdown start both blocked on owner (story text, launch approval).
+
+## 2026-09-22 01:50 UTC — Q&A: getting YouTube onto the new hub account
+- Channel: repo (Q&A, no file). Owner: signed into YouTube with the old account; after creating the new Google account, YouTube won't switch to it. Researched via web (YouTube Help: "Switch between channels", "Move your channel"; transfer guides).
+- Answer given: YouTube keeps its own active account in the switcher — signing into Gmail is not enough. Desktop steps: youtube.com → avatar (top right) → Switch account → if the hub is listed, click it; if not, Add account → sign in with the hub address → then Switch account → hub → Create a channel (Brand channel, name supEars, handle @supEars). No transfer/move needed since the owner decision is a fresh redo (old channel has no content; moving would risk deleting the wrong channel and loses history anyway).
+- Awaiting owner: new channel ID + handle once created under the hub.
+- Cost: 0. Result: guidance given; no public post.
