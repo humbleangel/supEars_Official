@@ -241,3 +241,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-22 02:20 UTC — Owner confirmed piece-3 readings
 - Channel: repo (Q&A, no file change besides this log). Owner "yea": "video 4d" = GPU/video card, "daily models" = local AI models. Piece 3 draft stands as filed.
 - Cost: 0. Result: confirmed. No public post.
+
+## 2026-09-22 02:21 UTC — Promo piece 4 added: "I need help from the world"
+- Channel: repo. Owner: solo dev catches errors in his own language but needs native speakers worldwide for the rest — feedback that feeds phrase-review corrections. Added Piece 4 draft to `mkt/research/2026-09-22-0214-UTC-promo-qa-cloud-feedback.md`; TASKS.md promo line updated 3→4. Links to the 26 feedback videos + spirit-brief "you asked, we built" loop. No accuracy % claimed.
+- Cost: 0. Result: filed; needs owner approval before any public use. No public post.

@@ -20,6 +20,14 @@ Our answer (owner wording, tightened only for spelling):
 
 Notes: accessibility angle — AI for people without GPU money. Tutorial potential (owner: "a very interesting tutorial for us"): a setup-on-weak-hardware video fits the 20-seconds-WiFi-off format family. Keep claims to "runs on CPU"; no speed numbers until dev measures.
 
+## Piece 4 — "I need help from the world" (owner-ordered 2026-09-22 02:21 UTC)
+
+Founder call (owner wording, tightened only for spelling):
+
+> I need help from the world. I can fix my own language — but the words I get wrong in languages I don't speak, only you can catch. Tell me what's wrong and we build the correction together: software that reviews the phrases and gives you the best result.
+
+Notes: pairs with the 26 per-language feedback videos (this piece sends people there) and the spirit-brief "rate each transcription / you asked, we built" loop. Honest solo-dev voice; asks for help, never begs. No accuracy % claimed (never, per restraints).
+
 ## Piece 2 — "I can use a cloud tool and get it done faster"
 
 User objection (owner wording): *I can use WhisperFlow and have it transcribed much faster.*
