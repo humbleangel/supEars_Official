@@ -334,6 +334,10 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo + Firefox preview. Line now: "No account, no subscription tax, no cloud, no one listening. Stop paying subscriptions." — all in one line under the Oct-10 line. Reopened in Firefox.
 - Cost: 0. Result: shown. No public post.
 
+## 2026-09-22 03:35 UTC — Q&As de-slopped (owner order, web research)
+- Channel: repo + Firefox preview. Researched slop markers (Pangram 9 tells, SlopBench 150+ patterns, Economist 2026 study, WikiProject AI Cleanup taxonomy): em-dash spam, "not just X but Y", rule of three, chatbot pleasantries ("cheer you on"), tidy closers ("here for you"), hedging ("sometimes"), vague claims. Old answers hit 5 of these. Rewrote all 3 Q&As short and plain: no em dashes, no triads, no contrast frames, specifics only. Page copy only — promo-file drafts unchanged (divergence noted). Reopened in Firefox.
+- Cost: 0. Result: shown. No public post.
+
 ## 2026-09-22 03:27 UTC — Emblem nudged right (owner request)
 - Channel: repo + Firefox preview. Emblem shifted 24px right of center (`translateX`). Reopened in Firefox.
 - Cost: 0. Result: shown. No public post.
