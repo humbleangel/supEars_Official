@@ -374,6 +374,10 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo. Owner: deep-research forum pages like the one he found (confirmed first: r/developersIndia Hindi STT thread, "Nope, not yet"). 2 search passes → filed NEW `mkt/research/2026-09-22-0501-UTC-india-seeker-threads-round2.md`: r/learnmachinelearning Hindi STT seekers, Quora Hindi voice-typing asker, hargod/deshkit demand proof — and RIVAL ALERT Betterflo (on-device, floating mic, Hinglish, no account, Made in India — our positioning on Android; we keep Windows). No names in public copy.
 - Cost: 0. Result: filed. No public post.
 
+## 2026-09-22 05:18 UTC — Language builds to dev (Q7) + demand wall built
+- Channel: repo + dev folder. Owner's 2 jobs: (1) tell dev — per-language downloads with the best model bundled (filed `mkt req/2026-09-22-0518-UTC-marketing-language-builds.txt`, Q7: feasibility, size/maintenance cost, claim wording; gated). (2) "HTML in the ways where you found the demands" — my interpretation: a page showing the seeker evidence. Built NEW `mkt/demand-wall.html` only (26 quotes, one per language, linked, no usernames; existing files untouched). Tracked in TASKS.md.
+- Cost: 0. Result: filed + built. No public post.
+
 ## 2026-09-22 05:06 UTC — Owner read on Betterflo: pro .io, AI-slop content
 - Channel: repo (discussion, no file change besides this log). Owner looked deep: the `.io` looks professional but the copy reads AI-perfect with download-only and no story — founder built the app, left marketing to AI, mess made. Agent agreed with specifics (generic SaaS voice, no founder, no proof, no loop) and framed it as our India opening: same tech lane, human marketing is the moat. Offered piece-8 use as unnamed cautionary tale + Windows-move watch; awaiting owner.
 - Cost: 0. Result: discussed. No public post.
