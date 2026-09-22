@@ -10,9 +10,9 @@
 - [ ] **Instagram** — brand account under hub (`+ig` plus-address); Reels = same cuts as TikTok/Shorts.
 - [ ] **Facebook** — Page under hub (Pages need no new email; lives under the hub login).
 - [ ] **X (Twitter)** — brand account under hub (`+x`); needs phone verification (one number covers a few accounts).
-- [ ] **Threads** — spins off Instagram; mass-market text channel for the countdown.
-- [ ] **Telegram channel** — free broadcast; 1B MAU, strong in RU/IN/BR/Middle East. No extra email needed (phone login).
-- [ ] **WhatsApp Channel** — free broadcast; India ~536M users, Brazil 93.9% reach. Countdown + launch announcements.
+- [ ] **Threads** — CUT active posting (owner decision 2026-09-22 02:06 UTC): hungry text feed, overlaps IG audience. Only park the handle (free, blocks squats), no posting.
+- [ ] **Telegram channel** — KEEP as broadcast rail (owner decision 2026-09-22 02:06 UTC): crosspost each video + one line, no replies owed. 1B MAU, strong in RU/IN/BR/Middle East. No extra email needed (phone login).
+- [ ] **WhatsApp Channel** — KEEP as broadcast rail (owner decision 2026-09-22 02:06 UTC): launch/countdown announcements only. India ~536M users, Brazil 93.9% reach.
 - [ ] **Kwai** — short-video, Brazil 40.1% reach + LatAm strength; same cuts as TikTok.
 - [x] **YouTube** — LIVE under hub `UCznNnUBltWG8lrSXC39e5lw` @supEars (2026-09-22 01:54 UTC).
 - [x] **Reddit** — owner already holds `humbleangel`; use it for replies. Branded `r/supEars` later, only after alpha (needs real users first).
