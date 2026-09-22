@@ -54,6 +54,14 @@ Founder confession (agent's shaping — owner to approve wording):
 
 Notes: vulnerability piece; pairs with Piece 4 ("I need help from the world") as its emotional twin — anxiety asks, Piece 4 invites. Story/dev-journey placement, off the landing.
 
+## Newcomer lock-in line for the new accounts (owner-ordered 2026-09-22 03:13 UTC)
+
+Text to carry on the new channel/account pages (bios, descriptions) for people arriving in the migration:
+
+> Come in now and lock the founder price — $25 forever, first 1,000 only, before it's gone.
+
+Notes: quotes the locked founding tier (handoff §2, cleared for public). "Before it's gone" = before the 1,000 run out; never a date.
+
 ## Piece 2 — "I can use a cloud tool and get it done faster"
 
 User objection (owner wording): *I can use WhisperFlow and have it transcribed much faster.*

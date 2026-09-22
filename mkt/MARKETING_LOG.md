@@ -280,6 +280,11 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo (Q&A, no dev note). Owner correction: not PIX-via-Stripe (Stripe takes its cut) — DIRECT PIX bank-to-bank, ~zero fee. Three standalone options: direct PIX, Stripe, Polar. Owner finds Polar's 4%+40¢ high — use Polar only where MoR tax handling earns it. `mkt/TASKS.md` corrected (manual key delivery noted for direct PIX: owner confirms each payment).
 - Cost: 0. Result: corrected. No public post.
 
+## 2026-09-22 03:13 UTC — Prelanding page built + lock-in line filed
+- Channel: repo. Owner: (1) newcomer text on the new accounts — lock the founder price before it's gone; (2) fresh prelanding HTML (countdown + 2 questions only), change nothing existing — "go".
+- Built NEW `mkt/prelanding-countdown.html` only (black/white, live JS countdown to 2026-10-10, Q1+Q2 verbatim, one notify link, no downloads, roadmap footer). `index.html`, `landing-v1.html`, all else untouched. Lock-in line filed in promo file + TASKS.md (account-bios task). My interpretation: "migration account parts" = newcomer-facing texts on the new accounts/pages.
+- Cost: 0. Result: built; no public post yet (page goes live with Pages on push — owner ordered hosting there).
+
 ## 2026-09-22 03:06 UTC — Sales system brief filed (in-app + on-site, 3 rails)
 - Channel: repo + dev folder. Owner: buy both in-app and on-site; bundle everything into one dev communication. Filed `mkt req/2026-09-22-0306-UTC-marketing-sales-brief.txt`: 2 places × 3 rails (direct PIX manual / Stripe links / Polar MoR+keys), one license window for all keys, static landing + Releases at alpha, locked tiers untouched, Q5/Q6 gated. `mkt/TASKS.md` tracks it; awaiting dev (feasibility, key format, wording needs).
 - Cost: 0. Result: filed. No public post.
