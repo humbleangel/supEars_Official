@@ -429,3 +429,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-22 05:50 UTC — Channel launch pack filed (owner: solve parked accounts)
 - Channel: repo. Owner: solve "everything else parked or awaiting creation". Filed NEW `mkt/research/2026-09-22-0550-UTC-channel-launch-pack.md`: hub+handle rule, copy-paste kit (short bio, long about, pinned founder post, waitlist link — all approved voice), per-platform creation steps + fastest-first order for all 8 Phase-1 accounts. `mkt/TASKS.md` copy-pack line → PREPARED. Note: same bad-edit slip as 05:37 (dropped the promo-pieces line), restored and verified both lines via grep before commit.
 - Cost: 0. Result: filed; account creation is owner's action. No public post.
+
+## 2026-09-22 05:59 UTC — Full status brief filed for dev (owner order)
+- Channel: dev folder. Owner: document for dev explaining everything developed and decided, including the YouTube feedback videos. Filed `mkt req/2026-09-22-0559-UTC-marketing-full-status-brief.txt`: (A) built list, (B) owner decisions, (C) 26-video feedback loop (process, no build), (D) open questions Q4-Q7 + new D1 keys/D2 join/D3 offline-schools-feasibility, (E) gates. Deliberately did NOT edit `mkt/TASKS.md` for this (three prior edit slips on that file today; verified it unchanged via grep).
+- Cost: 0. Result: filed. No public post.
