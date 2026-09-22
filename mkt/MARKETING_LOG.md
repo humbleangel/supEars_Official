@@ -309,6 +309,11 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo + Firefox preview. Background flag: full-bleed cover 28px blur → contained 12px blur, opacity 0.10→0.14. Reopened in Firefox.
 - Cost: 0. Result: shown. No public post.
 
+## 2026-09-22 03:25 UTC — Prelanding tweaks: blur 3px, email box, kinder Q&As, notebook line
+- Channel: repo + Firefox preview. Owner: blur down again (12→6→3), email input on the waitlist join, kinder tone on all 3 questions, CPU answer gains "developed and tested on a 15-year-old notebook (4th generation)" (owner-supplied fact). Join now opens the visitor's mail app addressed to the hub with their email prefilled (static page: no backend; limitation stated to owner).
+- Owner copy changes (verbatim): "goes alpha"→"goes live", "Windows today"→"Windows only", "Mac and Linux on the roadmap"→"Mac and Linux planned". Noted tension: "Windows only" narrows handoff §2 (Mac/Linux roadmap) and "goes live" softens alpha wording — owner is final word on claims; applied literally.
+- Cost: 0. Result: shown in Firefox; awaiting verdict. No public post.
+
 ## 2026-09-22 03:21 UTC — Blur 12→6px + third question (CPU, no GPU)
 - Channel: repo + Firefox preview. Owner: less blur again + add CPU piece as third user question. Added ("My PC is old — no GPU. Can it run AI?" / CPU answer) beside the other two; still one screen. Reopened in Firefox.
 - Cost: 0. Result: shown. No public post.
