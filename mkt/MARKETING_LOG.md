@@ -346,6 +346,10 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo + Firefox preview. Owner overruled dead-link caution: footer now lists YouTube, Reddit, X, Instagram, TikTok, Facebook (standard @supEars handle URLs). X/IG/TikTok/FB 404 until created — they activate as owner makes each account. Reopened in Firefox.
 - Cost: 0. Result: shown. No public post.
 
+## 2026-09-22 03:39 UTC — Social icons inlined (owner: nice logos)
+- Channel: repo + Firefox preview. Footer text links → six white inline-SVG brand icons (Simple Icons paths, self-hosted, zero external requests): YouTube, Reddit, X, Instagram, TikTok, Facebook. Reopened in Firefox.
+- Cost: 0. Result: shown. No public post.
+
 ## 2026-09-22 03:27 UTC — Emblem nudged right (owner request)
 - Channel: repo + Firefox preview. Emblem shifted 24px right of center (`translateX`). Reopened in Firefox.
 - Cost: 0. Result: shown. No public post.
