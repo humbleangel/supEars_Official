@@ -28,8 +28,8 @@
 - [ ] **Facebook** — needs a personal profile under the hub first (Pages live under a profile), then Create → Page → name `supEars`, username `@supEars` → paste long about → avatar = emblem, cover = "100% offline · Alpha 0.90 soon".
 - [ ] **X** — signup with email (`+x`) → handle `@supEars` → name `supEars` → paste short bio → avatar = emblem, header = cover line. Expect phone verification — same number as the others.
 - [ ] **Threads** — PARK ONLY: log in with the new IG account, claim `supEars`, no posting (owner decision 2026-09-22 02:06 UTC).
-- [ ] **Telegram channel** — phone login (no email needed) → New Channel → name `supEars`, handle `t.me/supEars` → paste long about → avatar = emblem. Broadcast rail: each video + one line, no replies owed.
-- [ ] **WhatsApp Channel** — phone's WhatsApp → Updates → Create channel → name `supEars` → paste short bio → avatar = emblem. Launch/countdown announcements only.
+- [ ] **Telegram channel** — phone login (no email needed) → New Channel → name `supEars`, handle `t.me/supEars` → paste long about → avatar = emblem. Broadcast rail: each video + one line, no replies owed. Setup-only phone (one SMS); afterwards Telegram Desktop runs everything.
+- [ ] **WhatsApp Channel** — phone's WhatsApp → Updates → Create channel → name `supEars` → paste short bio → avatar = emblem. Launch/countdown announcements only. Setup-only phone; afterwards WhatsApp desktop/web posts everything.
 - [ ] **Kwai** — app → signup with email (`+kw`) → name `supEars` → paste short bio → same cuts as TikTok (Brazil/LatAm strength).
 
 ## Order (fastest first)
