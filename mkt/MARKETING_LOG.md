@@ -326,6 +326,10 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo + Firefox preview. Removed "10 out of 10 — "; added "Stop paying subscriptions." + 2-line block (Oct 10 goes-live / "No account, no subscription tax, no cloud, no one listening."); removed "alpha 0.90 comes first"; removed price values from lock line ("lock the founder price — before it's gone"). Meta description matched. Note: "no subscription tax" is owner's coinage, kept verbatim. Reopened in Firefox.
 - Cost: 0. Result: shown. No public post.
 
+## 2026-09-22 03:32 UTC — Lock line rewritten (owner verbatim)
+- Channel: repo + Firefox preview. Lock line → "Come in now and be a founder. Be part of the beta-testers group." Reopened in Firefox.
+- Cost: 0. Result: shown. No public post.
+
 ## 2026-09-22 03:27 UTC — Emblem nudged right (owner request)
 - Channel: repo + Firefox preview. Emblem shifted 24px right of center (`translateX`). Reopened in Firefox.
 - Cost: 0. Result: shown. No public post.
