@@ -370,6 +370,10 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: local machine (no repo file besides this log). Owner: expand the GIF tool so it's usable. Found his zip was source code only (no exe); fetched official portable v21.0.0 (199MB, two attempts — first truncated at timeout, resume double-wrote, clean re-download verified). Expanded to `Downloads\ShareX-portable\`, `ShareX.exe` confirmed. Not launched (registers hotkeys — owner's click).
 - Cost: 0. Result: ready. No public post.
 
+## 2026-09-22 05:01 UTC — India seeker-threads round 2 + Betterflo rival alert
+- Channel: repo. Owner: deep-research forum pages like the one he found (confirmed first: r/developersIndia Hindi STT thread, "Nope, not yet"). 2 search passes → filed NEW `mkt/research/2026-09-22-0501-UTC-india-seeker-threads-round2.md`: r/learnmachinelearning Hindi STT seekers, Quora Hindi voice-typing asker, hargod/deshkit demand proof — and RIVAL ALERT Betterflo (on-device, floating mic, Hinglish, no account, Made in India — our positioning on Android; we keep Windows). No names in public copy.
+- Cost: 0. Result: filed. No public post.
+
 ## 2026-09-22 04:01 UTC — Promo piece 8: vibecoder, the part nobody teaches
 - Channel: repo. Owner: everyone teaches one-prompt apps; nobody teaches the after — marketing steps, resources, texts, ideas; our documents are the material. Added Piece 8 draft to promo file; TASKS.md 7→8. Links to video-plan idea #1 (reserved first long-form): this piece is its thesis; the public repo is positioned as the course.
 - Cost: 0. Result: filed; needs owner approval before any public use. No public post.
