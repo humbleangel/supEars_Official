@@ -374,6 +374,10 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo. Owner: deep-research forum pages like the one he found (confirmed first: r/developersIndia Hindi STT thread, "Nope, not yet"). 2 search passes → filed NEW `mkt/research/2026-09-22-0501-UTC-india-seeker-threads-round2.md`: r/learnmachinelearning Hindi STT seekers, Quora Hindi voice-typing asker, hargod/deshkit demand proof — and RIVAL ALERT Betterflo (on-device, floating mic, Hinglish, no account, Made in India — our positioning on Android; we keep Windows). No names in public copy.
 - Cost: 0. Result: filed. No public post.
 
+## 2026-09-22 05:06 UTC — Owner read on Betterflo: pro .io, AI-slop content
+- Channel: repo (discussion, no file change besides this log). Owner looked deep: the `.io` looks professional but the copy reads AI-perfect with download-only and no story — founder built the app, left marketing to AI, mess made. Agent agreed with specifics (generic SaaS voice, no founder, no proof, no loop) and framed it as our India opening: same tech lane, human marketing is the moat. Offered piece-8 use as unnamed cautionary tale + Windows-move watch; awaiting owner.
+- Cost: 0. Result: discussed. No public post.
+
 ## 2026-09-22 04:01 UTC — Promo piece 8: vibecoder, the part nobody teaches
 - Channel: repo. Owner: everyone teaches one-prompt apps; nobody teaches the after — marketing steps, resources, texts, ideas; our documents are the material. Added Piece 8 draft to promo file; TASKS.md 7→8. Links to video-plan idea #1 (reserved first long-form): this piece is its thesis; the public repo is positioned as the course.
 - Cost: 0. Result: filed; needs owner approval before any public use. No public post.
