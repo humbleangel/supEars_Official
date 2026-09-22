@@ -227,3 +227,9 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-22 02:08 UTC — TASKS.md updated: Threads cut, TG/WA kept as rails
 - Channel: repo. Owner approved ("ok go"): `mkt/TASKS.md` Phase 1 edited — Threads = handle parked only, no posting; Telegram + WhatsApp = broadcast rails (crosspost video + one line). Active posting stays on YouTube/TikTok/Instagram/Kwai/Facebook.
 - Cost: 0. Result: applied; no public post.
+
+## 2026-09-22 02:14 UTC — Promo Q&A pair + cloud endpoint + feedback system filed
+- Channel: repo + dev folder. Owner (two messages, second one restoring the cut first part): (1) 2 promo pieces framed as user questions — "build same with AI" (answer: go spend your tokens/time, or use this ready tool) and "cloud tool is faster" (answer: private mode, nothing leaves the machine); (2) dev to consider an opt-in cloud endpoint for speed; (3) feedback method: one YouTube video per language + marketing reviews/answers comments daily and relays to dev.
+- Filed NEW `mkt/research/2026-09-22-0214-UTC-promo-qa-cloud-feedback.md` (both drafts, cloud roadmap framing with "no server" tension noted, feedback system); filed `mkt req/2026-09-22-0214-UTC-marketing-questions-4.txt` (Q5 cloud feasibility + feedback FYI); extended `mkt/TASKS.md` Phase 3 (promo pieces, 26 feedback videos, daily comment duty, cloud gated).
+- My interpretations (correct me): "edited much faster" = transcribed/done faster via a cloud tool; "being by hand" = explicit opt-in choice; "pranuvium" = your premium content/ideas (rendered as "ideas, texts"). Piece 2 kept generic (no rival name) per standing rule — owner to confirm or override.
+- Cost: 0. Result: filed; promo drafts + cloud mention need owner approval before any public use. No public post.
