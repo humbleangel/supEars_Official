@@ -2,14 +2,15 @@
 
 > Started 2026-09-19 10:50 UTC. One place for every public account, its status, and who holds it. No secrets (no passwords, no recovery codes) — those never enter this repo.
 
-## YouTube — LIVE (created by owner)
+## YouTube — PENDING REDO under the hub (old channel superseded)
 
-- Channel ID: `UCdSxsiTM6vCfoE2qwVmj6gQ`
-- Studio URL: https://studio.youtube.com/channel/UCdSxsiTM6vCfoE2qwVmj6gQ
-- Public URL: https://www.youtube.com/channel/UCdSxsiTM6vCfoE2qwVmj6gQ
-- Agreed setup (2026-09-15 05:00 UTC): Brand channel under the hub Gmail, handle `@supEars`, banner "100% offline · Alpha 0.90 soon".
-- **Unknown / to confirm from owner:** actual handle, whether it is a Brand channel or created under a personal Google account, and the hub Gmail address. No secrets please — just the handle and account type.
-- Status: **unblocks the "no channel" blocker** in `2026-09-15-1905-UTC-launch-plan-1010-countdown.md`.
+- Old channel ID (under another account, NOT final): `UCdSxsiTM6vCfoE2qwVmj6gQ`
+- Studio URL (old): https://studio.youtube.com/channel/UCdSxsiTM6vCfoE2qwVmj6gQ
+- Public URL (old): https://www.youtube.com/channel/UCdSxsiTM6vCfoE2qwVmj6gQ
+- Owner decision (2026-09-22 04:22 UTC): **all channels created under the hub** (`supears.app@gmail.com`). Owner may redo this channel under the hub — do not treat the old ID as final.
+- Agreed setup (2026-09-15 05:00 UTC, still applies to the redo): Brand channel under the hub Gmail, handle `@supEars`, banner "100% offline · Alpha 0.90 soon".
+- **Awaiting owner:** new channel ID + handle once redone under the hub. No secrets please — just the handle and ID.
+- Status: countdown "no channel" blocker is open again until the redo lands (see `2026-09-15-1905-UTC-launch-plan-1010-countdown.md`).
 
 ## Gmail hub — CREATED (owner, 2026-09-22)
 
@@ -17,7 +18,7 @@
 - Display name: **HumbleAngel**
 - Purpose: hub for the show/brand accounts; use plus-addressing (`supears.app+yt@gmail.com`, `+x@`, `+ig@`) so every platform's mail lands in one inbox (plan 2026-09-15 02:55 UTC).
 - Not needed here: password, recovery codes, 2FA secrets — never enter those in this repo. Owner uses authenticator 2FA + saved recovery codes per the earlier advisory.
-- Open question: does the existing YouTube channel (`UCdSxsiTM6vCfoE2qwVmj6gQ`) sit **under this hub** or under a personal account? If it's under a personal account, decide whether to move it or run the other channels under the hub.
+- Resolved (2026-09-22 04:22 UTC): existing channel sits under **another account**, not this hub. Owner decision: redo it under this hub; all channels live here.
 
 ## Other platforms — none yet
 
