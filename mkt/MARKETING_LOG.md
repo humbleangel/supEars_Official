@@ -358,6 +358,10 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo (research, no file besides this log). Findings (YT Help specs + 2026 policy docs): accepted fps = 24/25/30/48/50/60 ("others acceptable" but 1fps unsafe) — our plan (PNGs → 30fps MP4 with held frames) is technically fine; literal 1fps upload risks rejection. Bigger risk is POLICY: 2025-26 Inauthentic Content rules target mass-produced template videos + narration-less slideshows (demonetization, spam strikes); daily same-background text swaps match that pattern. Mitigations filed in report: narration/human, varied edits, verify account (15-min cap), Shorts ≤3min vertical.
 - Cost: 0. Result: answered. No public post.
 
+## 2026-09-22 04:28 UTC — GIF tool identified: ShareX (owner download)
+- Channel: repo (Q&A). Owner downloaded "a tool that saves gifs", couldn't recall the name. Checked Downloads: `ShareX-develop.zip` (2026-09-14) is the match — ShareX is a free open-source screen capture tool that records the desktop and saves GIF/video. Verdict: yes, useful — it becomes our $0 demo-GIF pipeline (dictation-proof GIFs, README/social assets). Nothing else GIF-related in Downloads.
+- Cost: 0. Result: identified; recommended as GIF pipeline. No public post.
+
 ## 2026-09-22 04:25 UTC — 24fps locked for text-frame videos (owner decision)
 - Channel: repo. Owner: 24fps. `mkt/TASKS.md` first-video line updated (24fps locked; still blocked on story text). Render chain stays: PNG per line → ffmpeg MP4 at 24fps + narration per the anti-slop mitigations.
 - Cost: 0. Result: locked. No public post.
