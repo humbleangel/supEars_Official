@@ -55,5 +55,9 @@ Why: global networks are banned or weak in CN/RU; India banned TikTok. Picks gro
 - India: wscubetech.com 2026 (WhatsApp 535.8M, YouTube 500M, IG 481M, ShareChat 350M, Moj 160M, Telegram 104M), sharechat.com/about, Moj Wikipedia.
 - Brazil/LatAm/messaging: Statista Q2-2025 (WhatsApp 93.9%, IG 91.2%, Kwai/Kuaishou 40.1%), Similarweb Jul-2026, verbaflo.ai 2026 messaging table.
 
+## Goals — earned mentions (owner-ordered 2026-09-22 06:12 UTC)
+
+- [ ] **Github Awesome feature** — get supEars mentioned in a video on the "Github Awesome" YouTube channel (@GithubAwesome, ~61K subs, daily GitHub-trending compilations + githubawesome.com). Levers: polished storefront README (26 languages, roadmap wording), alpha release at 0.90, topics + stars, then suggest via their site/comments once something shippable exists. Nothing to pitch before alpha — no download, no feature.
+
 ---
 *Filed 2026-09-22 01:59 UTC · cost 0 · no public post · internal.*

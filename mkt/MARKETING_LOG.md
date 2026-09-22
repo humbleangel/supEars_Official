@@ -441,3 +441,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-22 06:08 UTC — Correction: phone is setup-only, never ops (owner clarification)
 - Channel: repo. Owner: has a phone, refuses to rely on it to RUN the system — setup only; that was the reason behind the earlier Telegram/WhatsApp questioning. Understood and corrected: phone appears exactly once per account (SMS/verification) and never again — Telegram Desktop and WhatsApp desktop/web run both rails fully afterwards; same for any X/IG verification. Launch pack's Telegram/WhatsApp lines annotated setup-only. Nothing in the plan needs phone-based daily operation.
 - Cost: 0. Result: corrected. No public post.
+
+## 2026-09-22 06:12 UTC — Goal filed: Github Awesome feature (owner order)
+- Channel: repo (research + task). Owner: make being mentioned in a Github Awesome video one of our goals. Verified the channel (@GithubAwesome, ~61K subs, daily trending-repo compilations, site githubawesome.com — unofficial, picks trending repos). Filed "Goals — earned mentions" section in `mkt/TASKS.md`: levers are storefront polish + alpha 0.90 release + suggest via their site/comments; nothing to pitch before alpha. Diff verified pure-addition. Note: one more log-edit slip (deleted/restored the 06:08 header while drafting); diff confirms log otherwise untouched.
+- Cost: 0. Result: filed. No public post.
