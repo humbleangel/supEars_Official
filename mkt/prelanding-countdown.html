@@ -6,37 +6,39 @@
 <title>supEars — 10 out of 10, 2026-10-10</title>
 <meta name="description" content="supEars. The Ear that understands your language. Launch day 2026-10-10: 10 out of 10. Join the waitlist.">
 <style>
-  :root { --bg: #000; --fg: #fff; --mut: #999; }
+  :root { --bg: #000; --fg: #fff; --mut: #bbb; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: var(--bg); color: var(--fg); font-family: Arial, Helvetica, sans-serif; text-align: center; }
-  .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 4vh 6vw; gap: 2vh; }
-  .hero img.ear { width: clamp(120px, 22vw, 220px); height: auto; }
-  .brand { font-size: clamp(30px, 5vw, 52px); font-weight: bold; letter-spacing: 1px; }
-  .tag { color: var(--mut); font-size: clamp(14px, 2.4vw, 19px); }
-  .ten { font-size: clamp(22px, 4vw, 34px); font-weight: bold; max-width: 640px; line-height: 1.4; }
-  .ten small { display: block; color: var(--mut); font-weight: normal; font-size: clamp(14px, 2.4vw, 18px); margin-top: 1vh; }
-  #count { display: flex; gap: 5vw; justify-content: center; }
-  #count div { min-width: 64px; }
-  #count b { display: block; font-size: clamp(26px, 5vw, 44px); }
-  #count span { color: var(--mut); font-size: 12px; text-transform: uppercase; letter-spacing: 2px; }
-  .cta { display: inline-block; margin-top: 1vh; background: var(--fg); color: var(--bg); font-weight: bold; font-size: clamp(17px, 3vw, 22px); padding: 14px 42px; border-radius: 999px; text-decoration: none; }
-  .lock { color: var(--mut); font-size: clamp(13px, 2.2vw, 16px); }
-  .qa { max-width: 720px; margin: 0 auto; padding: 8vh 6vw; text-align: left; }
-  .qa h2 { font-size: clamp(20px, 3.4vw, 28px); margin-bottom: 4vh; text-align: center; }
-  .q { margin-bottom: 4vh; border-left: 3px solid var(--fg); padding-left: 18px; }
-  .q p.u { color: var(--mut); font-size: clamp(15px, 2.4vw, 19px); margin-bottom: 8px; }
-  .q p.a { font-size: clamp(17px, 2.8vw, 22px); line-height: 1.5; }
-  footer { color: var(--mut); font-size: 13px; padding: 4vh 6vw 6vh; }
+  html, body { height: 100%; }
+  body { background: var(--bg); color: var(--fg); font-family: Arial, Helvetica, sans-serif; text-align: center; overflow: hidden; }
+  .bg { position: fixed; inset: -10%; width: 120%; height: 120%; object-fit: cover; opacity: 0.10; filter: blur(28px); pointer-events: none; }
+  .page { position: relative; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.4vh; padding: 2vh 5vw; }
+  .ear { width: clamp(72px, 11vh, 110px); height: auto; }
+  .brand { font-size: clamp(24px, 4.5vh, 40px); font-weight: bold; letter-spacing: 1px; line-height: 1; }
+  .tag { color: var(--mut); font-size: clamp(12px, 2.2vh, 16px); }
+  .sell { font-size: clamp(13px, 2.5vh, 18px); max-width: 640px; line-height: 1.35; }
+  .ten { font-size: clamp(15px, 3vh, 22px); font-weight: bold; }
+  .ten span { color: var(--mut); font-weight: normal; }
+  #count { display: flex; gap: 3.5vw; justify-content: center; }
+  #count div { min-width: 58px; }
+  #count b { display: block; font-size: clamp(20px, 4.5vh, 34px); }
+  #count span { color: var(--mut); font-size: 11px; text-transform: uppercase; letter-spacing: 2px; }
+  .cta { display: inline-block; background: var(--fg); color: var(--bg); font-weight: bold; font-size: clamp(15px, 2.8vh, 19px); padding: 10px 38px; border-radius: 999px; text-decoration: none; }
+  .lock { color: var(--mut); font-size: clamp(11px, 2vh, 14px); }
+  .qa { display: flex; gap: 3vw; max-width: 900px; text-align: left; }
+  .q { flex: 1; border-left: 2px solid var(--fg); padding-left: 12px; font-size: clamp(11px, 2vh, 14px); line-height: 1.4; }
+  .q .u { color: var(--mut); margin-bottom: 4px; }
+  footer { color: var(--mut); font-size: 11px; }
+  @media (max-height: 640px), (max-width: 640px) { body { overflow: auto; } .page { height: auto; min-height: 100vh; } .qa { flex-direction: column; } }
 </style>
 </head>
 <body>
-  <header class="hero">
+  <img class="bg" src="assets/supEarsLogoV3.png" alt="">
+  <main class="page">
     <img class="ear" src="assets/supEarsEmblem.png" alt="supEars — the floating ear">
     <div class="brand">supEars</div>
     <div class="tag">The Ear that understands your language.</div>
-    <p class="ten">10 out of 10 — October 10, 2026, the day supEars goes alpha.
-      <small>Speak in your native language — supEars writes it in English, or any of 26 languages. In total privacy: your voice never leaves your computer. No account, no cloud, no one listening.</small>
-    </p>
+    <p class="sell">Speak in your native language — supEars writes it in English, or any of 26 languages. In total privacy: your voice never leaves your computer.</p>
+    <div class="ten">10 out of 10 — October 10, 2026, the day supEars goes alpha. <span>No account, no cloud, no one listening.</span></div>
     <div id="count" aria-live="off">
       <div><b id="d">–</b><span>days</span></div>
       <div><b id="h">–</b><span>hours</span></div>
@@ -45,21 +47,12 @@
     </div>
     <a class="cta" href="https://github.com/humbleangel/supEars_Official/issues">Join the waitlist</a>
     <div class="lock">Come in now and lock the founder price — $25 forever, first 1,000 only, before it's gone.</div>
-  </header>
-
-  <section class="qa">
-    <h2>Two questions you may ask.</h2>
-    <div class="q">
-      <p class="u">“I can build the same thing with AI.”</p>
-      <p class="a">OK — go make yours with AI. I spent months deciding and preparing this tool for the future, so it is ready to use now. If you want to build yours, spend your tokens, your time — or use this tool for all the possibilities.</p>
+    <div class="qa">
+      <div class="q"><p class="u">“I can build the same thing with AI.”</p><p>OK — go make yours with AI. I spent months preparing this tool, ready to use now. Spend your tokens, your time — or use this tool for all the possibilities.</p></div>
+      <div class="q"><p class="u">“A cloud tool is faster.”</p><p>In our tool you send no data — not your ideas, not your texts — to the big corporations. Private mode: everything happens inside your computer.</p></div>
     </div>
-    <div class="q">
-      <p class="u">“I can use a cloud tool and get it done faster.”</p>
-      <p class="a">In our tool you send no data — not your ideas, not your texts — to the big corporations. You work in private mode. Everything happens inside your computer. Things never fly around.</p>
-    </div>
-  </section>
-
-  <footer>No download yet — alpha 0.90 comes first. Windows today; Mac and Linux on the roadmap.</footer>
+    <footer>No download yet — alpha 0.90 comes first. Windows today; Mac and Linux on the roadmap.</footer>
+  </main>
 
 <script>
 (function () {

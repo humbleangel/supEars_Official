@@ -301,6 +301,10 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo + Firefox preview. Owner: sell the app — native-language speech → English/any language + privacy. Hero subline rewritten: "Speak in your native language — supEars writes it in English, or any of 26 languages. In total privacy: your voice never leaves your computer. No account, no cloud, no one listening." Reopened in Firefox.
 - Cost: 0. Result: shown; awaiting verdict. No public post.
 
+## 2026-09-22 03:20 UTC — Prelanding one-screen rebuild (owner direction)
+- Channel: repo + Firefox preview. Owner: keep emblem, add flag logo huge/blurred/transparent behind, everything on one screen, no scroll, kill dead top space. Rebuilt `mkt/prelanding-countdown.html`: fixed full-bleed `supEarsLogoV3.png` at 10% + 28px blur, emblem front, single 100vh column (sell line, 10/10, compact countdown, CTA, lock line, 2 Q&As side-by-side, footer). Tightened Q&A wording to fit. Scroll allowed only on short/small screens as fallback. Reopened in Firefox.
+- Cost: 0. Result: shown; awaiting verdict. No public post.
+
 ## 2026-09-22 03:06 UTC — Sales system brief filed (in-app + on-site, 3 rails)
 - Channel: repo + dev folder. Owner: buy both in-app and on-site; bundle everything into one dev communication. Filed `mkt req/2026-09-22-0306-UTC-marketing-sales-brief.txt`: 2 places × 3 rails (direct PIX manual / Stripe links / Polar MoR+keys), one license window for all keys, static landing + Releases at alpha, locked tiers untouched, Q5/Q6 gated. `mkt/TASKS.md` tracks it; awaiting dev (feasibility, key format, wording needs).
 - Cost: 0. Result: filed. No public post.
