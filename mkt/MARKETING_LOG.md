@@ -257,3 +257,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-22 02:40 UTC — Q&A: piece 6 explained in detail (owner request)
 - Channel: repo (Q&A, no draft change). Explained: concept (founder dogfood — maker on the same tool), exact draft text, why it works (trust via shared risk), placement (story pieces only, never landing/pricing), internal-vs-public split (Q6 stays internal; piece publishes only on owner order), and the open angle question. Full text lives in the report, not here.
 - Cost: 0. Result: explained. No public post.
+
+## 2026-09-22 02:42 UTC — Q6 corrected: "ask for more free days" USER button
+- Channel: repo + dev folder. Owner correction: not a founder perk — when a USER hits a free limit, a button lets them ask the developer for more free days. Filed `mkt req/2026-09-22-0242-UTC-marketing-questions-6.txt` (Q6 corrected, old founder-bypass reading discarded); rewrote Piece 6 draft ("When your free days run out, you don't hit a wall — you get a button..."); TASKS.md updated (bypass task replaced). Gated: nothing public until dev confirms + owner approves wording.
+- Cost: 0. Result: corrected and filed. No public post.

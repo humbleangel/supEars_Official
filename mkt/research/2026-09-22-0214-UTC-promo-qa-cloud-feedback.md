@@ -36,13 +36,15 @@ Founder proof (owner's example, agent's shaping — owner to approve wording):
 
 Notes: meta-piece — it demonstrates its own claim (human idea, AI only shaped the words). Slightly different context per owner: philosophical, not a user objection. Keep it off the ledger landing; belongs to story/dev-journey pieces with the "Stop feeding the MegaCorps" motto family.
 
-## Piece 6 — "The founder uses his own tool" (owner-ordered 2026-09-22 02:27 UTC; angle = my interpretation, correct me)
+## Piece 6 — "Ask me for more free days" (owner-ordered 2026-09-22 02:27 UTC, CORRECTED 02:42 UTC)
 
-Founder beat (agent's shaping — owner to approve wording):
+User-facing feature + piece (owner correction: not a founder perk — a button for USERS who hit the free limit).
 
-> I asked the developer for more free days — for myself. I use supEars every day, the same tool you will use. If it ever wastes my time, you'll hear it from me first.
+Draft (agent's shaping — owner to approve wording):
 
-Notes: dogfood piece; pairs with dev Q6 (founder bypass, asked 2026-09-22 02:27 UTC). Internal fact, not a selling point — publishes only if owner orders it. My interpretation of your piece angle: the maker on the same tool, first to feel its flaws. Say if you meant a different angle.
+> When your free days run out, you don't hit a wall — you get a button. One tap asks me, the developer, for more free days. A human reads it.
+
+Notes: generosity as paywall strategy; pairs with dev Q6-corrected (asked 2026-09-22 02:42 UTC). Gated: never mention publicly until dev confirms + owner approves wording. Prior "founder uses his own tool" angle discarded per owner correction.
 
 ## Piece 2 — "I can use a cloud tool and get it done faster"
 
