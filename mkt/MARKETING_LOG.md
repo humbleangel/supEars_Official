@@ -378,6 +378,10 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo (discussion, no file change besides this log). Owner looked deep: the `.io` looks professional but the copy reads AI-perfect with download-only and no story — founder built the app, left marketing to AI, mess made. Agent agreed with specifics (generic SaaS voice, no founder, no proof, no loop) and framed it as our India opening: same tech lane, human marketing is the moat. Offered piece-8 use as unnamed cautionary tale + Windows-move watch; awaiting owner.
 - Cost: 0. Result: discussed. No public post.
 
+## 2026-09-22 05:14 UTC — Demand wave 26/26 filed (owner correction: demand, not rivals)
+- Channel: repo. Owner corrected my Betterflo framing: launch one agent per language hunting DEMAND. Launched 26 parallel agents (all returned) → filed NEW `mkt/research/2026-09-22-0514-UTC-demand-wave-26-languages.md`: universal 5-pattern (free long-form, offline/private, working at-cursor dictation, local accuracy, pay-once rage) + per-language cluster + sequencing read (HI/UR/AR/ID/VI/TH unserved vs DE/FR/JP payable). Demand proven 26/26; no repositioning needed.
+- Cost: 0. Result: filed. No public post.
+
 ## 2026-09-22 04:01 UTC — Promo piece 8: vibecoder, the part nobody teaches
 - Channel: repo. Owner: everyone teaches one-prompt apps; nobody teaches the after — marketing steps, resources, texts, ideas; our documents are the material. Added Piece 8 draft to promo file; TASKS.md 7→8. Links to video-plan idea #1 (reserved first long-form): this piece is its thesis; the public repo is positioned as the course.
 - Cost: 0. Result: filed; needs owner approval before any public use. No public post.
