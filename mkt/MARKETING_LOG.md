@@ -342,6 +342,10 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo + Firefox preview. Footer gains YouTube (@supEars) + Reddit (u/humbleangel) — only accounts that exist; no dead links to uncreated X/IG/TikTok/FB. Reopened in Firefox.
 - Cost: 0. Result: shown. No public post.
 
+## 2026-09-22 03:38 UTC — All planned socials linked (owner: we'll create them)
+- Channel: repo + Firefox preview. Owner overruled dead-link caution: footer now lists YouTube, Reddit, X, Instagram, TikTok, Facebook (standard @supEars handle URLs). X/IG/TikTok/FB 404 until created — they activate as owner makes each account. Reopened in Firefox.
+- Cost: 0. Result: shown. No public post.
+
 ## 2026-09-22 03:27 UTC — Emblem nudged right (owner request)
 - Channel: repo + Firefox preview. Emblem shifted 24px right of center (`translateX`). Reopened in Firefox.
 - Cost: 0. Result: shown. No public post.
