@@ -233,3 +233,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Filed NEW `mkt/research/2026-09-22-0214-UTC-promo-qa-cloud-feedback.md` (both drafts, cloud roadmap framing with "no server" tension noted, feedback system); filed `mkt req/2026-09-22-0214-UTC-marketing-questions-4.txt` (Q5 cloud feasibility + feedback FYI); extended `mkt/TASKS.md` Phase 3 (promo pieces, 26 feedback videos, daily comment duty, cloud gated).
 - My interpretations (correct me): "edited much faster" = transcribed/done faster via a cloud tool; "being by hand" = explicit opt-in choice; "pranuvium" = your premium content/ideas (rendered as "ideas, texts"). Piece 2 kept generic (no rival name) per standing rule — owner to confirm or override.
 - Cost: 0. Result: filed; promo drafts + cloud mention need owner approval before any public use. No public post.
+
+## 2026-09-22 02:19 UTC — Promo piece 3 added: CPU-only, no GPU needed
+- Channel: repo. Owner: software runs on CPU; many lack a decent video card for AI models — a tutorial angle to win new users. Added Piece 3 to `mkt/research/2026-09-22-0214-UTC-promo-qa-cloud-feedback.md` ("supEars is built for CPU..."); TASKS.md promo line updated 2→3. My readings: "video 4d" = GPU/video card, "daily models" = local AI models. No speed numbers claimed (unmeasured).
+- Cost: 0. Result: filed; needs owner approval before any public use. No public post.

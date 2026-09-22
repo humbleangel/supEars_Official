@@ -11,6 +11,15 @@ Our answer (owner wording, tightened only for spelling):
 
 Notes: first person, founder voice, no begging, names no rival. Fits the dev-journey series.
 
+## Piece 3 — "AI models need a GPU I don't have" (owner-ordered 2026-09-22 02:19 UTC)
+
+User objection (owner wording): *many people don't have a decent video card to run AI models.*
+Our answer (owner wording, tightened only for spelling):
+
+> supEars is built for CPU. No video card, no expensive hardware — if your computer runs Windows, it runs supEars.
+
+Notes: accessibility angle — AI for people without GPU money. Tutorial potential (owner: "a very interesting tutorial for us"): a setup-on-weak-hardware video fits the 20-seconds-WiFi-off format family. Keep claims to "runs on CPU"; no speed numbers until dev measures.
+
 ## Piece 2 — "I can use a cloud tool and get it done faster"
 
 User objection (owner wording): *I can use WhisperFlow and have it transcribed much faster.*
