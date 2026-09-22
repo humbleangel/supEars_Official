@@ -253,3 +253,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-22 02:27 UTC — Founder bypass (dev Q6) + promo piece 6 filed
 - Channel: repo + dev folder. Owner: more free/unrestricted days for HumbleAngel's own install — both a dev functionality and a piece. Filed `mkt req/2026-09-22-0227-UTC-marketing-questions-5.txt` (Q6 founder bypass, internal until owner says publish); added Piece 6 draft ("The founder uses his own tool") to the promo file; TASKS.md promo line 5→6 + founder-bypass task.
 - Cost: 0. Result: filed; piece angle is my interpretation (maker dogfoods, first to feel flaws) — owner to correct. No public post.
+
+## 2026-09-22 02:40 UTC — Q&A: piece 6 explained in detail (owner request)
+- Channel: repo (Q&A, no draft change). Explained: concept (founder dogfood — maker on the same tool), exact draft text, why it works (trust via shared risk), placement (story pieces only, never landing/pricing), internal-vs-public split (Q6 stays internal; piece publishes only on owner order), and the open angle question. Full text lives in the report, not here.
+- Cost: 0. Result: explained. No public post.
