@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>supEars — 10/10</title>
+<meta name="description" content="supEars. The Ear that understands your language. 10 out of 10 — 2026-10-10.">
+<style>
+  :root { --bg: #000; --fg: #fff; --mut: #999; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: Arial, Helvetica, sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 8vh 6vw; text-align: center; }
+  .brand { font-size: clamp(28px, 5vw, 54px); font-weight: bold; letter-spacing: 1px; }
+  .tag { color: var(--mut); margin-top: 8px; font-size: clamp(14px, 2.4vw, 20px); }
+  .ten { font-size: clamp(60px, 14vw, 150px); font-weight: bold; margin-top: 6vh; line-height: 1; }
+  .date { font-size: clamp(18px, 3.4vw, 30px); margin-top: 6px; }
+  #count { display: flex; gap: 4vw; margin-top: 5vh; flex-wrap: wrap; justify-content: center; }
+  #count div { min-width: 76px; }
+  #count b { display: block; font-size: clamp(30px, 6vw, 56px); }
+  #count span { color: var(--mut); font-size: 13px; text-transform: uppercase; letter-spacing: 2px; }
+  .qa { max-width: 720px; margin-top: 9vh; text-align: left; }
+  .qa h2 { font-size: clamp(20px, 3.4vw, 30px); margin-bottom: 4vh; text-align: center; }
+  .q { margin-bottom: 4vh; border-left: 3px solid var(--fg); padding-left: 18px; }
+  .q p.u { color: var(--mut); font-size: clamp(15px, 2.4vw, 19px); margin-bottom: 8px; }
+  .q p.a { font-size: clamp(17px, 2.8vw, 22px); line-height: 1.5; }
+  .notify { margin-top: 7vh; }
+  .notify a { color: var(--fg); font-size: clamp(16px, 2.6vw, 20px); }
+  footer { margin-top: auto; padding-top: 8vh; color: var(--mut); font-size: 13px; }
+</style>
+</head>
+<body>
+  <div class="brand">supEars</div>
+  <div class="tag">The Ear that understands your language.</div>
+
+  <div class="ten">10 / 10</div>
+  <div class="date">2026-10-10</div>
+  <div id="count" aria-live="off">
+    <div><b id="d">–</b><span>days</span></div>
+    <div><b id="h">–</b><span>hours</span></div>
+    <div><b id="m">–</b><span>minutes</span></div>
+    <div><b id="s">–</b><span>seconds</span></div>
+  </div>
+
+  <section class="qa">
+    <h2>Two questions you may ask.</h2>
+    <div class="q">
+      <p class="u">“I can build the same thing with AI.”</p>
+      <p class="a">OK — go make yours with AI. I spent months deciding and preparing this tool for the future, so it is ready to use now. If you want to build yours, spend your tokens, your time — or use this tool for all the possibilities.</p>
+    </div>
+    <div class="q">
+      <p class="u">“I can use a cloud tool and get it done faster.”</p>
+      <p class="a">In our tool you send no data — not your ideas, not your texts — to the big corporations. You work in private mode. Everything happens inside your computer. Things never fly around.</p>
+    </div>
+  </section>
+
+  <div class="notify"><a href="https://github.com/humbleangel/supEars_Official/issues">Get notified at alpha.</a></div>
+
+  <footer>No download yet — alpha 0.90 comes first. Windows today; Mac and Linux on the roadmap.</footer>
+
+<script>
+(function () {
+  var target = new Date("2026-10-10T00:00:00Z").getTime();
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function tick() {
+    var diff = target - Date.now();
+    if (diff <= 0) {
+      document.getElementById("count").innerHTML = "<div><b>10/10</b><span>today</span></div>";
+      return;
+    }
+    var d = Math.floor(diff / 864e5),
+        h = Math.floor(diff / 36e5) % 24,
+        m = Math.floor(diff / 6e4) % 60,
+        s = Math.floor(diff / 1e3) % 60;
+    document.getElementById("d").textContent = d;
+    document.getElementById("h").textContent = pad(h);
+    document.getElementById("m").textContent = pad(m);
+    document.getElementById("s").textContent = pad(s);
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>
+</body>
+</html>
