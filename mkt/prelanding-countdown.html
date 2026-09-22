@@ -3,42 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>supEars — 10/10</title>
-<meta name="description" content="supEars. The Ear that understands your language. 10 out of 10 — 2026-10-10.">
+<title>supEars — 10 out of 10, 2026-10-10</title>
+<meta name="description" content="supEars. The Ear that understands your language. Launch day 2026-10-10: 10 out of 10. Join the waitlist.">
 <style>
   :root { --bg: #000; --fg: #fff; --mut: #999; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: var(--bg); color: var(--fg); font-family: Arial, Helvetica, sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 8vh 6vw; text-align: center; }
-  .brand { font-size: clamp(28px, 5vw, 54px); font-weight: bold; letter-spacing: 1px; }
-  .tag { color: var(--mut); margin-top: 8px; font-size: clamp(14px, 2.4vw, 20px); }
-  .ten { font-size: clamp(60px, 14vw, 150px); font-weight: bold; margin-top: 6vh; line-height: 1; }
-  .date { font-size: clamp(18px, 3.4vw, 30px); margin-top: 6px; }
-  #count { display: flex; gap: 4vw; margin-top: 5vh; flex-wrap: wrap; justify-content: center; }
-  #count div { min-width: 76px; }
-  #count b { display: block; font-size: clamp(30px, 6vw, 56px); }
-  #count span { color: var(--mut); font-size: 13px; text-transform: uppercase; letter-spacing: 2px; }
-  .qa { max-width: 720px; margin-top: 9vh; text-align: left; }
-  .qa h2 { font-size: clamp(20px, 3.4vw, 30px); margin-bottom: 4vh; text-align: center; }
+  body { background: var(--bg); color: var(--fg); font-family: Arial, Helvetica, sans-serif; text-align: center; }
+  .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 4vh 6vw; gap: 2vh; }
+  .hero img.ear { width: clamp(120px, 22vw, 220px); height: auto; }
+  .brand { font-size: clamp(30px, 5vw, 52px); font-weight: bold; letter-spacing: 1px; }
+  .tag { color: var(--mut); font-size: clamp(14px, 2.4vw, 19px); }
+  .ten { font-size: clamp(22px, 4vw, 34px); font-weight: bold; max-width: 640px; line-height: 1.4; }
+  .ten small { display: block; color: var(--mut); font-weight: normal; font-size: clamp(14px, 2.4vw, 18px); margin-top: 1vh; }
+  #count { display: flex; gap: 5vw; justify-content: center; }
+  #count div { min-width: 64px; }
+  #count b { display: block; font-size: clamp(26px, 5vw, 44px); }
+  #count span { color: var(--mut); font-size: 12px; text-transform: uppercase; letter-spacing: 2px; }
+  .cta { display: inline-block; margin-top: 1vh; background: var(--fg); color: var(--bg); font-weight: bold; font-size: clamp(17px, 3vw, 22px); padding: 14px 42px; border-radius: 999px; text-decoration: none; }
+  .lock { color: var(--mut); font-size: clamp(13px, 2.2vw, 16px); }
+  .qa { max-width: 720px; margin: 0 auto; padding: 8vh 6vw; text-align: left; }
+  .qa h2 { font-size: clamp(20px, 3.4vw, 28px); margin-bottom: 4vh; text-align: center; }
   .q { margin-bottom: 4vh; border-left: 3px solid var(--fg); padding-left: 18px; }
   .q p.u { color: var(--mut); font-size: clamp(15px, 2.4vw, 19px); margin-bottom: 8px; }
   .q p.a { font-size: clamp(17px, 2.8vw, 22px); line-height: 1.5; }
-  .notify { margin-top: 7vh; }
-  .notify a { color: var(--fg); font-size: clamp(16px, 2.6vw, 20px); }
-  footer { margin-top: auto; padding-top: 8vh; color: var(--mut); font-size: 13px; }
+  footer { color: var(--mut); font-size: 13px; padding: 4vh 6vw 6vh; }
 </style>
 </head>
 <body>
-  <div class="brand">supEars</div>
-  <div class="tag">The Ear that understands your language.</div>
-
-  <div class="ten">10 / 10</div>
-  <div class="date">2026-10-10</div>
-  <div id="count" aria-live="off">
-    <div><b id="d">–</b><span>days</span></div>
-    <div><b id="h">–</b><span>hours</span></div>
-    <div><b id="m">–</b><span>minutes</span></div>
-    <div><b id="s">–</b><span>seconds</span></div>
-  </div>
+  <header class="hero">
+    <img class="ear" src="assets/supEarsEmblem.png" alt="supEars — the floating ear">
+    <div class="brand">supEars</div>
+    <div class="tag">The Ear that understands your language.</div>
+    <p class="ten">10 out of 10 — October 10, 2026, the day supEars goes alpha.
+      <small>Speak, release, appear. 100% offline. No account. The floating ear lands on your desktop.</small>
+    </p>
+    <div id="count" aria-live="off">
+      <div><b id="d">–</b><span>days</span></div>
+      <div><b id="h">–</b><span>hours</span></div>
+      <div><b id="m">–</b><span>minutes</span></div>
+      <div><b id="s">–</b><span>seconds</span></div>
+    </div>
+    <a class="cta" href="https://github.com/humbleangel/supEars_Official/issues">Join the waitlist</a>
+    <div class="lock">Come in now and lock the founder price — $25 forever, first 1,000 only, before it's gone.</div>
+  </header>
 
   <section class="qa">
     <h2>Two questions you may ask.</h2>
@@ -51,8 +58,6 @@
       <p class="a">In our tool you send no data — not your ideas, not your texts — to the big corporations. You work in private mode. Everything happens inside your computer. Things never fly around.</p>
     </div>
   </section>
-
-  <div class="notify"><a href="https://github.com/humbleangel/supEars_Official/issues">Get notified at alpha.</a></div>
 
   <footer>No download yet — alpha 0.90 comes first. Windows today; Mac and Linux on the roadmap.</footer>
 

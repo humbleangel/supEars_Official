@@ -293,6 +293,10 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: local preview only. Opened `mkt/prelanding-countdown.html` in Firefox per owner. No repo change except this log.
 - Cost: 0. Result: shown. No public post.
 
+## 2026-09-22 03:18 UTC — Prelanding rebuilt (owner: NOT good)
+- Channel: repo + Firefox preview. Owner verdict on v1: cryptic 10/10, key content below the fold, weak waitlist invite, no app identity. Rebuilt `mkt/prelanding-countdown.html`: one-viewport hero (ear emblem `assets/supEarsEmblem.png`, brand, 10/10 explained as alpha launch day + what the app is, compact countdown, big Join-the-waitlist button, founder-price lock line); the 2 questions moved below the fold. Reopened in Firefox per owner.
+- Cost: 0. Result: rebuilt; awaiting owner verdict. No public post.
+
 ## 2026-09-22 03:06 UTC — Sales system brief filed (in-app + on-site, 3 rails)
 - Channel: repo + dev folder. Owner: buy both in-app and on-site; bundle everything into one dev communication. Filed `mkt req/2026-09-22-0306-UTC-marketing-sales-brief.txt`: 2 places × 3 rails (direct PIX manual / Stripe links / Polar MoR+keys), one license window for all keys, static landing + Releases at alpha, locked tiers untouched, Q5/Q6 gated. `mkt/TASKS.md` tracks it; awaiting dev (feasibility, key format, wording needs).
 - Cost: 0. Result: filed. No public post.
