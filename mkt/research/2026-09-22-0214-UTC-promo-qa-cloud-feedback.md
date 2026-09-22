@@ -54,6 +54,11 @@ Founder confession (agent's shaping — owner to approve wording):
 
 Notes: vulnerability piece; pairs with Piece 4 ("I need help from the world") as its emotional twin — anxiety asks, Piece 4 invites. Story/dev-journey placement, off the landing.
 
+## Founder register: license now, software at launch (owner idea, filed 2026-09-22 03:59 UTC)
+
+- Join button → free Polar "Founder register" product (Checkout Link, $0) → Polar auto-emails a real license key → page says "you're on the register." Validates the full license pipeline pre-alpha; no software shipped. Verified in Polar docs: free products + license-key benefit + no-code links all exist.
+- Rules: success message must say license-not-software ("your license is registered, the app arrives at launch"); register keys must differ from paid founder keys (beta-tester keys vs forever keys — dev formats). Owner thinking; gated until he approves + creates the Polar product + dev confirms key types.
+
 ## Newcomer lock-in line for the new accounts (owner-ordered 2026-09-22 03:13 UTC)
 
 Text to carry on the new channel/account pages (bios, descriptions) for people arriving in the migration:

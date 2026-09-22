@@ -350,6 +350,10 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo + Firefox preview. Footer text links → six white inline-SVG brand icons (Simple Icons paths, self-hosted, zero external requests): YouTube, Reddit, X, Instagram, TikTok, Facebook. Reopened in Firefox.
 - Cost: 0. Result: shown. No public post.
 
+## 2026-09-22 03:59 UTC — Founder-register idea filed (owner thinking)
+- Channel: repo (no dev note — owner still deciding). Filed owner idea as decided: free Polar "Founder register" product + auto license keys + Join-link swap, with license-not-software honesty rule and register-vs-paid key distinction. Section in promo file + task in TASKS.md. Next needs: owner creates Polar product, dev confirms key types.
+- Cost: 0. Result: filed. No public post.
+
 ## 2026-09-22 03:53 UTC — Q&A: is the waitlist join real? (owner question)
 - Channel: repo (Q&A, no file change besides this log). Answered honestly: half-real — click opens the visitor's mail app with a prefilled email to the hub; nothing is stored or sent automatically; no mail client = dead click; only a manually-sent email reaches us. No capture, no confirmation, no list. Offered the $0 fix for launch: free form endpoint (Formspree/Basin 50/mo free, Formspark 250 free) replacing mailto before the page goes public. Awaiting owner decision.
 - Cost: 0. Result: answered. No public post.
