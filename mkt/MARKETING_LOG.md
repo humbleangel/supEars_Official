@@ -425,3 +425,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-22 05:40 UTC — Context re-read (owner order)
 - Channel: repo (no file change besides this log). Owner: reread files to regain context before continuing. Re-read `mkt/MARKETING_HANDOFF.md`, `mkt/TASKS.md`, `mkt/channels.md`, `mkt/MARKETING_LOG.md` tail. State confirmed: prelanding + demand wall built and previewed; 8 promo pieces filed; sales brief + Q4/Q5/Q6/Q7 with dev; education FUTURE filed; blockers = owner story text, dev answers, Pages 404, Polar product.
 - Cost: 0. Result: ready. No public post.
+
+## 2026-09-22 05:50 UTC — Channel launch pack filed (owner: solve parked accounts)
+- Channel: repo. Owner: solve "everything else parked or awaiting creation". Filed NEW `mkt/research/2026-09-22-0550-UTC-channel-launch-pack.md`: hub+handle rule, copy-paste kit (short bio, long about, pinned founder post, waitlist link — all approved voice), per-platform creation steps + fastest-first order for all 8 Phase-1 accounts. `mkt/TASKS.md` copy-pack line → PREPARED. Note: same bad-edit slip as 05:37 (dropped the promo-pieces line), restored and verified both lines via grep before commit.
+- Cost: 0. Result: filed; account creation is owner's action. No public post.

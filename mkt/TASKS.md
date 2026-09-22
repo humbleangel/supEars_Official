@@ -33,7 +33,7 @@ Why: global networks are banned or weak in CN/RU; India banned TikTok. Picks gro
 - [ ] First video: 1920×1080 white-on-black text frames at 24fps (owner-locked 2026-09-22 04:25 UTC; 30fps container also fine, 24 chosen) — blocked on owner story text.
 - [ ] "Policy vs Architecture" 60–90s cut — needs owner approval to start.
 - [ ] 10/10 countdown — blocked on dev Q4 (alpha readiness, asked 2026-09-22 01:27 UTC) + owner approval. 18 days out.
-- [ ] Per-channel copy pack (bios, banner lines, waitlist links) once Phase 1 accounts exist — approved voice only (§3 taglines, locked prices, no competitor names).
+- [ ] Per-channel copy pack PREPARED (owner-ordered 2026-09-22 05:50 UTC; pack in `mkt/research/2026-09-22-0550-UTC-channel-launch-pack.md`): short bio + long about + pinned founder post + waitlist link, all approved voice. Activates as owner creates each account; agent registers handles in `mkt/channels.md`.
 - [ ] 8 promo pieces (owner-ordered 2026-09-22 02:14/02:19/02:21/02:23/02:27/02:58/04:01 UTC; drafts in `mkt/research/2026-09-22-0214-UTC-promo-qa-cloud-feedback.md`): "build it with AI" + "cloud tool is faster" + "runs on CPU, no GPU needed" + "I need help from the world" + "AI will not replace humans" + "ask me for more free days" + "developer's anxiety" + "vibecoder: the part nobody teaches". Piece 2 naming TBD (generic vs rival name — owner to confirm).
 - [x] Prelanding page BUILT (owner-ordered 2026-09-22 03:13 UTC): fresh `mkt/prelanding-countdown.html` — countdown to 10/10 + the 2 user questions only. Existing files untouched.
 - [ ] Newcomer lock-in line on all new account pages (owner-ordered 2026-09-22 03:13 UTC; text in promo file): "$25 forever, first 1,000 only, before it's gone."
