@@ -210,3 +210,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Channel: repo (status note, no file). Owner relayed YouTube's message: "Seu canal está sendo criado. Verifique novamente em alguns instantes." (channel provisioning — normal, takes a few minutes).
 - Told owner: wait ~5 minutes, refresh youtube.com, check avatar → Switch account for the new supEars channel; then send channel ID + handle for `mkt/channels.md`. Nothing else to do on our side until it appears.
 - Cost: 0. Result: waiting on YouTube provisioning; no public post.
+
+## 2026-09-22 01:54 UTC — Hub YouTube channel LIVE, registered
+- Channel: repo. Owner created the redo under the hub: ID `UCznNnUBltWG8lrSXC39e5lw`, name supEars, handle @supEars — public page verified live ("supEars - YouTube"), owner screenshot confirms ownership (customize + manage buttons). `mkt/channels.md` rewritten: new channel LIVE, old ID kept as one-line superseded history. Countdown "no channel" blocker cleared again; remaining launch blockers: dev Q4 answer + owner approval. Still open (cosmetic): banner.
+- Cost: 0. Result: registered; no public post.
