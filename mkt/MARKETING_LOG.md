@@ -218,3 +218,8 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-22 01:59 UTC — Future-tasks file created (owner order)
 - Channel: repo. Owner: add future tasks as `mkt/TASKS.md` + mass-market/country-specific extras (CN/RU/IN/others). Ran 4 web research passes; filed NEW `mkt/TASKS.md`: Phase 1 (TikTok, IG, FB Page, X, Threads, Telegram channel, WhatsApp Channel, Kwai — OWNER creates under hub; agent cannot pass phone verification), Phase 2 (VK+Rutube+Dzen / Xiaohongshu-first-CN / Moj-ShareChat-IN-gated-on-local-number / LINE+Kakao-only-if-local-number), Phase 3 (video + countdown + copy pack), sources listed. YouTube + Reddit marked done/existing.
 - Cost: 0. Result: filed; account creation is owner's action — agent guides per platform on request. No public post.
+
+## 2026-09-22 02:06 UTC — Q&A: keep or cut Threads / Telegram / WhatsApp?
+- Channel: repo (Q&A, no file). Owner: how are we supposed to be on those three — leaning to remove them.
+- Answer given: split them. Telegram + WhatsApp Channels are one-way broadcast rails (post the countdown video + one line, done; no replies owed, no algorithm to feed) and they are exactly where our target markets live (Telegram ~96M RU / 104M IN / 55.8% BR reach; WhatsApp 536M IN / 93.9% BR) — recommend KEEP as zero-effort announcement rails. Threads is a hungry text feed that demands native posting + replies and overlaps our IG audience — recommend CUT active posting, only park the handle (free, blocks squats). Same park-only logic offered for any Phase 2 handle. No file changed — awaiting owner decision before editing `mkt/TASKS.md`.
+- Cost: 0. Result: recommendation given; no public post.
