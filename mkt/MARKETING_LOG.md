@@ -271,3 +271,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 - Researched (2 passes): real `.dj` costs $59+/yr so his is a free shared subdomain (afraid.org-style: free account → up to 5 subdomains off shared domains); same-pattern `supears.app.dj` should be creatable the same way he made his, then CNAME to GitHub Pages. Registered both in `mkt/channels.md` (new Domains section); his URL didn't resolve on fetch — asked him to confirm it loads.
 - Answered (2): yes — Polar already pays out through Stripe Connect under the hood, and both link systems can run side by side; recommend Polar links for license sales (tax + keys) with Stripe optional later for extras (donations), not two parallel stores.
 - Cost: 0. Result: registered + answered. No public post.
+
+## 2026-09-22 03:03 UTC — PIX for Brazil researched + tasked
+- Channel: repo (Q&A, no dev note). Owner (in Brasil): add PIX too. Researched (2 passes, Stripe docs): Stripe supports PIX on Payment Links/Checkout — but BR accounts get it invite-only after 60 days processing history; no evidence Polar supports PIX. Plan filed in `mkt/TASKS.md`: Polar links for global cards, Stripe+PIX for Brazil, apply for PIX access early. BR Pix price line already locked in handoff §2 (no price change).
+- Cost: 0. Result: filed + answered. No public post.
