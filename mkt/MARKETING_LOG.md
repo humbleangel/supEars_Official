@@ -237,3 +237,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-22 02:19 UTC — Promo piece 3 added: CPU-only, no GPU needed
 - Channel: repo. Owner: software runs on CPU; many lack a decent video card for AI models — a tutorial angle to win new users. Added Piece 3 to `mkt/research/2026-09-22-0214-UTC-promo-qa-cloud-feedback.md` ("supEars is built for CPU..."); TASKS.md promo line updated 2→3. My readings: "video 4d" = GPU/video card, "daily models" = local AI models. No speed numbers claimed (unmeasured).
 - Cost: 0. Result: filed; needs owner approval before any public use. No public post.
+
+## 2026-09-22 02:20 UTC — Owner confirmed piece-3 readings
+- Channel: repo (Q&A, no file change besides this log). Owner "yea": "video 4d" = GPU/video card, "daily models" = local AI models. Piece 3 draft stands as filed.
+- Cost: 0. Result: confirmed. No public post.
