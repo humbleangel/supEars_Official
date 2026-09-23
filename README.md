@@ -6,7 +6,7 @@
 
 <div align="center">
 
-Speak in your own native language. A floating ear for Windows: click (or hotkey), speak — supEars transcribes, translates, and pastes where you type. Single offline `.exe`, no account.
+Speak in your own native language. supEars translates and transcribes pasting where you are.
 
 **Pre-alpha v0.8.71 — no public download yet.**<br/>
 **Beta opens October 10, 2026 — [join the beta group](https://github.com/humbleangel/supEars_Official/issues).**
