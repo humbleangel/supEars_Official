@@ -7,12 +7,12 @@
 Speak in your own native language.<br/>
 supEars translates and transcribes pasting where you are.
 
-**Pre-alpha v0.8.71. not public yet.**<br/>
+**Pre-alpha v0.8.71. Not public yet.**<br/>
 **Beta opens at October 10, 2026. [Join the beta group.](https://github.com/humbleangel/supEars_Official/issues)**
 
-Escape the Bit Tech Corps Subscriptions Traps.<br/>
+Escape the Big Tech Corps Subscriptions Traps.<br/>
 100% Offline Transcription. No Credit Card. No Account. No Cloud. No money to MegaCorps.<br/>
-Windows. Mac and Linux versions under development.
+Windows only now. Mac and Linux versions planned and under development.
 
 [YouTube @supEars](https://www.youtube.com/channel/UCznNnUBltWG8lrSXC39e5lw) · [Reddit u/humbleangel](https://www.reddit.com/user/humbleangel)
 
@@ -108,10 +108,9 @@ Windows. Mac and Linux versions under development.
   <img src="mkt/video/flags/vn.png" height="20" alt="vn"/>
 </p>
 
-## This repo
+## This repo is
 
-The public marketing and storefront home — landing pages, videos, demand research, channel register, GPU feedbacks.
-The product code lives in a private repo. No download links appear until the beta is ready.
+The public marketing and storefront home — landing pages, videos, demand research, channel register, feedbacks. The product code lives in a private repo. Download links soon.
 
 ## Roadmap
 
