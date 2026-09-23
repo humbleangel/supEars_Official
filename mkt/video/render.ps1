@@ -56,9 +56,10 @@ $Fonts = @{
 $Langs = @()
 Get-Content -Encoding UTF8 $LangsFile | Where-Object { $_.Trim() -ne "" } | ForEach-Object {
   $p = $_.Split("|")
+  if ($p.Count -lt 3) { throw "langs.txt lines need native|font|english" }
   $key = $p[1].Trim()
   if (-not $Fonts.ContainsKey($key)) { throw "Unknown font key '$key' in langs.txt" }
-  $Langs += @{ t = $p[0].Trim(); f = $key }
+  $Langs += @{ t = $p[0].Trim(); f = $key; e = $p[2].Trim() }
 }
 if ($Langs.Count -eq 0) { throw "langs.txt is empty" }
 
@@ -85,12 +86,12 @@ $FadeEnd = "if(lt(t\,15.3)\,(t-15)/0.3\,if(gt(t\,19.7)\,(20-t)/0.3\,1))"
 $Orientations = @(
   @{ Name = "land"; W = 1920; H = 1080; ZS = "3840:2160"; TagSplit = $false
      EmY = 142; EmS = 260
-     TagY = 500; LangY = 660; LangS = 84
+     TagY = 500; LangY = 660; LangS = 84; Lang2Y = 760; Lang2S = 44
      NumY = 430; NumS = 190; WordY = 640; WordS = 52
      DLY = 720; DLS = 62; DateY = 790; Dates = 62; UrlY = 870; UrlS = 38 },
   @{ Name = "vertical"; W = 1080; H = 1920; ZS = "2160:3840"; TagSplit = $true
      EmY = 574; EmS = 240
-     TagY = 880; LangY = 1090; LangS = 76
+     TagY = 880; LangY = 1090; LangS = 76; Lang2Y = 1180; Lang2S = 40
      NumY = 845; NumS = 200; WordY = 1065; WordS = 50
      DLY = 1145; DLS = 58; DateY = 1225; Dates = 58; UrlY = 1305; UrlS = 34 }
 )
@@ -108,6 +109,7 @@ foreach ($o in $Orientations) {
     $e = $s + $slot
     $a = "if(lt(t\,$(N ($s + 0.05)))\,(t-$(N $s))/0.05\,if(gt(t\,$(N ($e - 0.05)))\,($(N $e)-t)/0.05\,1))"
     $langDt += DrawText $Fonts[$Langs[$i].f] "" $o.LangS "(w-text_w)/2" $o.LangY "between(t,$(N $s),$(N $e))" $a $Langs[$i].tf
+    $langDt += DrawText $Fonts.main "($($Langs[$i].e))" $o.Lang2S "(w-text_w)/2" $o.Lang2Y "between(t,$(N $s),$(N $e))" $a
   }
 
   $dt = @()
