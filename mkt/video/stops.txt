@@ -1,0 +1,25 @@
+English|Stop paying subscriptions.
+Portuguese|Pare de pagar assinaturas.
+Chinese|停止支付订阅费。
+Spanish|Deja de pagar suscripciones.
+French|Arrêtez de payer des abonnements.
+Japanese|サブスクの支払いをやめよう。
+German|Hör auf, Abos zu bezahlen.
+Korean|구독 결제를 그만하세요.
+Italian|Smetti di pagare gli abbonamenti.
+Hindi|सदस्यता शुल्क देना बंद करें।
+Russian|Хватит платить за подписки.
+Thai|เลิกจ่ายค่าสมาชิก
+Ukrainian|Досить платити за підписки.
+Arabic|توقف عن دفع الاشتراكات.
+Dutch|Stop met betalen van abonnementen.
+Urdu|سبسکرپشن کی ادائیگی بند کریں۔
+Polish|Przestań płacić za subskrypcje.
+Turkish|Abonelik ücreti ödemeyi bırak.
+Czech|Přestaňte platit předplatné.
+Hungarian|Ne fizess előfizetésekért.
+Greek|Σταμάτα να πληρώνεις συνδρομές.
+Romanian|Nu mai plăti abonamente.
+Swedish|Sluta betala prenumerationer.
+Indonesian|Berhenti bayar langganan.
+Vietnamese|Ngừng trả tiền đăng ký.

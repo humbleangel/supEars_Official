@@ -19,6 +19,7 @@ $Repo      = (Resolve-Path (Join-Path $PSScriptRoot "..\..")).Path
 $Logo      = Join-Path $Repo "mkt\assets\supEarsLogoV3.png"
 $Emblem    = Join-Path $Repo "mkt\assets\supEarsEmblem.png"
 $LangsFile = Join-Path $VideoDir "langs.txt"
+$StopsFile = Join-Path $VideoDir "stops.txt"
 if (-not $Music) { $Music = Join-Path $VideoDir "music_instant40.m4a" }
 $FontDir   = "C:\Users\777\AppData\Local\Temp\opencode\fonts"
 
@@ -32,9 +33,10 @@ $FFADE     = 0.3       # element fade length
 $FPS       = 12        # output framerate (owner: film look)
 
 $TAGLINE  = "The Ear that understands your language."
-$DATE     = "October 10, 2026"
+$DATE     = "Launch: October 10, 2026"
 $DAYSWORD = "DAYS TO GO"
-$DL       = "Download free"
+$DL       = "Download for Free Now."
+$JOIN     = "Join the Beta Group."
 $URL      = "github.com/humbleangel/supEars_Official"
 
 # flags under each language (flagcdn.com PNGs, public domain; keyed by langs.txt english column)
@@ -70,7 +72,7 @@ $FlagMap = @{
 
 function FF([string]$p) { ($p -replace '\\', '/') -replace ':', '\:' }
 function N([double]$v) { $v.ToString('0.###', [System.Globalization.CultureInfo]::InvariantCulture) }
-function DTEsc([string]$s) { $s -replace "'", "\'" }
+function DTEsc([string]$s) { ($s -replace "'", "\'") -replace ":", "\:" }
 
 $Fonts = @{
   main = FF "$env:WINDIR\Fonts\segoeui.ttf"
@@ -96,10 +98,23 @@ if ($Langs.Count -eq 0) { throw "langs.txt is empty" }
 $TmpDir = Join-Path $VideoDir "tmp"
 if (-not (Test-Path $TmpDir)) { New-Item -ItemType Directory -Path $TmpDir | Out-Null }
 $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+$StopMap = @{}
+if (Test-Path $StopsFile) {
+  Get-Content -Encoding UTF8 $StopsFile | Where-Object { $_.Trim() -ne "" } | ForEach-Object {
+    $p = $_.Split("|")
+    if ($p.Count -ge 2) { $StopMap[$p[0].Trim()] = $p[1].Trim() }
+  }
+}
 for ($i = 0; $i -lt $Langs.Count; $i++) {
   $tp = Join-Path $TmpDir ("lang_{0:d2}.txt" -f $i)
   [System.IO.File]::WriteAllText($tp, $Langs[$i].t, $utf8NoBom)
   $Langs[$i].tf = (FF $tp)
+  $Langs[$i].sf = $null
+  if ($StopMap.ContainsKey($Langs[$i].e)) {
+    $sp = Join-Path $TmpDir ("stop_{0:d2}.txt" -f $i)
+    [System.IO.File]::WriteAllText($sp, $StopMap[$Langs[$i].e], $utf8NoBom)
+    $Langs[$i].sf = (FF $sp)
+  }
 }
 
 # build one flag strip per language (flagcdn PNGs, pre-composited with a dark gap)
@@ -142,17 +157,17 @@ $Orientations = @(
   @{ Name = "land"; W = 1920; H = 1080; ZS = "3840:2160"; TagSplit = $false; Zoom = 0.10
      EmY = 142; EmS = 260
      TagY = 500; LangY = 660; LangS = 84; Lang2Y = 760; Lang2S = 44
-     FlagH = 54; FlagY = 830
-     SupY = 415; SupS = 70
-     NumY = 515; NumS = 190; WordY = 750; WordS = 52
-     DLY = 825; DLS = 62; DateY = 895; Dates = 62; UrlY = 970; UrlS = 38 },
+     FlagH = 54; FlagY = 830; StopY = 905; StopS = 40
+     SupY = 400; SupS = 70
+     NumY = 490; NumS = 190; WordY = 720; WordS = 52
+     DLY = 790; DLS = 62; JoinY = 870; DateY = 950; Dates = 62; UrlY = 1025; UrlS = 38 },
   @{ Name = "vertical"; W = 1080; H = 1920; ZS = "2160:3840"; TagSplit = $true; Zoom = 0.20
      EmY = 574; EmS = 240
      TagY = 880; LangY = 1090; LangS = 76; Lang2Y = 1180; Lang2S = 40
-     FlagH = 48; FlagY = 1245
-     SupY = 825; SupS = 64
-     NumY = 925; NumS = 200; WordY = 1170; WordS = 50
-     DLY = 1245; DLS = 58; DateY = 1325; Dates = 58; UrlY = 1405; UrlS = 34 }
+     FlagH = 48; FlagY = 1245; StopY = 1320; StopS = 36
+     SupY = 820; SupS = 64
+     NumY = 905; NumS = 200; WordY = 1150; WordS = 50
+     DLY = 1220; DLS = 58; JoinY = 1298; DateY = 1376; Dates = 58; UrlY = 1455; UrlS = 34 }
 )
 
 foreach ($o in $Orientations) {
@@ -171,6 +186,9 @@ foreach ($o in $Orientations) {
     $a = "if(lt(t\,$(N ($s + 0.1)))\,(t-$(N $s))/0.1\,if(gt(t\,$(N ($e - 0.1)))\,($(N $e)-t)/0.1\,1))"
     $langDt += DrawText $Fonts[$Langs[$i].f] "" $o.LangS "(w-text_w)/2" $o.LangY "between(t,$(N $s),$(N $e))" $a $Langs[$i].tf
     $langDt += DrawText $Fonts.main "($($Langs[$i].e))" $o.Lang2S "(w-text_w)/2" $o.Lang2Y "between(t,$(N $s),$(N $e))" $a
+    if ($Langs[$i].sf) {
+      $langDt += DrawText $Fonts[$Langs[$i].f] "" $o.StopS "(w-text_w)/2" $o.StopY "between(t,$(N $s),$(N $e))" $a $Langs[$i].sf
+    }
   }
 
   # flag overlays under the language name, same slot window
@@ -195,6 +213,7 @@ foreach ($o in $Orientations) {
   $dt += DrawText $Fonts.bold "$Days" $o.NumS "(w-text_w)/2" $o.NumY "between(t,35,40)" $FadeEnd
   $dt += DrawText $Fonts.main $DAYSWORD $o.WordS "(w-text_w)/2" $o.WordY "between(t,35,40)" $FadeEnd
   $dt += DrawText $Fonts.bold $DL $o.DLS "(w-text_w)/2" $o.DLY "between(t,35,40)" $FadeEnd
+  $dt += DrawText $Fonts.main $JOIN $o.DLS "(w-text_w)/2" $o.JoinY "between(t,35,40)" $FadeEnd
   $dt += DrawText $Fonts.bold $DATE $o.Dates "(w-text_w)/2" $o.DateY "between(t,35,40)" $FadeEnd
   $dt += DrawText $Fonts.main $URL $o.UrlS "(w-text_w)/2" $o.UrlY "between(t,35,40)" $FadeEnd
 
