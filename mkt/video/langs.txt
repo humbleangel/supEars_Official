@@ -1,6 +1,6 @@
 English|main|English
 Português |main|Portuguese 
-中文|sc|Chinese (Simplified)
+中文|sc|Chinese
 Español|main|Spanish
 Français|main|French
 日本語|jp|Japanese

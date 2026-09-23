@@ -84,16 +84,18 @@ $FadeIn  = "if(lt(t\,0.3)\,t/0.3\,if(gt(t\,34.7)\,(35-t)/0.3\,1))"
 $FadeEnd = "if(lt(t\,35.3)\,(t-35)/0.3\,if(gt(t\,39.7)\,(40-t)/0.3\,1))"
 
 $Orientations = @(
-  @{ Name = "land"; W = 1920; H = 1080; ZS = "3840:2160"; TagSplit = $false
+  @{ Name = "land"; W = 1920; H = 1080; ZS = "3840:2160"; TagSplit = $false; Zoom = 0.10
      EmY = 142; EmS = 260
      TagY = 500; LangY = 660; LangS = 84; Lang2Y = 760; Lang2S = 44
-     NumY = 430; NumS = 190; WordY = 640; WordS = 52
-     DLY = 720; DLS = 62; DateY = 790; Dates = 62; UrlY = 870; UrlS = 38 },
-  @{ Name = "vertical"; W = 1080; H = 1920; ZS = "2160:3840"; TagSplit = $true
+     SupY = 415; SupS = 70
+     NumY = 515; NumS = 190; WordY = 750; WordS = 52
+     DLY = 825; DLS = 62; DateY = 895; Dates = 62; UrlY = 970; UrlS = 38 },
+  @{ Name = "vertical"; W = 1080; H = 1920; ZS = "2160:3840"; TagSplit = $true; Zoom = 0.20
      EmY = 574; EmS = 240
      TagY = 880; LangY = 1090; LangS = 76; Lang2Y = 1180; Lang2S = 40
-     NumY = 845; NumS = 200; WordY = 1065; WordS = 50
-     DLY = 1145; DLS = 58; DateY = 1225; Dates = 58; UrlY = 1305; UrlS = 34 }
+     SupY = 825; SupS = 64
+     NumY = 925; NumS = 200; WordY = 1170; WordS = 50
+     DLY = 1245; DLS = 58; DateY = 1325; Dates = 58; UrlY = 1405; UrlS = 34 }
 )
 
 foreach ($o in $Orientations) {
@@ -120,6 +122,7 @@ foreach ($o in $Orientations) {
     $dt += DrawText $Fonts.main $TAGLINE 60 "(w-text_w)/2" $o.TagY "between(t,0,35)" $FadeIn
   }
   $dt += $langDt
+  $dt += DrawText $Fonts.bold "supEars" $o.SupS "(w-text_w)/2" $o.SupY "between(t,35,40)" $FadeEnd
   $dt += DrawText $Fonts.bold "$Days" $o.NumS "(w-text_w)/2" $o.NumY "between(t,35,40)" $FadeEnd
   $dt += DrawText $Fonts.main $DAYSWORD $o.WordS "(w-text_w)/2" $o.WordY "between(t,35,40)" $FadeEnd
   $dt += DrawText $Fonts.bold $DL $o.DLS "(w-text_w)/2" $o.DLY "between(t,35,40)" $FadeEnd
@@ -132,7 +135,7 @@ foreach ($o in $Orientations) {
         "[cv][em]overlay=(W-w)/2:$($o.EmY)[c1];" +
         "[0]scale=$($o.W):$($o.H):force_original_aspect_ratio=increase,crop=$($o.W):$($o.H),gblur=sigma=$BGLUR,eq=brightness=$DARKEN,format=gbrp[bg];" +
         "[bg][c1]blend=all_mode=screen,format=yuv420p[scr];" +
-        "[scr]" + ($dt -join ",") + ",scale=$($o.ZS),zoompan=z='1+$ZOOM*on/959':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=$($o.W)x$($o.H):fps=$FPS,fade=t=in:st=0:d=0.3,fade=t=out:st=39.7:d=0.3[v]"
+        "[scr]" + ($dt -join ",") + ",scale=$($o.ZS),zoompan=z='1+$($o.Zoom)*on/959':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=$($o.W)x$($o.H):fps=$FPS,fade=t=in:st=0:d=0.3,fade=t=out:st=39.7:d=0.3[v]"
 
   if ($o.Name -eq "vertical") { $outPath = Join-Path $VideoDir "$OutBase-vertical.mp4" }
   else { $outPath = Join-Path $VideoDir "$OutBase.mp4" }
