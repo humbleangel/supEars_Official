@@ -79,18 +79,18 @@ function DrawText([string]$font, [string]$text, [int]$size, [string]$x, [string]
   return $s
 }
 
-$FadeIn  = "if(lt(t\,0.3)\,t/0.3\,if(gt(t\,3.7)\,(4-t)/0.3\,1))"
+$FadeIn  = "if(lt(t\,0.3)\,t/0.3\,if(gt(t\,9.7)\,(10-t)/0.3\,1))"
 $FadeEnd = "if(lt(t\,10.3)\,(t-10)/0.3\,if(gt(t\,13.7)\,(14-t)/0.3\,1))"
 
 $Orientations = @(
   @{ Name = "land"; W = 1920; H = 1080; ZS = "3840:2160"; TagSplit = $false
-     Em1Y = 150; Em2Y = 60;  Em1S = 200; Em2S = 100
-     TagY = 500; LangY = 540; LangS = 84
+     Em1Y = 150; Em2Y = 50;  Em1S = 200; Em2S = 240
+     TagY = 500; LangY = 660; LangS = 84
      NumY = "(h/2-text_h)-170"; NumS = 190; WordY = "(h/2+10)"; WordS = 52
      DLY = "(h/2+80)"; DLS = 62; DateY = "(h/2+150)"; Dates = 62; UrlY = "(h/2+230)"; UrlS = 38 },
   @{ Name = "vertical"; W = 1080; H = 1920; ZS = "2160:3840"; TagSplit = $true
-     Em1Y = 520; Em2Y = 380; Em1S = 180; Em2S = 90
-     TagY = 880; LangY = 1000; LangS = 76
+     Em1Y = 520; Em2Y = 300; Em1S = 180; Em2S = 220
+     TagY = 880; LangY = 1090; LangS = 76
      NumY = "560"; NumS = 200; WordY = "1010"; WordS = 50
      DLY = "1100"; DLS = 58; DateY = "1190"; Dates = 58; UrlY = "1300"; UrlS = 34 }
 )
@@ -112,10 +112,10 @@ foreach ($o in $Orientations) {
 
   $dt = @()
   if ($o.TagSplit) {
-    $dt += DrawText $Fonts.main "The Ear that understands" 54 "(w-text_w)/2" $o.TagY "between(t,0,4)" $FadeIn
-    $dt += DrawText $Fonts.main "your language." 54 "(w-text_w)/2" ($o.TagY + 80) "between(t,0,4)" $FadeIn
+    $dt += DrawText $Fonts.main "The Ear that understands" 54 "(w-text_w)/2" $o.TagY "between(t,0,10)" $FadeIn
+    $dt += DrawText $Fonts.main "your language." 54 "(w-text_w)/2" ($o.TagY + 80) "between(t,0,10)" $FadeIn
   } else {
-    $dt += DrawText $Fonts.main $TAGLINE 60 "(w-text_w)/2" $o.TagY "between(t,0,4)" $FadeIn
+    $dt += DrawText $Fonts.main $TAGLINE 60 "(w-text_w)/2" $o.TagY "between(t,0,10)" $FadeIn
   }
   $dt += $langDt
   $dt += DrawText $Fonts.bold "$Days" $o.NumS "(w-text_w)/2" $o.NumY "between(t,10,14)" $FadeEnd
