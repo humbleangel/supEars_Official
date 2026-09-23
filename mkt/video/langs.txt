@@ -1,0 +1,26 @@
+English|main
+Português (BR)|main
+中文|sc
+Español|main
+Français|main
+日本語|jp
+Deutsch|main
+한국어|kr
+Italiano|main
+हिन्दी|in
+Русский|main
+ไทย|th
+Українська|main
+العربية|ar
+Nederlands|main
+اردو|ar
+Polski|main
+Türkçe|main
+Čeština|main
+Magyar|main
+Ελληνικά|main
+Română|main
+Svenska|main
+Português (PT)|main
+Indonesia|main
+Tiếng Việt|main
