@@ -449,3 +449,7 @@ Every entry: `YYYY-MM-DD HH:MM UTC`, channel, what went out (file/commit link), 
 ## 2026-09-22 22:21 UTC — ZenVoice lessons filed (owner find, second Indian builder)
 - Channel: repo (3 fetches: GitHub repo, yashchaudhary.dev, HF model). Owner: another Indian boy, app-only, market-shipped, X blocked, no IG. Findings: ZenVoice = private local-first macOS dictation, beta 0.4.5, Apache-2.0, 460 commits — with 0 stars / 0 forks / 0 issues. Filed `mkt/research/2026-09-22-2221-UTC-zenvoice-lessons.md`: build-only-zero-distribution cautionary tale (piece-8 material), no-single-voice rail logic, parked-handles-invisible, mac-only gap favors our Windows-CPU story, benchmark honesty worth copying, single-product focus, + Apache-2.0 Hindi fine-tune pointer for dev Q7 (suggest only). Name stays internal, never in public copy. Note: two more log-edit inversions while drafting (deleted 06:12 entry, restored verbatim); diff-verified before commit.
 - Cost: 0. Result: filed. No public post.
+
+## 2026-09-22 22:24 UTC — Working rule: new files, no more giant-file edits (owner order)
+- Channel: repo. Owner: too many edit mistakes — from now on updates go in NEW files as necessary, no more appending to giant files. Recorded in NEW `mkt/working-rules.md` (the rule applied to itself). This log entry is the last append; future updates get their own files.
+- Cost: 0. Result: recorded. No public post.
