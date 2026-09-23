@@ -1,5 +1,5 @@
 English|main|English
-Português (BR)|main|Portuguese (BR)
+Português |main|Portuguese 
 中文|sc|Chinese (Simplified)
 Español|main|Spanish
 Français|main|French
@@ -21,6 +21,5 @@ Magyar|main|Hungarian
 Ελληνικά|main|Greek
 Română|main|Romanian
 Svenska|main|Swedish
-Português (PT)|main|Portuguese (PT)
 Indonesia|main|Indonesian
 Tiếng Việt|main|Vietnamese

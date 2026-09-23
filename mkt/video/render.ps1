@@ -19,12 +19,12 @@ $Repo      = (Resolve-Path (Join-Path $PSScriptRoot "..\..")).Path
 $Logo      = Join-Path $Repo "mkt\assets\supEarsLogoV3.png"
 $Emblem    = Join-Path $Repo "mkt\assets\supEarsEmblem.png"
 $LangsFile = Join-Path $VideoDir "langs.txt"
-if (-not $Music) { $Music = Join-Path $VideoDir "music_instant20.m4a" }
+if (-not $Music) { $Music = Join-Path $VideoDir "music_instant40.m4a" }
 $FontDir   = "C:\Users\777\AppData\Local\Temp\opencode\fonts"
 
-$DUR       = 20        # total seconds
+$DUR       = 40        # total seconds
 $BRAND_END = 4         # languages start
-$LANG_END  = 15        # languages end / end card starts
+$LANG_END  = 35        # languages end / end card starts
 $BGLUR     = 8
 $DARKEN    = -0.25
 $ZOOM      = 0.10      # total push-in across the whole video
@@ -80,8 +80,8 @@ function DrawText([string]$font, [string]$text, [int]$size, [string]$x, [string]
   return $s
 }
 
-$FadeIn  = "if(lt(t\,0.3)\,t/0.3\,if(gt(t\,14.7)\,(15-t)/0.3\,1))"
-$FadeEnd = "if(lt(t\,15.3)\,(t-15)/0.3\,if(gt(t\,19.7)\,(20-t)/0.3\,1))"
+$FadeIn  = "if(lt(t\,0.3)\,t/0.3\,if(gt(t\,34.7)\,(35-t)/0.3\,1))"
+$FadeEnd = "if(lt(t\,35.3)\,(t-35)/0.3\,if(gt(t\,39.7)\,(40-t)/0.3\,1))"
 
 $Orientations = @(
   @{ Name = "land"; W = 1920; H = 1080; ZS = "3840:2160"; TagSplit = $false
@@ -114,25 +114,25 @@ foreach ($o in $Orientations) {
 
   $dt = @()
   if ($o.TagSplit) {
-    $dt += DrawText $Fonts.main "The Ear that understands" 54 "(w-text_w)/2" $o.TagY "between(t,0,15)" $FadeIn
-    $dt += DrawText $Fonts.main "your language." 54 "(w-text_w)/2" ($o.TagY + 80) "between(t,0,15)" $FadeIn
+    $dt += DrawText $Fonts.main "The Ear that understands" 54 "(w-text_w)/2" $o.TagY "between(t,0,35)" $FadeIn
+    $dt += DrawText $Fonts.main "your language." 54 "(w-text_w)/2" ($o.TagY + 80) "between(t,0,35)" $FadeIn
   } else {
-    $dt += DrawText $Fonts.main $TAGLINE 60 "(w-text_w)/2" $o.TagY "between(t,0,15)" $FadeIn
+    $dt += DrawText $Fonts.main $TAGLINE 60 "(w-text_w)/2" $o.TagY "between(t,0,35)" $FadeIn
   }
   $dt += $langDt
-  $dt += DrawText $Fonts.bold "$Days" $o.NumS "(w-text_w)/2" $o.NumY "between(t,15,20)" $FadeEnd
-  $dt += DrawText $Fonts.main $DAYSWORD $o.WordS "(w-text_w)/2" $o.WordY "between(t,15,20)" $FadeEnd
-  $dt += DrawText $Fonts.bold $DL $o.DLS "(w-text_w)/2" $o.DLY "between(t,15,20)" $FadeEnd
-  $dt += DrawText $Fonts.bold $DATE $o.Dates "(w-text_w)/2" $o.DateY "between(t,15,20)" $FadeEnd
-  $dt += DrawText $Fonts.main $URL $o.UrlS "(w-text_w)/2" $o.UrlY "between(t,15,20)" $FadeEnd
+  $dt += DrawText $Fonts.bold "$Days" $o.NumS "(w-text_w)/2" $o.NumY "between(t,35,40)" $FadeEnd
+  $dt += DrawText $Fonts.main $DAYSWORD $o.WordS "(w-text_w)/2" $o.WordY "between(t,35,40)" $FadeEnd
+  $dt += DrawText $Fonts.bold $DL $o.DLS "(w-text_w)/2" $o.DLY "between(t,35,40)" $FadeEnd
+  $dt += DrawText $Fonts.bold $DATE $o.Dates "(w-text_w)/2" $o.DateY "between(t,35,40)" $FadeEnd
+  $dt += DrawText $Fonts.main $URL $o.UrlS "(w-text_w)/2" $o.UrlY "between(t,35,40)" $FadeEnd
 
   # video chain: emblems overlay a black canvas (alpha-safe), THEN screen in gbrp (RGB)
-  $fc = "[1]scale=$($o.EmS):-1,fade=t=in:st=0:d=0.3,fade=t=out:st=19.7:d=0.3[em];" +
+  $fc = "[1]scale=$($o.EmS):-1,fade=t=in:st=0:d=0.3,fade=t=out:st=39.7:d=0.3[em];" +
         "[2]format=gbrp[cv];" +
         "[cv][em]overlay=(W-w)/2:$($o.EmY)[c1];" +
         "[0]scale=$($o.W):$($o.H):force_original_aspect_ratio=increase,crop=$($o.W):$($o.H),gblur=sigma=$BGLUR,eq=brightness=$DARKEN,format=gbrp[bg];" +
         "[bg][c1]blend=all_mode=screen,format=yuv420p[scr];" +
-        "[scr]" + ($dt -join ",") + ",scale=$($o.ZS),zoompan=z='1+$ZOOM*on/479':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=$($o.W)x$($o.H):fps=$FPS,fade=t=in:st=0:d=0.3,fade=t=out:st=19.7:d=0.3[v]"
+        "[scr]" + ($dt -join ",") + ",scale=$($o.ZS),zoompan=z='1+$ZOOM*on/959':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=$($o.W)x$($o.H):fps=$FPS,fade=t=in:st=0:d=0.3,fade=t=out:st=39.7:d=0.3[v]"
 
   if ($o.Name -eq "vertical") { $outPath = Join-Path $VideoDir "$OutBase-vertical.mp4" }
   else { $outPath = Join-Path $VideoDir "$OutBase.mp4" }
