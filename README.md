@@ -2,68 +2,121 @@
   <img src="mkt/assets/supEarsLogoV3.png" alt="supEars logo"/>
 </p>
 
-<h1 align="center">supEars — The Ear that understands your language.</h1>
-
 <div align="center">
 
-Speak in your own native language. supEars translates and transcribes pasting where you are.
+Speak in your own native language.<br/>
+supEars translates and transcribes pasting where you are.
 
-**Pre-alpha v0.8.71 — no public download yet.**<br/>
-**Beta opens October 10, 2026 — [join the beta group](https://github.com/humbleangel/supEars_Official/issues).**
+**Pre-alpha v0.8.71. not public yet.**<br/>
+**Beta opens at October 10, 2026. [Join the beta group.](https://github.com/humbleangel/supEars_Official/issues)**
 
-100% offline transcription. Your voice never leaves your computer. No account, no cloud, no telemetry.<br/>
-26 talk languages. Windows today — Mac + Linux on the roadmap.<br/>
-Escape the Subscriptions Traps: no auto-renewal, ever.
+Escape the Bit Tech Corps Subscriptions Traps.<br/>
+100% Offline Transcription. No Credit Card. No Account. No Cloud. No money to MegaCorps.<br/>
+Windows. Mac and Linux versions under development.
 
 [YouTube @supEars](https://www.youtube.com/channel/UCznNnUBltWG8lrSXC39e5lw) · [Reddit u/humbleangel](https://www.reddit.com/user/humbleangel)
 
 </div>
 
-## What it does
+- Speak in your language; supEars write in English or in any of the 26 supported languages.
+- Runs on old and new CPUs. no Graphics Card required
+- Free forever: 30 days; from day 31, 5 phrases/day.
+- Pro $4.99 / 1 month · $14 / 6 months · $39 lifetime license
+- $24.99 lifetime license only to early adopters (only to the first 1,000 users).
+- No subscriptions, no auto-renewal, ever.
 
-- Press the hotkey (or click the ear), speak, release — your words appear at the cursor, in any app.
-- Speak in your language; write in English or any of the 26 supported languages.
-- Runs on CPU — no GPU needed (developed and tested on a 15-year-old notebook).
-- Free forever: days 1–30 unlimited; from day 31, 5 completed phrases/day (cancelled recordings are free).
-- Paid removes the cap only — same quality: **$4.99 / 1 month · $15 / 6 months · $50 forever · $25 founding forever (first 1,000)**. No auto-renewal, ever.
-
-## Speak in your own native language
-
-- en: Speak in your own native language.
-- pt-BR: Fale no seu idioma.
-- pt-PT: Fala na tua língua.
-- es: Habla en tu idioma.
-- fr: Parlez dans votre langue maternelle.
-- de: Sprich in deiner Muttersprache.
-- it: Parla nella tua lingua.
-- ru: Говорите на родном языке.
-- uk: Говоріть рідною мовою.
-- nl: Spreek in je eigen moedertaal.
-- pl: Mów w swoim języku.
-- tr: Kendi dilinde konuş.
-- zh (Simplified): 用母语说话。
-- ja: 母語で話してください。
-- ko: 편한 언어로 말하세요.
-- hi: अपनी भाषा में बोलें।
-- cs: Mluvte svým jazykem.
-- hu: Beszélj anyanyelveden.
-- el: Μίλα στη μητρική σου γλώσσα.
-- ro: Vorbește în limba ta maternă.
-- sv: Tala på ditt modersmål.
-- id: Bicara dalam bahasa ibu Anda.
-- vi: Hãy nói bằng tiếng mẹ đẻ của bạn.
-- th: พูดด้วยภาษาของคุณ
-- ur: اپنی زبان میں بات کریں۔
-- ar: تحدث بلغتك الأم.
+<p align="center">
+  <img src="mkt/video/flags/ae.png" height="20" alt="ae"/>
+  <img src="mkt/video/flags/al.png" height="20" alt="al"/>
+  <img src="mkt/video/flags/ao.png" height="20" alt="ao"/>
+  <img src="mkt/video/flags/ar.png" height="20" alt="ar"/>
+  <img src="mkt/video/flags/at.png" height="20" alt="at"/>
+  <img src="mkt/video/flags/au.png" height="20" alt="au"/>
+  <img src="mkt/video/flags/aw.png" height="20" alt="aw"/>
+  <img src="mkt/video/flags/ax.png" height="20" alt="ax"/>
+  <img src="mkt/video/flags/be.png" height="20" alt="be"/>
+  <img src="mkt/video/flags/bg.png" height="20" alt="bg"/>
+  <img src="mkt/video/flags/br.png" height="20" alt="br"/>
+  <img src="mkt/video/flags/by.png" height="20" alt="by"/>
+  <img src="mkt/video/flags/ca.png" height="20" alt="ca"/>
+  <img src="mkt/video/flags/cd.png" height="20" alt="cd"/>
+  <img src="mkt/video/flags/ch.png" height="20" alt="ch"/>
+  <img src="mkt/video/flags/ci.png" height="20" alt="ci"/>
+  <img src="mkt/video/flags/cm.png" height="20" alt="cm"/>
+  <img src="mkt/video/flags/cn.png" height="20" alt="cn"/>
+  <img src="mkt/video/flags/co.png" height="20" alt="co"/>
+  <img src="mkt/video/flags/cv.png" height="20" alt="cv"/>
+  <img src="mkt/video/flags/cw.png" height="20" alt="cw"/>
+  <img src="mkt/video/flags/cy.png" height="20" alt="cy"/>
+  <img src="mkt/video/flags/cz.png" height="20" alt="cz"/>
+  <img src="mkt/video/flags/de.png" height="20" alt="de"/>
+  <img src="mkt/video/flags/dz.png" height="20" alt="dz"/>
+  <img src="mkt/video/flags/eg.png" height="20" alt="eg"/>
+  <img src="mkt/video/flags/es.png" height="20" alt="es"/>
+  <img src="mkt/video/flags/fi.png" height="20" alt="fi"/>
+  <img src="mkt/video/flags/fj.png" height="20" alt="fj"/>
+  <img src="mkt/video/flags/fr.png" height="20" alt="fr"/>
+  <img src="mkt/video/flags/gb.png" height="20" alt="gb"/>
+  <img src="mkt/video/flags/gr.png" height="20" alt="gr"/>
+  <img src="mkt/video/flags/hk.png" height="20" alt="hk"/>
+  <img src="mkt/video/flags/hr.png" height="20" alt="hr"/>
+  <img src="mkt/video/flags/hu.png" height="20" alt="hu"/>
+  <img src="mkt/video/flags/id.png" height="20" alt="id"/>
+  <img src="mkt/video/flags/in.png" height="20" alt="in"/>
+  <img src="mkt/video/flags/iq.png" height="20" alt="iq"/>
+  <img src="mkt/video/flags/it.png" height="20" alt="it"/>
+  <img src="mkt/video/flags/jp.png" height="20" alt="jp"/>
+  <img src="mkt/video/flags/kg.png" height="20" alt="kg"/>
+  <img src="mkt/video/flags/kh.png" height="20" alt="kh"/>
+  <img src="mkt/video/flags/kr.png" height="20" alt="kr"/>
+  <img src="mkt/video/flags/kz.png" height="20" alt="kz"/>
+  <img src="mkt/video/flags/la.png" height="20" alt="la"/>
+  <img src="mkt/video/flags/lt.png" height="20" alt="lt"/>
+  <img src="mkt/video/flags/lu.png" height="20" alt="lu"/>
+  <img src="mkt/video/flags/ma.png" height="20" alt="ma"/>
+  <img src="mkt/video/flags/md.png" height="20" alt="md"/>
+  <img src="mkt/video/flags/mu.png" height="20" alt="mu"/>
+  <img src="mkt/video/flags/mx.png" height="20" alt="mx"/>
+  <img src="mkt/video/flags/my.png" height="20" alt="my"/>
+  <img src="mkt/video/flags/mz.png" height="20" alt="mz"/>
+  <img src="mkt/video/flags/ng.png" height="20" alt="ng"/>
+  <img src="mkt/video/flags/nl.png" height="20" alt="nl"/>
+  <img src="mkt/video/flags/no.png" height="20" alt="no"/>
+  <img src="mkt/video/flags/np.png" height="20" alt="np"/>
+  <img src="mkt/video/flags/pe.png" height="20" alt="pe"/>
+  <img src="mkt/video/flags/ph.png" height="20" alt="ph"/>
+  <img src="mkt/video/flags/pk.png" height="20" alt="pk"/>
+  <img src="mkt/video/flags/pl.png" height="20" alt="pl"/>
+  <img src="mkt/video/flags/pt.png" height="20" alt="pt"/>
+  <img src="mkt/video/flags/ro.png" height="20" alt="ro"/>
+  <img src="mkt/video/flags/rs.png" height="20" alt="rs"/>
+  <img src="mkt/video/flags/ru.png" height="20" alt="ru"/>
+  <img src="mkt/video/flags/sa.png" height="20" alt="sa"/>
+  <img src="mkt/video/flags/sd.png" height="20" alt="sd"/>
+  <img src="mkt/video/flags/se.png" height="20" alt="se"/>
+  <img src="mkt/video/flags/sg.png" height="20" alt="sg"/>
+  <img src="mkt/video/flags/sk.png" height="20" alt="sk"/>
+  <img src="mkt/video/flags/sm.png" height="20" alt="sm"/>
+  <img src="mkt/video/flags/sr.png" height="20" alt="sr"/>
+  <img src="mkt/video/flags/th.png" height="20" alt="th"/>
+  <img src="mkt/video/flags/tl.png" height="20" alt="tl"/>
+  <img src="mkt/video/flags/tr.png" height="20" alt="tr"/>
+  <img src="mkt/video/flags/tw.png" height="20" alt="tw"/>
+  <img src="mkt/video/flags/ua.png" height="20" alt="ua"/>
+  <img src="mkt/video/flags/us.png" height="20" alt="us"/>
+  <img src="mkt/video/flags/va.png" height="20" alt="va"/>
+  <img src="mkt/video/flags/vn.png" height="20" alt="vn"/>
+</p>
 
 ## This repo
 
-The public marketing and storefront home — landing pages, videos, demand research, channel register. The product code lives in a private repo. No download links appear until the alpha is declared.
+The public marketing and storefront home — landing pages, videos, demand research, channel register, GPU feedbacks.
+The product code lives in a private repo. No download links appear until the beta is ready.
 
 ## Roadmap
 
 - Mac + Linux builds
-- Targeting 97% measured accuracy
+- GPU/Cloud Options
 - Public downloads at alpha 0.90
 
 supEars (c) · Developed by HumbleAngel 👼
