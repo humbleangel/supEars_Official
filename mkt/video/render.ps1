@@ -19,12 +19,12 @@ $Repo      = (Resolve-Path (Join-Path $PSScriptRoot "..\..")).Path
 $Logo      = Join-Path $Repo "mkt\assets\supEarsLogoV3.png"
 $Emblem    = Join-Path $Repo "mkt\assets\supEarsEmblem.png"
 $LangsFile = Join-Path $VideoDir "langs.txt"
-if (-not $Music) { $Music = Join-Path $VideoDir "music_instant14.m4a" }
+if (-not $Music) { $Music = Join-Path $VideoDir "music_instant20.m4a" }
 $FontDir   = "C:\Users\777\AppData\Local\Temp\opencode\fonts"
 
-$DUR       = 14        # total seconds
-$BRAND_END = 4         # brand screen: 0..4s
-$END_START = 10        # end card: 10..14s
+$DUR       = 20        # total seconds
+$BRAND_END = 4         # languages start
+$LANG_END  = 15        # languages end / end card starts
 $BGLUR     = 8
 $DARKEN    = -0.25
 $ZOOM      = 0.10      # total push-in across the whole video
@@ -79,20 +79,20 @@ function DrawText([string]$font, [string]$text, [int]$size, [string]$x, [string]
   return $s
 }
 
-$FadeIn  = "if(lt(t\,0.3)\,t/0.3\,if(gt(t\,9.7)\,(10-t)/0.3\,1))"
-$FadeEnd = "if(lt(t\,10.3)\,(t-10)/0.3\,if(gt(t\,13.7)\,(14-t)/0.3\,1))"
+$FadeIn  = "if(lt(t\,0.3)\,t/0.3\,if(gt(t\,14.7)\,(15-t)/0.3\,1))"
+$FadeEnd = "if(lt(t\,15.3)\,(t-15)/0.3\,if(gt(t\,19.7)\,(20-t)/0.3\,1))"
 
 $Orientations = @(
   @{ Name = "land"; W = 1920; H = 1080; ZS = "3840:2160"; TagSplit = $false
-     Em1Y = 150; Em2Y = 50;  Em1S = 200; Em2S = 240
+     EmY = 142; EmS = 260
      TagY = 500; LangY = 660; LangS = 84
-     NumY = "(h/2-text_h)-170"; NumS = 190; WordY = "(h/2+10)"; WordS = 52
-     DLY = "(h/2+80)"; DLS = 62; DateY = "(h/2+150)"; Dates = 62; UrlY = "(h/2+230)"; UrlS = 38 },
+     NumY = 430; NumS = 190; WordY = 640; WordS = 52
+     DLY = 720; DLS = 62; DateY = 790; Dates = 62; UrlY = 870; UrlS = 38 },
   @{ Name = "vertical"; W = 1080; H = 1920; ZS = "2160:3840"; TagSplit = $true
-     Em1Y = 520; Em2Y = 300; Em1S = 180; Em2S = 220
+     EmY = 574; EmS = 240
      TagY = 880; LangY = 1090; LangS = 76
-     NumY = "560"; NumS = 200; WordY = "1010"; WordS = 50
-     DLY = "1100"; DLS = 58; DateY = "1190"; Dates = 58; UrlY = "1300"; UrlS = 34 }
+     NumY = 845; NumS = 200; WordY = 1065; WordS = 50
+     DLY = 1145; DLS = 58; DateY = 1225; Dates = 58; UrlY = 1305; UrlS = 34 }
 )
 
 foreach ($o in $Orientations) {
@@ -101,7 +101,7 @@ foreach ($o in $Orientations) {
 
   # language flash filters, one slot each
   $n = $Langs.Count
-  $slot = ($END_START - $BRAND_END) / $n
+  $slot = ($LANG_END - $BRAND_END) / $n
   $langDt = @()
   for ($i = 0; $i -lt $n; $i++) {
     $s = $BRAND_END + $i * $slot
@@ -112,27 +112,25 @@ foreach ($o in $Orientations) {
 
   $dt = @()
   if ($o.TagSplit) {
-    $dt += DrawText $Fonts.main "The Ear that understands" 54 "(w-text_w)/2" $o.TagY "between(t,0,10)" $FadeIn
-    $dt += DrawText $Fonts.main "your language." 54 "(w-text_w)/2" ($o.TagY + 80) "between(t,0,10)" $FadeIn
+    $dt += DrawText $Fonts.main "The Ear that understands" 54 "(w-text_w)/2" $o.TagY "between(t,0,15)" $FadeIn
+    $dt += DrawText $Fonts.main "your language." 54 "(w-text_w)/2" ($o.TagY + 80) "between(t,0,15)" $FadeIn
   } else {
-    $dt += DrawText $Fonts.main $TAGLINE 60 "(w-text_w)/2" $o.TagY "between(t,0,10)" $FadeIn
+    $dt += DrawText $Fonts.main $TAGLINE 60 "(w-text_w)/2" $o.TagY "between(t,0,15)" $FadeIn
   }
   $dt += $langDt
-  $dt += DrawText $Fonts.bold "$Days" $o.NumS "(w-text_w)/2" $o.NumY "between(t,10,14)" $FadeEnd
-  $dt += DrawText $Fonts.main $DAYSWORD $o.WordS "(w-text_w)/2" $o.WordY "between(t,10,14)" $FadeEnd
-  $dt += DrawText $Fonts.bold $DL $o.DLS "(w-text_w)/2" $o.DLY "between(t,10,14)" $FadeEnd
-  $dt += DrawText $Fonts.bold $DATE $o.Dates "(w-text_w)/2" $o.DateY "between(t,10,14)" $FadeEnd
-  $dt += DrawText $Fonts.main $URL $o.UrlS "(w-text_w)/2" $o.UrlY "between(t,10,14)" $FadeEnd
+  $dt += DrawText $Fonts.bold "$Days" $o.NumS "(w-text_w)/2" $o.NumY "between(t,15,20)" $FadeEnd
+  $dt += DrawText $Fonts.main $DAYSWORD $o.WordS "(w-text_w)/2" $o.WordY "between(t,15,20)" $FadeEnd
+  $dt += DrawText $Fonts.bold $DL $o.DLS "(w-text_w)/2" $o.DLY "between(t,15,20)" $FadeEnd
+  $dt += DrawText $Fonts.bold $DATE $o.Dates "(w-text_w)/2" $o.DateY "between(t,15,20)" $FadeEnd
+  $dt += DrawText $Fonts.main $URL $o.UrlS "(w-text_w)/2" $o.UrlY "between(t,15,20)" $FadeEnd
 
   # video chain: emblems overlay a black canvas (alpha-safe), THEN screen in gbrp (RGB)
-  $fc = "[1]scale=$($o.Em1S):-1,fade=t=in:st=0:d=0.3,fade=t=out:st=3.7:d=0.3[em1];" +
-        "[1]scale=$($o.Em2S):-1,fade=t=in:st=10:d=0.3,fade=t=out:st=13.7:d=0.3[em2];" +
+  $fc = "[1]scale=$($o.EmS):-1,fade=t=in:st=0:d=0.3,fade=t=out:st=19.7:d=0.3[em];" +
         "[2]format=gbrp[cv];" +
-        "[cv][em1]overlay=(W-w)/2:$($o.Em1Y):enable='between(t,0,4)'[c1];" +
-        "[c1][em2]overlay=(W-w)/2:$($o.Em2Y):enable='between(t,10,14)'[c2];" +
+        "[cv][em]overlay=(W-w)/2:$($o.EmY)[c1];" +
         "[0]scale=$($o.W):$($o.H):force_original_aspect_ratio=increase,crop=$($o.W):$($o.H),gblur=sigma=$BGLUR,eq=brightness=$DARKEN,format=gbrp[bg];" +
-        "[bg][c2]blend=all_mode=screen,format=yuv420p[scr];" +
-        "[scr]" + ($dt -join ",") + ",scale=$($o.ZS),zoompan=z='1+$ZOOM*on/335':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=$($o.W)x$($o.H):fps=$FPS,fade=t=in:st=0:d=0.3,fade=t=out:st=13.7:d=0.3[v]"
+        "[bg][c1]blend=all_mode=screen,format=yuv420p[scr];" +
+        "[scr]" + ($dt -join ",") + ",scale=$($o.ZS),zoompan=z='1+$ZOOM*on/479':d=1:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':s=$($o.W)x$($o.H):fps=$FPS,fade=t=in:st=0:d=0.3,fade=t=out:st=19.7:d=0.3[v]"
 
   if ($o.Name -eq "vertical") { $outPath = Join-Path $VideoDir "$OutBase-vertical.mp4" }
   else { $outPath = Join-Path $VideoDir "$OutBase.mp4" }
