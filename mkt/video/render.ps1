@@ -42,31 +42,31 @@ $URL      = "github.com/humbleangel/supEars_Official"
 # flags under each language (flagcdn.com PNGs, public domain; keyed by langs.txt english column)
 $FlagDir = Join-Path $VideoDir "flags"
 $FlagMap = @{
-  "English"              = "gb,us"
-  "Portuguese"           = "br,pt"
-  "Chinese"              = "cn"
-  "Spanish"              = "es,mx"
-  "French"               = "fr"
-  "Japanese"             = "jp"
-  "German"               = "de"
-  "Korean"               = "kr"
-  "Italian"              = "it"
-  "Hindi"                = "in"
-  "Russian"              = "ru"
-  "Thai"                 = "th"
-  "Ukrainian"            = "ua"
-  "Arabic"               = "sa,eg"
-  "Dutch"                = "nl"
-  "Urdu"                 = "pk"
-  "Polish"               = "pl"
-  "Turkish"              = "tr"
-  "Czech"                = "cz"
-  "Hungarian"            = "hu"
-  "Greek"                = "gr"
-  "Romanian"             = "ro"
-  "Swedish"              = "se"
-  "Indonesian"           = "id"
-  "Vietnamese"           = "vn"
+  "English"              = "gb,us,in,ng,pk,ph"
+  "Portuguese"           = "br,pt,ao,mz,cv"
+  "Chinese"              = "cn,tw,sg,my,hk"
+  "Spanish"              = "es,mx,co,ar,pe,us"
+  "French"               = "fr,cd,ca,cm,ci"
+  "Japanese"             = "jp,br,us,pe"
+  "German"               = "de,at,ch,be,lu"
+  "Korean"               = "kr,cn,us,jp,ca"
+  "Italian"              = "it,ch,sm,va"
+  "Hindi"                = "in,fj,np,mu"
+  "Russian"              = "ru,by,kz,kg"
+  "Thai"                 = "th,kh,la,my"
+  "Ukrainian"            = "ua,pl,ca,de"
+  "Arabic"               = "sa,eg,dz,sd,ma,iq"
+  "Dutch"                = "nl,be,sr,aw,cw"
+  "Urdu"                 = "pk,in,sa,ae,gb"
+  "Polish"               = "pl,lt,by,ua,gb"
+  "Turkish"              = "tr,cy,de,bg,iq"
+  "Czech"                = "cz,sk,at,hr"
+  "Hungarian"            = "hu,sk,rs,at"
+  "Greek"                = "gr,cy,al,au"
+  "Romanian"             = "ro,md,it,de,es"
+  "Swedish"              = "se,fi,ax,no"
+  "Indonesian"           = "id,my,tl"
+  "Vietnamese"           = "vn,us,fr,au,cz"
 }
 # ----------------------------------------------------
 
@@ -134,7 +134,17 @@ for ($i = 0; $i -lt $Langs.Count; $i++) {
   if ($src.Count -eq 1) {
     & ffmpeg -y -v error -i $src[0] -vf "scale=-1:160" $outPng
   } else {
-    & ffmpeg -y -v error -i $src[0] -i $src[1] -filter_complex "[0]scale=-1:160[a];[1]scale=-1:160[b];[a]pad=iw+16:ih:0:0:black[ap];[ap][b]hstack=inputs=2" $outPng
+    $inArgs = @()
+    foreach ($s in $src) { $inArgs += @("-i", $s) }
+    $parts = @()
+    for ($k = 0; $k -lt $src.Count; $k++) { $parts += "[$k]scale=-1:160[fl$k]" }
+    $prev = "fl0"
+    for ($k = 1; $k -lt $src.Count; $k++) {
+      $parts += "[$prev]pad=iw+16:ih:0:0:black[p$k]"
+      $parts += "[p$k][fl$k]hstack=inputs=2[o$k]"
+      $prev = "o$k"
+    }
+    & ffmpeg -y -v error @inArgs -filter_complex ($parts -join ";") -map "[$prev]" $outPng
   }
   if ($LASTEXITCODE -ne 0) { throw "flag strip failed for $($Langs[$i].e)" }
   $Langs[$i].fp = $outPng
@@ -156,18 +166,18 @@ $FadeEnd = "if(lt(t\,35.3)\,(t-35)/0.3\,if(gt(t\,39.7)\,(40-t)/0.3\,1))"
 $Orientations = @(
   @{ Name = "land"; W = 1920; H = 1080; ZS = "3840:2160"; TagSplit = $false; Zoom = 0.10
      EmY = 142; EmS = 260
-     TagY = 500; LangY = 660; LangS = 84; Lang2Y = 760; Lang2S = 44
-     FlagH = 54; FlagY = 830; StopY = 905; StopS = 40
+     TagY = 500; LangY = 610; LangS = 84; Lang2Y = 728; Lang2S = 44
+     FlagH = 54; FlagY = 800; StopY = 880; StopS = 40
      SupY = 400; SupS = 70
-     NumY = 490; NumS = 190; WordY = 720; WordS = 52
-     DLY = 790; DLS = 62; JoinY = 870; DateY = 950; Dates = 62; UrlY = 1025; UrlS = 38 },
+     NumY = 490; NumS = 190; WordY = 660; WordS = 52
+     DLY = 728; DLS = 62; JoinY = 796; DateY = 864; Dates = 62; UrlY = 932; UrlS = 38 },
   @{ Name = "vertical"; W = 1080; H = 1920; ZS = "2160:3840"; TagSplit = $true; Zoom = 0.20
      EmY = 574; EmS = 240
-     TagY = 880; LangY = 1090; LangS = 76; Lang2Y = 1180; Lang2S = 40
-     FlagH = 48; FlagY = 1245; StopY = 1320; StopS = 36
+     TagY = 880; LangY = 1050; LangS = 76; Lang2Y = 1150; Lang2S = 40
+     FlagH = 48; FlagY = 1205; StopY = 1280; StopS = 36
      SupY = 820; SupS = 64
-     NumY = 905; NumS = 200; WordY = 1150; WordS = 50
-     DLY = 1220; DLS = 58; JoinY = 1298; DateY = 1376; Dates = 58; UrlY = 1455; UrlS = 34 }
+     NumY = 905; NumS = 200; WordY = 1070; WordS = 50
+     DLY = 1135; DLS = 58; JoinY = 1203; DateY = 1271; Dates = 58; UrlY = 1339; UrlS = 34 }
 )
 
 foreach ($o in $Orientations) {
