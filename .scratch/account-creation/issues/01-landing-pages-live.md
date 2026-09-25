@@ -6,7 +6,7 @@
 
 **Status:** ready-for-agent
 
-- [ ] Agent prepares the site entry in the public repo (countdown prelanding + its assets) and checks it renders.
+- [x] Agent prepares the site entry in the public repo (countdown prelanding + its assets) and checks it renders. — root `index.html` (asset paths fixed to `mkt/assets/`, GitHub Issues signup line added, done 2026-09-25 12:2x UTC). Legacy landing page kept at `mkt/landing-legacy-2026-09.html`.
 - [ ] Owner: repo → Settings → Pages → Deploy from a branch → `main` / `(root)` → Save.
-- [ ] The Pages URL serves the prelanding; its waitlist button opens the Issues page.
+- [ ] The Pages URL serves the prelanding; its join paths work (email button → hub inbox; GitHub Issues link as second path).
 - [ ] Agent swaps any bio already using the Issues waitlist to the Pages URL.

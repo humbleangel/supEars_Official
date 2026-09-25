@@ -1,515 +1,102 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>supEars — Speak in your own language</title>
-<meta name="description" content="supEars is a tiny floating ear for Windows. Talk normally — clean text appears where you were typing. Free during testing; testers get 60 days."/>
-<meta name="color-scheme" content="dark"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>supEars — 10 out of 10, 2026-10-10</title>
+<meta name="description" content="supEars. The Ear that understands your language. Launch day 2026-10-10. Join the waitlist.">
 <style>
-  :root{
-    --bg:#0a0d11; --panel:#141922;
-    --line:rgba(255,255,255,.08); --line2:rgba(255,255,255,.13);
-    --text:#eef1f4; --muted:#99a2ae; --faint:#6b7480;
-    --accent:#10b981; --accent-soft:rgba(16,185,129,.12);
-    --accent2:#38bdf8;
-    --r:18px; --max:1080px;
-    --shadow:0 24px 70px -24px rgba(0,0,0,.7);
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    margin:0; color:var(--text);
-    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    background:
-      radial-gradient(1000px 520px at 88% -8%, rgba(16,185,129,.1), transparent 60%),
-      radial-gradient(820px 460px at 4% 6%, rgba(56,189,248,.08), transparent 60%),
-      radial-gradient(700px 500px at 50% 110%, rgba(16,185,129,.05), transparent 60%),
-      var(--bg);
-    -webkit-font-smoothing:antialiased;
-  }
-  a{color:inherit}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-
-  header.nav{position:sticky;top:0;z-index:50;background:rgba(10,13,17,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-  .nav-in{display:flex;align-items:center;gap:16px;padding:14px 0}
-  .logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.04em;font-size:15px;text-decoration:none}
-  .logo-mark{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;font-size:18px;background:linear-gradient(135deg,#12261f,#0f1a26);border:1px solid var(--line2);box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
-  nav.links{display:flex;gap:4px;margin-left:auto}
-  nav.links a{text-decoration:none;color:var(--muted);font-size:13.5px;font-weight:600;padding:8px 13px;border-radius:999px;transition:.18s}
-  nav.links a:hover{color:var(--text);background:rgba(255,255,255,.06)}
-  .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:14px;padding:11px 20px;border-radius:12px;border:1px solid transparent;cursor:pointer;transition:.18s}
-  .btn-primary{background:linear-gradient(180deg,#14c98d,#0da271);color:#04120c;box-shadow:0 10px 26px -10px rgba(16,185,129,.6)}
-  .btn-primary:hover{transform:translateY(-1px);box-shadow:0 14px 30px -10px rgba(16,185,129,.7)}
-  .btn-ghost{background:rgba(255,255,255,.05);border-color:var(--line2);color:var(--text)}
-  .btn-ghost:hover{background:rgba(255,255,255,.09)}
-  .btn-sm{padding:8px 15px;font-size:13px;border-radius:10px}
-  @media(max-width:760px){nav.links{display:none}}
-
-  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:72px 0 54px}
-  @media(max-width:900px){.hero{grid-template-columns:1fr;padding:48px 0 36px}}
-  .pill-top{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;letter-spacing:.02em;color:#b8f0da;background:var(--accent-soft);border:1px solid rgba(16,185,129,.35);padding:8px 15px;border-radius:999px;margin-bottom:20px}
-  .pulse-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 2.2s infinite}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(16,185,129,.55)}70%{box-shadow:0 0 0 9px rgba(16,185,129,0)}100%{box-shadow:0 0 0 0 rgba(16,185,129,0)}}
-  h1{font-size:clamp(38px,5.4vw,60px);line-height:1.06;letter-spacing:-.03em;margin:0 0 18px}
-  h1 .grad{background:linear-gradient(100deg,#34d399 10%,#38bdf8 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .lede{color:var(--muted);font-size:18px;margin:0 0 28px;max-width:32em}
-  .lede b{color:var(--text)}
-  .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px}
-  .micro{color:var(--faint);font-size:13px;display:flex;gap:16px;flex-wrap:wrap}
-  .micro span{display:flex;align-items:center;gap:6px}
-
-  .stage{position:relative;display:grid;place-items:center;min-height:400px}
-  .ear-card{position:relative;width:290px;border-radius:26px;padding:34px 20px 26px;text-align:center;background:linear-gradient(180deg,rgba(26,32,41,.92),rgba(13,17,22,.94));border:1px solid var(--line2);box-shadow:var(--shadow)}
-  .ear-glyph{font-size:92px;line-height:1;filter:grayscale(1) brightness(1.15);position:relative;z-index:2}
-  .ring{position:absolute;left:50%;top:96px;width:150px;height:150px;transform:translate(-50%,-50%);border-radius:50%;border:3px solid rgba(16,185,129,.5);animation:breathe 2.6s ease-in-out infinite}
-  @keyframes breathe{0%,100%{transform:translate(-50%,-50%) scale(.96);opacity:.55}50%{transform:translate(-50%,-50%) scale(1.05);opacity:1}}
-  .lang-pill{margin:18px auto 0;max-width:230px;background:rgba(0,0,0,.5);border:1px solid var(--line);border-radius:12px;padding:10px;font-size:13px;font-weight:600;min-height:86px}
-  .fade{transition:opacity .35s ease}
-  .fading{opacity:0}
-  .lang-pill div{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,.06);margin:4px 0;text-align:left}
-  .lang-pill img{width:22px;height:16px;border-radius:3px;object-fit:cover;flex:none;background:rgba(255,255,255,.08)}
-  .caption{margin-top:14px;color:var(--faint);font-size:12.5px}
-  .float-chip{position:absolute;font-size:12.5px;font-weight:700;padding:9px 14px;border-radius:12px;background:rgba(21,26,33,.92);border:1px solid var(--line2);box-shadow:var(--shadow);animation:float 5s ease-in-out infinite;max-width:240px}
-  .float-chip .fade{display:inline-block}
-  .chip-a{top:4%;left:0}
-  .chip-b{bottom:8%;right:0;animation-delay:2.4s}
-  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-  @media(max-width:900px){.stage{min-height:360px}.chip-a{left:2%}.chip-b{right:2%}}
-
-  .marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.015);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-  .marquee-track{display:flex;gap:12px;width:max-content;padding:16px 0;animation:scroll 32s linear infinite}
-  .marquee-track span{display:inline-flex;align-items:center;font-size:13px;font-weight:700;color:var(--muted);border:1px solid var(--line);background:rgba(255,255,255,.03);padding:7px 15px;border-radius:999px;white-space:nowrap}
-  .marquee-track img{width:22px;height:16px;border-radius:3px;object-fit:cover;margin-right:9px}
-  @keyframes scroll{to{transform:translateX(-50%)}}
-  @media(prefers-reduced-motion:reduce){.marquee-track{animation:none}}
-
-  section.block{padding:68px 0 8px}
-  .kicker{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin-bottom:12px}
-  h2{font-size:clamp(26px,3.4vw,36px);letter-spacing:-.02em;line-height:1.15;margin:0 0 14px}
-  .sub{color:var(--muted);max-width:36em;margin:0 0 32px;font-size:17px}
-
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  @media(max-width:800px){.steps{grid-template-columns:1fr}}
-  .step{background:linear-gradient(180deg,var(--panel),#12161c);border:1px solid var(--line);border-radius:var(--r);padding:24px;position:relative;overflow:hidden}
-  .step::after{content:"";position:absolute;top:0;left:24px;right:24px;height:1px;background:linear-gradient(90deg,transparent,rgba(16,185,129,.5),transparent)}
-  .step .n{font-size:12px;font-weight:800;letter-spacing:.12em;color:var(--accent);margin-bottom:10px}
-  .step h3{margin:0 0 6px;font-size:19px;letter-spacing:-.01em}
-  .step p{margin:0;color:var(--muted);font-size:14.5px}
-  .step p b{color:var(--text)}
-
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  @media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
-  @media(max-width:600px){.grid{grid-template-columns:1fr}}
-  .card{background:linear-gradient(180deg,var(--panel),#12161c);border:1px solid var(--line);border-radius:var(--r);padding:26px 24px;transition:.2s}
-  .card:hover{transform:translateY(-3px);border-color:rgba(16,185,129,.35);box-shadow:0 18px 44px -20px rgba(16,185,129,.35)}
-  .ico{font-size:26px;margin-bottom:14px}
-  .card h3{margin:0 0 8px;font-size:16.5px}
-  .card p{margin:0;color:var(--muted);font-size:14.5px}
-
-  .play{margin-top:8px;border-radius:22px;padding:40px 36px;background:linear-gradient(180deg,#161c25,#0f1319);border:1px solid var(--line2);box-shadow:var(--shadow)}
-  @media(max-width:600px){.play{padding:28px 20px}}
-  .pick{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 22px}
-  .pick button{font:700 13px/1 inherit;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:999px;padding:9px 15px;cursor:pointer;transition:.16s}
-  .pick button:hover{color:var(--text);border-color:var(--line2)}
-  .pick button.on{color:#b8f0da;background:var(--accent-soft);border-color:rgba(16,185,129,.45)}
-  .utter{display:grid;grid-template-columns:1fr 44px 1fr;gap:12px;align-items:stretch}
-  @media(max-width:640px){.utter{grid-template-columns:1fr}.utter .arrow{transform:rotate(90deg);justify-self:center}}
-  .bubble{background:rgba(0,0,0,.4);border:1px solid var(--line);border-radius:14px;padding:18px}
-  .bubble .who{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--faint);text-transform:uppercase;margin-bottom:10px}
-  .bubble .who img{width:22px;height:16px;border-radius:3px;object-fit:cover;background:rgba(255,255,255,.08)}
-  .bubble .say{font-size:19px;font-weight:600;min-height:62px;line-height:1.55}
-  .bubble.out{border-color:rgba(16,185,129,.3);background:rgba(16,185,129,.05)}
-  .say .w{display:inline-block;opacity:0;transform:translateY(10px);filter:blur(3px);transition:opacity .3s ease,transform .3s ease,filter .3s ease}
-  .say .w.on{opacity:1;transform:none;filter:none}
-  .utter .arrow{display:grid;place-items:center;color:var(--accent);font-size:22px;font-weight:800}
-  .play-note{margin-top:18px;color:var(--faint);font-size:13px}
-
-  .beta{margin-top:60px;border-radius:22px;padding:44px 40px;position:relative;overflow:hidden;background:linear-gradient(120deg,rgba(56,189,248,.1),rgba(16,185,129,.08) 60%,rgba(255,255,255,.02));border:1px solid rgba(56,189,248,.28)}
-  @media(max-width:600px){.beta{padding:32px 24px}}
-  .beta h2{margin-bottom:10px}
-  .beta p{color:#c4cbd3;margin:0 0 8px;max-width:42em}
-  .beta ul{margin:16px 0 24px;padding:0;list-style:none;display:grid;gap:10px}
-  .beta li{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:14.5px}
-  .beta li b{color:var(--text)}
-  .beta li::before{content:"✓";color:var(--accent2);font-weight:800}
-
-  .trial{margin-top:60px;text-align:center;border-radius:22px;padding:56px 32px;background:linear-gradient(180deg,#171d25,#10141a);border:1px solid var(--line2);box-shadow:var(--shadow)}
-  .trial h2{margin-bottom:10px}
-  .trial p{color:var(--muted);margin:0 auto 26px;max-width:30em}
-  .price{font-size:15px;color:var(--muted);margin-top:18px}
-  .price b{color:var(--text);font-size:22px}
-
-  details.faq{border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02);padding:18px 20px;margin-bottom:10px;transition:.18s}
-  details.faq[open]{border-color:rgba(16,185,129,.3);background:rgba(16,185,129,.04)}
-  details.faq summary{cursor:pointer;font-weight:700;font-size:15px;list-style:none;display:flex;justify-content:space-between;gap:12px}
-  details.faq summary::-webkit-details-marker{display:none}
-  details.faq summary::after{content:"+";color:var(--accent);font-size:19px;line-height:1.2}
-  details.faq[open] summary::after{content:"–"}
-  details.faq p{color:var(--muted);font-size:14.5px;margin:12px 0 2px}
-
-  footer{margin-top:68px;border-top:1px solid var(--line);padding:28px 0 40px;color:var(--faint);font-size:13px}
-  footer .wrap{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
-  footer .sp{margin-left:auto}
-
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
-  .reveal.in{opacity:1;transform:none}
-  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.ring,.float-chip,.pulse-dot,.marquee-track{animation:none}.say .w{opacity:1;transform:none;filter:none;transition:none}}
+  :root { --bg: #000; --fg: #fff; --mut: #bbb; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { background: var(--bg); color: var(--fg); font-family: Arial, Helvetica, sans-serif; text-align: center; overflow: hidden; }
+  .bg { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0.14; filter: blur(3px); pointer-events: none; }
+  .page { position: relative; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.4vh; padding: 2vh 5vw; }
+  .ear { width: clamp(150px, 24vh, 240px); height: auto; mix-blend-mode: screen; transform: translateX(24px); }
+  .brand { font-size: clamp(24px, 4.5vh, 40px); font-weight: bold; letter-spacing: 1px; line-height: 1; }
+  .tag { color: var(--mut); font-size: clamp(12px, 2.2vh, 16px); }
+  .sell { font-size: clamp(13px, 2.5vh, 18px); max-width: 640px; line-height: 1.35; }
+  .ten { font-size: clamp(15px, 3vh, 22px); font-weight: bold; }
+  .ten span { color: var(--mut); font-weight: normal; }
+  #count { display: flex; gap: 3.5vw; justify-content: center; }
+  #count div { min-width: 58px; }
+  #count b { display: block; font-size: clamp(20px, 4.5vh, 34px); }
+  #count span { color: var(--mut); font-size: 11px; text-transform: uppercase; letter-spacing: 2px; }
+  .cta { display: inline-block; background: var(--fg); color: var(--bg); font-weight: bold; font-size: clamp(15px, 2.8vh, 19px); padding: 10px 38px; border-radius: 999px; text-decoration: none; }
+  .join { display: flex; gap: 8px; justify-content: center; align-items: center; flex-wrap: wrap; }
+  .join input { font-size: clamp(14px, 2.6vh, 17px); padding: 10px 18px; border-radius: 999px; border: 1px solid var(--fg); background: transparent; color: var(--fg); width: min(300px, 60vw); outline: none; }
+  .join input::placeholder { color: var(--mut); }
+  .join button { font-family: inherit; cursor: pointer; border: none; background: var(--fg); color: var(--bg); font-weight: bold; font-size: clamp(14px, 2.6vh, 17px); padding: 10px 30px; border-radius: 999px; }
+  .lock { color: var(--mut); font-size: clamp(11px, 2vh, 14px); }
+  .qa { display: flex; gap: 3vw; max-width: 900px; text-align: left; }
+  .q { flex: 1; border-left: 2px solid var(--fg); padding-left: 12px; font-size: clamp(11px, 2vh, 14px); line-height: 1.4; }
+  .q .u { color: var(--mut); margin-bottom: 4px; }
+  footer { color: var(--mut); font-size: 11px; }
+  footer .soc { margin-top: 6px; }
+  footer .soc a { margin: 0 9px; display: inline-block; vertical-align: middle; }
+  footer .soc svg { width: 20px; height: 20px; fill: var(--fg); display: block; }
+  @media (max-height: 640px), (max-width: 640px) { body { overflow: auto; } .page { height: auto; min-height: 100vh; } .qa { flex-direction: column; } }
 </style>
-<noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
 </head>
 <body>
-
-<header class="nav">
-  <div class="wrap nav-in">
-    <a class="logo" href="#top"><span class="logo-mark">👂</span>supEars</a>
-    <nav class="links">
-      <a href="#how">How it works</a>
-      <a href="#any">Your language</a>
-      <a href="#features">Features</a>
-      <a href="#beta">Beta · 60 days</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <a class="btn btn-primary btn-sm" href="#trial" style="margin-left:12px">Coming soon</a>
-  </div>
-</header>
-
-<div class="wrap" id="top">
-  <div class="hero">
-    <div>
-      <span class="pill-top"><span class="pulse-dot"></span>✓ Pre-alpha · Testers get 60 days free</span>
-      <h1>Speak in your<br/><span class="grad">own language.</span></h1>
-      <p class="lede">A floating ear for Windows. Talk normally — <b>clean text lands where you were typing.</b></p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#trial">Coming soon for Windows</a>
-        <a class="btn btn-ghost" href="#beta">Join the beta · 60 days free</a>
-      </div>
-      <div class="micro">
-        <span>✓ No account</span>
-        <span>✓ No credit card</span>
-        <span>✓ Works offline</span>
-      </div>
+  <img class="bg" src="mkt/assets/supEarsLogoV3.png" alt="">
+  <main class="page">
+    <img class="ear" src="mkt/assets/supEarsEmblem.png" alt="supEars — the floating ear">
+    <div class="brand">supEars</div>
+    <div class="tag">The Ear that understands your language.</div>
+    <p class="sell">Speak in your native language — supEars writes it in English, or any of 26 languages. In total privacy: your voice never leaves your computer.</p>
+    <div class="ten">October 10, 2026, the day supEars goes live.<br><span>No account, no subscription tax, no cloud, no one listening. Stop paying subscriptions.</span></div>
+    <div id="count" aria-live="off">
+      <div><b id="d">–</b><span>days</span></div>
+      <div><b id="h">–</b><span>hours</span></div>
+      <div><b id="m">–</b><span>minutes</span></div>
+      <div><b id="s">–</b><span>seconds</span></div>
     </div>
-    <div class="stage" aria-hidden="true">
-      <div class="float-chip chip-a">💬 <span class="fade" id="chipSay">“me liga quando chegares”</span></div>
-      <div class="ear-card">
-        <div class="ring"></div>
-        <div class="ear-glyph">👂</div>
-        <div class="lang-pill">
-          <div class="fade" id="pillTalk"><img id="pillFlag" alt=""/><span id="pillTalkTxt">Portuguese →</span></div>
-          <div id="pillWrite"><img id="writeFlag" alt=""/><span>→ English</span></div>
-        </div>
-        <div class="caption">One click · speak · transcribed</div>
-      </div>
-      <div class="float-chip chip-b">⚡ <span class="fade" id="chipOut">transcribed where you type</span></div>
+    <form class="join" id="join" action="#">
+      <input id="email" type="email" required placeholder="your@email.com" aria-label="Your email">
+      <button type="submit">Join the waitlist</button>
+    </form>
+    <div class="lock">Come in now and be a founder. Be part of the beta-testers group.</div>
+    <div class="lock">Prefer no email app? <a href="https://github.com/humbleangel/supEars_Official/issues" style="color:#fff;">Join the beta group on GitHub Issues</a>.</div>
+    <div class="qa">
+      <div class="q"><p class="u">“Could I just build the same thing with AI?”</p><p>You can. I spent months preparing this so you would not have to. Skip the tokens and the late nights. Use mine.</p></div>
+      <div class="q"><p class="u">“Isn't a cloud tool faster?”</p><p>Maybe. Nothing you say here travels anywhere. No ideas. No texts. It stays in your computer.</p></div>
+      <div class="q"><p class="u">“My PC is old. No GPU. Can it run AI?”</p><p>Yes. supEars runs on CPU, so no video card is needed. I built and tested it on a 15-year-old notebook, fourth generation. If your machine runs Windows, it runs supEars.</p></div>
     </div>
-  </div>
-</div>
-
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track" id="marquee"></div>
-</div>
-
-<div class="wrap">
-  <section class="block reveal" id="how">
-    <div class="kicker">How it works</div>
-    <h2>Thought to text in three seconds.</h2>
-    <p class="sub">No new app to learn. The ear floats above your work.</p>
-    <div class="steps">
-      <div class="step">
-        <div class="n">01</div>
-        <h3>Click the ear.</h3>
-        <p>Red means listening. Click again — <b>or just go quiet.</b></p>
-      </div>
-      <div class="step">
-        <div class="n">02</div>
-        <h3>Talk like yourself.</h3>
-        <p>Your language, your words. <b>Want it written in another? Set it once.</b></p>
-      </div>
-      <div class="step">
-        <div class="n">03</div>
-        <h3>There's your text.</h3>
-        <p>It lands where your cursor was. <b>Nothing to copy.</b></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="block reveal" id="any">
-    <div class="kicker">Your voice, written out</div>
-    <h2>Say it in your words.</h2>
-    <p class="sub">A sample of our 26 voices — everyday thoughts. Tap through — this is the ear, live.</p>
-    <div class="play">
-      <div class="pick" id="pick" role="tablist" aria-label="Choose a spoken language"></div>
-      <div class="utter">
-        <div class="bubble">
-          <div class="who"><img id="sayFlag" alt=""/><span id="whoSay">You say · Portuguese</span></div>
-          <div class="say" id="sayNative"></div>
-        </div>
-        <div class="arrow">→</div>
-        <div class="bubble out">
-          <div class="who"><span>You get · English</span></div>
-          <div class="say" id="sayEn"></div>
-        </div>
-      </div>
-      <p class="play-note">Speak, release — your words appear, cleaned and translated.</p>
-    </div>
-  </section>
-
-  <section class="block reveal" id="features">
-    <div class="kicker">Features</div>
-    <h2>Small on screen. Big on the details.</h2>
-    <p class="sub">Every detail removes friction between thinking and writing.</p>
-    <div class="grid">
-      <div class="card">
-        <div class="ico">🗣️</div>
-        <h3>Your language, first-class</h3>
-        <p>26 languages. Speak one, write another — set once.</p>
-      </div>
-      <div class="card">
-        <div class="ico">🪟</div>
-        <h3>Never in the way</h3>
-        <p>Floats above your work, across monitors. Clicks pass through empty space.</p>
-      </div>
-      <div class="card">
-        <div class="ico">🤫</div>
-        <h3>Knows when you finished</h3>
-        <p>Go quiet and it stops. No dangling recordings.</p>
-      </div>
-      <div class="card">
-        <div class="ico">🔇</div>
-        <h3>Shushes the room</h3>
-        <p>System sound ducks while you record. Restored after.</p>
-      </div>
-      <div class="card">
-        <div class="ico">🔒</div>
-        <h3>Private by design</h3>
-        <p>Everything happens on your PC. No account, no cloud, no uploads.</p>
-      </div>
-      <div class="card">
-        <div class="ico">🧠</div>
-        <h3>Never loses a thought</h3>
-        <p>Rolling history with one-click re-paste.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="reveal" id="beta">
-    <div class="beta">
-      <div class="kicker">Beta team · limited seats</div>
-      <h2>Test it. Get 60 days free.</h2>
-      <p>Join the test team, tell us what breaks — <b>60 days, full features, key by email.</b></p>
-      <ul>
-        <li><b>60 days free,</b> everything unlocked.</li>
-        <li><b>Your feedback</b> decides what ships next.</li>
-        <li><b>Keep everything</b> — history and settings carry over.</li>
-      </ul>
-      <a class="btn btn-primary" href="https://github.com/humbleangel/supEars_Official/issues">Join the team</a>
-    </div>
-  </section>
-
-  <section class="reveal" id="trial">
-    <div class="trial">
-      <div class="kicker" style="text-align:center">Get started</div>
-      <h2>First release coming soon.</h2>
-      <p>Pre-alpha v0.8.71 — no public download yet. All 26 languages, full features. No account, no card. Windows first; Mac + Linux coming. Leave an Issue and we will notify you.</p>
-      <a class="btn btn-primary" href="https://github.com/humbleangel/supEars_Official/issues">Notify me</a>
-      <div class="price"><b>Free during testing</b> · 60 days for testers</div>
-    </div>
-  </section>
-
-  <section class="block reveal" id="faq">
-    <div class="kicker">Questions</div>
-    <h2>Asked, answered.</h2>
-    <p class="sub">Short answers to common questions.</p>
-    <div style="margin-top:26px">
-      <details class="faq" open>
-        <summary>Which languages can I speak?</summary>
-        <p>26 — English, Portuguese (BR + PT), Spanish, French, German, Italian, Russian, Ukrainian, Dutch, Polish, Turkish, Chinese (Simplified), Japanese, Korean, Hindi, Czech, Hungarian, Greek, Romanian, Swedish, Indonesian, Vietnamese, Thai, Urdu, Arabic, plus auto-detect. Speak one, write another.</p>
-      </details>
-      <details class="faq">
-        <summary>How does the free trial work?</summary>
-        <p>Free during pre-alpha/beta testing, everything unlocked. Testers get 60 days. No account, no credit card.</p>
-      </details>
-      <details class="faq">
-        <summary>How do I get 60 days free?</summary>
-        <p>Join the test team and tell us what you think. Your 60-day key arrives by email.</p>
-      </details>
-      <details class="faq">
-        <summary>Do I need internet?</summary>
-        <p>Only to download the app and get your key. Transcription itself runs fully offline on your PC.</p>
-      </details>
-      <details class="faq">
-        <summary>Where does my text go?</summary>
-        <p>Wherever your cursor already is. Nothing to copy or move.</p>
-      </details>
-      <details class="faq">
-        <summary>What if it mishears me?</summary>
-        <p>Fix it by hand, or re-paste from history. Nothing is ever lost.</p>
-      </details>
-      <details class="faq">
-        <summary>Will it record my music?</summary>
-        <p>No. System sound mutes while you speak, restores after.</p>
-      </details>
-      <details class="faq">
-        <summary>What happens when the trial ends?</summary>
-        <p>Recording pauses until you add a license. History and settings stay.</p>
-      </details>
-    </div>
-  </section>
-</div>
-
-<footer>
-  <div class="wrap">
-    <span>👂 supEars — speak in your own language.</span>
-    <span class="sp">Made for people who think faster than they type · <span id="yr"></span></span>
-  </div>
-</footer>
+    <footer>No download yet. Windows only; Mac and Linux planned.
+      <div class="soc"><a href="https://www.youtube.com/@supEars" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a><a href="https://www.reddit.com/user/humbleangel/" aria-label="Reddit"><svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 3.314 1.343 6.314 3.515 8.485l-2.286 2.286C.775 23.225 1.097 24 1.738 24H12c6.627 0 12-5.373 12-12S18.627 0 12 0Zm4.388 3.199c1.104 0 1.999.895 1.999 1.999 0 1.105-.895 2-1.999 2-.946 0-1.739-.657-1.947-1.539v.002c-1.147.162-2.032 1.15-2.032 2.341v.007c1.776.067 3.4.567 4.686 1.363.473-.363 1.064-.58 1.707-.58 1.547 0 2.802 1.254 2.802 2.802 0 1.117-.655 2.081-1.601 2.531-.088 3.256-3.637 5.876-7.997 5.876-4.361 0-7.905-2.617-7.998-5.87-.954-.447-1.614-1.415-1.614-2.538 0-1.548 1.255-2.802 2.803-2.802.645 0 1.239.218 1.712.585 1.275-.79 2.881-1.291 4.64-1.365v-.01c0-1.663 1.263-3.034 2.88-3.207.188-.911.993-1.595 1.959-1.595Zm-8.085 8.376c-.784 0-1.459.78-1.506 1.797-.047 1.016.64 1.429 1.426 1.429.786 0 1.371-.369 1.418-1.385.047-1.017-.553-1.841-1.338-1.841Zm7.406 0c-.786 0-1.385.824-1.338 1.841.047 1.017.634 1.385 1.418 1.385.785 0 1.473-.413 1.426-1.429-.046-1.017-.721-1.797-1.506-1.797Zm-3.703 4.013c-.974 0-1.907.048-2.77.135-.147.015-.241.168-.183.305.483 1.154 1.622 1.964 2.953 1.964 1.33 0 2.47-.81 2.953-1.964.057-.137-.037-.29-.184-.305-.863-.087-1.795-.135-2.769-.135Z"/></svg></a><a href="https://x.com/supEars" aria-label="X"><svg viewBox="0 0 24 24"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg></a><a href="https://www.instagram.com/supears" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg></a><a href="https://www.tiktok.com/@supEars" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a><a href="https://www.facebook.com/supEars" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a></div>
+    </footer>
+  </main>
 
 <script>
 (function () {
-  'use strict';
-  // Content must never stay invisible: if anything below throws,
-  // reveal everything instead of leaving a black page.
-  function revealAll() {
-    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
-  }
-  window.addEventListener('error', revealAll);
-
-  document.getElementById('yr').textContent = new Date().getFullYear();
-
-  // Real flag images, embedded so the page stays one file.
-  var FLAGS = {"ar":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAA1CAMAAADh9px2AAAAVFBMVEUAVDAeaEh2o4+KsJ8OXTs5el4IWTZ+qZZAf2QWYkFLhmxXjncnbk9tnYgvc1ZFgmhglH5QinG/1Muxy7+jwbSYuqyRtaYDVjOErZvg6ubT4dv7/PwhsBJvAAABnUlEQVQYGe3BSW7dMBAFwMex2ZxHifq+/z2DLLIzEDrIUlV4vV6vczYi3iJqNgxjNWe+G8qwQmYho42arZBR45hpNdaZ9vZ0e5+qS25Ib8RkR5raDJOHKBdOacMDhlJZJhhQiYJwmX5DxUgIRu+NjShxysBXWCmbEqloFa0ZKK4qUGaVnctxgqwmnDIsyRf5WesmpfLYe/URqycSuKqpxfZK2144dXdfR4LrAuSCCE3cRlujzafkS2gp7RW6dRdO2V4lxMzbJDJZKjPYm7ieKNetLAhQmIEvHMuSea/nqeqh7l1VJufdyddwpczUorr3ihdO5eRl025L1gsRmDm1ZW7bgi8UPCFKljw3TomkC2xy1SOB7nZh9t4/X0+rOlkeVgdb2Uuccm3QnGFlxQ2lTy1Ji74cEEoDbXJVBwuPUzxkyeoSkLr1yaa3PC7GnRA+tmhXqFQjlsAx1wcxAgsf9HhGDFasT2s5+bKSkRoiyKTxUw5/WAAi4rcItni9Xn9jA/5Npe+pDxF5/By77z001dcX/h8PAWHwer1eP/ILL3kYDinfdx8AAAAASUVORK5CYII=","de":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAwAgMAAAD7ixVkAAAACVBMVEUAAADdAAD/zgDGIigcAAAAG0lEQVQoz2NgGAVUBaFYwKgg+YKrsIBRQbIFAbpUPtBQ8ZOVAAAAAElFTkSuQmCC","en":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAoCAMAAABevo0zAAAAM1BMVEX///+6w9fzytGrtc3WTWM3UInxxMvIEC4BIWnAyNqqtc22wNT0ztTs7vT109n88fPO1OI8OV3ZAAABE0lEQVRIx+3XtxaDMAwF0AfBlFD//2tDDbasYnIYMvAGBpd7WJAEihJbWlezeQHVHuDNn3EZumI5MWvrQyNt0Oe2wyppgSEHlIVB6qBrkYdCRhcoqYEcV7smWnRpoItepnE1lg2VlECWq1dQJ3lQ4A5QIzlQ5E5QJmNQ4XxQIimociHIkyFocBTkyN4He4ObwYZm6jEO5Zxh3C95IMKdfoquIyUeeE8ugdXNecAH/AX8/y+FKw5b9hLBgN/iwRWHuHzB79c5LV9kNy5fKtdxBVYnYXBsC9BIGJzQpGQSBie2UYmEwSmNnidhcOoowpEwOGNYiklE3MVxjpCtxSUMnIQ0uKSR2CctLnFoP0mLS/6tOMgPj+pDAxFVOjwAAAAASUVORK5CYII=","es":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAA1CAMAAADh9px2AAAA3lBMVEX6vQCtFRnnkwabMRKZPA30tQH4uwGXKhDuswC+OxmrqKnjqQOuAyOcSQZ6bh+2TQ6bXAjFlwrvrQTSpyHnnQWzpXigIBCqoY5EZHlqbkeKVBK6ZCKHLxKoggWrWl/Sr0qUFBe8jKamiSDTnhKfUzLjsh/OWwo8MHOrcA6sKxiRdAmyXUfSZauEf1KvjHjccwvLhg+1rZixCiCjFB9BWGODIA7Zggeynaf5vwtvf2zJfwarbly2GxyyiwSuREt5G02qMkCjgCmvl4dxRwB7XgClO0cQP5Wpdl68fpO9fp8nzyHlAAABfklEQVRYw+3Wx26DQBAG4MVb6RhMM8Vg494r7o5byvu/UC5RTrktUpSI/7aXTzPSzGqAUHBACZZgCf4PsFJwwF9OtVBtyyxNbm+L4nDLauFIlq2WXFC300BfXBUxmFZJIWBPWTiC03ccRS+maxktIUWUOmjPj5m6iIFsDAbGQDNmANT2JifY6+HKxkAhzXpXyyKzqMUHsijCupKslaEkTdwbO0W8A2nbRFfu92T4no5SlzXsNp9H5jbRk8djPcxHo9xlDYkT3JxfxL6iackwl0apKwh9EXMtyTF+24jrgZZ0L+lH6naCuN/hqlC8HTr6Mgy7q1Us5W5NlPgqBDhWpnVKw+7q1TFUVFs8+caGiOcJqUMIl90LRQiyRnyscYmduU3qEEIEVUNTEWtIAeYemy9QrSNkco+N3Gwyg0KIMlWAKsKnJuemjH2/aYYUoskTITizfM3nA33PGwM5yMa73SGrgKrnedyfLAEAYGYy/P36zRR+OZTnXAmWYAn+lE9C+ywNWkwjFAAAAABJRU5ErkJggg==","fr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAA1BAMAAAAkBnF3AAAAD1BMVEX///8AJlTOESbeYG5Wb42QNrxKAAAAJ0lEQVRIx2MQRAYODEiAWQkZMIwqHFU4qnBU4ajCUYWjCkcVUkEhAIQklyN0REMMAAAAAElFTkSuQmCC","hi":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAA1CAMAAADh9px2AAAAP1BMVEX///8Eajj/aCBDj2r/jljo6PUOCpDa2u60s92IhslfXLbQz+rEw+RubL2mpdf39/w7OaZ/fcQkIZpST7CVk8+BV7XQAAAA3klEQVRYw+3UyW0EMQxE0bbHxZ3a84/Vh05gAOmoH8ADoYXP7+GeC17wghe84Av+He75JpQ+Zy94DhWDmlmjEWc8pc5ABXfSE15pUhGMAKSVfQ+kzEUkQhxK++fYJ1iKZq4Sjtm3wRYVmlN1pqLG3PUqMcvKJMpcwkz7TwYuSyeR6RLH8O0JnWVljpG5hJ3q7ohDKnSaqpmiyti+FGtwKWqmJZybbYNOnb2ESIijkx/4KcMrgjkAp3Li7xl1BgDuZGe2A7d32zQ+tb8eXmbrS+5zuOfncBe84AUveMG3f5ZgHCG26UDJAAAAAElFTkSuQmCC","it":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAA1BAMAAAAkBnF3AAAAD1BMVEXOKzcAkkb///9VtoPecHj7ZEZ0AAAAJklEQVRIx2MQRAZGSkhAhQEFjCocVTiqcFThqMJRhaMKRxVSQSEA6aGUCJuKIGMAAAAASUVORK5CYII=","ja":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAA1CAMAAADh9px2AAAAOVBMVEW8AC3ILFHUW3jbdY3DG0PghpvmoLH////kl6n55ur22uC/Czb+/Pzxy9TKNlntu8fPSWnrsb7MP2AZmjhmAAAA40lEQVRYw+3Wyw6EIAwF0PK0vETn/z92Nm6M0rGFZBZy1+SEQCgXlsGBCU7wtWDcvXN+j2PA4BQcUS50g1HDKTr2gR4uwR7QwU2cHNRwGyMFPTSCMrBAM0UCZtsGbRaAHoh4AbhS4MoHI5AJbNDRILLBjQY1G1xp8MMGLQ1aLpjhR/K/d7goGlSjb3ljg4YGHRssNBj5b1mJjpAAUfTyqHlIbHHNoomdWl4qg/8UL/31zOBfr3Ex2NMc6uUcU+3rNsGcyGR+1aUH7Qv1MXmsxv72daAVsYZHS5822DxL+wRfDX4B50xfz1QVWiYAAAAASUVORK5CYII=","ko":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAA1CAMAAADh9px2AAAA3lBMVEX///8AR6DNLjoAAADt7e0UFBQODg7p6em3t7fz8vP5+PhXV1egoKBOTk6np6caGhqamppCQkKRkZG8vLzj4+M7OzsJCQm0MEYRRJfAMUNcXFxkZGTHx8evr69xcXGzs7O6y+TRPUjonqRyOWgRU6bV1dVJSUk1NTVtlsnihY2lvt79/P0cRJL0zdDvub4sLCxfX19Gerrca3SQrtZfO3DV4O/XWGGCpNA3QITUcX1cicL21tlUhL/ki5KlMk6/v7+9r8UhX6xxb5+TNVf55edCPn8nTpi2cYnVo7HMzMwEGb/sAAACqUlEQVRYw+2XaXOiQBCGgR5uDUQELxCjxgtjvHJnk72P//+HdoaIjgrMSKVqa6vSVX4Q22d46aH7HUH4iP8imhW+vIrJl3cG4PDkaQBnPHmqDGXDZSId1yiDrHIAcRpqg4dQXhJSPWgjvDSbVwIIfICKppSyk2xFqwD4WHSJxasqYOoWuLoM59lZ51jFECyjeX3JApLUFnjVJijV/GWrAC2dWWkbQHOIYIYY8mCw6FeHUemqB3MiGD/uAXX5qjteLsfdmbFXOsEFSzdBUXMFWzoRXKbS9PGFtImL7hapDn2El28ha2/pY8EOFmufUUK6W1yMnO1UK1qSnwm8vG6R6qq7/aUvpYMYR5ufBmAhomg+zKu0PsfVpQTfSkfxQFfaI5XOf0HlEhYcbL59klKiu3vnA1vWWBsRGTIke+tJSo0rqtKI42X23STrVzrwNqm065/UFqNOQ8q/xVPjawZPGhcE/jwEfev1XuLdWIx3I9ZoWmNdF3H8IBe/FwJ2xDXFq03Ft6jXij7EiSi+HPMwsSHNigLriehaXdxFryDwhtxNj2ydRo/miVPpqVhV+vHf79f34kE0omLARzEjHgruw0kW8PdpHH+4eZejL+m86aZvo+EfDhzdbTrpwM+ndJsg7ofJABil8e6oyVdi9UMdz2OV8izPx7znpHnhjo0/zbyOjWcKHqAmNUSjo3t8jChLYIKsz3PcA5liWHAYUFNv0qdx/RU19cIQ54V5Uy+ey3jlvfFtrLbI/kin5zK2BOX8uUwm2byqtNV9o2Z0VqPFYnHX2Td9gtpWVIZzIJULUSDbAYe3sa0QOUwXSwRzui+Px32R1CafPyRWicMfEjFvhi7fwYbEzIUcDvZEjz3gOQUQU+wyHUZ8ClB4TgHvfk4RBPOdT1If8a/jL1S9MUKKtUGPAAAAAElFTkSuQmCC","nl":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAA1BAMAAAAkBnF3AAAAD1BMVEWuHCj///8hRovIZm5rhLLyO+d3AAAAK0lEQVRIx2NgGAWjYCgCYyIBgyCRYFThqMJBpdCFSMCgRCQYVTiqcDApBADNaJoRWwlNAgAAAABJRU5ErkJggg==","pl":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAyAQMAAADx486/AAAABlBMVEXcFDz////vuDXSAAAAE0lEQVQoz2P4DwcMo0wIcxSgAwBb0PkHxoHwIwAAAABJRU5ErkJggg==","pt":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAA1CAMAAADh9px2AAAA+VBMVEX/AAAAZgD////8AAABYgDY1wD3AQDf3gD6+vvR0QLpBABbfL7BxgCwvgCZsADZfADueXd5nwJslgCSqQCiuADv7gAAXADIzQDyGQ/zOjfdZVDWvAA4fQDn5wDBYgDvgX/vTkvJUgDeXUHTjwC/hADOggisvN7mOAHdUALXpgDUxQDBrwPMdQDTmgDrXFdzj8eEogDZhwDUZgDZbQDZrwC5iVS5ewDdgldViQDfXwDG0eiVqtXsamX8/ADcIgCii1neeWLRoQDMjlTLwgD//wC3ngDXnHzb4vDst7XrpqPi6PTTqljfxlmmtWbKtFIYbACDfUWaeVTIRABJHBxHAAACP0lEQVRYw+3WV5PaMBAAYIEsyXKv2NjY2Mamdwh3cNxxhevp///HRE6YvGYieEhm2NHo8Zu1tdIuqPwhwN/GGTyDZ/BfBAV8QlCoWJb9uFhL8CSgYKmIUOUhRLS3xseDlwpRp42a1pIkPSTLzrGgHakNgaWptVhycN0ni+NAJ9p9+1DG/f0FiyC4j2ZHgILlqVmcYghxHJd7GgcDGvODNvG0LM/Z4eI8Lz85z4PhgxJDTrCGrvduNpz79Xq9KNjmzxfZ99wbSHygYFEPRWMAmuIhDADGo1mP3HBmqCHkKgkDq9WqLIvVaglKQEI6Z4aeZnpRAg9g9QBCuOxhLvALmlqOl6XdEmy3S7CbBuGdPupLXOAlpaptZqtVs331dsVW21itguEoROiGC5wqdq0mZEXRnEw2sryRJ0ZRBBhLd96KL0OkUGeaQNhsy+JkIsptA8LxsBX2vZTvUIhmaSorG4P9vs2GbVsAti19MUIS5yk7QkUIAEgOZSPWAbjo+XgZYt46rFWEHfQ7L7/K5rXj44/XYYfMOAu7EdkOpfX5UH8Rn5/FV304TwbXe4o6vHdZQZ5jfk3vdJgYRgL0UcoSdPe8d7lSMani2Je73wl1b1sDqrgx/wNru6pC0Oetzx4s6G/f+4g+RI+QHxQcV2uYpvnp6fb26b3QF92eO4NH9RQzUsqeUrNbrInC7pLMj+16DZU45s+u5+tLMro5UV9GSr9PUK+LTzM5CNZUHehrCZ9ytoEnnG3OA+cZPIP/D/gDi5JASRpy9TcAAAAASUVORK5CYII=","ru":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAA1BAMAAAAkBnF3AAAAD1BMVEXVKx4AOab///+OMEuqveHhfiP9AAAAKUlEQVRIx2NUYiAOMDGMKhxVOHgUshCbcBkFR8NxVOFwTuGjYBQMSQAASsMAwmh8IyAAAAAASUVORK5CYII=","tr":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAA1CAMAAADh9px2AAAASFBMVEXjChfoLDf3trrlFCH1oabpN0L+8fH////mHyvsUVr85ebrSlTwcXjxho32q6/72tztXGXzlZv4wcTykJX++PnqRE7weoH6z9HJeFUyAAAA7ElEQVRYw+2W2RKDIAxFAZFFFhG3///TjmBb21JHIY/cF2dk5pjchESEqqqqqq5LuIUSaxQQThK+ayJtOa6x/CiCC3m4jyBmFyUQVrQrS1x0kUfFK+JRlvBifP2Hda3IB0b/ui9Ck81rY76p0uIsKg28IdlLNAfIAjBpmeRue9wruQw8/+eMYUmZvgU0AWhOPkZyLNRJB1mq/Neaxv28V3u3c32zJgN0hMuJh3OOhzN0lcH7EP6mgN9lNAJPG9SsgbiCzcPnhJ3evVM2sQ87xRsZd4orXXsGduttaQ8T5F4OSG29h/tzqKqqqnoAliYK+q/+x14AAAAASUVORK5CYII=","zh":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAA1CAMAAADh9px2AAAANlBMVEXuHCX//wDwLyHyVBvuIiP5qw3xPx71dRX+5wP3jRL4mRD/9gHzXxnySxz7wQn6tgv7ygj80QdOKUmjAAAAwElEQVQYGe3BSXLDMAwEwBkQBFct+f9nbSVOpORIwYdUsRv/msKTmBS42lvEbYZTZKuKe2TFDytrwl2JgpME3LUy4TcxKIYpueKPHAsGaDgUsoXDghepjQtG9MbTh+FFLcaqGCE7v1VcFMUYReGnHHClGLfxkOBFGw8RXjqZK9kUV0EwKnJTWGbHSUKsQTBEc8KTxoiLQhaMMcOXjgvL2eBpEQlws8CTpFThKnLvcCSZ2wJHoj3BmWCapmmapumtHrOgA8RDdxj4AAAAAElFTkSuQmCC"};
-
-  // Sample voices — a subset of the 26 supported languages.
-  var VOICES = [
-    { code: 'pt', name: 'Portuguese', say: 'Me liga quando chegares em casa.',            en: 'Call me when you get home.',                    chip: '“me liga quando chegares”' },
-    { code: 'es', name: 'Spanish',    say: '¿Nos vemos mañana para comer?',                en: 'Shall we meet for lunch tomorrow?',             chip: '“¿nos vemos mañana?”' },
-    { code: 'fr', name: 'French',     say: 'Tu peux m’envoyer l’adresse de ce soir ?',     en: 'Can you send me tonight’s address?',            chip: '“envoie-moi l’adresse”' },
-    { code: 'de', name: 'German',     say: 'Lass uns das morgen früh besprechen.',         en: 'Let’s discuss that tomorrow morning.',          chip: '“morgen früh besprechen”' },
-    { code: 'it', name: 'Italian',    say: 'Ci vediamo alle otto davanti al cinema.',      en: 'See you at eight in front of the cinema.',      chip: '“alle otto davanti al cinema”' },
-    { code: 'nl', name: 'Dutch',      say: 'Vergeet je sleutels niet mee te nemen.',       en: 'Don’t forget to take your keys.',               chip: '“vergeet je sleutels niet”' },
-    { code: 'pl', name: 'Polish',     say: 'Zadzwonię do ciebie po spotkaniu.',            en: 'I’ll call you after the meeting.',              chip: '“zadzwonię po spotkaniu”' },
-    { code: 'ru', name: 'Russian',    say: 'Давай встретимся у метро в шесть.',            en: 'Let’s meet by the metro at six.',               chip: '“встретимся в шесть”' },
-    { code: 'tr', name: 'Turkish',    say: 'Toplantıyı yarına erteleyebilir miyiz?',       en: 'Can we push the meeting to tomorrow?',          chip: '“yarına erteleyebilir miyiz”' },
-    { code: 'zh', name: 'Chinese',    say: '记得把门锁上再走。',                            en: 'Remember to lock the door on your way out.',    chip: '“记得把门锁上”' },
-    { code: 'ja', name: 'Japanese',   say: '明日の会議、10時からで大丈夫？',                 en: 'Is ten OK for tomorrow’s meeting?',             chip: '“明日10時で大丈夫？”' },
-    { code: 'ko', name: 'Korean',     say: '내일 점심 같이 먹을래?',                        en: 'Want to grab lunch together tomorrow?',         chip: '“내일 점심 같이?”' },
-    { code: 'hi', name: 'Hindi',      say: 'कल सुबह मुझे याद दिला देना।',                  en: 'Remind me tomorrow morning.',                   chip: '“कल सुबह याद दिला देना”' },
-    { code: 'ar', name: 'Arabic',     say: 'أخبرني عندما تصل إلى المطار.',                 en: 'Let me know when you reach the airport.',       chip: '“أخبرني عندما تصل”' }
-  ];
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function esc(s) {
-    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-  }
-
-  // Word-by-word landing animation. Scripts without spaces split per character.
-  function renderWords(el, text) {
-    var spaced = text.indexOf(' ') !== -1;
-    var tokens = spaced ? text.split(' ') : Array.from(text);
-    var html = '';
-    for (var k = 0; k < tokens.length; k++) {
-      html += '<span class="w">' + esc(tokens[k]) + '</span>' + (spaced ? ' ' : '');
-    }
-    el.innerHTML = html;
-    var spans = el.querySelectorAll('.w');
-    if (reduceMotion || !spans.length) {
-      for (var q = 0; q < spans.length; q++) spans[q].classList.add('on');
+  var target = new Date("2026-10-10T00:00:00Z").getTime();
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function tick() {
+    var diff = target - Date.now();
+    if (diff <= 0) {
+      document.getElementById("count").innerHTML = "<div><b>10/10</b><span>today</span></div>";
       return;
     }
-    for (var i = 0; i < spans.length; i++) {
-      (function (s, d) { setTimeout(function () { s.classList.add('on'); }, d); })(spans[i], i * 60);
-    }
+    var d = Math.floor(diff / 864e5),
+        h = Math.floor(diff / 36e5) % 24,
+        m = Math.floor(diff / 6e4) % 60,
+        s = Math.floor(diff / 1e3) % 60;
+    document.getElementById("d").textContent = d;
+    document.getElementById("h").textContent = pad(h);
+    document.getElementById("m").textContent = pad(m);
+    document.getElementById("s").textContent = pad(s);
   }
-
-  // ---- marquee: flag + name, doubled for a seamless loop ----
-  var mq = document.getElementById('marquee');
-  var items = '';
-  for (var m = 0; m < VOICES.length; m++) {
-    items += '<span><img src="' + FLAGS[VOICES[m].code] + '" alt="" loading="lazy"/>' + VOICES[m].name + '</span>';
-  }
-  items += '<span>…and auto-detect</span>';
-  mq.innerHTML = items + items;
-
-  // ---- playground + hero pill + floating chips, one random rotation ----
-  var pick = document.getElementById('pick');
-  var whoSay = document.getElementById('whoSay');
-  var sayFlag = document.getElementById('sayFlag');
-  var sayNative = document.getElementById('sayNative');
-  var sayEn = document.getElementById('sayEn');
-  var pillTalk = document.getElementById('pillTalk');
-  var pillTalkTxt = document.getElementById('pillTalkTxt');
-  var pillFlag = document.getElementById('pillFlag');
-  var writeFlag = document.getElementById('writeFlag');
-  var chipSay = document.getElementById('chipSay');
-  var chipOut = document.getElementById('chipOut');
-  writeFlag.src = FLAGS.en;
-  var current = -1, timer = null, seq = 0;
-
-  for (var b = 0; b < VOICES.length; b++) {
-    (function (idx) {
-      var btn = document.createElement('button');
-      btn.textContent = VOICES[idx].name;
-      btn.setAttribute('role', 'tab');
-      btn.addEventListener('click', function () { select(idx, true); });
-      pick.appendChild(btn);
-    })(b);
-  }
-  var btns = pick.querySelectorAll('button');
-
-  function randomNext() {
-    if (VOICES.length < 2) return 0;
-    var n = current;
-    while (n === current) n = Math.floor(Math.random() * VOICES.length);
-    return n;
-  }
-
-  function swapHero(v, my) {
-    // pill row + both floating chips fade as one beat — nothing snaps alone
-    pillTalk.classList.add('fading');
-    chipSay.parentElement.classList.add('fading');
-    chipOut.parentElement.classList.add('fading');
-    setTimeout(function () {
-      if (my !== seq) return;
-      pillTalkTxt.textContent = v.name + ' →';
-      pillFlag.src = FLAGS[v.code];
-      chipSay.textContent = v.chip;
-      pillTalk.classList.remove('fading');
-      chipSay.parentElement.classList.remove('fading');
-      chipOut.parentElement.classList.remove('fading');
-    }, 350);
-  }
-
-  function select(i, manual) {
-    current = i;
-    var my = ++seq;
-    for (var j = 0; j < btns.length; j++) btns[j].classList.toggle('on', j === i);
-    var v = VOICES[i];
-    whoSay.textContent = 'You say · ' + v.name;
-    sayFlag.src = FLAGS[v.code];
-    renderWords(sayNative, v.say);
-    setTimeout(function () { if (my === seq) renderWords(sayEn, v.en); }, 350);
-    swapHero(v, my);
-    if (manual) restart();
-  }
-  function restart() {
-    if (timer) clearInterval(timer);
-    timer = setInterval(function () { select(randomNext(), false); }, 7000);
-  }
-  select(randomNext(), false);
-  restart();
-
-  // ---- reveal on scroll (with fallback: content always wins) ----
-  if (!('IntersectionObserver' in window)) {
-    revealAll();
-  } else {
-    var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
-  }
+  tick();
+  setInterval(tick, 1000);
+  document.getElementById("join").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var mail = document.getElementById("email").value.trim();
+    if (!mail) return;
+    window.location.href = "mailto:supears.app@gmail.com"
+      + "?subject=" + encodeURIComponent("supEars waitlist")
+      + "&body=" + encodeURIComponent("Please notify me at alpha: " + mail);
+  });
 })();
 </script>
 </body>
