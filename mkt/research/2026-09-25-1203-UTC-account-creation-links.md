@@ -5,13 +5,11 @@
 > phone/SMS. One at a time, VPN off, hub email `supears.app@gmail.com` with plus-addressing
 > (`+tt`, `+x`, `+fb`, `+ig`), handle **@supEars** everywhere, avatar = `mkt/assets/supEarsLogoV3.png`.
 
-## Site answer: no separate site needed
+## Site: LIVE since 2026-09-25 12:4x UTC
 
-- Cost-$0 path already in place: GitHub Pages on this repo.
-  - Owner toggles once: repo → Settings → Pages → Deploy from a branch → `main` / `(root)` → Save.
-  - Agent part (on your word): copies `mkt/prelanding-countdown.html` to root `index.html` so
-    `https://humbleangel.github.io/supEars_Official/` becomes the landing page.
-  - Every bio link swaps from the Issues waitlist to that URL once it serves.
+- `https://humbleangel.github.io/supEars_Official/` serves the countdown prelanding (verified 200, both images 200).
+- Owner toggled Pages once: repo → Settings → Pages → Deploy from a branch → `main` / `(root)` → Save. Agent half was the root `index.html` (ticket 01).
+- **Use this URL in every bio from now on** (replaces the Issues waitlist link as the primary link).
 - Do NOT buy domains/site builders now. When alpha 0.90 opens, downloads = GitHub Releases linked from the same page.
 
 ## Order (desktop-first — phone appears only where noted, once)
@@ -30,7 +28,7 @@
 - Short bio (X/IG/TikTok/Kwai): The Ear that understands your language. Speak in your native language — writes in English or 26 languages. 100% offline. No account, no cloud. Escape the Big Tech Corps Subscriptions Traps.
 - Long about (FB/Telegram): supEars — The Ear that understands your language. Speak in your native language; supEars writes it in English, or any of 26 languages. In total privacy: your voice never leaves your computer. No account, no cloud, no one listening. No money to MegaCorps. Pre-alpha now — beta opens October 10, 2026. Windows today, Mac and Linux planned.
 - First pinned post (only AFTER you approve posting): Come in now and be a founder. Be part of the beta-testers group. $24.99 forever, first 1,000 only, before it's gone.
-- Waitlist link until Pages serve: https://github.com/humbleangel/supEars_Official/issues
+- Waitlist link (all bios from now on): https://humbleangel.github.io/supEars_Official/ — the page's own join paths reach the hub inbox and the Issues page.
 
 ## Report back
 

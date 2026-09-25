@@ -30,6 +30,7 @@
 ## Domains — owner asset + supEars plan (2026-09-22 03:00 UTC)
 
 - Owner holds **mytreex.app.dj** (free subdomain pattern; a real `.dj` registration costs $59+/yr, so this is near-certainly a free shared-domain subdomain, e.g. via FreeDNS/afraid.org-style sharing).
+- **LIVE 2026-09-25:** the $0 site is up — `https://humbleangel.github.io/supEars_Official/` (GitHub Pages, root `index.html` = countdown prelanding). Every new bio uses this URL.
 - Plan: create **supears.app.dj** (same nickname, same provider) for the selling site, pointing at GitHub Pages (subdomain CNAME → github.io address + Pages custom-domain setting).
 - Caveats: shared subdomains live only while the domain owner allows (no ownership); fine to start, real domain later. `mytreex.app.dj` did not resolve on fetch 2026-09-22 (transport error) — owner to confirm it loads.
 
