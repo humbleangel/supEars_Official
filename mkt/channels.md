@@ -21,9 +21,11 @@
 - Not needed here: password, recovery codes, 2FA secrets — never enter those in this repo. Owner uses authenticator 2FA + saved recovery codes per the earlier advisory.
 - Resolved (2026-09-22 04:22 UTC): existing channel sits under **another account**, not this hub. Owner decision: redo it under this hub; all channels live here.
 
-## Other platforms — none yet
+## Other platforms — pending creation (tickets 02–09)
 
-- X / Instagram / TikTok / Facebook: not created. Alt-account policy (`2026-09-15-0250-UTC-alt-accounts-policy.md`) applies if created.
+- Approved channels, none created yet: X, TikTok, Facebook Page, Instagram (+Threads park), Telegram channel, WhatsApp Channel, Kwai, and **Pinterest business** (owner approved adding, 2026-09-25 12:10 UTC).
+- Creation guide + links: `mkt/research/2026-09-25-1203-UTC-account-creation-links.md`; tickets: `.scratch/account-creation/issues/`.
+- As each handle is created it gets its own section above with URL + date. Alt-account policy (`2026-09-15-0250-UTC-alt-accounts-policy.md`) applies.
 
 ## Domains — owner asset + supEars plan (2026-09-22 03:00 UTC)
 
