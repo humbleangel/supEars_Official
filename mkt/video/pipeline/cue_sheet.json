@@ -1,0 +1,866 @@
+{
+ "meta": {
+  "fps": 30,
+  "duration": 60.0,
+  "bpm": 140.0,
+  "beat": 0.42857,
+  "bar": 1.71429,
+  "resolution": [
+   1920,
+   1080
+  ],
+  "render": [
+   960,
+   540
+  ],
+  "music": "mashup.wav (6 tracks @141)",
+  "wall": "wall.wav (26 voices)",
+  "vo": "vo/vo_placed.wav (14 lines)"
+ },
+ "chapters": [
+  {
+   "name": "HOOK",
+   "start": 0.0,
+   "end": 8.571
+  },
+  {
+   "name": "MECH",
+   "start": 8.571,
+   "end": 20.571
+  },
+  {
+   "name": "WALL",
+   "start": 20.571,
+   "end": 39.429
+  },
+  {
+   "name": "PRIVACY",
+   "start": 39.429,
+   "end": 44.571
+  },
+  {
+   "name": "PROOF",
+   "start": 44.571,
+   "end": 53.143
+  },
+  {
+   "name": "CTA",
+   "start": 53.143,
+   "end": 60.0
+  }
+ ],
+ "vo": [
+  {
+   "id": "hook",
+   "chapter": "HOOK",
+   "start": 0.0,
+   "dur": 2.424,
+   "file": "vo/hook.mp3"
+  },
+  {
+   "id": "pain",
+   "chapter": "HOOK",
+   "start": 3.3,
+   "dur": 4.008,
+   "file": "vo/pain.mp3"
+  },
+  {
+   "id": "brand",
+   "chapter": "MECH",
+   "start": 8.8,
+   "dur": 3.528,
+   "file": "vo/brand.mp3"
+  },
+  {
+   "id": "how1",
+   "chapter": "MECH",
+   "start": 12.8,
+   "dur": 4.152,
+   "file": "vo/how1.mp3"
+  },
+  {
+   "id": "how2",
+   "chapter": "MECH",
+   "start": 17.3,
+   "dur": 2.784,
+   "file": "vo/how2.mp3"
+  },
+  {
+   "id": "es",
+   "chapter": "WALL",
+   "start": 20.9,
+   "dur": 4.728,
+   "file": "vo/es.mp3"
+  },
+  {
+   "id": "fr",
+   "chapter": "WALL",
+   "start": 26.0,
+   "dur": 4.008,
+   "file": "vo/fr.mp3"
+  },
+  {
+   "id": "de",
+   "chapter": "WALL",
+   "start": 30.3,
+   "dur": 4.44,
+   "file": "vo/de.mp3"
+  },
+  {
+   "id": "ja",
+   "chapter": "WALL",
+   "start": 35.1,
+   "dur": 4.056,
+   "file": "vo/ja.mp3"
+  },
+  {
+   "id": "privacy",
+   "chapter": "PRIVACY",
+   "start": 39.6,
+   "dur": 4.872,
+   "file": "vo/privacy.mp3"
+  },
+  {
+   "id": "cpu",
+   "chapter": "PROOF",
+   "start": 44.9,
+   "dur": 3.24,
+   "file": "vo/cpu.mp3"
+  },
+  {
+   "id": "motto",
+   "chapter": "PROOF",
+   "start": 48.4,
+   "dur": 3.264,
+   "file": "vo/motto.mp3"
+  },
+  {
+   "id": "free",
+   "chapter": "PROOF",
+   "start": 52.0,
+   "dur": 3.744,
+   "file": "vo/free.mp3"
+  },
+  {
+   "id": "cta2",
+   "chapter": "CTA",
+   "start": 56.1,
+   "dur": 2.4,
+   "file": "vo/cta2.mp3"
+  }
+ ],
+ "texts": [
+  {
+   "id": "hook",
+   "chapter": "HOOK",
+   "text": "Are you tired of paying subscriptions to talk?",
+   "lang": "en",
+   "start": 0.0,
+   "end": 3.2,
+   "style": "hero",
+   "y": 470,
+   "snap": 0.0
+  },
+  {
+   "id": "pain1",
+   "chapter": "HOOK",
+   "text": "You pay every month.",
+   "lang": "en",
+   "start": 3.3,
+   "end": 7.1,
+   "style": "hero",
+   "y": 470,
+   "snap": 3.4285714285714284
+  },
+  {
+   "id": "pain2",
+   "chapter": "HOOK",
+   "text": "to type one sentence.",
+   "lang": "en",
+   "start": 5.0,
+   "end": 7.1,
+   "style": "sub",
+   "y": 600,
+   "snap": 5.142857142857142
+  },
+  {
+   "id": "quote1",
+   "chapter": "HOOK",
+   "text": "\u201cWindows speech recognition accuracy was too low.\u201d",
+   "lang": "en",
+   "start": 7.3,
+   "end": 8.5,
+   "style": "quote",
+   "y": 1010,
+   "snap": 7.285714285714286
+  },
+  {
+   "id": "brand",
+   "chapter": "MECH",
+   "text": "The Ear that understands your language.",
+   "lang": "en",
+   "start": 8.8,
+   "end": 12.3,
+   "style": "claim",
+   "y": 870,
+   "snap": 9.0
+  },
+  {
+   "id": "quote2",
+   "chapter": "MECH",
+   "text": "\u201cLocal offline speech recognition. No internet needed.\u201d",
+   "lang": "en",
+   "start": 9.95,
+   "end": 11.95,
+   "style": "quote",
+   "y": 1010,
+   "snap": 9.857142857142856
+  },
+  {
+   "id": "mech1",
+   "chapter": "MECH",
+   "text": "Click.",
+   "lang": "en",
+   "start": 12.8,
+   "end": 14.3,
+   "style": "hero3",
+   "y": 750,
+   "snap": 12.857142857142856
+  },
+  {
+   "id": "mech2",
+   "chapter": "MECH",
+   "text": "Speak.",
+   "lang": "en",
+   "start": 14.3,
+   "end": 15.8,
+   "style": "hero3",
+   "y": 750,
+   "snap": 14.142857142857142
+  },
+  {
+   "id": "mech3",
+   "chapter": "MECH",
+   "text": "Magic.",
+   "lang": "en",
+   "start": 15.8,
+   "end": 17.3,
+   "style": "hero3",
+   "y": 750,
+   "snap": 15.857142857142856
+  },
+  {
+   "id": "cry",
+   "chapter": "MECH",
+   "text": "Escape the Subscriptions Trap.",
+   "lang": "en",
+   "start": 18.0,
+   "end": 20.4,
+   "style": "cry",
+   "y": 540,
+   "snap": 18.0
+  },
+  {
+   "id": "draft1",
+   "chapter": "MECH",
+   "text": "Fale no seu idioma.",
+   "lang": "pt",
+   "start": 15.2,
+   "end": 17.1,
+   "style": "draft",
+   "y": 0,
+   "snap": 15.0
+  },
+  {
+   "id": "draft2",
+   "chapter": "MECH",
+   "text": "Speak in your own native language.",
+   "lang": "en",
+   "start": 15.9,
+   "end": 17.3,
+   "style": "draft",
+   "y": 0,
+   "snap": 15.857142857142856
+  },
+  {
+   "id": "es",
+   "chapter": "WALL",
+   "text": "Habla en espa\u00f1ol.",
+   "lang": "es",
+   "start": 20.75,
+   "end": 25.55,
+   "style": "hero",
+   "y": 350,
+   "snap": 20.57142857142857
+  },
+  {
+   "id": "es_sub",
+   "chapter": "WALL",
+   "text": "supEars escribe en ingl\u00e9s.",
+   "lang": "en",
+   "start": 22.15,
+   "end": 25.55,
+   "style": "sub",
+   "y": 620,
+   "snap": 22.285714285714285
+  },
+  {
+   "id": "es_win",
+   "chapter": "WALL",
+   "text": "Email to my boss, in English.",
+   "lang": "en",
+   "start": 22.35,
+   "end": 25.55,
+   "style": "window",
+   "y": 0,
+   "snap": 22.285714285714285
+  },
+  {
+   "id": "fr",
+   "chapter": "WALL",
+   "text": "Parlez fran\u00e7ais.",
+   "lang": "fr",
+   "start": 25.85,
+   "end": 29.95,
+   "style": "hero",
+   "y": 350,
+   "snap": 25.71428571428571
+  },
+  {
+   "id": "fr_sub",
+   "chapter": "WALL",
+   "text": "supEars \u00e9crit en anglais.",
+   "lang": "en",
+   "start": 27.25,
+   "end": 29.95,
+   "style": "sub",
+   "y": 620,
+   "snap": 27.428571428571427
+  },
+  {
+   "id": "fr_win",
+   "chapter": "WALL",
+   "text": "Message: I'm running late, see you at nine.",
+   "lang": "en",
+   "start": 27.45,
+   "end": 29.95,
+   "style": "window",
+   "y": 0,
+   "snap": 27.428571428571427
+  },
+  {
+   "id": "quote3",
+   "chapter": "WALL",
+   "text": "\u201cI searched for voice-to-text without a subscription.\u201d",
+   "lang": "en",
+   "start": 27.8,
+   "end": 29.8,
+   "style": "quote",
+   "y": 1010,
+   "snap": 27.857142857142854
+  },
+  {
+   "id": "de",
+   "chapter": "WALL",
+   "text": "Sprich Deutsch.",
+   "lang": "de",
+   "start": 30.15,
+   "end": 34.6,
+   "style": "hero",
+   "y": 350,
+   "snap": 30.0
+  },
+  {
+   "id": "de_sub",
+   "chapter": "WALL",
+   "text": "Keine Cloud, kein Abo.",
+   "lang": "en",
+   "start": 31.55,
+   "end": 34.6,
+   "style": "sub",
+   "y": 620,
+   "snap": 31.71428571428571
+  },
+  {
+   "id": "de_win",
+   "chapter": "WALL",
+   "text": "Invoice the client on Friday.",
+   "lang": "en",
+   "start": 31.75,
+   "end": 34.6,
+   "style": "window",
+   "y": 0,
+   "snap": 31.71428571428571
+  },
+  {
+   "id": "quote4",
+   "chapter": "WALL",
+   "text": "\u201c200 hours of sermons must become text.\u201d",
+   "lang": "en",
+   "start": 32.4,
+   "end": 34.4,
+   "style": "quote",
+   "y": 1010,
+   "snap": 32.57142857142857
+  },
+  {
+   "id": "ja",
+   "chapter": "WALL",
+   "text": "\u65e5\u672c\u8a9e\u3067\u8a71\u3059\u3002",
+   "lang": "ja",
+   "start": 34.95,
+   "end": 37.45,
+   "style": "hero",
+   "y": 350,
+   "snap": 35.14285714285714
+  },
+  {
+   "id": "ja_sub",
+   "chapter": "WALL",
+   "text": "\u82f1\u8a9e\u3067\u66f8\u304f\u3002",
+   "lang": "en",
+   "start": 36.35,
+   "end": 39.0,
+   "style": "sub",
+   "y": 620,
+   "snap": 36.42857142857142
+  },
+  {
+   "id": "ja_win",
+   "chapter": "WALL",
+   "text": "Meeting notes, translated.",
+   "lang": "en",
+   "start": 36.55,
+   "end": 39.0,
+   "style": "window",
+   "y": 0,
+   "snap": 36.42857142857142
+  },
+  {
+   "id": "claim",
+   "chapter": "WALL",
+   "text": "25 languages in. English out.",
+   "lang": "en",
+   "start": 37.6,
+   "end": 39.4,
+   "style": "claim",
+   "y": 190,
+   "snap": 37.714285714285715
+  },
+  {
+   "id": "priv1",
+   "chapter": "PRIVACY",
+   "text": "100% offline.",
+   "lang": "en",
+   "start": 39.5,
+   "end": 44.4,
+   "style": "hero",
+   "y": 480,
+   "snap": 39.42857142857142
+  },
+  {
+   "id": "priv2",
+   "chapter": "PRIVACY",
+   "text": "No account. No cloud.",
+   "lang": "en",
+   "start": 41.4,
+   "end": 44.4,
+   "style": "sub",
+   "y": 690,
+   "snap": 41.57142857142857
+  },
+  {
+   "id": "proof1",
+   "chapter": "PROOF",
+   "text": "Runs on old CPUs.",
+   "lang": "en",
+   "start": 44.9,
+   "end": 48.0,
+   "style": "claim",
+   "y": 170,
+   "snap": 45.0
+  },
+  {
+   "id": "proof2",
+   "chapter": "PROOF",
+   "text": "No graphics card.",
+   "lang": "en",
+   "start": 46.2,
+   "end": 48.0,
+   "style": "sub",
+   "y": 244,
+   "snap": 46.285714285714285
+  },
+  {
+   "id": "motto",
+   "chapter": "PROOF",
+   "text": "Escape the Big Tech Corps Subscriptions Traps.",
+   "lang": "en",
+   "start": 48.4,
+   "end": 51.6,
+   "style": "claim",
+   "y": 540,
+   "snap": 48.42857142857142
+  },
+  {
+   "id": "proof3",
+   "chapter": "PROOF",
+   "text": "30 days free. No credit card.",
+   "lang": "en",
+   "start": 52.0,
+   "end": 55.5,
+   "style": "claim",
+   "y": 964,
+   "snap": 51.857142857142854
+  },
+  {
+   "id": "uc1",
+   "chapter": "PROOF",
+   "text": "\u201cI have so much typing. I can't cope.\u201d",
+   "lang": "en",
+   "start": 52.3,
+   "end": 55.2,
+   "style": "quote",
+   "y": 700,
+   "snap": 52.285714285714285
+  },
+  {
+   "id": "cta1",
+   "chapter": "CTA",
+   "text": "supEars",
+   "lang": "en",
+   "start": 56.1,
+   "end": 60.0,
+   "style": "brand",
+   "y": 808,
+   "snap": 56.14285714285714
+  },
+  {
+   "id": "cta2",
+   "chapter": "CTA",
+   "text": "Public release \u00b7 October 10, 2026",
+   "lang": "en",
+   "start": 56.5,
+   "end": 60.0,
+   "style": "sub",
+   "y": 890,
+   "snap": 56.57142857142857
+  },
+  {
+   "id": "cta3",
+   "chapter": "CTA",
+   "text": "100% offline \u00b7 no account \u00b7 no cloud",
+   "lang": "en",
+   "start": 57.0,
+   "end": 60.0,
+   "style": "sub",
+   "y": 942,
+   "snap": 57.0
+  },
+  {
+   "id": "cta4",
+   "chapter": "CTA",
+   "text": "Developed by HumbleAngel",
+   "lang": "en",
+   "start": 57.4,
+   "end": 60.0,
+   "style": "sub",
+   "y": 982,
+   "snap": 57.42857142857142
+  }
+ ],
+ "counters": [
+  {
+   "id": "languages",
+   "label": "LANGUAGES",
+   "start": 20.9,
+   "end": 39.0,
+   "from": 1,
+   "to": 25
+  },
+  {
+   "id": "free_days",
+   "label": "DAYS FREE",
+   "start": 52.0,
+   "end": 55.7,
+   "from": 0,
+   "to": 30
+  }
+ ],
+ "sfx": [
+  {
+   "id": "boom",
+   "at": 0.0,
+   "kind": "sub",
+   "snap": 0.0
+  },
+  {
+   "id": "boom2",
+   "at": 3.3,
+   "kind": "sub",
+   "snap": 3.4285714285714284
+  },
+  {
+   "id": "whip",
+   "at": 5.0,
+   "kind": "whip",
+   "snap": 5.142857142857142
+  },
+  {
+   "id": "push",
+   "at": 6.6,
+   "kind": "impact",
+   "snap": 6.428571428571428
+  },
+  {
+   "id": "brand",
+   "at": 8.8,
+   "kind": "shimmer",
+   "snap": 9.0
+  },
+  {
+   "id": "click1",
+   "at": 12.8,
+   "kind": "click",
+   "snap": 12.857142857142856
+  },
+  {
+   "id": "click2",
+   "at": 14.3,
+   "kind": "click",
+   "snap": 14.142857142857142
+  },
+  {
+   "id": "click3",
+   "at": 15.8,
+   "kind": "click",
+   "snap": 15.857142857142856
+  },
+  {
+   "id": "type",
+   "at": 15.2,
+   "kind": "ticks",
+   "snap": 15.0
+  },
+  {
+   "id": "cry",
+   "at": 18.0,
+   "kind": "impact",
+   "snap": 18.0
+  },
+  {
+   "id": "claim",
+   "at": 37.6,
+   "kind": "shimmer",
+   "snap": 37.714285714285715
+  },
+  {
+   "id": "whoosh",
+   "at": 20.571,
+   "kind": "whip",
+   "snap": 20.57142857142857
+  },
+  {
+   "id": "iris",
+   "at": 39.429,
+   "kind": "iris",
+   "snap": 39.42857142857142
+  },
+  {
+   "id": "motto",
+   "at": 48.4,
+   "kind": "impact",
+   "snap": 48.42857142857142
+  },
+  {
+   "id": "riser",
+   "at": 55.2,
+   "kind": "riser",
+   "snap": 55.285714285714285
+  },
+  {
+   "id": "slam",
+   "at": 56.1,
+   "kind": "impact",
+   "snap": 56.14285714285714
+  }
+ ],
+ "camera": [
+  {
+   "t": 0.0,
+   "x": 0,
+   "y": 0,
+   "z": 1.16,
+   "rot": 0,
+   "ease": "io"
+  },
+  {
+   "t": 3.3,
+   "x": -70,
+   "y": 26,
+   "z": 1.46,
+   "rot": 0,
+   "ease": "out"
+  },
+  {
+   "t": 5.0,
+   "x": 0,
+   "y": 0,
+   "z": 1.02,
+   "rot": 0,
+   "ease": "io"
+  },
+  {
+   "t": 6.6,
+   "x": 0,
+   "y": 0,
+   "z": 2.7,
+   "rot": 0,
+   "ease": "in"
+  },
+  {
+   "t": 7.4,
+   "x": 0,
+   "y": 40,
+   "z": 1.02,
+   "rot": 0,
+   "ease": "out"
+  },
+  {
+   "t": 8.571,
+   "x": -40,
+   "y": 0,
+   "z": 1.05,
+   "rot": 0,
+   "ease": "io"
+  },
+  {
+   "t": 11.3,
+   "x": 150,
+   "y": -34,
+   "z": 1.34,
+   "rot": 0,
+   "ease": "out"
+  },
+  {
+   "t": 14.6,
+   "x": -160,
+   "y": 26,
+   "z": 1.24,
+   "rot": 0,
+   "ease": "io"
+  },
+  {
+   "t": 17.5,
+   "x": 120,
+   "y": -30,
+   "z": 1.3,
+   "rot": 0,
+   "ease": "io"
+  },
+  {
+   "t": 20.571,
+   "x": 0,
+   "y": 0,
+   "z": 1.02,
+   "rot": 0,
+   "ease": "io"
+  },
+  {
+   "t": 24.0,
+   "x": -40,
+   "y": 20,
+   "z": 1.4,
+   "rot": 0,
+   "ease": "out"
+  },
+  {
+   "t": 28.0,
+   "x": -110,
+   "y": 46,
+   "z": 1.22,
+   "rot": 0,
+   "ease": "io"
+  },
+  {
+   "t": 32.0,
+   "x": 90,
+   "y": -42,
+   "z": 1.34,
+   "rot": 0,
+   "ease": "io"
+  },
+  {
+   "t": 36.0,
+   "x": 0,
+   "y": 0,
+   "z": 1.5,
+   "rot": 0,
+   "ease": "out"
+  },
+  {
+   "t": 39.429,
+   "x": 0,
+   "y": 0,
+   "z": 1.26,
+   "rot": 0,
+   "ease": "io"
+  },
+  {
+   "t": 43.0,
+   "x": 0,
+   "y": 0,
+   "z": 1.04,
+   "rot": 0,
+   "ease": "out"
+  },
+  {
+   "t": 44.571,
+   "x": 0,
+   "y": 0,
+   "z": 1.0,
+   "rot": 0,
+   "ease": "io"
+  },
+  {
+   "t": 46.5,
+   "x": -80,
+   "y": 34,
+   "z": 1.26,
+   "rot": 0,
+   "ease": "out"
+  },
+  {
+   "t": 50.0,
+   "x": 50,
+   "y": -24,
+   "z": 1.14,
+   "rot": 0,
+   "ease": "io"
+  },
+  {
+   "t": 53.143,
+   "x": 0,
+   "y": 0,
+   "z": 1.0,
+   "rot": 0,
+   "ease": "io"
+  },
+  {
+   "t": 56.5,
+   "x": 0,
+   "y": 0,
+   "z": 1.07,
+   "rot": 0,
+   "ease": "out"
+  },
+  {
+   "t": 60.0,
+   "x": 0,
+   "y": 0,
+   "z": 1.0,
+   "rot": 0,
+   "ease": "io"
+  }
+ ]
+}

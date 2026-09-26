@@ -184,10 +184,10 @@ calm = by_energy[-1]
 
 plan = [
     (0, 5, master, "hook"),                 # 0.000 - 8.571
-    (5, 10, hard1, "mech"),                 # 8.571 - 17.143
-    (10, 21, None, "wall"),                 # 17.143 - 36.000 (A/B alternation)
-    (21, 26, calm, "privacy"),              # 36.000 - 44.571
-    (26, 31, None, "proof"),                # 44.571 - 53.143 (hardest A/B)
+    (5, 12, hard1, "mech"),                 # 8.571 - 20.571
+    (12, 23, None, "wall"),                 # 20.571 - 39.429
+    (23, 26, calm, "privacy"),              # 39.429 - 44.571
+    (26, 31, None, "proof"),                # 44.571 - 53.143
     (31, 35, master, "cta"),                # 53.143 - 60.000
 ]
 master_y = info[master]["y"]

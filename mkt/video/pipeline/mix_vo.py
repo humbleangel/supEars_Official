@@ -5,13 +5,18 @@ import sys
 from pathlib import Path
 
 HERE = Path(r"D:\WORK_B\PRJS\supEars_Official\mkt\video\pipeline")
-PLAN = {"pain": 0.00, "brand": 4.36, "how1": 9.04, "how2": 13.55, "es": 17.44,
-        "fr": 22.52, "de": 26.88, "ja": 31.67, "privacy": 36.88, "cpu": 44.61,
-        "free": 48.20, "cta": 53.10}
+PLAN = {"hook": 0.00, "pain": 3.30, "brand": 8.80, "how1": 12.80, "how2": 17.30,
+        "es": 20.90, "fr": 26.00, "de": 30.30, "ja": 35.10, "privacy": 39.60,
+        "cpu": 44.90, "motto": 48.40, "free": 52.00, "cta2": 56.10}
 
 timings = json.loads((HERE / "vo" / "timings.json").read_text(encoding="utf-8"))
 by_id = {t["id"]: t for t in timings}
-assert set(by_id) == set(PLAN), f"timing/plan mismatch: {set(by_id) ^ set(PLAN)}"
+for extra in ("hook", "motto", "cta2", "user1", "user2"):
+    f = HERE / "vo" / (extra + ".mp3")
+    d = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                        "-of", "csv=p=0", str(f)], capture_output=True, text=True).stdout.strip()
+    by_id[extra] = {"id": extra, "dur": round(float(d), 3)}
+assert set(PLAN) <= set(by_id), f"missing durations: {set(PLAN) - set(by_id)}"
 
 # prove no overlaps before building
 order = sorted(PLAN, key=PLAN.get)
