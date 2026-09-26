@@ -1,0 +1,62 @@
+[
+ {
+  "id": "pain",
+  "file": "vo/pain.mp3",
+  "dur": 4.008
+ },
+ {
+  "id": "brand",
+  "file": "vo/brand.mp3",
+  "dur": 3.528
+ },
+ {
+  "id": "how1",
+  "file": "vo/how1.mp3",
+  "dur": 4.152
+ },
+ {
+  "id": "how2",
+  "file": "vo/how2.mp3",
+  "dur": 2.736
+ },
+ {
+  "id": "es",
+  "file": "vo/es.mp3",
+  "dur": 4.728
+ },
+ {
+  "id": "fr",
+  "file": "vo/fr.mp3",
+  "dur": 4.008
+ },
+ {
+  "id": "de",
+  "file": "vo/de.mp3",
+  "dur": 4.44
+ },
+ {
+  "id": "ja",
+  "file": "vo/ja.mp3",
+  "dur": 4.056
+ },
+ {
+  "id": "privacy",
+  "file": "vo/privacy.mp3",
+  "dur": 4.872
+ },
+ {
+  "id": "cpu",
+  "file": "vo/cpu.mp3",
+  "dur": 3.24
+ },
+ {
+  "id": "free",
+  "file": "vo/free.mp3",
+  "dur": 3.744
+ },
+ {
+  "id": "cta",
+  "file": "vo/cta.mp3",
+  "dur": 5.256
+ }
+]

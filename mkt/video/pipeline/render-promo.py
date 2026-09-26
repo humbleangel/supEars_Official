@@ -189,6 +189,110 @@ def lerp(a, b, t):
     return a + (b - a) * t
 
 
+ARCS = [0.0, 9.04, 17.44, 36.88, 44.61, 53.10]
+LINES = [0.0, 4.36, 9.04, 13.55, 17.44, 22.52, 26.88, 31.67, 36.88, 44.61, 48.20, 53.10]
+
+
+def score60(path: Path, dur: float, sr: int = 48000) -> None:
+    """60s bed for the voice-led film: marks arcs, whispers under lines."""
+    n = int(sr * dur)
+    t = np.arange(n) / sr
+    rng = np.random.default_rng(23)
+    out = np.zeros(n)
+
+    def hit(at, f0, f1, decay, amp, curve=2.2):
+        i0 = int(at * sr)
+        m = min(n - i0, int(decay * 4 * sr))
+        if m <= 0:
+            return
+        seg = np.arange(m) / sr
+        sweep = f0 + (f1 - f0) * (seg / seg[-1])
+        envv = np.exp(-seg / decay) * (1 - np.exp(-seg * 900)) ** curve
+        out[i0:i0 + m] += amp * np.sin(2 * np.pi * sweep * seg) * envv
+
+    def noise_hit(at, decay, amp, cut=0.25):
+        i0 = int(at * sr)
+        m = min(n - i0, int(decay * 5 * sr))
+        if m <= 0:
+            return
+        seg = np.arange(m) / sr
+        src = rng.normal(0, 1, m)
+        b, a = butter(2, cut)
+        envv = np.exp(-seg / decay) * (1 - np.exp(-seg * 1400))
+        out[i0:i0 + m] += amp * lfilter(b, a, src) * envv
+
+    def riser(frm, to, amp, cut0=0.06, cut1=0.5):
+        i0, i1 = int(frm * sr), min(n, int(to * sr))
+        m = i1 - i0
+        if m <= 0:
+            return
+        tt = np.arange(m) / sr
+        src = rng.normal(0, 1, m)
+        acc = np.zeros(m)
+        for k in range(6):
+            frac = (cut0 + (cut1 - cut0) * (tt / max(tt[-1], 1e-9)))[k::6]
+            b, a = butter(2, float(np.clip(frac.mean() if frac.size else cut1, 0.01, 0.9)))
+            acc += lfilter(b, a, src) / 6
+        out[i0:i1] += amp * acc * (tt / max(tt[-1], 1e-9)) ** 2.1
+
+    def pad(frm, to, amp, roots, trem=0.23):
+        i0, i1 = int(frm * sr), min(n, int(to * sr))
+        m = i1 - i0
+        if m <= 0:
+            return
+        tt = np.arange(m) / sr
+        v = sum(np.sin(2 * np.pi * f * tt) for f in roots) / len(roots)
+        v *= 0.62 + 0.38 * np.sin(2 * np.pi * trem * tt)
+        v *= np.minimum(1, tt / 1.6) * np.minimum(1, (tt[-1] - tt) / 2.2 + 0.3)
+        out[i0:i1] += amp * v
+
+    def arp(frm, every, count, f0, f1, amp, decay=0.2):
+        for k in range(count):
+            f = lerp(f0, f1, k / max(1, count - 1))
+            i0 = int((frm + k * every) * sr)
+            m = min(n - i0, int(decay * 6 * sr))
+            if m <= 0:
+                continue
+            tt = np.arange(m) / sr
+            v = (np.sin(2 * np.pi * f * tt) + 0.4 * np.sin(4 * np.pi * f * tt)
+                 + 0.2 * np.sin(6 * np.pi * f * tt))
+            out[i0:i0 + m] += amp * v * np.exp(-tt / decay) * (1 - np.exp(-tt * 700))
+
+    pad(0.0, 9.4, 0.10, (55.0, 82.41, 110.0))
+    pad(8.8, 17.8, 0.09, (49.0, 73.42, 98.0))
+    pad(17.2, 37.2, 0.11, (55.0, 82.41, 110.0, 164.81), 0.4)
+    pad(36.6, 45.0, 0.07, (55.0, 110.0), 0.12)
+    pad(44.4, 53.4, 0.11, (65.41, 98.0, 130.81, 196.0), 0.5)
+    pad(52.9, 60.0, 0.10, (55.0, 82.41, 110.0, 164.81), 0.2)
+
+    for i, b in enumerate(ARCS):
+        amp = 0.66 if i in (0, 2, 5) else 0.46
+        hit(b, 62, 38, 0.45, amp)
+        noise_hit(b, 0.18, 0.30 if i == 0 else 0.22, 0.3)
+    hit(53.10, 72, 34, 0.8, 0.72)
+    noise_hit(53.10, 0.5, 0.18, 0.5)
+
+    for b in ARCS[1:]:
+        riser(b - 1.1, b, 0.14)
+    for s in LINES:
+        hit(s, 1900, 1300, 0.016, 0.035, 3.0)
+    for k in range(9):  # bubble typing ticks
+        hit(12.9 + k * 0.42, 2100, 1500, 0.016, 0.04, 3.0)
+    for k in range(30):  # heartbeat under the polyglot wave
+        hit(17.5 + k * 0.62, 55, 41, 0.14, 0.10)
+    arp(44.9, 0.12, 30, 220.0, 880.0, 0.07, 0.13)
+    for f in (110.0, 164.81, 220.0, 329.63):
+        hit(53.2, f, f, 1.6, 0.10, 1.4)
+
+    out[: int(0.004 * sr)] = 0
+    fade = int(0.6 * sr)
+    out[-fade:] *= np.linspace(1, 0, fade) ** 1.4
+    peak = np.abs(out).max()
+    if peak > 0:
+        out = out / peak * 0.80
+    wavfile.write(path, sr, (out * 32767).astype(np.int16))
+
+
 def _render_slice(job):
     html_path, frames_dir, start, end, fps, w, h, scale = job
     with sync_playwright() as p:
@@ -219,13 +323,30 @@ def main() -> int:
     ap.add_argument("--height", type=int, default=1080)
     ap.add_argument("--scale", type=int, default=1)
     ap.add_argument("--workers", type=int, default=6)
+    ap.add_argument("--score60", action="store_true", help="use the 60s voice-led bed")
+    ap.add_argument("--vo", default="",
+                    help="placed voiceover wav to mix forward over the bed (48k mono)")
     ap.add_argument("--audio-only", action="store_true",
                     help="rebuild the score and remux it onto an existing render (no frame work)")
     args = ap.parse_args()
 
     if args.audio_only:
         wav = Path(tempfile.gettempdir()) / "supears_score.wav"
-        score(wav, args.seconds)
+        if args.score60:
+            score60(wav, args.seconds)
+        else:
+            score(wav, args.seconds)
+        if args.vo:
+            sr, bed = wavfile.read(str(wav))
+            vsr, vo = wavfile.read(args.vo)
+            assert vsr == sr, f"VO rate {vsr} != {sr}"
+            bed = bed.astype(np.float64) * 0.42
+            vo = vo.astype(np.float64)
+            mix = np.zeros(max(len(bed), len(vo)))
+            mix[:len(bed)] += bed
+            mix[:len(vo)] += vo
+            mix /= max(1e-9, np.abs(mix).max()) * 1.05
+            wavfile.write(wav, sr, (mix * 32767).astype(np.int16))
         tmp = Path(args.out).with_suffix(".remux.mp4")
         subprocess.run(
             ["ffmpeg", "-y", "-i", str(args.out), "-i", str(wav),
@@ -243,6 +364,10 @@ def main() -> int:
     frames.mkdir()
 
     src_html = Path(args.html)
+    if not src_html.exists():
+        cand = HERE / src_html.name
+        if cand.exists():
+            src_html = cand
     page_html = work / "page.html"
     html = inline_assets(src_html.read_text(encoding="utf-8"))
     flag_b64 = {f.stem: base64.b64encode(f.read_bytes()).decode()
@@ -251,6 +376,13 @@ def main() -> int:
                         "const FLAG_B64 = " + json.dumps(flag_b64) + ";\nconst FLAGS = {};")
     html = html.replace("im.src = 'FLAG_' + n;",
                         "im.src = FLAG_B64[n] ? 'data:image/png;base64,' + FLAG_B64[n] : '';")
+    def inline_script(m: re.Match) -> str:
+        p = HERE / m.group(1)
+        if not p.exists():
+            return m.group(0)
+        return "<script>\n" + p.read_text(encoding="utf-8") + "\n</script>"
+
+    html = re.sub(r'<script\s+src="([^"]+\.js)"></script>', inline_script, html)
     page_html.write_text(html, encoding="utf-8")
 
     chunk = max(1, (total + args.workers - 1) // args.workers)
@@ -273,7 +405,22 @@ def main() -> int:
         raise SystemExit(f"slices too dark (mean luminance): {inks}")
 
     wav = work / "score.wav"
-    score(wav, args.seconds)
+    if args.score60:
+        score60(wav, args.seconds)
+    else:
+        score(wav, args.seconds)
+    if args.vo:
+        sr, bed = wavfile.read(str(wav))
+        vsr, vo = wavfile.read(args.vo)
+        assert vsr == sr, f"VO rate {vsr} != {sr}"
+        bed = bed.astype(np.float64) * 0.42
+        vo = vo.astype(np.float64)
+        m = min(len(bed), len(vo))
+        mix = np.zeros(max(len(bed), len(vo)))
+        mix[:len(bed)] += bed
+        mix[:len(vo)] += vo
+        mix /= max(1e-9, np.abs(mix).max()) * 1.05
+        wavfile.write(wav, sr, (mix * 32767).astype(np.int16))
 
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)

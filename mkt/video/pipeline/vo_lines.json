@@ -1,0 +1,14 @@
+[
+  {"id": "pain", "lang": "pt-BR", "voice": "pt-BR-FranciscaNeural", "rate": "+0%", "text": "Você paga todo mês. Para digitar uma frase."},
+  {"id": "brand", "lang": "en-US", "voice": "en-US-AvaMultilingualNeural", "rate": "+0%", "text": "supEars. The Ear that understands your language."},
+  {"id": "how1", "lang": "pt-BR", "voice": "pt-BR-AntonioNeural", "rate": "+5%", "text": "Clique. Fale. Solte."},
+  {"id": "how2", "lang": "en-US", "voice": "en-US-AvaMultilingualNeural", "rate": "+5%", "text": "Click. Speak. Release."},
+  {"id": "es", "lang": "es-ES", "voice": "es-ES-ElviraNeural", "rate": "+0%", "text": "Habla en español. supEars escribe en inglés."},
+  {"id": "fr", "lang": "fr-FR", "voice": "fr-FR-DeniseNeural", "rate": "+0%", "text": "Parlez français. supEars écrit en anglais."},
+  {"id": "de", "lang": "de-DE", "voice": "de-DE-KatjaNeural", "rate": "+0%", "text": "Sprich Deutsch. Keine Cloud, kein Abo."},
+  {"id": "ja", "lang": "ja-JP", "voice": "ja-JP-NanamiNeural", "rate": "+0%", "text": "日本語で話す。英語で書く。"},
+  {"id": "privacy", "lang": "en-US", "voice": "en-US-AvaMultilingualNeural", "rate": "-5%", "text": "Your voice never leaves your computer. No account. No cloud."},
+  {"id": "cpu", "lang": "en-US", "voice": "en-US-AndrewMultilingualNeural", "rate": "+0%", "text": "Runs on old CPUs. No graphics card."},
+  {"id": "free", "lang": "pt-BR", "voice": "pt-BR-FranciscaNeural", "rate": "+5%", "text": "Trinta dias grátis. Sem cartão de crédito."},
+  {"id": "cta", "lang": "en-US", "voice": "en-US-AvaMultilingualNeural", "rate": "+0%", "text": "supEars. Public release. October tenth, twenty twenty-six."}
+]
