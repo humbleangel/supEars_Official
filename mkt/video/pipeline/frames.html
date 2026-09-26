@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; background: #000; }
+  canvas { display: block; }
+  #ob { position: absolute; left: -9999px; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1280" height="720"></canvas>
+<img id="ob" src="caps/onboarding.png">
+<script>
+const W = 1280, H = 720, DUR = 5.0;
+const c = document.getElementById('c');
+const x = c.getContext('2d');
+const ob = document.getElementById('ob');
+const obReady = new Promise(res => { if (ob.complete && ob.naturalWidth) res(); else ob.onload = res; });
+
+const GREEN = [115, 242, 189];
+const DIM = [99, 130, 122];
+
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const ease = t => { t = clamp(t, 0, 1); return t * t * (3 - 2 * t); };
+const easeOut = t => 1 - Math.pow(1 - clamp(t, 0, 1), 3);
+const lerp = (a, b, t) => a + (b - a) * t;
+
+// deterministic pseudo-noise so every render is identical
+let seed = 1337;
+const rnd = () => { seed = (seed * 1664525 + 1013904223) >>> 0; return seed / 4294967296; };
+const wave = new Float32Array(200);
+for (let i = 0; i < wave.length; i++) wave[i] = rnd() * 2 - 1;
+
+function bgGlow(cx, cy, r, a) {
+  const g = x.createRadialGradient(cx, cy, 0, cx, cy, r);
+  g.addColorStop(0, `rgba(${GREEN[0]},${GREEN[1]},${GREEN[2]},${a})`);
+  g.addColorStop(0.4, `rgba(${GREEN[0]},${GREEN[1]},${GREEN[2]},${a * 0.25})`);
+  g.addColorStop(1, 'rgba(0,0,0,0)');
+  x.fillStyle = g;
+  x.fillRect(cx - r, cy - r, r * 2, r * 2);
+}
+
+function ring(cx, cy, r, w, rgb, a) {
+  x.beginPath();
+  x.arc(cx, cy, r, 0, Math.PI * 2);
+  x.strokeStyle = `rgba(${rgb[0]},${rgb[1]},${rgb[2]},${a})`;
+  x.lineWidth = w;
+  x.stroke();
+}
+
+// port of paint_glyph: the U+1F442 glyph, grayscale (as the app paints it), shadow + glow
+function earGlyph(cx, cy, size, a) {
+  x.save();
+  x.filter = 'grayscale(1) brightness(1.9)';
+  x.font = `${size}px "Segoe UI Emoji", "Noto Color Emoji", sans-serif`;
+  x.textAlign = 'center';
+  x.textBaseline = 'middle';
+  x.shadowColor = `rgba(${GREEN[0]},${GREEN[1]},${GREEN[2]},0.55)`;
+  x.shadowBlur = size * 0.28;
+  x.fillStyle = `rgba(0,0,0,${0.55 * a})`;
+  x.fillText('\u{1F442}', cx + size * 0.03, cy + size * 0.05);
+  x.shadowBlur = size * 0.16;
+  x.fillStyle = `rgba(240,248,246,${a})`;
+  x.fillText('\u{1F442}', cx, cy);
+  x.filter = 'none';
+  x.restore();
+}
+
+// port of paint_circular_waveform: 120 buckets, loudest peak, sign kept
+function listeningRing(cx, cy, r, level, t, a) {
+  const N = 120, w = 3.0;
+  x.beginPath();
+  for (let i = 0; i <= N; i++) {
+    const idx = i % N;
+    const ph = t * 2.2 + idx * 0.31;
+    const sig = Math.sin(ph) * 0.6 + Math.sin(ph * 2.7 + 1.3) * 0.4;
+    const rr = r * (1 + sig * 0.16 * level);
+    const ang = (idx / N) * Math.PI * 2 - Math.PI / 2;
+    const px = cx + Math.cos(ang) * rr, py = cy + Math.sin(ang) * rr;
+    if (i === 0) x.moveTo(px, py); else x.lineTo(px, py);
+  }
+  x.strokeStyle = `rgba(${GREEN[0]},${GREEN[1]},${GREEN[2]},${a})`;
+  x.lineWidth = w;
+  x.shadowColor = `rgba(${GREEN[0]},${GREEN[1]},${GREEN[2]},0.8)`;
+  x.shadowBlur = 14;
+  x.stroke();
+  x.shadowBlur = 0;
+}
+
+let panelCache = null, panelKey = '';
+function scaledPanel(img, w, h) {
+  const key = Math.round(w) + 'x' + Math.round(h);
+  if (panelKey !== key || !panelCache) {
+    const c2 = document.createElement('canvas');
+    c2.width = Math.max(1, Math.round(w));
+    c2.height = Math.max(1, Math.round(h));
+    const g2 = c2.getContext('2d');
+    g2.filter = 'brightness(1.5) contrast(1.06) saturate(1.1)';
+    g2.drawImage(img, 0, 0, c2.width, c2.height);
+    panelCache = c2;
+    panelKey = key;
+  }
+  return panelCache;
+}
+
+function keystone(img, cx, top, h, skewTop, skewBot, a) {
+  const w = img.naturalWidth / img.naturalHeight * h;
+  const src = scaledPanel(img, w, h);
+  const strips = 48;
+  const sw = src.width / strips;
+  x.save();
+  x.globalAlpha = a;
+  for (let i = 0; i < strips; i++) {
+    const f0 = i / strips, f1 = (i + 1) / strips;
+    x.drawImage(src, i * sw, 0, sw + 0.5, src.height,
+      cx - w / 2 + f0 * w + lerp(skewTop, skewBot, f0), top, sw + 0.8, h);
+  }
+  x.restore();
+  return w;
+}
+
+function caption(txt, cx, y, size, a, track, rgb) {
+  x.save();
+  x.font = `600 ${size}px "Segoe UI", Inter, system-ui, sans-serif`;
+  x.textAlign = 'center';
+  x.letterSpacing = `${track}px`;
+  x.fillStyle = `rgba(${rgb[0]},${rgb[1]},${rgb[2]},${a})`;
+  x.fillText(txt, cx, y);
+  x.restore();
+}
+
+function draw(t) {
+  seed = 1337;
+  x.fillStyle = '#000';
+  x.fillRect(0, 0, W, H);
+
+  const cx = W / 2, cy = H / 2 - 30;
+
+  // beat 1: bloom + ear
+  const b1 = ease(t / 0.9);
+  if (t < 2.7) {
+    bgGlow(cx, cy, 420, 0.30 * b1 * (t < 2.4 ? 1 : 1 - (t - 2.4) / 0.3));
+    const s = lerp(0.72, 1, easeOut(t / 0.9));
+    const earA = b1 * (t > 2.4 ? clamp(1 - (t - 2.4) / 0.3, 0, 1) : 1);
+    ring(cx, cy, 96 * s, 2, GREEN, 0.30 * earA);
+    ring(cx, cy, 78 * s, 1, DIM, 0.35 * earA);
+    const lvl = t < 1.0 ? 0.15 : clamp((t - 1.0) / 0.5, 0, 1) * (t > 2.2 ? clamp(1 - (t - 2.2) / 0.4, 0, 1) : 1);
+    if (lvl > 0.01) listeningRing(cx, cy, 88 * s, lvl, t, 0.85 * earA);
+    earGlyph(cx, cy, 92 * s, earA);
+  }
+
+  // beat 2: captions
+  const c1 = ease((t - 1.15) / 0.5) * (1 - ease((t - 2.15) / 0.35));
+  const c2 = ease((t - 1.75) / 0.5) * (1 - ease((t - 2.25) / 0.35));
+  if (c1 > 0.01) caption('Speak naturally in your own native language.', cx, cy + 190, 30, c1, 0.5, [238, 246, 244]);
+  if (c2 > 0.01) caption('supEars understands you.', cx, cy + 236, 26, c2 * 0.9, 0.5, GREEN);
+
+  // beat 3: real app window flying in as a 3D panel
+  const p = easeOut((t - 2.45) / 0.85);
+  if (t > 2.4 && ob.naturalWidth) {
+    const h = lerp(300, 470, p);
+    const cxP = lerp(cx + 190, cx, p);
+    const sk = lerp(150, 0, p);
+    const fadeOut = 1 - ease((t - 3.55) / 0.35);
+    keystone(ob, cxP, cy - h / 2 + lerp(30, 0, p), h, sk, lerp(60, 0, p), ease((t - 2.45) / 0.4) * fadeOut);
+    const a2 = 1 - ease((t - 3.75) / 0.35);
+    if (a2 > 0.01) {
+      caption('The app you already use.', cxP, cy + h / 2 + 42, 22, a2 * 0.85, 0.4, [238, 246, 244]);
+    }
+  }
+
+  // beat 4: end card
+  const e = ease((t - 3.85) / 0.6);
+  if (e > 0.001) {
+    x.fillStyle = `rgba(0,0,0,${0.88 * e})`;
+    x.fillRect(0, 0, W, H);
+    bgGlow(cx, cy - 20, 520, 0.22 * e);
+    const pop = lerp(1.12, 1, easeOut(clamp((t - 3.85) / 0.7, 0, 1)));
+    x.save();
+    x.translate(cx, cy - 46);
+    x.scale(pop, pop);
+    earGlyph(0, -6, 64, e);
+    x.restore();
+    caption('supEars', cx, cy + 92, 54, e, 4, [238, 246, 244]);
+    const e2 = ease((t - 4.15) / 0.5);
+    caption('Public release · October 10, 2026', cx, cy + 142, 24, e2 * 0.92, 1, GREEN);
+    const e3 = ease((t - 4.35) / 0.5);
+    caption('humbleangel.github.io/supEars_Official', cx, cy + 186, 17, e3 * 0.6, 0.6, DIM);
+  }
+
+  // grain, keeps flat darks from banding
+  x.globalAlpha = 0.035;
+  for (let i = 0; i < 900; i++) {
+    const v = wave[(i * 7 + Math.floor(t * 24)) % wave.length];
+    x.fillStyle = v > 0 ? '#fff' : '#000';
+    x.fillRect((i * 137) % W, (i * 89) % H, 1, 1);
+  }
+  x.globalAlpha = 1;
+}
+
+window.__draw = draw;
+window.__ready = obReady;
+</script>
+</body>
+</html>
