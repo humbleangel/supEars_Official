@@ -1,0 +1,106 @@
+[
+ {
+  "start": 0.0,
+  "end": 8.571,
+  "track": "NUNCA MUDA (Slowed).wav",
+  "src_offset": 46.0,
+  "bars": 5,
+  "tag": "hook"
+ },
+ {
+  "start": 8.571,
+  "end": 17.143,
+  "track": "MONTAGEM TOMADA.wav",
+  "src_offset": 0.0,
+  "bars": 5,
+  "tag": "mech"
+ },
+ {
+  "start": 17.143,
+  "end": 20.571,
+  "track": "MONTAGEM TOMADA.wav",
+  "src_offset": 0.0,
+  "bars": 2,
+  "tag": "wall"
+ },
+ {
+  "start": 20.571,
+  "end": 24.0,
+  "track": "LONOWN - AVANGARD (Slowed).wav",
+  "src_offset": 3.429,
+  "bars": 2,
+  "tag": "wall"
+ },
+ {
+  "start": 24.0,
+  "end": 27.429,
+  "track": "MONTAGEM TOMADA.wav",
+  "src_offset": 0.0,
+  "bars": 2,
+  "tag": "wall"
+ },
+ {
+  "start": 27.429,
+  "end": 30.857,
+  "track": "LONOWN - AVANGARD (Slowed).wav",
+  "src_offset": 3.429,
+  "bars": 2,
+  "tag": "wall"
+ },
+ {
+  "start": 30.857,
+  "end": 34.286,
+  "track": "MONTAGEM TOMADA.wav",
+  "src_offset": 0.0,
+  "bars": 2,
+  "tag": "wall"
+ },
+ {
+  "start": 34.286,
+  "end": 36.0,
+  "track": "LONOWN - AVANGARD (Slowed).wav",
+  "src_offset": 3.429,
+  "bars": 1,
+  "tag": "wall"
+ },
+ {
+  "start": 36.0,
+  "end": 44.571,
+  "track": "sosin-phonk-music-beat-580409.mp3",
+  "src_offset": 0.0,
+  "bars": 5,
+  "tag": "privacy"
+ },
+ {
+  "start": 44.571,
+  "end": 48.0,
+  "track": "LONOWN - AVANGARD (Slowed).wav",
+  "src_offset": 0.0,
+  "bars": 2,
+  "tag": "proof"
+ },
+ {
+  "start": 48.0,
+  "end": 51.429,
+  "track": "MONTAGEM TOMADA.wav",
+  "src_offset": 3.429,
+  "bars": 2,
+  "tag": "proof"
+ },
+ {
+  "start": 51.429,
+  "end": 53.143,
+  "track": "LONOWN - AVANGARD (Slowed).wav",
+  "src_offset": 0.0,
+  "bars": 1,
+  "tag": "proof"
+ },
+ {
+  "start": 53.143,
+  "end": 58.286,
+  "track": "NUNCA MUDA (Slowed).wav",
+  "src_offset": 46.0,
+  "bars": 3,
+  "tag": "cta"
+ }
+]

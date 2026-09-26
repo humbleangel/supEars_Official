@@ -1,0 +1,210 @@
+[
+  {
+    "id": "ar",
+    "lang": "ar-SA",
+    "voice": "ar-SA-HamedNeural",
+    "rate": "+8%",
+    "file": "vo2/ar.mp3",
+    "dur": 2.688
+  },
+  {
+    "id": "cs",
+    "lang": "cs-CZ",
+    "voice": "cs-CZ-AntoninNeural",
+    "rate": "+12%",
+    "file": "vo2/cs.mp3",
+    "dur": 2.28
+  },
+  {
+    "id": "de",
+    "lang": "de-DE",
+    "voice": "de-DE-KatjaNeural",
+    "rate": "+5%",
+    "file": "vo2/de.mp3",
+    "dur": 4.032
+  },
+  {
+    "id": "el",
+    "lang": "el-GR",
+    "voice": "el-GR-NestorasNeural",
+    "rate": "+2%",
+    "file": "vo2/el.mp3",
+    "dur": 2.544
+  },
+  {
+    "id": "en1",
+    "lang": "en-US",
+    "voice": "en-US-BrianNeural",
+    "rate": "+6%",
+    "file": "vo2/en1.mp3",
+    "dur": 3.312
+  },
+  {
+    "id": "en2",
+    "lang": "en-US",
+    "voice": "en-US-AvaNeural",
+    "rate": "+11%",
+    "file": "vo2/en2.mp3",
+    "dur": 3.0
+  },
+  {
+    "id": "es",
+    "lang": "es-ES",
+    "voice": "es-ES-ElviraNeural",
+    "rate": "+8%",
+    "file": "vo2/es.mp3",
+    "dur": 3.12
+  },
+  {
+    "id": "fr",
+    "lang": "fr-FR",
+    "voice": "fr-FR-HenriNeural",
+    "rate": "+0%",
+    "file": "vo2/fr.mp3",
+    "dur": 3.408
+  },
+  {
+    "id": "hi",
+    "lang": "hi-IN",
+    "voice": "hi-IN-SwaraNeural",
+    "rate": "+3%",
+    "file": "vo2/hi.mp3",
+    "dur": 2.784
+  },
+  {
+    "id": "hu",
+    "lang": "hu-HU",
+    "voice": "hu-HU-NoemiNeural",
+    "rate": "+4%",
+    "file": "vo2/hu.mp3",
+    "dur": 2.688
+  },
+  {
+    "id": "id",
+    "lang": "id-ID",
+    "voice": "id-ID-GadisNeural",
+    "rate": "+0%",
+    "file": "vo2/id.mp3",
+    "dur": 2.856
+  },
+  {
+    "id": "it",
+    "lang": "it-IT",
+    "voice": "it-IT-DiegoNeural",
+    "rate": "+10%",
+    "file": "vo2/it.mp3",
+    "dur": 3.408
+  },
+  {
+    "id": "ja",
+    "lang": "ja-JP",
+    "voice": "ja-JP-NanamiNeural",
+    "rate": "+12%",
+    "file": "vo2/ja.mp3",
+    "dur": 2.664
+  },
+  {
+    "id": "ko",
+    "lang": "ko-KR",
+    "voice": "ko-KR-InJoonNeural",
+    "rate": "+4%",
+    "file": "vo2/ko.mp3",
+    "dur": 2.76
+  },
+  {
+    "id": "nl",
+    "lang": "nl-NL",
+    "voice": "nl-NL-FennaNeural",
+    "rate": "+9%",
+    "file": "vo2/nl.mp3",
+    "dur": 2.472
+  },
+  {
+    "id": "pl",
+    "lang": "pl-PL",
+    "voice": "pl-PL-MarekNeural",
+    "rate": "+1%",
+    "file": "vo2/pl.mp3",
+    "dur": 2.712
+  },
+  {
+    "id": "pt",
+    "lang": "pt-BR",
+    "voice": "pt-BR-AntonioNeural",
+    "rate": "+3%",
+    "file": "vo2/pt.mp3",
+    "dur": 3.936
+  },
+  {
+    "id": "ro",
+    "lang": "ro-RO",
+    "voice": "ro-RO-AlinaNeural",
+    "rate": "+10%",
+    "file": "vo2/ro.mp3",
+    "dur": 2.352
+  },
+  {
+    "id": "ru",
+    "lang": "ru-RU",
+    "voice": "ru-RU-SvetlanaNeural",
+    "rate": "+2%",
+    "file": "vo2/ru.mp3",
+    "dur": 3.288
+  },
+  {
+    "id": "sv",
+    "lang": "sv-SE",
+    "voice": "sv-SE-SofieNeural",
+    "rate": "+7%",
+    "file": "vo2/sv.mp3",
+    "dur": 2.856
+  },
+  {
+    "id": "th",
+    "lang": "th-TH",
+    "voice": "th-TH-NiwatNeural",
+    "rate": "+9%",
+    "file": "vo2/th.mp3",
+    "dur": 2.208
+  },
+  {
+    "id": "tr",
+    "lang": "tr-TR",
+    "voice": "tr-TR-EmelNeural",
+    "rate": "+6%",
+    "file": "vo2/tr.mp3",
+    "dur": 2.664
+  },
+  {
+    "id": "uk",
+    "lang": "uk-UA",
+    "voice": "uk-UA-OstapNeural",
+    "rate": "+11%",
+    "file": "vo2/uk.mp3",
+    "dur": 2.304
+  },
+  {
+    "id": "ur",
+    "lang": "ur-PK",
+    "voice": "ur-PK-UzmaNeural",
+    "rate": "+1%",
+    "file": "vo2/ur.mp3",
+    "dur": 2.376
+  },
+  {
+    "id": "vi",
+    "lang": "vi-VN",
+    "voice": "vi-VN-NamMinhNeural",
+    "rate": "+5%",
+    "file": "vo2/vi.mp3",
+    "dur": 2.352
+  },
+  {
+    "id": "zh",
+    "lang": "zh-CN",
+    "voice": "zh-CN-YunxiNeural",
+    "rate": "+7%",
+    "file": "vo2/zh.mp3",
+    "dur": 2.832
+  }
+]
