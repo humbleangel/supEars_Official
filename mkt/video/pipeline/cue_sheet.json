@@ -162,37 +162,15 @@
    "snap": 0.0
   },
   {
-   "id": "pain1",
-   "chapter": "HOOK",
-   "text": "You pay every month.",
-   "lang": "en",
-   "start": 3.3,
-   "end": 7.1,
-   "style": "hero",
-   "y": 470,
-   "snap": 3.4285714285714284
-  },
-  {
-   "id": "pain2",
-   "chapter": "HOOK",
-   "text": "to type one sentence.",
-   "lang": "en",
-   "start": 5.0,
-   "end": 7.1,
-   "style": "sub",
-   "y": 600,
-   "snap": 5.142857142857142
-  },
-  {
    "id": "quote1",
    "chapter": "HOOK",
    "text": "\u201cWindows speech recognition accuracy was too low.\u201d",
    "lang": "en",
-   "start": 7.3,
-   "end": 8.5,
+   "start": 3.4,
+   "end": 7.0,
    "style": "quote",
-   "y": 1010,
-   "snap": 7.285714285714286
+   "y": 640,
+   "snap": 3.4285714285714284
   },
   {
    "id": "brand",

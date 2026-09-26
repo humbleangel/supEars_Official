@@ -27,9 +27,7 @@ VO = [
 
 TEXTS = [
     ("hook", "Are you tired of paying subscriptions to talk?", "en", 0.00, 3.20, "hero", 470),
-    ("pain1", "You pay every month.", "en", 3.30, 7.10, "hero", 470),
-    ("pain2", "to type one sentence.", "en", 5.00, 7.10, "sub", 600),
-    ("quote1", "\u201cWindows speech recognition accuracy was too low.\u201d", "en", 7.30, 8.50, "quote", 1010),
+    ("quote1", "\u201cWindows speech recognition accuracy was too low.\u201d", "en", 3.40, 7.00, "quote", 640),
     ("brand", "The Ear that understands your language.", "en", 8.80, 12.30, "claim", 870),
     ("quote2", "\u201cLocal offline speech recognition. No internet needed.\u201d", "en", 9.95, 11.95, "quote", 1010),
     ("mech1", "Click.", "en", 12.80, 14.30, "hero3", 750),
