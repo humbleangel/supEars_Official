@@ -328,7 +328,45 @@ def main() -> int:
                     help="placed voiceover wav to mix forward over the bed (48k mono)")
     ap.add_argument("--audio-only", action="store_true",
                     help="rebuild the score and remux it onto an existing render (no frame work)")
+    ap.add_argument("--stills", default="",
+                    help="comma-separated times in seconds; render exactly those frames as PNGs into --out dir")
     args = ap.parse_args()
+
+    if args.stills:
+        times = [float(t) for t in args.stills.split(",") if t.strip() != ""]
+        outdir = Path(args.out)
+        outdir.mkdir(parents=True, exist_ok=True)
+        src_html = Path(args.html)
+        if not src_html.exists():
+            cand = HERE / src_html.name
+            if cand.exists():
+                src_html = cand
+        work = Path(tempfile.mkdtemp(prefix="supears_stills_"))
+        page_html = work / "page.html"
+        html = inline_assets(src_html.read_text(encoding="utf-8"))
+        flag_b64 = {f.stem: base64.b64encode(f.read_bytes()).decode()
+                    for f in sorted((HERE / "assets30" / "flags").glob("*.png"))}
+        html = html.replace("const FLAGS = {};",
+                            "const FLAG_B64 = " + json.dumps(flag_b64) + ";\nconst FLAGS = {};")
+        html = html.replace("im.src = 'FLAG_' + n;",
+                            "im.src = FLAG_B64[n] ? 'data:image/png;base64,' + FLAG_B64[n] : '';")
+        html = re.sub(r'<script\s+src="([^"]+\.js)"></script>',
+                      lambda m: "<script>\n" + (HERE / m.group(1)).read_text(encoding="utf-8") + "\n</script>"
+                      if (HERE / m.group(1)).exists() else m.group(0), html)
+        page_html.write_text(html, encoding="utf-8")
+        with sync_playwright() as p:
+            browser = p.chromium.launch(args=["--force-color-profile=srgb", "--font-render-hinting=none"])
+            page = browser.new_page(viewport={"width": args.width * args.scale,
+                                              "height": args.height * args.scale}, device_scale_factor=1)
+            page.goto(page_html.resolve().as_uri())
+            page.evaluate("window.__ready")
+            for i, t in enumerate(times):
+                page.evaluate("t => window.__draw(t)", t)
+                dest = outdir / f"still_{i:02d}_{t:.2f}s.png"
+                page.screenshot(path=str(dest))
+                print(str(dest))
+            browser.close()
+        return 0
 
     if args.audio_only:
         wav = Path(tempfile.gettempdir()) / "supears_score.wav"

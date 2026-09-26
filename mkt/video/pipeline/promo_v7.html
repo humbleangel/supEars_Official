@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; background: #000; }
+  canvas { display: block; }
+  .off { position: absolute; left: -99999px; }
+</style>
+</head>
+<body>
+<canvas id="c" width="480" height="270"></canvas>
+<div class="off">
+  <img id="crest" src="assets30/crest.png">
+  <img id="emblem" src="assets30/emblem.png">
+  <img id="appicon" src="assets30/appicon.png">
+  <img id="ob_en" src="assets30/own/ob_en.png">
+  <img id="ear_pill" src="assets30/own/ear_pill.png">
+</div>
+<script src="bg3d.js"></script>
+<script src="ktype.js"></script>
+<script src="fx.js"></script>
+<script>
+{
+'use strict';
+const W = 1920, H = 1080, DUR = 15.0;
+const c = document.getElementById('c');
+const x = c.getContext('2d');
+const A = id => document.getElementById(id);
+const TAU = Math.PI * 2;
+
+const EMERALD = [16, 185, 129], EMERALD_LT = [122, 240, 190];
+const REC = [231, 76, 60];
+const GOLD = [201, 162, 39], GOLD_LT = [231, 193, 90];
+const TEXT = [234, 242, 238], MUTED = [143, 167, 155];
+
+const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
+const ease = t => { t = clamp(t, 0, 1); return t * t * (3 - 2 * t); };
+const easeOut = t => 1 - Math.pow(1 - clamp(t, 0, 1), 3);
+const lerp = (a, b, t) => a + (b - a) * t;
+const smooth = (e0, e1, t) => ease((t - e0) / (e1 - e0));
+const win = (t, a, b) => clamp((t - a) / (b - a), 0, 1);
+const rgba = (rgb, a) => `rgba(${rgb[0]},${rgb[1]},${rgb[2]},${a})`;
+const env = (t, s0, fi, s1, fo) => smooth(s0, s0 + fi, t) * (1 - smooth(s1 - fo, s1, t));
+
+const FLAGS = {};
+function loadFlags() {
+  const names = ['pt','en','es','fr','de','it','ru','zh','ja','ko','nl','pl','tr','uk','hi','ar','id','vi','ro','el','sv','cs','hu','ur','th'];
+  return Promise.all(names.map(n => new Promise(res => {
+    if (typeof FLAG_B64 === 'undefined' || !FLAG_B64[n]) return res();
+    const im = new Image();
+    im.onload = () => { FLAGS[n] = im; res(); };
+    im.onerror = () => res();
+    im.src = 'data:image/png;base64,' + FLAG_B64[n];
+  })));
+}
+/* the entry screen, scrolling languages super fast */
+const LANGS = [
+  ['Portuguese','pt'], ['English','en'], ['Spanish','es'], ['French','fr'], ['German','de'],
+  ['Italian','it'], ['Russian','ru'], ['Chinese','zh'], ['Japanese','ja'], ['Korean','ko'],
+  ['Dutch','nl'], ['Polish','pl'], ['Turkish','tr'], ['Ukrainian','uk'], ['Hindi','hi'],
+  ['Arabic','ar'], ['Indonesian','id'], ['Vietnamese','vi'], ['Romanian','ro'], ['Greek','el'],
+  ['Swedish','sv'], ['Czech','cs'], ['Hungarian','hu'], ['Urdu','ur'], ['Thai','th']
+];
+function langScroll(t, cx, cy, a, t0, speed, size) {
+  if (a <= 0.001) return;
+  x.save();
+  x.globalAlpha = a;
+  x.textAlign = 'center'; x.textBaseline = 'middle';
+  const n = LANGS.length;
+  for (let k = -2; k < 5; k++) {
+    const idx = Math.floor((t - t0) * speed) + k;
+    const li = ((idx % n) + n) % n;
+    const frac = (t - t0) * speed - Math.floor((t - t0) * speed);
+    const yy = cy + (k - frac) * size * 1.35;
+    const dist = Math.abs(k - frac - 1);
+    const aa = clamp(1 - dist / 2.6, 0, 1);
+    if (aa <= 0.01) continue;
+    const f = FLAGS[LANGS[li][1]];
+    x.save();
+    x.globalAlpha = aa;
+    x.font = `800 ${size}px "Segoe UI",system-ui,sans-serif`;
+    if (dist < 0.6) { x.shadowColor = rgba(EMERALD, 0.7); x.shadowBlur = size * 0.4; }
+    x.fillStyle = rgba(dist < 0.6 ? TEXT : MUTED, 1);
+    const label = LANGS[li][0];
+    const tw = x.measureText(label).width;
+    x.fillText(label, cx, yy);
+    if (f && dist < 1.2) x.drawImage(f, cx - tw / 2 - 74, yy - 17, 56, 36);
+    x.restore();
+  }
+  x.restore();
+}
+function head(txt, cx, cy, size, a, opts = {}) {
+  if (a <= 0.001) return;
+  x.save();
+  x.font = `${opts.weight || 800} ${size}px "Segoe UI",Inter,system-ui,sans-serif`;
+  x.textAlign = 'center'; x.textBaseline = 'middle';
+  if (opts.glow) { x.shadowColor = rgba(opts.glow, 0.45 * a); x.shadowBlur = size * 0.5; }
+  x.fillStyle = rgba(opts.rgb || TEXT, a);
+  x.fillText(txt, cx, cy);
+  x.restore();
+}
+function grain(a) {
+  x.save();
+  x.globalAlpha = a;
+  let s = 7;
+  const r = () => { s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; };
+  for (let i = 0; i < 500; i++) x.fillStyle = r() > 0.5 ? '#fff' : '#000', x.fillRect((r() * W) | 0, (r() * H) | 0, 2, 2);
+  x.restore();
+}
+
+function draw(t) {
+  x.setTransform(1, 0, 0, 1, 0, 0);
+  x.fillStyle = '#000';
+  x.fillRect(0, 0, W, H);
+  x.setTransform(0.25, 0, 0, 0.25, 0, 0);
+  const g0 = x.createLinearGradient(0, 0, 0, H);
+  g0.addColorStop(0, '#030806'); g0.addColorStop(0.55, '#05110D'); g0.addColorStop(1, '#020504');
+  x.fillStyle = g0; x.fillRect(0, 0, W, H);
+
+  /* 0-2.5 hook + language scroll */
+  if (t < 2.7) {
+    const a = env(t, 0, 0.15, 2.7, 0.25);
+    if (a > 0.001) {
+      x.save(); x.globalAlpha = a * 0.5;
+      drawBackdrop(x, W, H, t, 0.2, 0.1, 0.9, 0.1);
+      x.restore();
+      langScroll(t, W / 2, H / 2 + 260, a * 0.85, 0, 3.2, 44);
+      ktype(x, 'Are you tired of paying', W / 2, H / 2 - 160, 84, t, 0.0, 2.5,
+        { weight: 800, track: -2, rgb: TEXT, glow: REC, extrude: 4 });
+      ktype(x, 'subscriptions to talk?', W / 2, H / 2 - 40, 84, t, 0.5, 2.0,
+        { weight: 800, track: -2, rgb: TEXT, glow: REC, extrude: 4 });
+    }
+  }
+  /* 2.5-4.5 battle cry */
+  if (t >= 2.5 && t < 4.7) {
+    if (t < 2.95) FX.whip(x, W, H, t, 2.5, 0.45, 0, '201,162,39');
+    const a = env(t, 2.6, 0.12, 4.7, 0.2);
+    if (a > 0.001) {
+      x.save(); x.globalAlpha = a;
+      const gg = x.createLinearGradient(0, 0, W, H);
+      gg.addColorStop(0, '#F0CE6B'); gg.addColorStop(0.5, '#C9A227'); gg.addColorStop(1, '#7A5F1C');
+      x.fillStyle = gg; x.fillRect(0, 0, W, H);
+      x.restore();
+      ktype(x, 'Escape the Subscriptions Trap.', W / 2, H / 2, 80, t, 2.65, 1.9,
+        { weight: 800, track: -2, rgb: [10, 13, 11] });
+    }
+  }
+  /* 4.5-8.5 ear + es + scroll */
+  if (t >= 4.5 && t < 8.7) {
+    const a = env(t, 4.5, 0.25, 8.7, 0.3);
+    if (a > 0.001) {
+      x.save(); x.globalAlpha = a;
+      drawBackdrop(x, W, H, t, 0.6, 0.4, 0.4, 0.5);
+      x.restore();
+      const im = A('appicon');
+      if (im.naturalWidth) {
+        const s = lerp(1.2, 1.0, easeOut(win(t, 4.5, 5.6)));
+        x.save(); x.globalAlpha = a;
+        x.translate(420, H / 2 - 40); x.scale(s, s);
+        x.filter = 'brightness(1.3)';
+        x.drawImage(im, -150, -150, 300, 300);
+        x.restore();
+      }
+      x.save(); x.globalAlpha = a;
+      x.beginPath(); x.arc(420, H / 2 - 40, 195, 0, TAU);
+      x.strokeStyle = rgba(REC, 0.9); x.lineWidth = 5;
+      x.shadowColor = rgba(REC, 0.7); x.shadowBlur = 26;
+      x.stroke(); x.restore();
+      langScroll(t, 1230, H / 2 - 40, a, 4.5, 4.5, 52);
+      ktype(x, 'Habla en español.', 1230, 180, 72, t, 4.7, 2.6,
+        { weight: 800, track: -2, rgb: TEXT, glow: GOLD_LT, extrude: 4 });
+    }
+  }
+  /* 8.5-11 privacy flash */
+  if (t >= 8.5 && t < 11.2) {
+    if (t < 8.95) FX.whip(x, W, H, t, 8.5, 0.45, 1, '16,185,129');
+    const a = env(t, 8.6, 0.25, 11.2, 0.3);
+    if (a > 0.001) {
+      ktype(x, '100% offline.', W / 2, H / 2 - 60, 110, t, 8.6, 2.4,
+        { weight: 800, track: -2, rgb: TEXT, glow: EMERALD, extrude: 5 });
+      ktype(x, 'No account. No cloud.', W / 2, H / 2 + 120, 46, t, 9.4, 1.8,
+        { weight: 600, track: 0.6, rgb: MUTED });
+      langScroll(t, W / 2, H / 2 + 330, a * 0.5, 8.5, 6.0, 34);
+    }
+  }
+  /* 11.2-15 end card */
+  if (t >= 11.2) {
+    const e = env(t, 11.2, 0.4, 15.0, 0.0);
+    if (e > 0.001) {
+      x.save(); x.globalAlpha = e;
+      x.fillStyle = 'rgba(1,3,2,0.94)';
+      x.fillRect(0, 0, W, H);
+      x.restore();
+      const em = A('emblem');
+      if (em.naturalWidth) {
+        const s = lerp(1.25, 1.0, easeOut(win(t, 11.3, 12.3)));
+        x.save(); x.globalAlpha = env(t, 11.25, 0.4, 15.0, 0.0);
+        x.translate(W / 2, H / 2 - 110); x.scale(s, s);
+        x.drawImage(em, -em.naturalWidth / 2, -em.naturalHeight / 2, em.naturalWidth, em.naturalHeight);
+        x.restore();
+      }
+      ktype(x, 'supEars', W / 2, H / 2 + 250, 92, t, 11.8, 3.1,
+        { weight: 800, track: 2, rgb: TEXT, glow: EMERALD, extrude: 5 });
+      ktype(x, 'Public release · October 10, 2026', W / 2, H / 2 + 332, 32, t, 12.3, 2.6,
+        { weight: 600, track: 1.4, rgb: GOLD_LT });
+      ktype(x, 'Developed by HumbleAngel', W / 2, H / 2 + 382, 24, t, 12.7, 2.2,
+        { weight: 500, track: 0.8, rgb: MUTED });
+    }
+  }
+
+  grain(0.03);
+  x.setTransform(1, 0, 0, 1, 0, 0);
+}
+
+window.__draw = draw;
+window.__ready = loadFlags();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; background: #000; }
+  canvas { display: block; }
+  .off { position: absolute; left: -99999px; }
+</style>
+</head>
+<body>
+<canvas id="c" width="960" height="540"></canvas>
+<div class="off">
+  <img id="crest" src="assets30/crest.png">
+  <img id="emblem" src="assets30/emblem.png">
+  <img id="appicon" src="assets30/appicon.png">
+  <img id="talk" src="assets30/talk.png">
+  <img id="mic" src="assets30/mic.png">
+  <img id="write" src="assets30/write.png">
+  <img id="ob_en" src="assets30/own/ob_en.png">
+  <img id="ob_pl" src="assets30/own/ob_pl.png">
+  <img id="ob_es" src="assets30/own/ob_es.png">
+  <img id="ear_pill" src="assets30/own/ear_pill.png">
+</div>
+<script src="bg3d.js"></script>
+<script src="ktype.js"></script>
+<script src="fx.js"></script>
+<script src="cam.js"></script>
+<script src="phrases3d.js"></script>
+<script src="uiwin.js"></script>
+<script>
+{
+'use strict';
+const W = 1920, H = 1080, DUR = 60.0;
+const c = document.getElementById('c');
+const x = c.getContext('2d');
+const A = id => document.getElementById(id);
+const TAU = Math.PI * 2;
+const BAR = 1.7142857;               /* 140 BPM */
+
+const EMERALD = [16, 185, 129], EMERALD_LT = [122, 240, 190];
+const REC = [231, 76, 60], BUSY = [255, 225, 0];
+const GOLD = [201, 162, 39], GOLD_LT = [231, 193, 90];
+const TEXT = [234, 242, 238], MUTED = [143, 167, 155], NEON = [255, 84, 96];
+
+const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
+const ease = t => { t = clamp(t, 0, 1); return t * t * (3 - 2 * t); };
+const easeOut = t => 1 - Math.pow(1 - clamp(t, 0, 1), 3);
+const easeIn = t => Math.pow(clamp(t, 0, 1), 3);
+const lerp = (a, b, t) => a + (b - a) * t;
+const smooth = (e0, e1, t) => ease((t - e0) / (e1 - e0));
+const win = (t, a, b) => clamp((t - a) / (b - a), 0, 1);
+const rgba = (rgb, a) => `rgba(${rgb[0]},${rgb[1]},${rgb[2]},${a})`;
+const env = (t, s0, fi, s1, fo) => smooth(s0, s0 + fi, t) * (1 - smooth(s1 - fo, s1, t));
+
+function mulberry(seed) {
+  return function () {
+    seed |= 0; seed = (seed + 0x6D2B79F5) | 0;
+    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+const SR = 16000;
+const NOISE = new Float32Array(SR);
+{ const r = mulberry(777); for (let i = 0; i < SR; i++) NOISE[i] = r() * 2 - 1; }
+
+/* ===== voiceover line starts (measured, mixed) ===== */
+const VO = { hook: 0.0, pain: 3.30, brand: 8.80, how1: 12.80, how2: 17.30,
+             es: 20.90, fr: 26.00, de: 30.30, ja: 35.10, privacy: 39.60,
+             cpu: 44.90, motto: 48.40, free: 52.00, cta2: 56.10 };
+
+/* ===== camera keys: pan / tilt / dolly / crane across the film ===== */
+const CAMKEYS = [
+  { t: 0.00, x: 0, y: 0, z: 1.16 },
+  { t: 3.30, x: -70, y: 26, z: 1.46 },
+  { t: 5.00, x: 0, y: 0, z: 1.02 },
+  { t: 6.60, x: 0, y: 0, z: 2.70, ease: 'in' },
+  { t: 7.40, x: 0, y: 40, z: 1.02, ease: 'out' },
+  { t: 8.571, x: -40, y: 0, z: 1.05 },
+  { t: 11.30, x: 150, y: -34, z: 1.34, ease: 'out' },
+  { t: 14.60, x: -160, y: 26, z: 1.24 },
+  { t: 17.50, x: 120, y: -30, z: 1.30, ease: 'out' },
+  { t: 20.571, x: 0, y: 0, z: 1.02 },
+  { t: 24.00, x: -40, y: 20, z: 1.40, ease: 'out' },
+  { t: 28.00, x: -110, y: 46, z: 1.22 },
+  { t: 32.00, x: 90, y: -42, z: 1.34 },
+  { t: 36.00, x: 0, y: 0, z: 1.50, ease: 'out' },
+  { t: 39.429, x: 0, y: 0, z: 1.26 },
+  { t: 43.00, x: 0, y: 0, z: 1.04, ease: 'out' },
+  { t: 44.571, x: 0, y: 0, z: 1.00 },
+  { t: 46.50, x: -80, y: 34, z: 1.26, ease: 'out' },
+  { t: 50.00, x: 50, y: -24, z: 1.14 },
+  { t: 53.143, x: 0, y: 0, z: 1.00 },
+  { t: 56.50, x: 0, y: 0, z: 1.07, ease: 'out' },
+  { t: 60.00, x: 0, y: 0, z: 1.00 },
+];
+
+/* ===== the 26-language phrase wall (text + where it flies) ===== */
+const WALL = [
+  ['Anota aí: reunião às três', 'pt'], ['Escribe un correo', 'es'], ['Écris un message', 'fr'],
+  ['Schreib eine E-Mail', 'de'], ['Scrivi una nota', 'it'], ['Напиши письмо', 'ru'],
+  ['翻译成英文', 'zh'], ['会議のメモを書いて', 'ja'], ['이메일을 영어로', 'ko'],
+  ['Schrijf een bericht', 'nl'], ['Napisz wiadomość', 'pl'], ['Müşteriye e-posta yaz', 'tr'],
+  ['Напиши лист клієнту', 'uk'], ['अंग्रेज़ी में लिखो', 'hi'], ['اكتب رسالة إلى العميل', 'ar'],
+  ['Tulis pesan untuk klien', 'id'], ['Viết tin nhắn', 'vi'], ['Scrie un mesaj', 'ro'],
+  ['Γράψε ένα μήνυμα', 'el'], ['Skriv ett meddelande', 'sv'], ['Napiš zprávu klientovi', 'cs'],
+  ['Írj üzenetet', 'hu'], ['เขียนข้อความถึงลูกค้า', 'th'], ['کلائنٹ کو پیغام لکھو', 'ur'],
+  ['Reply to Maria in twenty minutes', 'en'], ['Invoice the client on Friday', 'en']
+];
+function wallItems() {
+  const items = [];
+  const rnd = mulberry(2026);
+  for (let i = 0; i < WALL.length; i++) {
+    const band = i % 3;                       /* 0 near, 1 mid, 2 far */
+    const size = band === 0 ? 64 : band === 1 ? 46 : 34;
+    const alphaBand = band === 0 ? 0.95 : band === 1 ? 0.7 : 0.42;
+    const rotY = (band === 2 ? 0.62 : 0.46) * (rnd() - 0.5);
+    const rotX = (band === 0 ? 0.26 : 0.34) * (rnd() - 0.5);
+    const vz = (rnd() - 0.5) * 26;                       /* drift, never rush past the camera */
+    const vx = (rnd() < 0.5 ? -1 : 1) * (30 + rnd() * 78);
+    items.push({
+      text: WALL[i][0],
+      x: (rnd() - 0.5) * 2600, y: (rnd() - 0.5) * 1250, z: 420 + rnd() * 1150,
+      vx: vx, vy: (rnd() - 0.5) * 12, vz: vz,
+      rotY: rotY, rotX: rotX, size: size,
+      rgb: band === 0 ? [240, 248, 245] : band === 1 ? [206, 230, 218] : [156, 186, 174],
+      weight: band === 0 ? 800 : 600, track: 1, alphaBand: alphaBand
+    });
+  }
+  return items;
+}
+const WALL_ITEMS = wallItems();
+
+/* ===== ports of the app's painters ===== */
+function circularWaveform(cx, cy, base, samples, level, rgb, alphaMul) {
+  const POINTS = 120, sr = 16000, winN = Math.max(POINTS, Math.min(samples.length, Math.ceil(sr * 0.05)));
+  const tail = samples.subarray(samples.length - winN);
+  const n = tail.length;
+  const w = 2.5 * clamp(base / 67.2, 0.5, 1.0);
+  x.beginPath();
+  for (let i = 0; i <= POINTS; i++) {
+    const idx = i % POINTS;
+    const a = Math.floor(idx * n / POINTS), b = Math.max(Math.floor((i + 1) * n / POINTS), a + 1);
+    let peak = 0;
+    for (let k = a; k < b && k < n; k++) { const v = tail[k]; if (Math.abs(v) > Math.abs(peak)) peak = v; }
+    const r = base * (1 + clamp(peak * 1.2, -1, 1) * 0.7);
+    const ang = (idx / POINTS) * TAU - Math.PI / 2;
+    const px = cx + Math.cos(ang) * r, py = cy + Math.sin(ang) * r;
+    if (i === 0) x.moveTo(px, py); else x.lineTo(px, py);
+  }
+  x.strokeStyle = rgba(rgb, (0.35 + 0.65 * level) * alphaMul);
+  x.lineWidth = w;
+  x.shadowColor = rgba(rgb, 0.7 * alphaMul);
+  x.shadowBlur = 10 + 16 * level;
+  x.stroke();
+  x.shadowBlur = 0;
+}
+function radialWaveform(cx, cy, base, level, rgb, rot, alphaMul) {
+  const bars = 16, alpha = (140 + level * 115) / 255, len = 8 + level * 34;
+  x.strokeStyle = rgba(rgb, alpha * alphaMul);
+  x.lineWidth = 3.5; x.lineCap = 'round';
+  for (let i = 0; i < bars; i++) {
+    const ang = (i / bars) * TAU - Math.PI / 2 + rot;
+    const dx = Math.cos(ang), dy = Math.sin(ang);
+    x.beginPath();
+    x.moveTo(cx + dx * base, cy + dy * base);
+    x.lineTo(cx + dx * (base + len), cy + dy * (base + len));
+    x.stroke();
+  }
+  x.lineCap = 'butt';
+}
+function logoEar(cx, cy, artR, phase, level, alphaMul, t) {
+  let ringR, ringC;
+  if (phase === 'rec') {
+    ringR = artR * 1.18 + level * artR * 0.10;
+    ringC = [REC[0], REC[1], REC[2], (70 + level * 150) / 255];
+  } else if (phase === 'busy') {
+    const f = (t * 2.0) % 1.0;
+    ringR = artR * 1.16 + f * artR * 0.05;
+    ringC = [BUSY[0], BUSY[1], BUSY[2], (90 + 70 * f) / 255];
+  } else {
+    ringR = artR * 1.16;
+    ringC = [EMERALD[0], EMERALD[1], EMERALD[2], 0.42];
+  }
+  x.save();
+  x.globalAlpha = alphaMul;
+  const halo = x.createRadialGradient(cx, cy, ringR * 0.6, cx, cy, ringR * 1.55);
+  halo.addColorStop(0, rgba(ringC, 0));
+  halo.addColorStop(0.72, rgba(ringC, 0.13 * ringC[3] * alphaMul * 3));
+  halo.addColorStop(1, rgba(ringC, 0));
+  x.fillStyle = halo;
+  x.beginPath(); x.arc(cx, cy, ringR * 1.55, 0, TAU); x.fill();
+  x.beginPath(); x.arc(cx, cy, ringR, 0, TAU);
+  x.strokeStyle = rgba(ringC, ringC[3]);
+  x.lineWidth = Math.max(1.6, artR * 0.016);
+  x.shadowColor = rgba(ringC, 0.55); x.shadowBlur = 22;
+  x.stroke(); x.shadowBlur = 0;
+  if (phase === 'rec') {
+    const n = 800, buf = new Float32Array(n);
+    for (let i = 0; i < n; i++) buf[i] = NOISE[(Math.floor(t * SR) - (n - i) + SR * 4) % NOISE.length];
+    circularWaveform(cx, cy, ringR * 0.94, buf, level, ringC, 1);
+  } else if (phase === 'busy') {
+    radialWaveform(cx, cy, ringR * 0.9, 0.5 + 0.4 * Math.sin(t * 4.2), BUSY, t * 1.4, 1);
+  }
+  const im = A('appicon');
+  if (im.naturalWidth) {
+    const d = artR * 2;
+    x.save(); x.filter = 'brightness(1.3)';
+    x.drawImage(im, cx - d / 2, cy - d / 2, d, d);
+    x.restore();
+  }
+  x.restore();
+}
+function footage(id, cx, cy, w, h, a, tilt) {
+  if (a <= 0.001) return;
+  const im = A(id);
+  if (!im || !im.naturalWidth) return;
+  x.save();
+  x.globalAlpha = a;
+  x.translate(cx, cy);
+  x.rotate(tilt || 0);
+  const r = 26;
+  x.beginPath();
+  x.moveTo(-w / 2 + r, -h / 2);
+  x.arcTo(w / 2, -h / 2, w / 2, h / 2, r); x.arcTo(w / 2, h / 2, -w / 2, h / 2, r);
+  x.arcTo(-w / 2, h / 2, -w / 2, -h / 2, r); x.arcTo(-w / 2, -h / 2, w / 2, -h / 2, r);
+  x.closePath();
+  x.save();
+  x.clip();
+  x.filter = 'brightness(1.28) contrast(1.06) saturate(1.08)';
+  x.drawImage(im, -w / 2, -h / 2, w, h);
+  x.restore();
+  x.strokeStyle = rgba(EMERALD, 0.5);
+  x.lineWidth = 2;
+  x.shadowColor = rgba(EMERALD, 0.4); x.shadowBlur = 24;
+  x.stroke();
+  x.restore();
+}
+const FLAGS = {};
+const LANGNAME = { pt: 'Portuguese', en: 'English', es: 'Spanish', fr: 'French', de: 'German',
+  it: 'Italian', ru: 'Russian', zh: 'Chinese', ja: 'Japanese', ko: 'Korean', nl: 'Dutch',
+  pl: 'Polish', tr: 'Turkish', uk: 'Ukrainian', hi: 'Hindi', id: 'Indonesian', vi: 'Vietnamese',
+  ro: 'Romanian', el: 'Greek', sv: 'Swedish', cs: 'Czech', hu: 'Hungarian', ur: 'Urdu',
+  th: 'Thai', ar: 'Arabic' };
+function loadFlags() {
+  const names = Object.keys(LANGNAME).concat(['pt-PT', 'auto']);
+  return Promise.all(names.map(n => new Promise(res => {
+    if (typeof FLAG_B64 === 'undefined' || !FLAG_B64[n]) return res();
+    const im = new Image();
+    im.onload = () => { FLAGS[n] = im; res(); };
+    im.onerror = () => res();
+    im.src = 'data:image/png;base64,' + FLAG_B64[n];
+  })));
+}
+function chip(code, x0, y0, scale, alpha) {
+  if (alpha <= 0.001) return 0;
+  const f = FLAGS[code];
+  const fw = 46 * scale, fh = 31 * scale, pad = 13 * scale, h = 62 * scale;
+  const label = LANGNAME[code] || code;
+  x.save();
+  x.font = `600 ${25 * scale}px "Segoe UI",system-ui,sans-serif`;
+  const tw = x.measureText(label).width;
+  const w = pad * 2 + fw + 10 * scale + tw;
+  x.globalAlpha = alpha;
+  x.fillStyle = 'rgba(16,22,20,0.82)';
+  x.strokeStyle = 'rgba(255,255,255,0.14)';
+  x.lineWidth = 1.4 * scale;
+  const r = h / 2;
+  x.beginPath();
+  x.moveTo(x0 + r, y0); x.arcTo(x0 + w, y0, x0 + w, y0 + h, r); x.arcTo(x0 + w, y0 + h, x0, y0 + h, r);
+  x.arcTo(x0, y0 + h, x0, y0, r); x.arcTo(x0, y0, x0 + w, y0, r); x.closePath();
+  x.fill(); x.stroke();
+  if (f) x.drawImage(f, x0 + pad, y0 + (h - fh) / 2, fw, fh);
+  x.fillStyle = rgba(TEXT, 0.95);
+  x.textBaseline = 'middle';
+  x.fillText(label, x0 + pad + fw + 10 * scale, y0 + h / 2 + 1);
+  x.restore();
+  return w;
+}
+function head(txt, cx, cy, size, a, opts = {}) {
+  if (a <= 0.001) return;
+  x.save();
+  x.font = `${opts.weight || 800} ${size}px "Segoe UI",Inter,system-ui,sans-serif`;
+  x.textAlign = 'center'; x.textBaseline = 'middle';
+  x.letterSpacing = `${opts.track != null ? opts.track : -size * 0.03}px`;
+  if (opts.glow) { x.shadowColor = rgba(opts.glow, 0.45 * a); x.shadowBlur = size * 0.5; }
+  x.fillStyle = rgba(opts.rgb || TEXT, a);
+  x.fillText(txt, cx, cy);
+  x.restore();
+}
+function grain(a) {
+  x.save();
+  x.globalAlpha = a;
+  const r = mulberry(7);
+  for (let i = 0; i < 1400; i++) x.fillStyle = r() > 0.5 ? '#fff' : '#000', x.fillRect((r() * W) | 0, (r() * H) | 0, 1, 1);
+  x.restore();
+}
+function vignette(str) {
+  const g = x.createRadialGradient(W / 2, H / 2, H * 0.32, W / 2, H / 2, H * 0.92);
+  g.addColorStop(0, 'rgba(0,0,0,0)');
+  g.addColorStop(1, `rgba(0,0,0,${str})`);
+  x.save(); x.fillStyle = g; x.fillRect(0, 0, W, H); x.restore();
+}
+const WIPES = [
+  { at: 8.57, rgb: EMERALD }, { at: 17.14, rgb: REC }, { at: 36.0, rgb: EMERALD },
+  { at: 44.57, rgb: GOLD_LT }, { at: 53.14, rgb: GOLD_LT }
+];
+function ringWipe(t) {
+  for (const wp of WIPES) {
+    const d = t - wp.at;
+    if (d < -0.02 || d > 0.62) continue;
+    const p = clamp(d / 0.62, 0, 1);
+    const r = lerp(150, 1750, easeOut(p));
+    const a = Math.sin(Math.PI * clamp(p, 0, 1)) * 0.9;
+    const lw = lerp(30, 2, easeIn(p));
+    x.save();
+    x.globalCompositeOperation = 'lighter';
+    const g = x.createRadialGradient(W / 2, H / 2, Math.max(1, r - lw * 2.2), W / 2, H / 2, r + lw);
+    g.addColorStop(0, rgba(wp.rgb, 0));
+    g.addColorStop(0.72, rgba(wp.rgb, 0.30 * a));
+    g.addColorStop(1, rgba(wp.rgb, 0));
+    x.fillStyle = g;
+    x.beginPath(); x.arc(W / 2, H / 2, r + lw, 0, TAU);
+    x.arc(W / 2, H / 2, Math.max(1, r - lw * 2.2), 0, TAU, true);
+    x.fill();
+    x.beginPath(); x.arc(W / 2, H / 2, r, 0, TAU);
+    x.strokeStyle = rgba(wp.rgb, 0.85 * a);
+    x.lineWidth = lw; x.stroke();
+    x.restore();
+  }
+}
+
+/* ===== use-case vignette: a window where English types itself in ===== */
+function vignetteWin(kind, cx, cy, w, h, a, t, t0, text, rgb) {
+  if (a <= 0.001) return;
+  const titles = { email: 'New Message', chat: '#team-launch', doc: 'notes.txt' };
+  x.save();
+  x.globalAlpha = a;
+  const box = uiWindow(x, cx, cy, w, h, { title: titles[kind] || 'Untitled', accent: rgb });
+  uiText(x, text, box.x + 26, box.y + 40, 30, t, t0, 26, { rgb: [230, 235, 232], wrapW: box.w - 52, lineH: 42 });
+  const pt = (t - t0 - text.length / 26 - 0.15) / 0.5;
+  if (pt > 0 && pt < 1.2) uiPasteFlash(x, cx, box.y + box.h * 0.5, box.w, box.h * 0.55, pt, rgb);
+  uiCursor(x, box.x + box.w * 0.62, box.y + box.h * 0.72, clamp(1 - (t - t0 - 1.2) / 0.4, 0, 1), t);
+  x.restore();
+}
+
+/* user quote: left bar + serif line */
+function quote(txt, cx, cy, size, t, t0, dur) {
+  const a = env(t, t0, 0.3, t0 + dur, 0.3);
+  if (a <= 0.001) return;
+  x.save();
+  x.globalAlpha = a;
+  x.font = `italic 500 ${size}px Georgia,"Times New Roman",serif`;
+  x.textAlign = 'center'; x.textBaseline = 'middle';
+  const w = x.measureText(txt).width;
+  x.fillStyle = rgba(GOLD_LT, 0.85);
+  x.fillRect(cx - w / 2 - 26, cy - size * 0.62, 5, size * 1.24);
+  x.fillStyle = rgba(TEXT, 0.92);
+  x.fillText(txt, cx, cy);
+  x.restore();
+}
+/* animated counter widget */
+function counter(label, v0, v1, t, t0, t1, cx, cy) {
+  const a = env(t, t0, 0.3, t1, 0.3);
+  if (a <= 0.001) return;
+  const v = Math.round(lerp(v0, v1, easeOut(win(t, t0, (t0 + t1) / 2 + 0.4))));
+  x.save();
+  x.globalAlpha = a;
+  x.textAlign = 'center'; x.textBaseline = 'middle';
+  x.font = `800 64px "Segoe UI",system-ui,sans-serif`;
+  x.fillStyle = rgba(GOLD_LT, 1);
+  x.shadowColor = rgba(GOLD_LT, 0.5); x.shadowBlur = 18;
+  x.fillText(String(v).padStart(2, '0'), cx, cy);
+  x.shadowBlur = 0;
+  x.font = `600 20px "Segoe UI",system-ui,sans-serif`;
+  x.fillStyle = rgba(MUTED, 1);
+  x.fillText(label, cx, cy + 56);
+  x.restore();
+}
+/* brand crest + tagline (arrives with the brand voice at 8.8) */
+function brandCrest(t, a) {
+  if (a <= 0.001) return;
+  const em = A('crest');
+  if (em.naturalWidth) {
+    x.save(); x.globalAlpha = a * 0.9;
+    const s = lerp(0.66, 0.58, easeOut(win(t, 8.8, 11.5)));
+    x.translate(W / 2, H / 2 - 90); x.scale(s, s);
+    x.drawImage(em, -em.naturalWidth / 2, -em.naturalHeight / 2, em.naturalWidth, em.naturalHeight);
+    x.restore();
+  }
+  ktype(x, 'The Ear that understands your language.', W / 2, H / 2 + 330, 46, t, 8.8, 3.5,
+    { weight: 600, track: -0.8, rgb: EMERALD_LT, glow: EMERALD });
+}
+/* slow rotating light sweep: moves the whole frame gently, keeps calm beats alive */
+function slowSweep(t, cx, cy, rgb, speed, alpha, wide) {
+  x.save();
+  x.globalCompositeOperation = 'lighter';
+  x.translate(cx, cy);
+  x.rotate(t * speed);
+  const R = 1400;
+  const g = x.createLinearGradient(-R, 0, R, 0);
+  g.addColorStop(0, rgba(rgb, 0));
+  g.addColorStop(0.5, rgba(rgb, alpha));
+  g.addColorStop(1, rgba(rgb, 0));
+  x.fillStyle = g;
+  x.fillRect(-R, -wide, R * 2, wide * 2);
+  x.restore();
+}
+/* ================= THE FILM ================= */
+function draw(t) {
+  x.setTransform(1, 0, 0, 1, 0, 0);
+  x.fillStyle = '#000';
+  x.fillRect(0, 0, W, H);
+  x.setTransform(0.5, 0, 0, 0.5, 0, 0);
+  const g0 = x.createLinearGradient(0, 0, 0, H);
+  g0.addColorStop(0, '#030806'); g0.addColorStop(0.55, '#05110D'); g0.addColorStop(1, '#020504');
+  x.fillStyle = g0; x.fillRect(0, 0, W, H);
+
+  const cam = camTrack(t, CAMKEYS);
+  const shake = camShake(t, 5.0, 1.35);
+  const camAll = { x: cam.x + shake.dx, y: cam.y + shake.dy, z: cam.z, rot: cam.rot + shake.rot };
+  const zPrev = camTrack(Math.max(0, t - 0.06), CAMKEYS).z;
+  const speed = clamp(Math.abs(cam.z - zPrev) * 6, 0, 1);
+
+  /* ---- backdrop: parallax at 0.4 depth ---- */
+  x.save();
+  camApply(x, { x: camAll.x * 0.4, y: camAll.y * 0.4, z: camAll.z * 0.55 + 0.45, rot: camAll.rot * 0.5 }, W, H);
+  const morphs = [
+    [0.25, 0.15, 0.85, 0.1], [0.2, 0.2, 0.9, 0.15], [0.7, 0.5, 0.4, 0.55],
+    [0.3, 0.05, 0.05, 0.05], [0.2, 0.7, 0.3, 0.6], [0.15, 0.25, 0.5, 0.2]
+  ];
+  const mi = t < 8.571 ? 0 : t < 20.571 ? 1 : t < 39.429 ? 2 : t < 44.571 ? 3 : t < 53.143 ? 4 : 5;
+  const mm = morphs[mi];
+  drawBackdrop(x, W, H, t, mm[0], mm[1], mm[2], mm[3]);
+  x.restore();
+
+  x.save();
+  camApply(x, camAll, W, H);
+  if (speed > 0.02) dollyBlur(x, speed);
+
+  /* ===== HOOK 0 - 8.57 ===== */
+  if (t < 8.9) {
+    const a = env(t, 0, 0.2, 8.57, 0.35);
+    if (a > 0.001) {
+      FX.ghost(x, tt => {
+        const p = lerp(2.2, 1.0, easeOut(win(tt, 0, 0.85)));
+        x.save(); x.globalAlpha = a;
+        x.translate(W / 2, H / 2 - 120); x.scale(p, p);
+        head('Are you tired of paying', 0, 0, 76, 1, { track: -2, glow: REC });
+        x.restore();
+      }, t, 0.085, 5, 0.5);
+      ktype(x, 'Are you tired of paying', W / 2, H / 2 - 120, 76, t, 0.0, 3.2,
+        { weight: 800, track: -2, rgb: TEXT, glow: REC, extrude: 5, jitter: 0.12 });
+      ktype(x, 'subscriptions to talk?', W / 2, H / 2 - 10, 76, t, 0.55, 2.65,
+        { weight: 800, track: -2, rgb: TEXT, glow: REC, extrude: 5, jitter: 0.12 });
+      quote(x, 'Windows speech recognition accuracy was too low.', W / 2, H / 2 + 100, 40, t, 3.4, 3.6);
+      /* push-through: the crest swells as a foreground object, then we cut */
+      const pu = env(t, 4.3, 0.5, 5.25, 0.12);
+      if (pu > 0.001) {
+        const em = A('crest');
+        if (em.naturalWidth) {
+          const s = lerp(0.8, 3.1, easeIn(win(t, 4.3, 5.25)));
+          x.save();
+          x.globalAlpha = pu;
+          x.filter = `blur(${(12 * easeIn(win(t, 4.3, 5.25))).toFixed(1)}px)`;
+          x.translate(W / 2, H / 2); x.scale(s, s);
+          x.drawImage(em, -em.naturalWidth / 2, -em.naturalHeight / 2, em.naturalWidth, em.naturalHeight);
+          x.restore();
+        }
+      }
+      /* push-through leads straight into the brand crest (cry lives at 18.0 now) */
+      /* crest settles + tagline */
+      const ca = env(t, 6.9, 0.4, 8.57, 0.35);
+      if (ca > 0.001) {
+        const em = A('crest');
+        if (em.naturalWidth) {
+          x.save(); x.globalAlpha = ca * 0.9;
+          const s = lerp(0.72, 0.6, easeOut(win(t, 6.9, 8.3)));
+          x.translate(W / 2, H / 2 - 40); x.scale(s, s);
+          x.drawImage(em, -em.naturalWidth / 2, -em.naturalHeight / 2, em.naturalWidth, em.naturalHeight);
+          x.restore();
+        }
+        /* tagline arrives with the brand voice at 8.8 (brandCrest, MECH) */
+      }
+    }
+  }
+
+  /* ===== MECHANISM 8.571 - 20.571 : tagline, steps, live draft, battle cry ===== */
+  if (t >= 8.571 && t < 20.571) {
+    const a = env(t, 8.571, 0.3, 20.571, 0.35);
+    brandCrest(t, a);
+    quote(x, 'Local offline speech recognition. No internet needed.', W / 2, H / 2 + 470, 34, t, 9.95, 2.0);
+    if (a > 0.001) {
+      const items = [
+        { img: A('talk'), label: 'Click.', t0: 12.8, phase: 'idle', rgb: EMERALD },
+        { img: A('mic'), label: 'Speak.', t0: 14.3, phase: 'rec', rgb: REC },
+        { img: A('write'), label: 'Magic.', t0: 15.8, phase: 'busy', rgb: BUSY }
+      ];
+      const W3 = 420, gap = 70;
+      const x0 = (W - (3 * W3 + 2 * gap)) / 2;
+      items.forEach((it, i) => {
+        const ia = env(t, it.t0, 0.35, 17.14, 0.35);
+        if (ia <= 0.001) return;
+        const cx = x0 + i * (W3 + gap) + W3 / 2, cy = H / 2 - 210;
+        const pop = lerp(1.5, 1, easeOut(win(t, it.t0, it.t0 + 0.6)));
+        x.save(); x.globalAlpha = ia;
+        x.translate(cx, cy); x.scale(pop, pop);
+        const s = 0.5;
+        const lvl = it.phase === 'rec' ? (0.35 + 0.65 * Math.abs(Math.sin(t * 5.1))) : 0;
+        const ringR = it.phase === 'rec' ? (104 + lvl * 12) * s : (it.phase === 'busy' ? 100 * s : 105 * s);
+        const rc = it.phase === 'rec' ? REC : (it.phase === 'busy' ? BUSY : EMERALD);
+        x.beginPath(); x.arc(0, 0, ringR, 0, TAU);
+        x.strokeStyle = rgba(rc, it.phase === 'idle' ? 0.5 : 0.9);
+        x.lineWidth = 2.4;
+        x.shadowColor = rgba(rc, 0.65); x.shadowBlur = 16;
+        x.stroke(); x.shadowBlur = 0;
+        if (it.phase === 'rec') radialWaveform(0, 0, ringR * 0.94, lvl, REC, t * 1.6, 1);
+        const im = it.img;
+        if (im.naturalWidth) { x.save(); x.filter = 'brightness(1.35)'; x.drawImage(im, -58, -58, 116, 116); x.restore(); }
+        x.restore();
+        ktype(x, it.label, cx, cy + 190, 50, t, it.t0 + 0.28, 2.6,
+          { weight: 800, track: -1, rgb: TEXT, glow: it.rgb, extrude: 4 });
+      });
+      /* the real product, filmed: pose-key camera keeps moving on it */
+      const fa = env(t, 13.4, 0.5, 20.571, 0.4);
+      if (fa > 0.001) {
+        const px = lerp(W + 320, W - 320, easeOut(win(t, 13.0, 14.4)));
+        footage('ob_en', px, H / 2 + 60, 350, 780, fa, 0.02);
+      }
+      const sa = env(t, 15.0, 0.4, 20.571, 0.35);
+      if (sa > 0.001) {
+        bubbleShape(W / 2 - 180, H / 2 + 250, 1320, 300, sa);
+        x.save(); x.globalAlpha = sa;
+        x.font = '34px Consolas,"Cascadia Mono",monospace';
+        x.textAlign = 'left'; x.textBaseline = 'middle';
+        const oN = Math.floor(clamp((t - 15.2) * 28, 0, 22));
+        x.fillStyle = rgba(TEXT, 0.94);
+        x.fillText('Fale no seu idioma.'.slice(0, oN), W / 2 - 180 - 660 + 44, H / 2 + 250 - 80);
+        if (t > 15.9) {
+          const tN = Math.floor(clamp((t - 15.9) * 30, 0, 40));
+          x.fillStyle = rgba(EMERALD_LT, 0.95);
+          x.fillText('Speak in your own native language.'.slice(0, tN), W / 2 - 180 - 660 + 44, H / 2 + 250 - 22);
+        }
+        x.restore();
+      }
+    }
+  }
+
+  /* ===== battle cry 18.00 - 20.40 : black on gold card ===== */
+  if (t >= 18.0 && t < 20.571) {
+    const ba = env(t, 18.0, 0.1, 20.40, 0.25);
+    if (ba > 0.001) {
+      x.save(); x.globalAlpha = ba;
+      const gg = x.createLinearGradient(0, 0, W, H);
+      gg.addColorStop(0, '#F0CE6B'); gg.addColorStop(0.5, '#C9A227'); gg.addColorStop(1, '#7A5F1C');
+      x.fillStyle = gg; x.fillRect(-200, -200, W + 400, H + 400);
+      x.restore();
+      ktype(x, 'Escape the Subscriptions Trap.', W / 2, H / 2, 92, t, 18.0, 2.4,
+        { weight: 800, track: -2, rgb: [10, 13, 11] });
+    }
+  }
+
+  /* ===== WALL + USE CASES 20.571 - 39.429 (bounds set above) ===== */
+  if (t >= 20.571 && t < 39.429) {
+    const a = env(t, 20.571, 0.35, 39.429, 0.4);
+    if (a > 0.001) {
+      /* hero line present -> damp the wall (research rule 2) */
+      const heroes = [
+        { at: 20.90, txt: 'Habla en español.', chip: 'es', sub: 'supEars escribe en inglés.' },
+        { at: 26.00, txt: 'Parlez français.', chip: 'fr', sub: 'supEars écrit en anglais.' },
+        { at: 30.30, txt: 'Sprich Deutsch.', chip: 'de', sub: 'Keine Cloud, kein Abo.' },
+        { at: 35.10, txt: '日本語で話す。', chip: 'ja', sub: '英語で書く。' }
+      ];
+      let heroA = 0;
+      for (const h of heroes) heroA = Math.max(heroA, env(t, h.at - 0.2, 0.3, h.at + 5.6, 0.4));
+      x.save();
+      x.globalAlpha = a * (1 - 0.42 * heroA);
+      phraseField(x, W, H, t, WALL_ITEMS, camAll,
+        { fadeNear: 120, fadeFar: 2400, maxAlpha: 1.0, glow: 7, tiltMax: 0.55, seed: 2026 });
+      x.restore();
+      /* hero lines + chips + windows */
+      for (const h of heroes) {
+        const s0 = h.at - 0.2;
+        const sa = env(t, s0, 0.3, h.at + 5.6, 0.4);
+        if (sa <= 0.001) continue;
+        ktype(x, h.txt, W / 2, H / 2 - 190, 104, t, s0, 4.4,
+          { weight: 800, track: -2, rgb: TEXT, glow: GOLD_LT, extrude: 5, jitter: 0.22 });
+        chip(h.chip, W / 2 - 150, H / 2 - 40, 1.35, sa);
+        ktype(x, h.sub, W / 2, H / 2 + 80, 42, t, s0 + 1.2, 3.2,
+          { weight: 600, track: 0.4, rgb: EMERALD_LT, glow: EMERALD });
+        /* the use case happening live: English types itself in a window */
+        vignetteWin(h.chip === 'es' ? 'email' : h.chip === 'fr' ? 'chat' : h.chip === 'de' ? 'doc' : 'chat',
+          W / 2, H / 2 + 340, 1020, 280, sa * 0.96, t, s0 + 1.4,
+          h.chip === 'es' ? 'Email to my boss, in English.' :
+          h.chip === 'fr' ? "Message: I'm running late, see you at nine." :
+          h.chip === 'de' ? 'Invoice the client on Friday.' : 'Meeting notes, translated.',
+          h.chip === 'es' ? [86, 156, 255] : h.chip === 'fr' ? [122, 240, 190] : h.chip === 'de' ? [255, 200, 120] : [255, 225, 0]);
+      }
+      const wa = env(t, 37.6, 0.3, 39.429, 0.35);
+      if (wa > 0.001) {
+        ktype(x, '25 languages in. English out.', W / 2, 190, 58, t, 37.6, 1.8,
+          { weight: 800, track: -1.2, rgb: TEXT, glow: EMERALD, extrude: 4 });
+      }
+      quote(x, 'I searched for voice-to-text without a subscription.', W / 2, 1010, 34, t, 27.8, 2.0);
+      quote(x, '200 hours of sermons must become text.', W / 2, 1010, 34, t, 32.4, 2.0);
+      counter(x, 'LANGUAGES', 20, 25, t, 20.90, 39.00, W - 300, 140);
+    }
+  }
+
+  /* ===== PRIVACY 39.429 - 44.571 : calm but alive (dust + breath) ===== */
+  if (t >= 39.429 && t < 44.571) {
+    const a = env(t, 39.429, 0.5, 44.571, 0.5);
+    if (a > 0.001) {
+      logoEar(W / 2, H / 2 - 60, 150, 'idle', 0, a, t);
+      const br = 200 + 60 * Math.sin(t * 0.9);
+      x.save(); x.globalAlpha = a * 0.75;
+      x.beginPath(); x.arc(W / 2, H / 2 - 60, br, 0, TAU);
+      x.strokeStyle = rgba(EMERALD, 0.4);
+      x.lineWidth = 2;
+      x.shadowColor = rgba(EMERALD, 0.5); x.shadowBlur = 26;
+      x.stroke(); x.restore();
+      /* comet: a bright arc segment circling the ring */
+      const ca2 = t * 1.15;
+      x.save(); x.globalAlpha = a * 0.9;
+      x.beginPath(); x.arc(W / 2, H / 2 - 60, br, ca2, ca2 + 0.7);
+      x.strokeStyle = rgba(EMERALD_LT, 0.85);
+      x.lineWidth = 4;
+      x.shadowColor = rgba(EMERALD, 0.8); x.shadowBlur = 22;
+      x.stroke(); x.restore();
+      x.save(); x.globalAlpha = a;
+      slowSweep(t, W / 2, H / 2 - 60, EMERALD, 0.30, 0.05, 320);
+      x.restore();
+      const dr = mulberry(99);
+      x.save();
+      x.fillStyle = rgba(EMERALD_LT, 1);
+      for (let i = 0; i < 60; i++) {
+        const px = (dr() * W + t * (16 + dr() * 40)) % W;
+        const py = (dr() * H - t * (10 + dr() * 26) + H) % H;
+        const s = 1.5 + dr() * 3;
+        x.globalAlpha = a * (0.25 + dr() * 0.45);
+        x.fillRect(px, py, s, s);
+      }
+      x.restore();
+      ktype(x, '100% offline.', W / 2, H / 2 - 60, 118, t, 39.5, 4.9,
+        { weight: 800, track: -2, rgb: TEXT, glow: EMERALD, extrude: 5 });
+      ktype(x, 'No account. No cloud.', W / 2, H / 2 + 150, 48, t, 41.4, 3.0,
+        { weight: 600, track: 0.6, rgb: MUTED });
+    }
+  }
+
+  /* ===== PROOF 44.57 - 53.14 ===== */
+  if (t >= 44.57 && t < 53.14) {
+    const a = env(t, 44.57, 0.3, 53.14, 0.4);
+    if (a > 0.001) {
+      const N25 = ['en', 'pt', 'es', 'fr', 'de', 'it', 'ru', 'zh', 'ja', 'ko', 'nl', 'pl', 'tr', 'uk', 'hi',
+                   'ar', 'id', 'vi', 'ro', 'el', 'sv', 'cs', 'hu', 'ur', 'th'];
+      const names = N25.filter(n => FLAGS[n]);
+      const cols = 5, fw = 148, fh = 99, gapx = 40, gapy = 28;
+      const gridW = cols * fw + (cols - 1) * gapx;
+      const rows = Math.ceil(names.length / cols);
+      const gridH = rows * fh + (rows - 1) * gapy;
+      const x0 = (W - gridW) / 2 - 190, y0 = H / 2 - gridH / 2 + 60;
+      names.forEach((nm, i) => {
+        const col = i % cols, row = Math.floor(i / cols);
+        const stagger = (col * 0.55 + row * 0.35) * 0.05;
+        const fa = env(t, 44.8 + stagger, 0.3, 53.14, 0.4);
+        if (fa <= 0.001 || !FLAGS[nm]) return;
+        const px = x0 + col * (fw + gapx), py = y0 + row * (fh + gapy);
+        const pop = lerp(1.5, 1, easeOut(win(t, 44.8 + stagger, 45.25 + stagger)));
+        x.save();
+        x.globalAlpha = fa * 0.92;
+        x.translate(px + fw / 2, py + fh / 2);
+        x.scale(pop, pop);
+        x.shadowColor = 'rgba(0,0,0,0.6)'; x.shadowBlur = 18; x.shadowOffsetY = 6;
+        x.drawImage(FLAGS[nm], -fw / 2, -fh / 2, fw, fh);
+        x.restore();
+      });
+      ktype(x, 'Runs on old CPUs.', W / 2, 170, 60, t, 44.41, 3.0,
+        { weight: 800, track: -1.4, rgb: TEXT, glow: GOLD_LT, extrude: 4 });
+      ktype(x, 'No graphics card.', W / 2, 244, 40, t, 45.6, 2.2,
+        { weight: 600, track: 0.4, rgb: EMERALD_LT });
+      ktype(x, 'Escape the Big Tech Corps Subscriptions Traps.', W / 2, H / 2 + 470, 44, t, 48.4, 3.2,
+        { weight: 800, track: -1.2, rgb: GOLD_LT, glow: GOLD_LT, extrude: 4 });
+      quote(x, 'I have so much typing. I can’t cope.', W / 2, 700, 34, t, 52.3, 2.9);
+      counter(x, 'DAYS FREE', 0, 30, t, 52.0, 55.7, W - 300, 140);
+      ktype(x, '30 days free. No credit card.', W / 2, H - 116, 46, t, 52.0, 3.5,
+        { weight: 700, track: -0.6, rgb: TEXT, glow: EMERALD, extrude: 4 });
+      /* two quick dictation windows riding the en1/en2 voices */
+      const w1 = env(t, 46.8, 0.4, 49.6, 0.4);
+      if (w1 > 0.001) vignetteWin('chat', 1520, H / 2 - 40, 600, 250, w1, t, 47.0,
+        "I'll be there in twenty minutes.", [122, 240, 190]);
+      const w2 = env(t, 49.9, 0.4, 52.6, 0.4);
+      if (w2 > 0.001) vignetteWin('doc', 1520, H / 2 + 260, 600, 250, w2, t, 50.1,
+        'Invoice the client on Friday.', [255, 200, 120]);
+    }
+  }
+
+  /* ===== CTA 53.14 - 60 ===== */
+  if (t >= 53.14) {
+    const e = env(t, 53.14, 0.5, 60, 0);
+    if (e > 0.001) {
+      x.save(); x.globalAlpha = e;
+      x.fillStyle = 'rgba(1,3,2,0.94)';
+      x.fillRect(-200, -200, W + 400, H + 400);
+      x.restore();
+      const rp = easeOut(win(t, 53.14, 54.4));
+      x.save(); x.globalAlpha = e;
+      x.translate(W / 2, H / 2 - 90);
+      x.beginPath();
+      x.arc(0, 0, 250, -Math.PI / 2, -Math.PI / 2 + rp * TAU);
+      x.strokeStyle = rgba(GOLD_LT, 0.85);
+      x.lineWidth = 3;
+      x.shadowColor = rgba(GOLD_LT, 0.6); x.shadowBlur = 18;
+      x.stroke();
+      x.restore();
+      const em = A('emblem');
+      if (em.naturalWidth) {
+        const s = lerp(1.30, 1.0, easeOut(win(t, 53.3, 54.2))) * (1 + 0.008 * Math.sin(t * 1.1));
+        x.save(); x.globalAlpha = env(t, 53.35, 0.5, 60, 0);
+        x.translate(W / 2, H / 2 - 90); x.scale(s, s);
+        x.drawImage(em, -em.naturalWidth / 2, -em.naturalHeight / 2, em.naturalWidth, em.naturalHeight);
+        x.restore();
+      }
+      /* slow shimmer sweep + pulsing ring + gold dust keep the card alive */
+      const sh = (t * 0.45) % 1;
+      x.save(); x.globalAlpha = e * 0.5;
+      x.globalCompositeOperation = 'overlay';
+      const sgx = lerp(-0.4, 1.4, sh) * W;
+      const sg = x.createLinearGradient(sgx - 420, 0, sgx + 420, 0);
+      sg.addColorStop(0, rgba(GOLD_LT, 0));
+      sg.addColorStop(0.5, rgba(GOLD_LT, 0.20));
+      sg.addColorStop(1, rgba(GOLD_LT, 0));
+      x.fillStyle = sg; x.fillRect(0, 0, W, H);
+      x.restore();
+      x.save(); x.globalAlpha = e;
+      slowSweep(t, W / 2, H / 2 - 90, GOLD_LT, 0.22, 0.045, 380);
+      x.restore();
+      const rp2 = easeOut(win(t, 53.14, 54.4));
+      x.save(); x.globalAlpha = e * 0.8;
+      x.translate(W / 2, H / 2 - 90);
+      x.beginPath();
+      x.arc(0, 0, 262 + 6 * Math.sin(t * 1.4), -Math.PI / 2, -Math.PI / 2 + rp2 * TAU);
+      x.strokeStyle = rgba(GOLD_LT, 0.5);
+      x.lineWidth = 5;
+      x.stroke();
+      x.restore();
+      const dr2 = mulberry(7);
+      x.save();
+      x.fillStyle = rgba(GOLD_LT, 1);
+      for (let i = 0; i < 40; i++) {
+        const px = (dr2() * W + t * (12 + dr2() * 30)) % W;
+        const py = (dr2() * H - t * (8 + dr2() * 20) + H) % H;
+        x.globalAlpha = e * (0.15 + dr2() * 0.35);
+        const s = 1.5 + dr2() * 2.5;
+        x.fillRect(px, py, s, s);
+      }
+      x.restore();
+      ktype(x, 'supEars', W / 2, H / 2 + 268, 96, t, 56.1, 3.9,
+        { weight: 800, track: 2, rgb: TEXT, glow: EMERALD, extrude: 5 });
+      ktype(x, 'Public release · October 10, 2026', W / 2, H / 2 + 350, 34, t, 54.5, 5.4,
+        { weight: 600, track: 1.4, rgb: GOLD_LT });
+      ktype(x, '100% offline · no account · no cloud', W / 2, H / 2 + 402, 23, t, 55.1, 4.8,
+        { weight: 500, track: 0.8, rgb: MUTED });
+      ktype(x, 'Developed by HumbleAngel', W / 2, H / 2 + 442, 23, t, 55.5, 4.4,
+        { weight: 500, track: 0.8, rgb: MUTED });
+    }
+  }
+
+  if (speed > 0.02) dollyBlurEnd(x);
+  camReset(x);
+
+  ringWipe(t);
+  vignette(0.55);
+  grain(0.028);
+  x.setTransform(1, 0, 0, 1, 0, 0);
+}
+
+/* minimal neon bubble shell reused by the mechanism beat */
+function bubbleShape(cx, cy, w2, h2, a) {
+  if (a <= 0.001) return;
+  const r = 30;
+  x.save();
+  x.globalAlpha = a;
+  x.shadowColor = rgba(NEON, 0.35); x.shadowBlur = 42;
+  x.fillStyle = 'rgba(26,10,14,0.94)';
+  x.beginPath();
+  x.moveTo(cx - w2 / 2 + r, cy - h2 / 2);
+  x.arcTo(cx + w2 / 2, cy - h2 / 2, cx + w2 / 2, cy + h2 / 2, r);
+  x.arcTo(cx + w2 / 2, cy + h2 / 2, cx - w2 / 2, cy + h2 / 2, r);
+  x.arcTo(cx - w2 / 2, cy + h2 / 2, cx - w2 / 2, cy - h2 / 2, r);
+  x.arcTo(cx - w2 / 2, cy - h2 / 2, cx + w2 / 2, cy - h2 / 2, r);
+  x.closePath(); x.fill();
+  x.shadowBlur = 0;
+  x.strokeStyle = rgba(NEON, 0.18); x.lineWidth = 9; x.stroke();
+  x.strokeStyle = rgba(NEON, 0.95); x.lineWidth = 2; x.stroke();
+  x.restore();
+}
+
+window.__draw = draw;
+window.__ready = loadFlags();
+}
+</script>
+</body>
+</html>
