@@ -1,0 +1,18 @@
+{
+  "hook": {
+    "file": "D:\\WORK_B\\PRJS\\supEars_Official\\mkt\\video\\pipeline\\vo_invite\\pt_hook.mp3",
+    "dur": 3.35
+  },
+  "cats": {
+    "file": "D:\\WORK_B\\PRJS\\supEars_Official\\mkt\\video\\pipeline\\vo_invite\\pt_cats.mp3",
+    "dur": 3.81
+  },
+  "how": {
+    "file": "D:\\WORK_B\\PRJS\\supEars_Official\\mkt\\video\\pipeline\\vo_invite\\pt_how.mp3",
+    "dur": 2.62
+  },
+  "cta": {
+    "file": "D:\\WORK_B\\PRJS\\supEars_Official\\mkt\\video\\pipeline\\vo_invite\\pt_cta.mp3",
+    "dur": 2.66
+  }
+}

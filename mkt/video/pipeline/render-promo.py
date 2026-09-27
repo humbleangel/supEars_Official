@@ -58,7 +58,7 @@ def score(path: Path, dur: float, sr: int = 48000) -> None:
         out[i0:i0 + seg.size] += amp * lfilter(b, a, src) * env
 
     def riser(frm, to, amp, cut0=0.06, cut1=0.5):
-        i0, i1 = int(frm * sr), int(to * sr)
+        i0, i1 = int(frm * sr), min(int(to * sr), n)
         if i1 <= i0:
             return
         m = i1 - i0
@@ -74,7 +74,7 @@ def score(path: Path, dur: float, sr: int = 48000) -> None:
         out[i0:i1] += amp * acc * env
 
     def pad(frm, to, amp, roots=(55.0, 82.41, 110.0, 164.81), trem=0.23):
-        i0, i1 = int(frm * sr), int(to * sr)
+        i0, i1 = int(frm * sr), min(int(to * sr), n)
         m = i1 - i0
         if m <= 0:
             return
@@ -98,7 +98,7 @@ def score(path: Path, dur: float, sr: int = 48000) -> None:
 
     def voice(frm, to, amp):
         """the 'speech' that drives the on-screen waveform: formant bumps + glottal pulse"""
-        i0, i1 = int(frm * sr), int(to * sr)
+        i0, i1 = int(frm * sr), min(int(to * sr), n)
         m = i1 - i0
         if m <= 0:
             return
@@ -299,6 +299,9 @@ def _render_slice(job):
         browser = p.chromium.launch(args=["--force-color-profile=srgb", "--font-render-hinting=none"])
         page = browser.new_page(viewport={"width": w * scale, "height": h * scale}, device_scale_factor=1)
         page.goto(Path(html_path).resolve().as_uri())
+        # canvas must fill the viewport or screenshots capture black margins
+        page.evaluate("() => { const cv = document.getElementById('c');"
+                      " cv.width = window.innerWidth; cv.height = window.innerHeight; }")
         page.evaluate("window.__ready")
         for i in range(start, end):
             page.evaluate("t => window.__draw(t)", i / fps)
@@ -359,6 +362,9 @@ def main() -> int:
             page = browser.new_page(viewport={"width": args.width * args.scale,
                                               "height": args.height * args.scale}, device_scale_factor=1)
             page.goto(page_html.resolve().as_uri())
+            # canvas must fill the viewport or screenshots capture black margins
+            page.evaluate("() => { const cv = document.getElementById('c');"
+                          " cv.width = window.innerWidth; cv.height = window.innerHeight; }")
             page.evaluate("window.__ready")
             for i, t in enumerate(times):
                 page.evaluate("t => window.__draw(t)", t)
