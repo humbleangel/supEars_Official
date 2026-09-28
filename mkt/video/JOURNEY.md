@@ -82,6 +82,8 @@ built. Read this before producing the other 24 language versions.
    probe per lang (script loop, same gates).
 4. **Native OK**: owner ticks per language (storyboard checkboxes).
 5. **QA per lang**: gate + bbox + 2 stills each (subagent review passes).
+   Fit-check EVERY line (FR how-text overflowed off-screen once): shrink size /
+   track until inside 1080 wide. Standing rule, all 25.
 6. Open question: opener stays EN+Ava worldwide, or translated? (Recommend: keep EN.)
 
 Then: 24 × (gen VO → data → render → mix → gate → review → commit). Pipeline
