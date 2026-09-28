@@ -371,6 +371,7 @@ function draw(t) {
   if (t >= 13.8 && t < 17.2) {
     const a = env(t, 13.8, 0.2, 17.2, 0.25);
     if (a > 0.001) {
+      if (t < 14.4) FX.whip(x, W, H, t, 13.8, 0.5, 1, '16,185,129');
       ringEar(t, W / 2, 300, 85, a);
       bubble(t, W / 2, 620, 640, a, 13.9,
         'Seu comentário aqui! ✍️', '👍 0 · Responder', 14.1, 2.0, '', -1, 0, 0.5, 14.1);
@@ -385,6 +386,7 @@ function draw(t) {
   if (t >= 17.2) {
     const e = smooth(17.2, 17.5, t);
     if (e > 0.001) {
+      if (t < 17.8) FX.whip(x, W, H, t, 17.2, 0.5, 0, '231,76,60');
       /* finale: emblem small top, big living ring as the phrase's stage */
       const em = A('emblem');
       if (em.naturalWidth) {
