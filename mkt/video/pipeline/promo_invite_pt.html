@@ -398,6 +398,9 @@ function draw(t) {
       strip(t, e);
       kline('Estreia · 10 de outubro de 2026', W / 2, 1410, 34, t, 18.7, 3.5,
         { weight: 600, track: 1.2, rgb: GOLD_LT, hold: 0.99 });
+      /* universal CTA: always English, never translated */
+      kline('DOWNLOAD NOW!', W / 2, 1580, 92, t, 19.0, 2.5,
+        { weight: 800, track: -1, rgb: GOLD_LT, glow: EMERALD, extrude: 5, hold: 0.99 });
     }
   }
 
