@@ -17,11 +17,15 @@ HERE = Path(__file__).parent
 LONOWN = Path(r"C:\Users\777\Downloads\LONOWN - AVANGARD (Slowed).wav")
 BED15 = 138.0  # hottest 21s window
 
-# lang: [(key, start, gain_db)] — 1,3,2,4,5,6: opener, testi, hook, cats, how, cta
-PLACES = {
-    "pt": [("open", 0.15, 4.0), ("testi", 3.5, 0.0), ("hook", 6.8, 0.0),
-           ("cats", 10.3, 3.0), ("how", 14.0, 0.0), ("cta", 18.0, 0.0)],
-}
+# One timeline for all languages: [(key, start, gain)]. Per-lang files
+# vo_invite/<lid>_<key>.mp3; opener is universal Ava (pt_open.mp3).
+import sys as _sys
+_sys.path.insert(0, str(Path(__file__).parent))
+from translations import LANG as _LANG
+
+_TIMELINE = [("open", 0.15, 4.0), ("testi", 3.5, 0.0), ("hook", 6.8, 0.0),
+             ("cats", 10.3, 3.0), ("how", 14.0, 0.0), ("cta", 18.0, 0.0)]
+PLACES = {lid: list(_TIMELINE) for lid in _LANG}
 
 
 def run(cmd):
@@ -57,7 +61,8 @@ def main():
     inputs, filt, labels = [], [], []
     spans = []
     for i, (key, start, gain) in enumerate(PLACES[lang]):
-        src = HERE / "vo_invite" / f"{lang}_{key}.mp3"
+        src = HERE / "vo_invite" / (f"pt_open.mp3" if key == "open"
+                                    else f"{lang}_{key}.mp3")
         assert src.exists() and src.stat().st_size > 3000, f"missing {src}"
         inputs += ["-i", str(src)]
         ms = int(round(start * 1000))
