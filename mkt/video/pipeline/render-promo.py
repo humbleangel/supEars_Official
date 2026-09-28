@@ -189,6 +189,117 @@ def lerp(a, b, t):
     return a + (b - a) * t
 
 
+INVITE_BEATS = [0.0, 3.2, 6.8, 10.3, 13.8, 17.2]
+
+
+def score_invite(path: Path, dur: float, sr: int = 48000) -> None:
+    """SFX map for the 21s invitation: every hit lands on a visual cut."""
+    n = int(sr * dur)
+    rng = np.random.default_rng(21)
+    out = np.zeros(n)
+
+    def hit(at, f0, f1, decay, amp, curve=2.2):
+        i0 = int(at * sr)
+        seg = np.arange(min(n - i0, int(decay * 4 * sr))) / sr
+        if seg.size == 0:
+            return
+        sweep = f0 + (f1 - f0) * (seg / seg[-1])
+        env = np.exp(-seg / decay) * (1 - np.exp(-seg * 900)) ** curve
+        out[i0:i0 + seg.size] += amp * np.sin(2 * np.pi * sweep * seg) * env
+
+    def noise_hit(at, decay, amp, cut=0.22):
+        i0 = int(at * sr)
+        seg = np.arange(min(n - i0, int(decay * 5 * sr))) / sr
+        if seg.size == 0:
+            return
+        src = rng.normal(0, 1, seg.size)
+        b, a = butter(2, cut)
+        env = np.exp(-seg / decay) * (1 - np.exp(-seg * 1400))
+        out[i0:i0 + seg.size] += amp * lfilter(b, a, src) * env
+
+    def riser(frm, to, amp, cut0=0.06, cut1=0.5):
+        i0, i1 = int(frm * sr), min(int(to * sr), n)
+        m = i1 - i0
+        if m <= 0:
+            return
+        tt = np.arange(m) / sr
+        src = rng.normal(0, 1, m)
+        nyq = 0.5 * (cut0 + (cut1 - cut0) * (tt / tt[-1]))
+        acc = np.zeros(m)
+        for k in range(6):
+            b, a = butter(2, float(np.clip(nyq[k::6].mean() if len(nyq) > k else nyq[-1], 0.01, 0.9)))
+            acc += lfilter(b, a, src) / 6
+        out[i0:i1] += amp * acc * (tt / tt[-1]) ** 2.1
+
+    def pad(frm, to, amp):
+        i0, i1 = int(frm * sr), min(int(to * sr), n)
+        m = i1 - i0
+        if m <= 0:
+            return
+        tt = np.arange(m) / sr
+        v = sum(np.sin(2 * np.pi * f * tt) for f in (55.0, 82.41, 110.0)) / 3
+        v *= 0.62 + 0.38 * np.sin(2 * np.pi * 0.23 * tt)
+        out[i0:i1] += amp * v
+
+    pad(0.0, dur, 0.08)
+    # opening + every cut gets a sub + air snap (finale hits harder)
+    for b in INVITE_BEATS:
+        amp = 0.66 if b in (0.0, 17.2) else 0.48
+        hit(b, 62, 38, 0.42, amp)
+        noise_hit(b, 0.16, 0.30 if b == 0.0 else 0.22, 0.3)
+    # risers lean into each cut
+    for frm, to in ((2.5, 3.2), (6.1, 6.8), (9.6, 10.3), (13.1, 13.8), (16.5, 17.2)):
+        riser(frm, to, 0.16)
+    # door pops land with the 4 cards
+    for at in (10.5, 11.05, 11.6, 12.15):
+        hit(at, 900, 620, 0.06, 0.12, 3.0)
+    # testimonial typing 3.6-6.0, how typing 14.1-16.1
+    at = 3.6
+    while at < 6.0:
+        hit(at, 2100, 1400, 0.018, 0.05, 3.0)
+        at += 0.12
+    at = 14.1
+    while at < 16.1:
+        hit(at, 2100, 1400, 0.018, 0.05, 3.0)
+        at += 0.13
+    # stars perform one by one 3.7-5.3
+    for k in range(5):
+        hit(3.7 + k * 0.4, 2600, 2600, 0.09, 0.06, 1.4)
+    # finale resolve + shimmer
+    for f in (110.0, 164.81, 220.0, 329.63):
+        hit(17.2, f, f, 1.5, 0.11, 1.4)
+    for k in range(12):
+        hit(17.4 + k * 0.14, 440.0 + k * 55, 440.0 + k * 55, 0.13, 0.05, 1.4)
+
+    out[: int(0.004 * sr)] = 0
+    fade = int(0.5 * sr)
+    out[-fade:] *= np.linspace(1, 0, fade) ** 1.4
+
+    def follow(env, atk, rel):
+        ka = float(np.exp(-1.0 / max(atk * sr, 1)))
+        kr = float(np.exp(-1.0 / max(rel * sr, 1)))
+        y = lfilter([1 - ka], [1, -ka], env)
+        return lfilter([1 - kr], [1, -kr], y)
+
+    env = follow(follow(np.abs(out), 0.004, 0.09), 0.02, 0.35) + 1e-9
+    env_db = 20 * np.log10(env)
+    over = np.maximum(env_db - (-26.0), 0.0)
+    gain_db = -over * (1.0 - 1.0 / 4.0)
+    gain_db = follow(follow(gain_db, 0.003, 0.12), 0.02, 0.3)
+    out = out * 10 ** (gain_db / 20.0)
+    out = np.tanh(out * 1.1) / np.tanh(1.1)
+    peak = np.abs(out).max()
+    if peak > 0:
+        out = out / peak * 0.891
+    d = int(0.011 * sr)
+    left = out.copy()
+    right = np.concatenate([np.zeros(d), out[:-d]]) if d < len(out) else out.copy()
+    width = 0.22 * (left - right)
+    st = np.stack([left + width, right - width], axis=1)
+    st /= max(1e-9, np.abs(st).max()) * 1.12
+    wavfile.write(path, sr, (st * 32767).astype(np.int16))
+
+
 ARCS = [0.0, 9.04, 17.44, 36.88, 44.61, 53.10]
 LINES = [0.0, 4.36, 9.04, 13.55, 17.44, 22.52, 26.88, 31.67, 36.88, 44.61, 48.20, 53.10]
 
@@ -331,6 +442,7 @@ def main() -> int:
     ap.add_argument("--scale", type=int, default=1)
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--score60", action="store_true", help="use the 60s voice-led bed")
+    ap.add_argument("--score-invite", action="store_true", help="use the 21s invitation SFX map")
     ap.add_argument("--vo", default="",
                     help="placed voiceover wav to mix forward over the bed (48k mono)")
     ap.add_argument("--audio-only", action="store_true",
@@ -384,6 +496,8 @@ def main() -> int:
         wav = Path(tempfile.gettempdir()) / "supears_score.wav"
         if args.score60:
             score60(wav, args.seconds)
+        elif args.score_invite:
+            score_invite(wav, args.seconds)
         else:
             score(wav, args.seconds)
         if args.vo:
@@ -457,6 +571,8 @@ def main() -> int:
     wav = work / "score.wav"
     if args.score60:
         score60(wav, args.seconds)
+    elif args.score_invite:
+        score_invite(wav, args.seconds)
     else:
         score(wav, args.seconds)
     if args.vo:
