@@ -13,6 +13,8 @@ LANG_A = {
         "howcard": "¡Tu comentario aquí!",
         "date": "Lanzamiento · 10 de octubre de 2026",
         "speak_sub": "¡Habla libremente! Enlace abajo.",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@maria.escucha",
     },
     "fr": {
         "voiceM": "fr-FR-HenriNeural", "voiceF": "fr-FR-DeniseNeural",
@@ -26,6 +28,8 @@ LANG_A = {
         "howcard": "Votre commentaire ici !",
         "date": "Sortie · 10 octobre 2026",
         "speak_sub": "Parlez librement ! Lien ci-dessous.",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@marie.ecoute",
     },
     "de": {
         "voiceM": "de-DE-ConradNeural", "voiceF": "de-DE-KatjaNeural",
@@ -39,6 +43,8 @@ LANG_A = {
         "howcard": "Dein Kommentar hier!",
         "date": "Release · 10. Oktober 2026",
         "speak_sub": "Sprich frei! Link unten.",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@maria.hoert",
     },
     "it": {
         "voiceM": "it-IT-DiegoNeural", "voiceF": "it-IT-ElsaNeural",
@@ -52,6 +58,8 @@ LANG_A = {
         "howcard": "Il tuo commento qui!",
         "date": "Uscita · 10 ottobre 2026",
         "speak_sub": "Parla liberamente! Link qui sotto.",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@maria.ascolta",
     },
     "nl": {
         "voiceM": "nl-NL-MaartenNeural", "voiceF": "nl-NL-ColetteNeural",
@@ -65,6 +73,8 @@ LANG_A = {
         "howcard": "Jouw reactie hier!",
         "date": "Release · 10 oktober 2026",
         "speak_sub": "Spreek vrij! Link hieronder.",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@maria.luistert",
     },
     "en": {
         "voiceM": "en-US-GuyNeural", "voiceF": "en-US-AriaNeural",
@@ -78,5 +88,7 @@ LANG_A = {
         "howcard": "Your comment here!",
         "date": "Release · October 10, 2026",
         "speak_sub": "Speak freely! Link below.",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@mary.hears",
     },
 }

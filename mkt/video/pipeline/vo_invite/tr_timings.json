@@ -5,7 +5,7 @@
   },
   "cats": {
     "file": "vo_invite/tr_cats.mp3",
-    "dur": 3.15
+    "dur": 3.71
   },
   "how": {
     "file": "vo_invite/tr_how.mp3",
@@ -13,7 +13,7 @@
   },
   "testi": {
     "file": "vo_invite/tr_testi.mp3",
-    "dur": 2.55
+    "dur": 3.14
   },
   "cta": {
     "file": "vo_invite/tr_cta.mp3",

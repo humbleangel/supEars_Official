@@ -13,6 +13,8 @@ LANG_B = {
         "howcard": "Ваш комментарий здесь!",
         "date": "Релиз · 10 октября 2026",
         "speak_sub": "Говорите свободно! Ссылка ниже.",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@masha.slyshit",
     },
     "uk": {
         "voiceM": "uk-UA-OstapNeural", "voiceF": "uk-UA-PolinaNeural",
@@ -26,6 +28,8 @@ LANG_B = {
         "howcard": "Ваш коментар тут!",
         "date": "Реліз · 10 жовтня 2026",
         "speak_sub": "Говоріть вільно! Посилання нижче.",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@marichka.chuye",
     },
     "pl": {
         "voiceM": "pl-PL-MarekNeural", "voiceF": "pl-PL-ZofiaNeural",
@@ -39,6 +43,8 @@ LANG_B = {
         "howcard": "Twój komentarz tutaj!",
         "date": "Premiera · 10 października 2026",
         "speak_sub": "Mów swobodnie! Link poniżej.",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@maria.slyszy",
     },
     "cs": {
         "voiceM": "cs-CZ-AntoninNeural", "voiceF": "cs-CZ-VlastaNeural",
@@ -52,6 +58,8 @@ LANG_B = {
         "howcard": "Váš komentář zde!",
         "date": "Vydání · 10. října 2026",
         "speak_sub": "Mluvte svobodně! Odkaz níže.",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@marie.slysi",
     },
     "hu": {
         "voiceM": "hu-HU-TamasNeural", "voiceF": "hu-HU-NoemiNeural",
@@ -65,6 +73,8 @@ LANG_B = {
         "howcard": "Kommented itt!",
         "date": "Megjelenés · 2026. október 10.",
         "speak_sub": "Beszélj szabadon! Link alul.",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@maria.hallja",
     },
     "el": {
         "voiceM": "el-GR-NestorasNeural", "voiceF": "el-GR-AthinaNeural",
@@ -78,5 +88,7 @@ LANG_B = {
         "howcard": "Το σχόλιό σου εδώ!",
         "date": "Κυκλοφορία · 10 Οκτωβρίου 2026",
         "speak_sub": "Μίλα ελεύθερα! Σύνδεσμος παρακάτω.",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@maria.akouei",
     },
 }

@@ -13,6 +13,8 @@ LANG_D = {
         "howcard": "تعليقك هنا!",
         "date": "الإصدار · 10 أكتوبر 2026",
         "speak_sub": "تكلّم بحرية! الرابط بالأسفل.",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@mariam.tasma",
     },
     "hi": {
         "voiceM": "hi-IN-MadhurNeural", "voiceF": "hi-IN-SwaraNeural",
@@ -26,6 +28,8 @@ LANG_D = {
         "howcard": "आपकी टिप्पणी यहाँ!",
         "date": "रिलीज़ · 10 अक्टूबर 2026",
         "speak_sub": "खुलकर बोलें! लिंक नीचे है।",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@meera.sunti",
     },
     "ur": {
         "voiceM": "ur-PK-AsadNeural", "voiceF": "ur-PK-UzmaNeural",
@@ -39,6 +43,8 @@ LANG_D = {
         "howcard": "آپ کا کمنٹ یہاں!",
         "date": "ریلیز · 10 اکتوبر 2026",
         "speak_sub": "کھل کر بولیں! لنک نیچے ہے۔",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@maham.sunti",
     },
     "tr": {
         "voiceM": "tr-TR-AhmetNeural", "voiceF": "tr-TR-EmelNeural",
@@ -52,6 +58,8 @@ LANG_D = {
         "howcard": "Yorumun burada!",
         "date": "Çıkış · 10 Ekim 2026",
         "speak_sub": "Özgürce konuş! Bağlantı aşağıda.",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@meryem.duyar",
     },
     "ro": {
         "voiceM": "ro-RO-EmilNeural", "voiceF": "ro-RO-AlinaNeural",
@@ -65,6 +73,8 @@ LANG_D = {
         "howcard": "Comentariul tău aici!",
         "date": "Lansare · 10 octombrie 2026",
         "speak_sub": "Vorbește liber! Linkul e mai jos.",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@maria.aude",
     },
     "sv": {
         "voiceM": "sv-SE-MattiasNeural", "voiceF": "sv-SE-SofieNeural",
@@ -78,5 +88,7 @@ LANG_D = {
         "howcard": "Din kommentar här!",
         "date": "Release · 10 oktober 2026",
         "speak_sub": "Prata fritt! Länken finns nedan.",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@maria.hor",
     },
 }

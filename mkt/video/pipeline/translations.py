@@ -16,6 +16,7 @@ LANG = {
         "name": "@maria.ouve",
         "how": "Deixe seu comentário aqui embaixo",
         "testi": "Essa orelha traduz e escreve tudo que eu falo!",
+        "testi_en": "This ear translates and writes everything I say!",
         "howcard": "Seu comentário aqui! ✍️",
         "date": "Estreia · 10 de outubro de 2026",
         "speak_sub": "Fale livremente. (Link no 1º comentário)",

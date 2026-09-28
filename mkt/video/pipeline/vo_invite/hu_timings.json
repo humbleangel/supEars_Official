@@ -1,11 +1,11 @@
 {
   "hook": {
     "file": "vo_invite/hu_hook.mp3",
-    "dur": 3.13
+    "dur": 3.12
   },
   "cats": {
     "file": "vo_invite/hu_cats.mp3",
-    "dur": 3.25
+    "dur": 3.72
   },
   "how": {
     "file": "vo_invite/hu_how.mp3",
@@ -13,7 +13,7 @@
   },
   "testi": {
     "file": "vo_invite/hu_testi.mp3",
-    "dur": 2.77
+    "dur": 3.29
   },
   "cta": {
     "file": "vo_invite/hu_cta.mp3",

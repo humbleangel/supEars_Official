@@ -165,10 +165,10 @@ function bgArt(t, a) {
 }
 /* (t_now retired: bgArt takes t directly) */
 /* the undeniable proof: the voice's OWN samples scrolling under a playhead */
-function strip(t, a) {
+function strip(t, a, dy = 0) {
   if (a <= 0.001 || !window.PEAKS) return;
   const P = window.PEAKS, N = P.mn.length;
-  const yc = 1680, amp = 230;
+  const yc = 1680 + dy, amp = 230;
   x.save();
   x.globalAlpha = a;
   x.fillStyle = 'rgba(0,0,0,0.55)';
@@ -203,7 +203,7 @@ function strip(t, a) {
    Optional live-typing (typeT0>=0), like flip (likeT0>=0), or nonstop
    climbing counter (likeRate>0 from likeT1). */
 function bubble(t, cx, cy, w, a, t0, line, sub, typeT0, typeDur, subAlt, likeT0,
-                likeBase, likeRate, likeT1) {
+                likeBase, likeRate, likeT1, line2) {
   if (a <= 0.001) return;
   const pop = easeBack(win(t, t0, t0 + 0.5));
   x.save();
@@ -211,19 +211,24 @@ function bubble(t, cx, cy, w, a, t0, line, sub, typeT0, typeDur, subAlt, likeT0,
   x.translate(cx, cy); x.scale(Math.max(0.01, pop), Math.max(0.01, pop));
   x.fillStyle = 'rgba(6,14,11,0.95)';
   x.strokeStyle = rgba(EMERALD, 0.9); x.lineWidth = 4;
+  /* tall card when a translation line exists: room to breathe, lines paired */
+  const tall = !!line2;
+  const top = tall ? -160 : -130, hh = tall ? 320 : 260;
+  const ay = tall ? -92 : -50, ny = tall ? -92 : -72;
+  const l1 = tall ? -16 : 40, l2 = tall ? 20 : 52, lk = tall ? 92 : 94;
   x.beginPath();
-  if (x.roundRect) x.roundRect(-w / 2, -130, w, 260, 44); else x.rect(-w / 2, -130, w, 260);
+  if (x.roundRect) x.roundRect(-w / 2, top, w, hh, 44); else x.rect(-w / 2, top, w, hh);
   x.fill(); x.stroke();
   x.fillStyle = rgba(EMERALD, 1);
-  x.beginPath(); x.arc(-w / 2 + 90, -50, 44, 0, TAU); x.fill();
+  x.beginPath(); x.arc(-w / 2 + 90, ay, 44, 0, TAU); x.fill();
   x.fillStyle = 'rgba(2,8,6,1)';
   x.font = '800 52px "Segoe UI",system-ui,sans-serif';
   x.textAlign = 'center'; x.textBaseline = 'middle';
-  x.fillText('M', -w / 2 + 90, -46);
+  x.fillText(NAME[1].toUpperCase(), -w / 2 + 90, ay + 4);
   x.textAlign = 'left';
   x.fillStyle = rgba(TEXT, 1);
   x.font = '700 34px "Segoe UI",system-ui,sans-serif';
-  x.fillText('@maria.ouve', -w / 2 + 156, -72);
+  x.fillText(NAME, -w / 2 + 156, ny);
   let shown = line;
   if (typeT0 >= 0 && typeDur > 0) {
     const n = Math.floor(clamp((t - typeT0) / typeDur, 0, 1) * Array.from(line).length);
@@ -231,7 +236,17 @@ function bubble(t, cx, cy, w, a, t0, line, sub, typeT0, typeDur, subAlt, likeT0,
   }
   x.fillStyle = rgba(MUTED, 1);
   x.font = '400 30px "Segoe UI",system-ui,sans-serif';
-  x.fillText(shown, -w / 2 + 40, 28);
+  x.fillText(shown, -w / 2 + 40, l1);
+  if (line2) {
+    let shown2 = line2;
+    if (typeT0 >= 0 && typeDur > 0) {
+      const n2 = Math.floor(clamp((t - typeT0) / typeDur, 0, 1) * Array.from(line2).length);
+      shown2 = Array.from(line2).slice(0, n2).join('');
+    }
+    x.fillStyle = rgba(GOLD_LT, 1);
+    x.font = 'italic 400 28px "Segoe UI",system-ui,sans-serif';
+    x.fillText(shown2, -w / 2 + 40, l2);
+  }
   x.fillStyle = rgba(GOLD_LT, 1);
   x.font = '600 30px "Segoe UI",system-ui,sans-serif';
   let likeline = (likeT0 >= 0 && t >= likeT0 && subAlt ? subAlt : sub);
@@ -240,7 +255,7 @@ function bubble(t, cx, cy, w, a, t0, line, sub, typeT0, typeDur, subAlt, likeT0,
     const fmt = n >= 1000 ? `${Math.floor(n / 1000)}.${String(n % 1000).padStart(3, '0')}` : `${n}`;
     likeline = `👍 ${fmt} · Responder`;
   }
-  x.fillText(likeline, -w / 2 + 40, 84);
+  x.fillText(likeline, -w / 2 + 40, lk);
   x.restore();
 }
 function grain(a) {
@@ -252,6 +267,8 @@ function grain(a) {
 }
 
 const CATS = ["Bug", "phê bình", "góp ý", "khen"];
+/* per-language viewer handle (translations.py: name); avatar letter derives. */
+const NAME = "@mai.nghe";
 
 function draw(t) {
   x.setTransform(1, 0, 0, 1, 0, 0);
@@ -273,6 +290,8 @@ function draw(t) {
     if (a > 0.001) {
       if (t < 0.6) FX.whip(x, W, H, t, 0.0, 0.5, 1, '16,185,129');
       ringEar(t, W / 2, 560, 130, a);
+      kline('supEars', W / 2, 190, 112, t, 0.15, 3.0,
+        { weight: 800, track: 1, rgb: GOLD_LT, glow: EMERALD, extrude: 6, hold: 0.99 });
       kline('DOWNLOAD AND USE IT', W / 2, 1000, 80, t, 0.15, 3.0,
         { weight: 800, track: -1, rgb: TEXT, glow: EMERALD, extrude: 4, hold: 0.99 });
       kline('NOW FOR FREE!', W / 2, 1140, 96, t, 0.9, 2.2,
@@ -286,9 +305,10 @@ function draw(t) {
     if (a > 0.001) {
       if (t < 3.8) FX.whip(x, W, H, t, 3.2, 0.5, 1, '16,185,129');
       ringEar(t, W / 2, 480, 120, a);
-      bubble(t, W / 2, 1000, 640, a, 3.5,
+      bubble(t, W / 2, 920, 780, a, 3.5,
         "Chiếc tai này viết lại mọi điều tôi nói!", '👍 1,2 mil · Responder',
-        3.6, 2.4, '', -1, 1184, 9, 3.6);
+        3.6, 2.4, '', -1, 1184, 9, 3.6,
+        "This ear writes everything I say!");
       /* stars perform one by one while Francisca speaks (testi VO 3.5-6.2) */
       x.save();
       x.globalAlpha = a;
@@ -353,6 +373,7 @@ function draw(t) {
   if (t >= 13.8 && t < 17.2) {
     const a = env(t, 13.8, 0.2, 17.2, 0.25);
     if (a > 0.001) {
+      if (t < 14.4) FX.whip(x, W, H, t, 13.8, 0.5, 1, '16,185,129');
       ringEar(t, W / 2, 300, 85, a);
       bubble(t, W / 2, 620, 640, a, 13.9,
         "Bình luận của bạn ở đây!", '👍 0 · Responder', 14.1, 2.0, '', -1, 0, 0.5, 14.1);
@@ -367,6 +388,7 @@ function draw(t) {
   if (t >= 17.2) {
     const e = smooth(17.2, 17.5, t);
     if (e > 0.001) {
+      if (t < 17.8) FX.whip(x, W, H, t, 17.2, 0.5, 0, '231,76,60');
       /* finale: emblem small top, big living ring as the phrase's stage */
       const em = A('emblem');
       if (em.naturalWidth) {
@@ -389,9 +411,13 @@ function draw(t) {
         x.drawImage(FLAGS['vi'], W / 2 - 65, 1257, 130, 85);
         x.restore();
       }
-      strip(t, e);
+      /* strip slides down and fully out before DOWNLOAD NOW! arrives */
+      strip(t, e, 600 * smooth(17.6, 18.8, t));
       kline("Phát hành · 10 tháng 10, 2026", W / 2, 1410, 34, t, 18.7, 3.5,
         { weight: 600, track: 1.2, rgb: GOLD_LT, hold: 0.99 });
+      /* universal CTA: always English, never translated */
+      kline('DOWNLOAD NOW!', W / 2, 1580, 92, t, 19.0, 2.5,
+        { weight: 800, track: -1, rgb: GOLD_LT, glow: EMERALD, extrude: 5, hold: 0.99 });
     }
   }
 

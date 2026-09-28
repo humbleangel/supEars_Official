@@ -13,6 +13,8 @@ LANG_C = {
         "howcard": "你的评论在这里！",
         "date": "发布 · 2026年10月10日",
         "speak_sub": "畅所欲言！链接在下方。",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@mali.ting",
     },
     "ja": {
         "voiceM": "ja-JP-KeitaNeural", "voiceF": "ja-JP-NanamiNeural",
@@ -26,6 +28,8 @@ LANG_C = {
         "howcard": "あなたのコメントはこちら！",
         "date": "リリース · 2026年10月10日",
         "speak_sub": "自由に話そう！リンクは下に。",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@maria.kiku",
     },
     "ko": {
         "voiceM": "ko-KR-InJoonNeural", "voiceF": "ko-KR-SunHiNeural",
@@ -39,6 +43,8 @@ LANG_C = {
         "howcard": "여러분의 댓글을 여기에!",
         "date": "출시 · 2026년 10월 10일",
         "speak_sub": "자유롭게 말하세요! 링크는 아래에.",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@mina.deudda",
     },
     "vi": {
         "voiceM": "vi-VN-NamMinhNeural", "voiceF": "vi-VN-HoaiMyNeural",
@@ -52,6 +58,8 @@ LANG_C = {
         "howcard": "Bình luận của bạn ở đây!",
         "date": "Phát hành · 10 tháng 10, 2026",
         "speak_sub": "Hãy nói tự do! Link ở bên dưới.",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@mai.nghe",
     },
     "th": {
         "voiceM": "th-TH-NiwatNeural", "voiceF": "th-TH-PremwadeeNeural",
@@ -65,6 +73,8 @@ LANG_C = {
         "howcard": "คอมเมนต์ของคุณตรงนี้!",
         "date": "เปิดตัว · 10 ตุลาคม 2026",
         "speak_sub": "พูดได้เต็มที่! ลิงก์อยู่ด้านล่าง.",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@malee.fang",
     },
     "id": {
         "voiceM": "id-ID-ArdiNeural", "voiceF": "id-ID-GadisNeural",
@@ -78,5 +88,7 @@ LANG_C = {
         "howcard": "Komentar Anda di sini!",
         "date": "Rilis · 10 Oktober 2026",
         "speak_sub": "Bicara bebas! Tautan di bawah.",
+        "testi_en": "This ear writes everything I say!",
+        "name": "@maria.dengar",
     },
 }
