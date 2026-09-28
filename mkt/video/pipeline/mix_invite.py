@@ -56,8 +56,13 @@ def main():
     ap.add_argument("video")
     ap.add_argument("lang")
     ap.add_argument("--seconds", type=float, default=15.0)
+    ap.add_argument("--bed-file", default="",
+                    help="bed override (default LONOWN hottest window)")
+    ap.add_argument("--bed-start", type=float, default=None)
     a = ap.parse_args()
     TOTAL = float(a.seconds)
+    BED = Path(a.bed_file) if a.bed_file else LONOWN
+    BED_START = float(a.bed_start) if a.bed_start is not None else BED15
     video, lang = Path(a.video), a.lang
     assert video.exists()
     tj = json.loads((HERE / "vo_invite" / f"{lang}_timings.json").read_text(encoding="utf-8"))
@@ -85,7 +90,7 @@ def main():
 
     graph = (
         f"[0:a]aresample=48000,volume=-12dB[sfx];"
-        f"[1:a]aresample=48000,atrim={BED15}:{BED15 + TOTAL},asetpts=PTS-STARTPTS,"
+        f"[1:a]aresample=48000,atrim={BED_START}:{BED15 + TOTAL},asetpts=PTS-STARTPTS,"
         f"volume=-7dB,equalizer=f=300:t=q:w=1:g=-4,equalizer=f=2500:t=q:w=1.5:g=-4,"
         f"afade=t=in:st=0:d=0.6,afade=t=out:st={TOTAL - 1.2}:d=1.2[bed];"
         f"[2:a]aresample=48000,volume=+7dB,asplit=2[vox][voxsc];"
@@ -96,7 +101,7 @@ def main():
     vomap = work / "vonly.mp4"
     out = work / "out.mp4"
     # input 0 = the render itself: video for picture, score audio as SFX stem
-    run(["ffmpeg", "-y", "-v", "error", "-i", str(video), "-i", str(LONOWN), "-i", str(vox),
+    run(["ffmpeg", "-y", "-v", "error", "-i", str(video), "-i", str(BED), "-i", str(vox),
          "-filter_complex", graph, "-map", "0:v", "-map", "[mix]",
          "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest",
          "-movflags", "+faststart", str(out)])
@@ -111,10 +116,10 @@ def main():
     # stem-truth gate: ducked-bed-only render (real vox drives sidechain,
     # silence takes its place in the mix) vs +7dB vox stem, per window.
     bedonly = work / "bedonly.wav"
-    run(["ffmpeg", "-y", "-v", "error", "-i", str(video), "-i", str(LONOWN),
+    run(["ffmpeg", "-y", "-v", "error", "-i", str(video), "-i", str(BED),
          "-i", str(vox), "-f", "lavfi", "-i", f"anullsrc=r=48000:cl=mono:d={TOTAL}",
          "-filter_complex",
-         f"[1:a]aresample=48000,atrim={BED15}:{BED15 + TOTAL},asetpts=PTS-STARTPTS,"
+         f"[1:a]aresample=48000,atrim={BED_START}:{BED15 + TOTAL},asetpts=PTS-STARTPTS,"
          f"volume=-7dB,equalizer=f=300:t=q:w=1:g=-4,equalizer=f=2500:t=q:w=1.5:g=-4[bed];"
          f"[2:a]aresample=48000,volume=+7dB[voxsc];"
          f"[3:a]aresample=48000[null];"
