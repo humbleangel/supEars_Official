@@ -277,30 +277,28 @@ function draw(t) {
   if (t >= 11.4) {
     const e = smooth(11.4, 11.7, t);
     if (e > 0.001) {
-      ringEar(t, W / 2, 250, 80, e);
-      x.save(); x.globalAlpha = e;
-      x.fillStyle = 'rgba(1,3,2,0.94)';
-      x.fillRect(0, 0, W, H);
-      x.restore();
+      /* finale: emblem small top, big living ring as the phrase's stage */
       const em = A('emblem');
       if (em.naturalWidth) {
         x.save(); x.globalAlpha = e;
-        x.translate(W / 2, 560);
-        const s = Math.min(1.4, em.naturalWidth > 0 ? 640 / em.naturalWidth : 1);
+        x.translate(W / 2, 360);
+        const s = Math.min(0.9, em.naturalWidth > 0 ? 420 / em.naturalWidth : 1);
         x.scale(s, s);
         x.drawImage(em, -em.naturalWidth / 2, -em.naturalHeight / 2, em.naturalWidth, em.naturalHeight);
         x.restore();
       }
+      ringEar(t, W / 2, 900, 190, e);
+      kline('Tua palavra', W / 2, 860, 64, t, 11.8, 4.5,
+        { weight: 800, track: -1, rgb: TEXT, glow: EMERALD, extrude: 4, hold: 0.99 });
+      kline('constrói o supEars.', W / 2, 990, 74, t, 12.3, 4.1,
+        { weight: 800, track: -1, rgb: GOLD_LT, glow: EMERALD, extrude: 5, hold: 0.99 });
       if (FLAGS.pt) {
         x.save(); x.globalAlpha = e;
-        x.drawImage(FLAGS.pt, W / 2 - 110, 880, 220, 143);
+        x.drawImage(FLAGS.pt, W / 2 - 65, 1257, 130, 85);
         x.restore();
       }
-      kline('Tua palavra', W / 2, 1180, 68, t, 11.8, 4.5,
-        { weight: 800, track: -1, rgb: TEXT, glow: EMERALD, extrude: 4, hold: 0.99 });
-      kline('constrói o supEars.', W / 2, 1300, 78, t, 12.3, 4.1,
-        { weight: 800, track: -1, rgb: GOLD_LT, glow: EMERALD, extrude: 5, hold: 0.99 });
-      kline('Estreia · 10 de outubro de 2026', W / 2, 1440, 34, t, 12.9, 3.5,
+      strip(t, e);
+      kline('Estreia · 10 de outubro de 2026', W / 2, 1410, 34, t, 12.9, 3.5,
         { weight: 600, track: 1.2, rgb: GOLD_LT, hold: 0.99 });
     }
   }

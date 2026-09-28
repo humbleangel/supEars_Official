@@ -73,10 +73,10 @@ def main():
 
     graph = (
         f"[1:a]aresample=48000,atrim={BED15}:{BED15 + TOTAL},asetpts=PTS-STARTPTS,"
-        f"volume=-12dB,equalizer=f=300:t=q:w=1:g=-4,equalizer=f=2500:t=q:w=1.5:g=-4,"
+        f"volume=-7dB,equalizer=f=300:t=q:w=1:g=-4,equalizer=f=2500:t=q:w=1.5:g=-4,"
         f"afade=t=in:st=0:d=0.6,afade=t=out:st={TOTAL - 1.2}:d=1.2[bed];"
         f"[2:a]aresample=48000,volume=+7dB,asplit=2[vox][voxsc];"
-        f"[bed][voxsc]sidechaincompress=threshold=-24dB:ratio=5:attack=15:release=500[ducked];"
+        f"[bed][voxsc]sidechaincompress=threshold=-24dB:ratio=6:attack=15:release=500[ducked];"
         f"[ducked][vox]amix=inputs=2:normalize=0,"
         f"loudnorm=I=-14:TP=-1.5:LRA=9[mix]"
     )
