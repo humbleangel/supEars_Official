@@ -26,6 +26,10 @@ from translations import LANG as _LANG
 _TIMELINE = [("open", 0.15, 4.0), ("testi", 3.5, 0.0), ("hook", 6.8, 0.0),
              ("cats", 10.3, 3.0), ("how", 14.0, 0.0), ("cta", 18.0, 0.0)]
 PLACES = {lid: list(_TIMELINE) for lid in _LANG}
+# soft deliveries get extra lift (stem-gate driven)
+OVERRIDES = {
+    "zh": {"how": 4.0, "hook": 2.0, "cats": 2.0},
+}
 
 
 def run(cmd):
@@ -61,6 +65,7 @@ def main():
     inputs, filt, labels = [], [], []
     spans = []
     for i, (key, start, gain) in enumerate(PLACES[lang]):
+        gain = gain + OVERRIDES.get(lang, {}).get(key, 0.0)
         src = HERE / "vo_invite" / (f"pt_open.mp3" if key == "open"
                                     else f"{lang}_{key}.mp3")
         assert src.exists() and src.stat().st_size > 3000, f"missing {src}"
