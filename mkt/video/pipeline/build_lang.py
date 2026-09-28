@@ -78,14 +78,14 @@ def build_spine(lid):
     tg_how = list(split_how(t["how"]))
     if tg_how[1]:
         tg_how[1] = tg_how[1] + " ⬇"
-    pre = t["cta_m"].rstrip("，,")
+    pre = t["cta_m"].rstrip("，,、،")
     assert t["cta_full"].startswith(pre), f"{lid}: cta_full/cta_m mismatch"
     brand2 = t["cta_full"][len(pre):].strip()
     subs = [
         ("Achou um bug?", tg_hook[0]),
         ("Tem uma ideia?", tg_hook[1]),
         ("Comenta aqui!", tg_hook[2]),
-        ("'Tua palavra'", "'" + t["cta_m"].rstrip("，,") + "'"),
+         ("'Tua palavra'", "'" + t["cta_m"].rstrip("，,、،") + "'"),
         ("'constrói o supEars.'", "'" + brand2 + "'"),
         ("'BUG', 'CRÍTICA', 'SUGESTÃO', 'ELOGIO'",
          "'" + "', '".join(t["chips"]) + "'"),

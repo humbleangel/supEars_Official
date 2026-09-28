@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; background: #000; }
+  canvas { display: block; }
+  .off { position: absolute; left: -99999px; }
+</style>
+</head>
+<body>
+<canvas id="c" width="540" height="960"></canvas>
+<div class="off">
+  <img id="crest" src="assets30/crest.png">
+  <img id="obart" src="assets30/own/ob_en.png">
+  <img id="emblem" src="assets30/emblem.png">
+  <img id="appicon" src="assets30/appicon.png">
+</div>
+<script src="ktype.js"></script>
+<script src="fx.js"></script>
+<script src="ring_raw_it.js"></script>
+<script src="peaks_it.js"></script>
+<script>
+{
+'use strict';
+/* PT invitation baseline, 15s vertical 1080x1920. Others follow this shape. */
+const W = 1080, H = 1920;
+const c = document.getElementById('c');
+const x = c.getContext('2d');
+const A = id => document.getElementById(id);
+const TAU = Math.PI * 2;
+
+const EMERALD = [16, 185, 129];
+const REC = [231, 76, 60];
+const GOLD = [201, 162, 39], GOLD_LT = [231, 193, 90];
+const TEXT = [234, 242, 238], MUTED = [143, 167, 155];
+
+const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
+const ease = t => { t = clamp(t, 0, 1); return t * t * (3 - 2 * t); };
+const easeOut = t => 1 - Math.pow(1 - clamp(t, 0, 1), 3);
+const easeBack = t => { t = clamp(t, 0, 1); const k = 1.70158; return 1 + (k + 1) * Math.pow(t - 1, 3) + k * Math.pow(t - 1, 2); };
+const win = (t, a, b) => clamp((t - a) / (b - a), 0, 1);
+const smooth = (e0, e1, t) => ease((t - e0) / (e1 - e0));
+const rgba = (rgb, a) => `rgba(${rgb[0]},${rgb[1]},${rgb[2]},${a})`;
+const env = (t, s0, fi, s1, fo) => smooth(s0, s0 + fi, t) * (1 - smooth(s1 - fo, s1, t));
+
+const FLAGS = {};
+function loadFlags() {
+  return new Promise(res => {
+    if (typeof FLAG_B64 === 'undefined' || !FLAG_B64['it']) return res();
+    const im = new Image();
+    im.onload = () => { FLAGS['it'] = im; res(); };
+    im.onerror = () => res();
+    im.src = 'data:image/png;base64,' + FLAG_B64['it'];
+  });
+}
+function kline(txt, cx, cy, size, t, t0, dur, opts = {}) {
+  const hot = win(t, t0, t0 + 0.4);
+  if (t >= t0 && hot < 1) {
+    x.save(); x.globalAlpha = 0.20 * (1 - hot);
+    ktype(x, txt, cx - 30 * (1 - hot), cy, size, t, t0, dur, opts);
+    x.restore();
+  }
+  ktype(x, txt, cx, cy, size, t, t0, dur, opts);
+}
+/* paint.rs VERBATIM, fed with our real VO: raw 120-pt ring + 16 level bars.
+   No smoothing anywhere — like the app, it jumps with the samples. */
+function ringEar(t, cx, cy, R, a) {
+  if (a <= 0.001) return;
+  const RD = window.RAW;
+  const F = RD ? clamp(Math.floor(t * 60), 0, RD.levels.length - 1) : -1;
+  const level = F >= 0 ? (RD.levels[F] || 0) : 0;
+  const speaking = level > 0.02;
+  const col = speaking ? [255, 42, 28] : [16, 220, 150];
+  const im = A('appicon');
+  x.save(); x.globalAlpha = a;
+  x.fillStyle = 'rgba(0,0,0,0.55)';
+  x.beginPath(); x.arc(cx, cy, R * 1.9, 0, TAU); x.fill();
+  if (im.naturalWidth) {
+    x.save(); x.filter = 'brightness(1.6)';
+    x.beginPath(); x.arc(cx, cy, R * 0.62, 0, TAU); x.clip();
+    x.drawImage(im, cx - R * 0.62, cy - R * 0.62, R * 1.24, R * 1.24);
+    x.restore();
+  }
+  if (F >= 0) {
+    const bands = RD.bands, off = F * 120;
+    x.save();
+    x.beginPath();
+    for (let i = 0; i <= 120; i++) {
+      const b = bands[off + (i % 120)] || 0;
+      const r = R * (1 + (b / 127) * 0.7);
+      const ang = (i / 120) * TAU - Math.PI / 2;
+      const px = cx + Math.cos(ang) * r, py = cy + Math.sin(ang) * r;
+      if (i === 0) x.moveTo(px, py); else x.lineTo(px, py);
+    }
+    x.closePath();
+    const wa = (140 + clamp(level, 0, 1) * 115) / 255;
+    x.strokeStyle = rgba(col, a * wa);
+    x.lineWidth = 4;
+    x.shadowColor = rgba(col, 0.8); x.shadowBlur = 20;
+    x.stroke();
+    x.restore();
+    /* 16 bars: len = 8 + level*34, rotating — paint_waveform verbatim */
+    x.save();
+    const rot = t * 1.2, k = R / 105;
+    for (let i = 0; i < 16; i++) {
+      const ang = (i / 16) * TAU - Math.PI / 2 + rot;
+      const dx = Math.cos(ang), dy = Math.sin(ang);
+      const len = (8 + clamp(level, 0, 1) * 34) * k;
+      x.strokeStyle = rgba(col, a * wa);
+      x.lineWidth = 3.5 * k;
+      x.beginPath();
+      x.moveTo(cx + dx * R * 1.05, cy + dy * R * 1.05);
+      x.lineTo(cx + dx * (R * 1.05 + len), cy + dy * (R * 1.05 + len));
+      x.stroke();
+    }
+    x.restore();
+  }
+  /* saturated outer twin: brightest channel to 255 — ring_light verbatim */
+  x.save();
+  x.beginPath(); x.arc(cx, cy, R * 1.28, 0, TAU);
+  x.strokeStyle = rgba(speaking ? [255, 60, 40] : [16, 230, 155], a * 0.95);
+  x.lineWidth = 5;
+  x.shadowColor = rgba(col, 0.9); x.shadowBlur = 26;
+  x.stroke();
+  x.restore();
+  x.restore();
+}
+/* our art as background: blurred once, cached, low opacity.
+   Testimonial beat (3.2-7.0) switches to the onboarding art: a real user. */
+let bgCache = null;
+let bgCacheOb = null;
+function bgArt(t, a) {
+  if (a <= 0.001) return;
+  const cr = A('crest');
+  /* build only once the art is decoded, else cache a blank forever */
+  if (!bgCache && cr.complete && cr.naturalWidth) {
+    const o = document.createElement('canvas');
+    o.width = 270; o.height = 480;
+    const c2 = o.getContext('2d');
+    c2.filter = 'blur(14px) brightness(0.55)';
+    c2.drawImage(A('crest'), 0, 0, 270, 480);
+    bgCache = o;
+  }
+  const ob = A('obart');
+  if (!bgCacheOb && ob.complete && ob.naturalWidth) {
+    const o = document.createElement('canvas');
+    o.width = 270; o.height = 480;
+    const c2 = o.getContext('2d');
+    c2.filter = 'blur(14px) brightness(0.55)';
+    c2.drawImage(ob, 0, 0, 270, 480);
+    bgCacheOb = o;
+  }
+  const obA = env(t, 3.2, 0.3, 7.0, 0.3);
+  x.save();
+  if (bgCache) {
+    x.globalAlpha = a * 0.34 * (1 - obA);
+    x.drawImage(bgCache, 0, 0, W, H);
+  }
+  if (bgCacheOb) {
+    x.globalAlpha = a * 0.38 * obA;
+    x.drawImage(bgCacheOb, 0, 0, W, H);
+  }
+  x.restore();
+}
+/* (t_now retired: bgArt takes t directly) */
+/* the undeniable proof: the voice's OWN samples scrolling under a playhead */
+function strip(t, a) {
+  if (a <= 0.001 || !window.PEAKS) return;
+  const P = window.PEAKS, N = P.mn.length;
+  const yc = 1680, amp = 230;
+  x.save();
+  x.globalAlpha = a;
+  x.fillStyle = 'rgba(0,0,0,0.55)';
+  x.fillRect(40, yc - 300, W - 80, 600);
+  x.strokeStyle = rgba(EMERALD, 0.4); x.lineWidth = 2;
+  x.strokeRect(40, yc - 300, W - 80, 600);
+  const RD = window.RAW;
+  const F = RD ? clamp(Math.floor(t * 60), 0, RD.levels.length - 1) : -1;
+  const lvl = F >= 0 ? (RD.levels[F] || 0) : 0;
+  for (let dx = 48; dx < W - 48; dx += 4) {
+    const tt = t - 1.2 + (dx / W) * 1.7;
+    const idx = Math.floor(tt * 100);
+    if (idx < 0 || idx >= N) continue;
+    const past = tt <= t;
+    const heat = past ? 0.55 + 0.45 * clamp(lvl * 5, 0, 1) : 0.22;
+    x.strokeStyle = past ? rgba(EMERALD, heat) : rgba(MUTED, heat);
+    x.lineWidth = 3;
+    const y0 = yc - P.mx[idx] * amp, y1 = yc - P.mn[idx] * amp;
+    x.beginPath(); x.moveTo(dx, y0); x.lineTo(dx, Math.max(y0 + 2, y1)); x.stroke();
+  }
+  const px = W * (1.2 / 1.7);
+  /* the red bar rides the audio: pushes forward on loud, falls back on quiet */
+  const sway = (clamp(lvl, 0, 1) - 0.16) * 340;
+  const bpx = clamp(px + sway, 80, W - 80);
+  x.strokeStyle = rgba(REC, 0.95); x.lineWidth = 4;
+  x.shadowColor = rgba(REC, 0.9); x.shadowBlur = 16;
+  x.beginPath(); x.moveTo(bpx, yc - 300); x.lineTo(bpx, yc + 300); x.stroke();
+  x.shadowColor = 'transparent'; x.shadowBlur = 0;
+  x.restore();
+}
+/* comment card: testimonial proof or your-turn placeholder.
+   Optional live-typing (typeT0>=0), like flip (likeT0>=0), or nonstop
+   climbing counter (likeRate>0 from likeT1). */
+function bubble(t, cx, cy, w, a, t0, line, sub, typeT0, typeDur, subAlt, likeT0,
+                likeBase, likeRate, likeT1) {
+  if (a <= 0.001) return;
+  const pop = easeBack(win(t, t0, t0 + 0.5));
+  x.save();
+  x.globalAlpha = a * clamp(pop, 0, 1);
+  x.translate(cx, cy); x.scale(Math.max(0.01, pop), Math.max(0.01, pop));
+  x.fillStyle = 'rgba(6,14,11,0.95)';
+  x.strokeStyle = rgba(EMERALD, 0.9); x.lineWidth = 4;
+  x.beginPath();
+  if (x.roundRect) x.roundRect(-w / 2, -130, w, 260, 44); else x.rect(-w / 2, -130, w, 260);
+  x.fill(); x.stroke();
+  x.fillStyle = rgba(EMERALD, 1);
+  x.beginPath(); x.arc(-w / 2 + 90, -50, 44, 0, TAU); x.fill();
+  x.fillStyle = 'rgba(2,8,6,1)';
+  x.font = '800 52px "Segoe UI",system-ui,sans-serif';
+  x.textAlign = 'center'; x.textBaseline = 'middle';
+  x.fillText('M', -w / 2 + 90, -46);
+  x.textAlign = 'left';
+  x.fillStyle = rgba(TEXT, 1);
+  x.font = '700 34px "Segoe UI",system-ui,sans-serif';
+  x.fillText('@maria.ouve', -w / 2 + 156, -72);
+  let shown = line;
+  if (typeT0 >= 0 && typeDur > 0) {
+    const n = Math.floor(clamp((t - typeT0) / typeDur, 0, 1) * Array.from(line).length);
+    shown = Array.from(line).slice(0, n).join('');
+  }
+  x.fillStyle = rgba(MUTED, 1);
+  x.font = '400 30px "Segoe UI",system-ui,sans-serif';
+  x.fillText(shown, -w / 2 + 40, 28);
+  x.fillStyle = rgba(GOLD_LT, 1);
+  x.font = '600 30px "Segoe UI",system-ui,sans-serif';
+  let likeline = (likeT0 >= 0 && t >= likeT0 && subAlt ? subAlt : sub);
+  if (likeRate > 0 && likeT1 >= 0 && t >= likeT1) {
+    const n = Math.floor(likeBase + (t - likeT1) * likeRate);
+    const fmt = n >= 1000 ? `${Math.floor(n / 1000)}.${String(n % 1000).padStart(3, '0')}` : `${n}`;
+    likeline = `👍 ${fmt} · Responder`;
+  }
+  x.fillText(likeline, -w / 2 + 40, 84);
+  x.restore();
+}
+function grain(a) {
+  x.save(); x.globalAlpha = a;
+  let s = 7;
+  const r = () => { s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; };
+  for (let i = 0; i < 300; i++) x.fillStyle = r() > 0.5 ? '#fff' : '#000', x.fillRect((r() * W) | 0, (r() * H) | 0, 3, 3);
+  x.restore();
+}
+
+const CATS = ['BUG', 'CRITICA', 'CONSIGLIO', 'ELOGIO'];
+
+function draw(t) {
+  x.setTransform(1, 0, 0, 1, 0, 0);
+  x.fillStyle = '#000';
+  x.fillRect(0, 0, W, H);
+  const S = c.width / 1080;
+  x.setTransform(S, 0, 0, S, 0, 0);
+  bgArt(t, 1.0);
+  /* readability veil over the art */
+  const veil = x.createLinearGradient(0, 0, 0, H);
+  veil.addColorStop(0, 'rgba(1,4,3,0.62)');
+  veil.addColorStop(0.55, 'rgba(1,4,3,0.45)');
+  veil.addColorStop(1, 'rgba(1,4,3,0.72)');
+  x.fillStyle = veil; x.fillRect(0, 0, W, H);
+
+  /* 0-3.2 OPENER — new first section, everything else shifts +3.0s untouched */
+  if (t < 3.4) {
+    const a = env(t, 0, 0.12, 3.4, 0.25);
+    if (a > 0.001) {
+      if (t < 0.6) FX.whip(x, W, H, t, 0.0, 0.5, 1, '16,185,129');
+      ringEar(t, W / 2, 560, 130, a);
+      kline('DOWNLOAD AND USE IT', W / 2, 1000, 80, t, 0.15, 3.0,
+        { weight: 800, track: -1, rgb: TEXT, glow: EMERALD, extrude: 4, hold: 0.99 });
+      kline('NOW FOR FREE!', W / 2, 1140, 96, t, 0.9, 2.2,
+        { weight: 800, track: -1, rgb: GOLD_LT, glow: EMERALD, extrude: 5, hold: 0.99 });
+      strip(t, a);
+    }
+  }
+  /* 3.2-7.2 TESTIMONIAL: her words, her voice, her screen */
+  if (t >= 3.2 && t < 7.2) {
+    const a = env(t, 3.2, 0.25, 7.2, 0.3);
+    if (a > 0.001) {
+      if (t < 3.8) FX.whip(x, W, H, t, 3.2, 0.5, 1, '16,185,129');
+      ringEar(t, W / 2, 480, 120, a);
+      bubble(t, W / 2, 1000, 640, a, 3.5,
+        'Questo orecchio scrive tutto quello che dico!', '👍 1,2 mil · Responder',
+        3.6, 2.4, '', -1, 1184, 9, 3.6);
+      /* stars perform one by one while Francisca speaks (testi VO 3.5-6.2) */
+      x.save();
+      x.globalAlpha = a;
+      x.font = '600 46px "Segoe UI",system-ui,sans-serif';
+      x.textAlign = 'center'; x.textBaseline = 'middle';
+      for (let s = 0; s < 5; s++) {
+        const sp = easeBack(win(t, 3.7 + s * 0.4, 4.1 + s * 0.4));
+        if (sp <= 0) continue;
+        x.save();
+        x.globalAlpha = a * clamp(sp, 0, 1);
+        x.translate(W / 2 + (s - 2) * 56, 1180); x.scale(Math.max(0.01, sp), Math.max(0.01, sp));
+        x.fillStyle = rgba(GOLD_LT, 1);
+        x.shadowColor = rgba(GOLD, 0.8); x.shadowBlur = 14;
+        x.fillText('★', 0, 0);
+        x.restore();
+      }
+      x.restore();
+      strip(t, a);
+    }
+  }
+  /* 6.8-10.8 HOOK (was 3-7, shifted +3.8, otherwise identical) */
+  if (t >= 6.8 && t < 10.8) {
+    const a = env(t, 6.8, 0.12, 10.8, 0.25);
+    if (a > 0.001) {
+      if (t < 7.4) FX.whip(x, W, H, t, 6.8, 0.5, 0, '231,76,60');
+      ringEar(t, W / 2, 380, 110, a);
+      kline('Hai trovato un bug?', W / 2, 760, 92, t, 6.9, 4.2,
+        { weight: 800, track: -2, rgb: TEXT, glow: REC, extrude: 4, hold: 0.99 });
+      kline('Hai un'idea?', W / 2, 890, 92, t, 7.7, 3.4,
+        { weight: 800, track: -2, rgb: TEXT, glow: REC, extrude: 4, hold: 0.99 });
+      kline('Commenta!', W / 2, 1060, 104, t, 8.6, 2.4,
+        { weight: 800, track: -1, rgb: GOLD_LT, glow: REC, extrude: 4, hold: 0.99 });
+      strip(t, a);
+    }
+  }
+  /* 10.3-14.1 FOUR DOORS (was 6.6-11.4, shifted +3.7) */
+  if (t >= 10.3 && t < 14.1) {
+    const a = env(t, 10.3, 0.2, 14.1, 0.25);
+    if (a > 0.001) {
+      ringEar(t, W / 2, 380, 100, a);
+      CATS.forEach((ct, k) => {
+        const pop = easeBack(win(t, 10.5 + k * 0.55, 11.05 + k * 0.55));
+        if (pop <= 0) return;
+        const cy = 700 + k * 200;
+        x.save();
+        x.globalAlpha = a * clamp(pop, 0, 1);
+        x.translate(W / 2, cy); x.scale(Math.max(0.01, pop), Math.max(0.01, pop));
+        x.fillStyle = 'rgba(2,8,6,0.92)';
+        x.fillRect(-380, -62, 760, 124);
+        x.strokeStyle = rgba(k % 2 ? GOLD : EMERALD, 0.85); x.lineWidth = 3;
+        x.strokeRect(-380, -62, 760, 124);
+        x.font = '800 56px "Segoe UI",system-ui,sans-serif';
+        x.textAlign = 'center'; x.textBaseline = 'middle';
+        x.fillStyle = rgba(TEXT, 1);
+        x.fillText(ct, 0, 4);
+        x.restore();
+      });
+      strip(t, a);
+    }
+  }
+  /* 13.8-17.2 HOW (was 11-14.4, shifted +2.8) */
+  if (t >= 13.8 && t < 17.2) {
+    const a = env(t, 13.8, 0.2, 17.2, 0.25);
+    if (a > 0.001) {
+      ringEar(t, W / 2, 300, 85, a);
+      bubble(t, W / 2, 620, 640, a, 13.9,
+        'Il tuo commento qui!', '👍 0 · Responder', 14.1, 2.0, '', -1, 0, 0.5, 14.1);
+      kline('Lascia il tuo commento qui sotto', W / 2, 1080, 72, t, 14.0, 3.0,
+        { weight: 800, track: -1, rgb: TEXT, glow: EMERALD, extrude: 4 });
+      kline('', W / 2, 1200, 72, t, 14.7, 2.7,
+        { weight: 800, track: -1, rgb: GOLD_LT, extrude: 4, hold: 0.99 });
+      strip(t, a);
+    }
+  }
+  /* 17.2-21 CTA (was 14.4-18, shifted +2.8) — no fade at the end */
+  if (t >= 17.2) {
+    const e = smooth(17.2, 17.5, t);
+    if (e > 0.001) {
+      /* finale: emblem small top, big living ring as the phrase's stage */
+      const em = A('emblem');
+      if (em.naturalWidth) {
+        x.save(); x.globalAlpha = e;
+        /* additive: black square adds nothing, line-art glows */
+        x.globalCompositeOperation = 'lighter';
+        x.translate(W / 2, 360);
+        const s = Math.min(0.9, em.naturalWidth > 0 ? 420 / em.naturalWidth : 1);
+        x.scale(s, s);
+        x.drawImage(em, -em.naturalWidth / 2, -em.naturalHeight / 2, em.naturalWidth, em.naturalHeight);
+        x.restore();
+      }
+      ringEar(t, W / 2, 900, 190, e);
+      kline('Le tue parole creano', W / 2, 860, 64, t, 17.6, 4.5,
+        { weight: 800, track: -1, rgb: TEXT, glow: EMERALD, extrude: 4, hold: 0.99 });
+      kline('supEars', W / 2, 990, 74, t, 18.1, 4.1,
+        { weight: 800, track: -1, rgb: GOLD_LT, glow: EMERALD, extrude: 5, hold: 0.99 });
+      if (FLAGS['it']) {
+        x.save(); x.globalAlpha = e;
+        x.drawImage(FLAGS['it'], W / 2 - 65, 1257, 130, 85);
+        x.restore();
+      }
+      strip(t, e);
+      kline('Uscita · 10 ottobre 2026', W / 2, 1410, 34, t, 18.7, 3.5,
+        { weight: 600, track: 1.2, rgb: GOLD_LT, hold: 0.99 });
+    }
+  }
+
+  /* dual line overlay: complete from frame 0, holds to 7s, fades by 7.5.
+     Lives outside the beats so it survives the opener->hook handoff. */
+  {
+    const oa = env(t, 0, 0.15, 7.0, 0.5);
+    if (oa > 0.001) {
+      x.save();
+      x.globalAlpha = oa;
+      x.textAlign = 'center'; x.textBaseline = 'middle';
+      x.font = '600 46px "Segoe UI",system-ui,sans-serif';
+      x.fillStyle = rgba(TEXT, 1);
+      x.fillText('Speak freely. (Link in 1st comment)', W / 2, 1252);
+      x.font = '600 44px "Segoe UI",system-ui,sans-serif';
+      x.fillStyle = rgba(GOLD_LT, 1);
+      x.fillText('Parla liberamente! Link qui sotto.', W / 2, 1316);
+      x.restore();
+    }
+  }
+
+  grain(0.025);
+  x.setTransform(1, 0, 0, 1, 0, 0);
+}
+
+window.__draw = draw;
+window.__ready = loadFlags();
+}
+</script>
+</body>
+</html>
