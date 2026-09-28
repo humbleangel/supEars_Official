@@ -371,6 +371,8 @@ function draw(t) {
       const em = A('emblem');
       if (em.naturalWidth) {
         x.save(); x.globalAlpha = e;
+        /* additive: black square adds nothing, line-art glows */
+        x.globalCompositeOperation = 'lighter';
         x.translate(W / 2, 360);
         const s = Math.min(0.9, em.naturalWidth > 0 ? 420 / em.naturalWidth : 1);
         x.scale(s, s);
