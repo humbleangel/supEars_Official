@@ -59,12 +59,9 @@ def main():
     ra = float(np.sqrt((a ** 2).mean())) or 1.0
     rb = float(np.sqrt((b ** 2).mean())) or 1.0
     b = b * min(3.0, ra / rb)
-    # boundary: proportional prior, refine to energy dip
-    prefix = "Tua palavra constrói o "
-    est = int(len(a) * len(prefix) / len(CTA_TXT))
-    lo, hi = max(0, est - int(0.3 * SR)), min(len(a), est + int(0.2 * SR))
-    ww = int(0.05 * SR)
-    cut = min(range(lo, hi), key=lambda i: rms_win(a, i, ww))
+    # boundary: fixed 1.85s — mid-"o" vowel, before any Portuguese sibilant.
+    # Antonio flows legato; the 30ms crossfade masks the vowel blend.
+    cut = int(1.85 * SR)
     xf = int(0.03 * SR)
     left = a[:cut]
     j0, j1 = max(0, cut - xf), min(len(a), cut + xf)
