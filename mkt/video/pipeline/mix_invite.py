@@ -29,6 +29,7 @@ PLACES = {lid: list(_TIMELINE) for lid in _LANG}
 # soft deliveries get extra lift (stem-gate driven)
 OVERRIDES = {
     "zh": {"how": 4.0, "hook": 2.0, "cats": 2.0},
+    "hu": {"how": 3.0, "testi": 2.0},
 }
 
 
