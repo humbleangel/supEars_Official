@@ -200,8 +200,10 @@ function strip(t, a) {
   x.restore();
 }
 /* comment card: testimonial proof or your-turn placeholder.
-   Optional live-typing (typeT0>=0) + like flip (likeT0>=0) for the demo. */
-function bubble(t, cx, cy, w, a, t0, line, sub, typeT0, typeDur, subAlt, likeT0) {
+   Optional live-typing (typeT0>=0), like flip (likeT0>=0), or nonstop
+   climbing counter (likeRate>0 from likeT1). */
+function bubble(t, cx, cy, w, a, t0, line, sub, typeT0, typeDur, subAlt, likeT0,
+                likeBase, likeRate, likeT1) {
   if (a <= 0.001) return;
   const pop = easeBack(win(t, t0, t0 + 0.5));
   x.save();
@@ -232,7 +234,13 @@ function bubble(t, cx, cy, w, a, t0, line, sub, typeT0, typeDur, subAlt, likeT0)
   x.fillText(shown, -w / 2 + 40, 28);
   x.fillStyle = rgba(GOLD_LT, 1);
   x.font = '600 30px "Segoe UI",system-ui,sans-serif';
-  x.fillText((likeT0 >= 0 && t >= likeT0 && subAlt ? subAlt : sub), -w / 2 + 40, 84);
+  let likeline = (likeT0 >= 0 && t >= likeT0 && subAlt ? subAlt : sub);
+  if (likeRate > 0 && likeT1 >= 0 && t >= likeT1) {
+    const n = Math.floor(likeBase + (t - likeT1) * likeRate);
+    const fmt = n >= 1000 ? `${Math.floor(n / 1000)}.${String(n % 1000).padStart(3, '0')}` : `${n}`;
+    likeline = `👍 ${fmt} · Responder`;
+  }
+  x.fillText(likeline, -w / 2 + 40, 84);
   x.restore();
 }
 function grain(a) {
@@ -279,7 +287,8 @@ function draw(t) {
       if (t < 3.8) FX.whip(x, W, H, t, 3.2, 0.5, 1, '16,185,129');
       ringEar(t, W / 2, 480, 120, a);
       bubble(t, W / 2, 1000, 640, a, 3.5,
-        'Essa orelha escreve tudo que eu falo!', '👍 1,2 mil · Responder');
+        'Essa orelha escreve tudo que eu falo!', '👍 1,2 mil · Responder',
+        3.6, 2.4, '', -1, 1184, 9, 3.6);
       /* stars perform one by one while Francisca speaks (testi VO 3.5-6.2) */
       x.save();
       x.globalAlpha = a;
@@ -346,7 +355,7 @@ function draw(t) {
     if (a > 0.001) {
       ringEar(t, W / 2, 300, 85, a);
       bubble(t, W / 2, 620, 640, a, 13.9,
-        'Seu comentário aqui! ✍️', '👍 0 · Responder', 14.1, 2.0, '👍 1 · Responder', 16.3);
+        'Seu comentário aqui! ✍️', '👍 0 · Responder', 14.1, 2.0, '', -1, 0, 0.5, 14.1);
       kline('Deixe seu comentário', W / 2, 1080, 72, t, 14.0, 3.0,
         { weight: 800, track: -1, rgb: TEXT, glow: EMERALD, extrude: 4 });
       kline('aqui embaixo ⬇', W / 2, 1200, 72, t, 14.7, 2.7,
