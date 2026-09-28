@@ -17,9 +17,10 @@ HERE = Path(__file__).parent
 LONOWN = Path(r"C:\Users\777\Downloads\LONOWN - AVANGARD (Slowed).wav")
 BED15 = 142.0  # hottest 18s window (was 146 for 15s)
 
-# lang: [(key, start)] — PT shifted +3.0s for the opener (rest untouched)
+# lang: [(key, start, gain_db)] — opener +4 over cold bed, cats +3 (soft delivery)
 PLACES = {
-    "pt": [("hook", 3.1), ("cats", 6.6), ("how", 11.0), ("cta", 15.0)],
+    "pt": [("open", 0.15, 4.0), ("hook", 3.1, 0.0), ("cats", 6.6, 3.0),
+           ("how", 11.0, 0.0), ("cta", 15.0, 0.0)],
 }
 
 
@@ -55,12 +56,12 @@ def main():
     # place VO
     inputs, filt, labels = [], [], []
     spans = []
-    for i, (key, start) in enumerate(PLACES[lang]):
+    for i, (key, start, gain) in enumerate(PLACES[lang]):
         src = HERE / "vo_invite" / f"{lang}_{key}.mp3"
         assert src.exists() and src.stat().st_size > 3000, f"missing {src}"
         inputs += ["-i", str(src)]
         ms = int(round(start * 1000))
-        filt.append(f"[{i}:a]aresample=48000,adelay={ms}|{ms}[s{i}]")
+        filt.append(f"[{i}:a]aresample=48000,adelay={ms}|{ms},volume={gain:.1f}dB[s{i}]")
         labels.append(f"[s{i}]")
         spans.append((start, start + tj[key]["dur"]))
     n = len(spans)
@@ -72,18 +73,19 @@ def main():
     assert rms_db(vox) > -45, "placed VO silent"
 
     graph = (
+        f"[0:a]aresample=48000,volume=-12dB[sfx];"
         f"[1:a]aresample=48000,atrim={BED15}:{BED15 + TOTAL},asetpts=PTS-STARTPTS,"
         f"volume=-7dB,equalizer=f=300:t=q:w=1:g=-4,equalizer=f=2500:t=q:w=1.5:g=-4,"
         f"afade=t=in:st=0:d=0.6,afade=t=out:st={TOTAL - 1.2}:d=1.2[bed];"
         f"[2:a]aresample=48000,volume=+7dB,asplit=2[vox][voxsc];"
         f"[bed][voxsc]sidechaincompress=threshold=-24dB:ratio=6:attack=15:release=500[ducked];"
-        f"[ducked][vox]amix=inputs=2:normalize=0,"
+        f"[ducked][vox][sfx]amix=inputs=3:normalize=0,"
         f"loudnorm=I=-14:TP=-1.5:LRA=9[mix]"
     )
     vomap = work / "vonly.mp4"
     out = work / "out.mp4"
-    run(["ffmpeg", "-y", "-v", "error", "-i", str(video), "-map", "0:v", "-c:v", "copy", str(vomap)])
-    run(["ffmpeg", "-y", "-v", "error", "-i", str(vomap), "-i", str(LONOWN), "-i", str(vox),
+    # input 0 = the render itself: video for picture, score audio as SFX stem
+    run(["ffmpeg", "-y", "-v", "error", "-i", str(video), "-i", str(LONOWN), "-i", str(vox),
          "-filter_complex", graph, "-map", "0:v", "-map", "[mix]",
          "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest",
          "-movflags", "+faststart", str(out)])
@@ -98,7 +100,7 @@ def main():
     # stem-truth gate: ducked-bed-only render (real vox drives sidechain,
     # silence takes its place in the mix) vs +7dB vox stem, per window.
     bedonly = work / "bedonly.wav"
-    run(["ffmpeg", "-y", "-v", "error", "-i", str(vomap), "-i", str(LONOWN),
+    run(["ffmpeg", "-y", "-v", "error", "-i", str(video), "-i", str(LONOWN),
          "-i", str(vox), "-f", "lavfi", "-i", f"anullsrc=r=48000:cl=mono:d={TOTAL}",
          "-filter_complex",
          f"[1:a]aresample=48000,atrim={BED15}:{BED15 + TOTAL},asetpts=PTS-STARTPTS,"

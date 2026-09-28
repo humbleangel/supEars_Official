@@ -14,5 +14,9 @@
   "cta": {
     "file": "D:\\WORK_B\\PRJS\\supEars_Official\\mkt\\video\\pipeline\\vo_invite\\pt_cta.mp3",
     "dur": 2.08
+  },
+  "open": {
+    "file": "mkt\\video\\pipeline\\vo_invite\\pt_open.mp3",
+    "dur": 2.08
   }
 }
