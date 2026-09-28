@@ -11,7 +11,7 @@ LANG = {
         "hook": "Achou um bug? Tem uma ideia? Comenta aqui!",
         "cta_full": "Tua palavra constrói o supEars",
         "cta_m": "Tua palavra constrói o,",
-        "cats": "Erros, impressões, críticas, sugestões ou elogios.",
+        "cats": "Bugs, críticas, sugestões ou elogios.",
         "chips": ["BUGS", "CRÍTICAS", "SUGESTÕES", "ELOGIOS"],
         "name": "@maria.ouve",
         "how": "Deixe seu comentário aqui embaixo",
