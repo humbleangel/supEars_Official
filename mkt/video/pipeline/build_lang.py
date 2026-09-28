@@ -20,7 +20,7 @@ from vo_polish import decode, polish, encode, probe
 
 MASTER = HERE / "promo_invite_pt.html"
 # PT slot durations (rate-fit targets)
-SLOTS = {"hook": 3.35, "cats": 3.02, "how": 2.62, "testi": 2.69, "cta_m": 1.9}
+SLOTS = {"hook": 3.35, "cats": 3.63, "how": 2.62, "testi": 3.04, "cta_m": 1.9}
 
 
 def split_sentences(s):
@@ -98,6 +98,7 @@ def build_spine(lid):
         ("'Seu comentário aqui! ✍️'", q(t["howcard"])),
         ("'Estreia · 10 de outubro de 2026'", q(t["date"])),
         ("'Fale livremente. (Link no 1º comentário)'", q(t["speak_sub"])),
+        ("'@maria.ouve'", q(t["name"])),
         ("FLAG_B64.pt", f"FLAG_B64['{lid}']"),
         ("FLAGS.pt", f"FLAGS['{lid}']"),
         ("window.RAW_PT", "window.RAW"),

@@ -215,7 +215,7 @@ function bubble(t, cx, cy, w, a, t0, line, sub, typeT0, typeDur, subAlt, likeT0,
   const tall = !!line2;
   const top = tall ? -160 : -130, hh = tall ? 320 : 260;
   const ay = tall ? -92 : -50, ny = tall ? -92 : -72;
-  const l1 = tall ? -16 : 8, l2 = tall ? 20 : 52, lk = tall ? 92 : 84;
+  const l1 = tall ? -16 : 40, l2 = tall ? 20 : 52, lk = tall ? 92 : 94;
   x.beginPath();
   if (x.roundRect) x.roundRect(-w / 2, top, w, hh, 44); else x.rect(-w / 2, top, w, hh);
   x.fill(); x.stroke();
@@ -224,11 +224,11 @@ function bubble(t, cx, cy, w, a, t0, line, sub, typeT0, typeDur, subAlt, likeT0,
   x.fillStyle = 'rgba(2,8,6,1)';
   x.font = '800 52px "Segoe UI",system-ui,sans-serif';
   x.textAlign = 'center'; x.textBaseline = 'middle';
-  x.fillText('M', -w / 2 + 90, ay + 4);
+  x.fillText(NAME[1].toUpperCase(), -w / 2 + 90, ay + 4);
   x.textAlign = 'left';
   x.fillStyle = rgba(TEXT, 1);
   x.font = '700 34px "Segoe UI",system-ui,sans-serif';
-  x.fillText('@maria.ouve', -w / 2 + 156, ny);
+  x.fillText(NAME, -w / 2 + 156, ny);
   let shown = line;
   if (typeT0 >= 0 && typeDur > 0) {
     const n = Math.floor(clamp((t - typeT0) / typeDur, 0, 1) * Array.from(line).length);
@@ -266,7 +266,9 @@ function grain(a) {
   x.restore();
 }
 
-const CATS = ['BUG', 'CRÍTICA', 'SUGESTÃO', 'ELOGIO'];
+const CATS = ['BUGS', 'CRÍTICAS', 'SUGESTÕES', 'ELOGIOS'];
+/* per-language viewer handle (translations.py: name); avatar letter derives. */
+const NAME = '@maria.ouve';
 
 function draw(t) {
   x.setTransform(1, 0, 0, 1, 0, 0);
@@ -301,7 +303,7 @@ function draw(t) {
     if (a > 0.001) {
       if (t < 3.8) FX.whip(x, W, H, t, 3.2, 0.5, 1, '16,185,129');
       ringEar(t, W / 2, 480, 120, a);
-      bubble(t, W / 2, 1000, 780, a, 3.5,
+      bubble(t, W / 2, 920, 780, a, 3.5,
         'Essa orelha traduz e escreve tudo que eu falo!', '👍 1,2 mil · Responder',
         3.6, 2.4, '', -1, 1184, 9, 3.6,
         'This ear translates and writes everything I say!');

@@ -3,7 +3,7 @@
 swarms (ES/FR/DE/IT/NL/EN, RU/UK/PL/CS/HU/EL, ZH/JA/KO/VI/TH/ID, AR/HI/UR/TR/RO/SV).
 Schema per lang: voiceM/F, hook (3 sentences), cta_full (ends with brand),
 cta_m (no brand + trailing comma), cats (spoken 4), chips[4] (short!),
-how, testi, howcard, date, speak_sub.
+how, testi, howcard, date, speak_sub, name (viewer handle, localized).
 """
 LANG = {
     "pt": {
@@ -11,10 +11,11 @@ LANG = {
         "hook": "Achou um bug? Tem uma ideia? Comenta aqui!",
         "cta_full": "Tua palavra constrói o supEars",
         "cta_m": "Tua palavra constrói o,",
-        "cats": "Bug, crítica, sugestão ou elogio.",
-        "chips": ["BUG", "CRÍTICA", "SUGESTÃO", "ELOGIO"],
+        "cats": "Erros, impressões, críticas, sugestões ou elogios.",
+        "chips": ["BUGS", "CRÍTICAS", "SUGESTÕES", "ELOGIOS"],
+        "name": "@maria.ouve",
         "how": "Deixe seu comentário aqui embaixo",
-        "testi": "Essa orelha escreve tudo que eu falo!",
+        "testi": "Essa orelha traduz e escreve tudo que eu falo!",
         "howcard": "Seu comentário aqui! ✍️",
         "date": "Estreia · 10 de outubro de 2026",
         "speak_sub": "Fale livremente. (Link no 1º comentário)",

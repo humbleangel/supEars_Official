@@ -219,11 +219,11 @@ function bubble(t, cx, cy, w, a, t0, line, sub, typeT0, typeDur, subAlt, likeT0,
   x.fillStyle = 'rgba(2,8,6,1)';
   x.font = '800 52px "Segoe UI",system-ui,sans-serif';
   x.textAlign = 'center'; x.textBaseline = 'middle';
-  x.fillText('M', -w / 2 + 90, -46);
+  x.fillText(NAME[1].toUpperCase(), -w / 2 + 90, -46);
   x.textAlign = 'left';
   x.fillStyle = rgba(TEXT, 1);
   x.font = '700 34px "Segoe UI",system-ui,sans-serif';
-  x.fillText('@maria.ouve', -w / 2 + 156, -72);
+  x.fillText(NAME, -w / 2 + 156, -72);
   let shown = line;
   if (typeT0 >= 0 && typeDur > 0) {
     const n = Math.floor(clamp((t - typeT0) / typeDur, 0, 1) * Array.from(line).length);
@@ -251,7 +251,9 @@ function grain(a) {
   x.restore();
 }
 
-const CATS = ['BUG', 'CRÍTICA', 'SUGESTÃO', 'ELOGIO'];
+const CATS = ['BUGS', 'CRÍTICAS', 'SUGESTÕES', 'ELOGIOS'];
+/* per-language viewer handle (translations.py: name); avatar letter derives. */
+const NAME = '@maria.ouve';
 
 function draw(t) {
   x.setTransform(1, 0, 0, 1, 0, 0);
