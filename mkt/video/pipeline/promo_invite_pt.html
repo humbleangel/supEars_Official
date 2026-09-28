@@ -273,9 +273,9 @@ function draw(t) {
       strip(t, a);
     }
   }
-  /* 11.5-15 CTA */
+  /* 11.5-15 CTA — no fade at the end: everything waves until the last frame */
   if (t >= 11.4) {
-    const e = env(t, 11.4, 0.3, 15.0, 0.0);
+    const e = smooth(11.4, 11.7, t);
     if (e > 0.001) {
       ringEar(t, W / 2, 250, 80, e);
       x.save(); x.globalAlpha = e;
