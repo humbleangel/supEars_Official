@@ -15,11 +15,11 @@ import numpy as np
 
 HERE = Path(__file__).parent
 LONOWN = Path(r"C:\Users\777\Downloads\LONOWN - AVANGARD (Slowed).wav")
-BED15 = 146.0  # hottest 15s
+BED15 = 142.0  # hottest 18s window (was 146 for 15s)
 
-# lang: [(key, start)]
+# lang: [(key, start)] — PT shifted +3.0s for the opener (rest untouched)
 PLACES = {
-    "pt": [("hook", 0.1), ("cats", 3.6), ("how", 8.0), ("cta", 12.0)],
+    "pt": [("hook", 3.1), ("cats", 6.6), ("how", 11.0), ("cta", 15.0)],
 }
 
 
@@ -95,13 +95,30 @@ def main():
             gaps.append((prev + 0.05, min(0.6, s - prev - 0.1)))
         prev = max(prev, e)
     floor = min(rms_db(fin, ss=g[0], t=g[1]) for g in gaps[:2]) if len(gaps) >= 2 else -30.0
+    # stem-truth gate: ducked-bed-only render (real vox drives sidechain,
+    # silence takes its place in the mix) vs +7dB vox stem, per window.
+    bedonly = work / "bedonly.wav"
+    run(["ffmpeg", "-y", "-v", "error", "-i", str(vomap), "-i", str(LONOWN),
+         "-i", str(vox), "-f", "lavfi", "-i", f"anullsrc=r=48000:cl=mono:d={TOTAL}",
+         "-filter_complex",
+         f"[1:a]aresample=48000,atrim={BED15}:{BED15 + TOTAL},asetpts=PTS-STARTPTS,"
+         f"volume=-7dB,equalizer=f=300:t=q:w=1:g=-4,equalizer=f=2500:t=q:w=1.5:g=-4[bed];"
+         f"[2:a]aresample=48000,volume=+7dB[voxsc];"
+         f"[3:a]aresample=48000[null];"
+         f"[bed][voxsc]sidechaincompress=threshold=-24dB:ratio=6:attack=15:release=500[ducked];"
+         f"[ducked][null]amix=inputs=2:normalize=0,"
+         f"loudnorm=I=-14:TP=-1.5:LRA=9[mix]",
+         "-map", "[mix]", "-c:a", "pcm_s16le", "-ar", "16000", str(bedonly)])
     worst = 99.0
     for s, e in sorted(spans):
         w = rms_db(fin, ss=s + 0.1, t=max(0.3, e - s - 0.2))
-        worst = min(worst, w - floor)
-        print(f"VO {s:4.1f}-{e:4.1f}: margin {w - floor:+5.1f} dB")
+        vb = rms_db(vox, ss=s + 0.1, t=max(0.3, e - s - 0.2)) + 7.0
+        bb = rms_db(bedonly, ss=s + 0.1, t=max(0.3, e - s - 0.2))
+        stem_margin = vb - bb
+        worst = min(worst, stem_margin)
+        print(f"VO {s:4.1f}-{e:4.1f}: final {w - floor:+5.1f} dB / stem {stem_margin:+5.1f} dB")
     assert worst >= 6.0, f"AUDIBILITY GATE FAILED ({worst:+.1f} dB)"
-    print(f"GATE PASSED (worst {worst:+.1f} dB, floor {floor:.1f})")
+    print(f"GATE PASSED (worst stem margin {worst:+.1f} dB, floor {floor:.1f})")
     shutil.move(str(out), str(video))
     print("OK", video, video.stat().st_size, "bytes")
 
