@@ -233,8 +233,6 @@ function draw(t) {
         { weight: 800, track: -1, rgb: TEXT, glow: EMERALD, extrude: 4, hold: 0.99 });
       kline('NOW FOR FREE!', W / 2, 1140, 96, t, 0.9, 2.2,
         { weight: 800, track: -1, rgb: GOLD_LT, glow: EMERALD, extrude: 5, hold: 0.99 });
-      kline('Speak freely. (Link in 1st comment)', W / 2, 1275, 44, t, 1.7, 1.8,
-        { weight: 600, track: 0.8, rgb: TEXT, hold: 0.99 });
       strip(t, a);
     }
   }
@@ -318,6 +316,24 @@ function draw(t) {
       strip(t, e);
       kline('Estreia · 10 de outubro de 2026', W / 2, 1410, 34, t, 15.9, 3.5,
         { weight: 600, track: 1.2, rgb: GOLD_LT, hold: 0.99 });
+    }
+  }
+
+  /* dual line overlay: complete from frame 0, holds to 7s, fades by 7.5.
+     Lives outside the beats so it survives the opener->hook handoff. */
+  {
+    const oa = env(t, 0, 0.15, 7.0, 0.5);
+    if (oa > 0.001) {
+      x.save();
+      x.globalAlpha = oa;
+      x.textAlign = 'center'; x.textBaseline = 'middle';
+      x.font = '600 46px "Segoe UI",system-ui,sans-serif';
+      x.fillStyle = rgba(TEXT, 1);
+      x.fillText('Speak freely. (Link in 1st comment)', W / 2, 1252);
+      x.font = '600 44px "Segoe UI",system-ui,sans-serif';
+      x.fillStyle = rgba(GOLD_LT, 1);
+      x.fillText('Fale livremente. (Link no 1º comentário)', W / 2, 1316);
+      x.restore();
     }
   }
 
