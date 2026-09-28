@@ -59,10 +59,13 @@ def main():
     ap.add_argument("--bed-file", default="",
                     help="bed override (default LONOWN hottest window)")
     ap.add_argument("--bed-start", type=float, default=None)
+    ap.add_argument("--bed-gain", type=float, default=-7.0,
+                    help="bed base gain dB (default -7)")
     a = ap.parse_args()
     TOTAL = float(a.seconds)
     BED = Path(a.bed_file) if a.bed_file else LONOWN
     BED_START = float(a.bed_start) if a.bed_start is not None else BED15
+    BED_GAIN = float(a.bed_gain)
     video, lang = Path(a.video), a.lang
     assert video.exists()
     tj = json.loads((HERE / "vo_invite" / f"{lang}_timings.json").read_text(encoding="utf-8"))
@@ -90,8 +93,8 @@ def main():
 
     graph = (
         f"[0:a]aresample=48000,volume=-12dB[sfx];"
-        f"[1:a]aresample=48000,atrim={BED_START}:{BED15 + TOTAL},asetpts=PTS-STARTPTS,"
-        f"volume=-7dB,equalizer=f=300:t=q:w=1:g=-4,equalizer=f=2500:t=q:w=1.5:g=-4,"
+        f"[1:a]aresample=48000,atrim={BED_START}:{BED_START + TOTAL},asetpts=PTS-STARTPTS,"
+        f"volume={BED_GAIN}dB,equalizer=f=300:t=q:w=1:g=-4,equalizer=f=2500:t=q:w=1.5:g=-4,"
         f"afade=t=in:st=0:d=0.6,afade=t=out:st={TOTAL - 1.2}:d=1.2[bed];"
         f"[2:a]aresample=48000,volume=+7dB,asplit=2[vox][voxsc];"
         f"[bed][voxsc]sidechaincompress=threshold=-24dB:ratio=6:attack=15:release=500[ducked];"
@@ -119,8 +122,8 @@ def main():
     run(["ffmpeg", "-y", "-v", "error", "-i", str(video), "-i", str(BED),
          "-i", str(vox), "-f", "lavfi", "-i", f"anullsrc=r=48000:cl=mono:d={TOTAL}",
          "-filter_complex",
-         f"[1:a]aresample=48000,atrim={BED_START}:{BED15 + TOTAL},asetpts=PTS-STARTPTS,"
-         f"volume=-7dB,equalizer=f=300:t=q:w=1:g=-4,equalizer=f=2500:t=q:w=1.5:g=-4[bed];"
+         f"[1:a]aresample=48000,atrim={BED_START}:{BED_START + TOTAL},asetpts=PTS-STARTPTS,"
+         f"volume={BED_GAIN}dB,equalizer=f=300:t=q:w=1:g=-4,equalizer=f=2500:t=q:w=1.5:g=-4[bed];"
          f"[2:a]aresample=48000,volume=+7dB[voxsc];"
          f"[3:a]aresample=48000[null];"
          f"[bed][voxsc]sidechaincompress=threshold=-24dB:ratio=6:attack=15:release=500[ducked];"
