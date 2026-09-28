@@ -200,10 +200,10 @@ function strip(t, a) {
   x.restore();
 }
 /* comment card: testimonial proof or your-turn placeholder.
-   Optional live-typing (typeT0>=0), like flip (likeT0>=0), or nonstop
-   climbing counter (likeRate>0 from likeT1). */
+   Optional live-typing (typeT0>=0), like flip (likeT0>=0), nonstop counter,
+   and a second keystroked translation line (line2*, shown with line). */
 function bubble(t, cx, cy, w, a, t0, line, sub, typeT0, typeDur, subAlt, likeT0,
-                likeBase, likeRate, likeT1) {
+                likeBase, likeRate, likeT1, line2) {
   if (a <= 0.001) return;
   const pop = easeBack(win(t, t0, t0 + 0.5));
   x.save();
@@ -231,7 +231,17 @@ function bubble(t, cx, cy, w, a, t0, line, sub, typeT0, typeDur, subAlt, likeT0,
   }
   x.fillStyle = rgba(MUTED, 1);
   x.font = '400 30px "Segoe UI",system-ui,sans-serif';
-  x.fillText(shown, -w / 2 + 40, 28);
+  x.fillText(shown, -w / 2 + 40, 8);
+  if (line2) {
+    let shown2 = line2;
+    if (typeT0 >= 0 && typeDur > 0) {
+      const n2 = Math.floor(clamp((t - typeT0) / typeDur, 0, 1) * Array.from(line2).length);
+      shown2 = Array.from(line2).slice(0, n2).join('');
+    }
+    x.fillStyle = rgba(GOLD_LT, 1);
+    x.font = 'italic 400 28px "Segoe UI",system-ui,sans-serif';
+    x.fillText(shown2, -w / 2 + 40, 52);
+  }
   x.fillStyle = rgba(GOLD_LT, 1);
   x.font = '600 30px "Segoe UI",system-ui,sans-serif';
   let likeline = (likeT0 >= 0 && t >= likeT0 && subAlt ? subAlt : sub);
@@ -286,9 +296,10 @@ function draw(t) {
     if (a > 0.001) {
       if (t < 3.8) FX.whip(x, W, H, t, 3.2, 0.5, 1, '16,185,129');
       ringEar(t, W / 2, 480, 120, a);
-      bubble(t, W / 2, 1000, 640, a, 3.5,
-        'Essa orelha escreve tudo que eu falo!', '👍 1,2 mil · Responder',
-        3.6, 2.4, '', -1, 1184, 9, 3.6);
+      bubble(t, W / 2, 1000, 780, a, 3.5,
+        'Essa orelha traduz e escreve tudo que eu falo!', '👍 1,2 mil · Responder',
+        3.6, 2.4, '', -1, 1184, 9, 3.6,
+        'This ear translates and writes everything I say!');
       /* stars perform one by one while Francisca speaks (testi VO 3.5-6.2) */
       x.save();
       x.globalAlpha = a;
