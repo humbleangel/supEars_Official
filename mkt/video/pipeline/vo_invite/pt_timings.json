@@ -18,5 +18,9 @@
   "open": {
     "file": "mkt\\video\\pipeline\\vo_invite\\pt_open.mp3",
     "dur": 2.08
+  },
+  "testi": {
+    "file": "mkt\\video\\pipeline\\vo_invite\\pt_testi.mp3",
+    "dur": 2.69
   }
 }

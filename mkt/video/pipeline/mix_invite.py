@@ -15,12 +15,12 @@ import numpy as np
 
 HERE = Path(__file__).parent
 LONOWN = Path(r"C:\Users\777\Downloads\LONOWN - AVANGARD (Slowed).wav")
-BED15 = 142.0  # hottest 18s window (was 146 for 15s)
+BED15 = 138.0  # hottest 21s window
 
-# lang: [(key, start, gain_db)] — opener +4 over cold bed, cats +3 (soft delivery)
+# lang: [(key, start, gain_db)] — 1,3,2,4,5,6: opener, testi, hook, cats, how, cta
 PLACES = {
-    "pt": [("open", 0.15, 4.0), ("hook", 3.1, 0.0), ("cats", 6.6, 3.0),
-           ("how", 11.0, 0.0), ("cta", 15.0, 0.0)],
+    "pt": [("open", 0.15, 4.0), ("testi", 3.5, 0.0), ("hook", 6.8, 0.0),
+           ("cats", 10.3, 3.0), ("how", 14.0, 0.0), ("cta", 18.0, 0.0)],
 }
 
 
