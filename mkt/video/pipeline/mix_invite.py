@@ -61,11 +61,14 @@ def main():
     ap.add_argument("--bed-start", type=float, default=None)
     ap.add_argument("--bed-gain", type=float, default=-7.0,
                     help="bed base gain dB (default -7)")
+    ap.add_argument("--sfx-gain", type=float, default=-12.0,
+                    help="score-SFX stem gain dB (default -12)")
     a = ap.parse_args()
     TOTAL = float(a.seconds)
     BED = Path(a.bed_file) if a.bed_file else LONOWN
     BED_START = float(a.bed_start) if a.bed_start is not None else BED15
     BED_GAIN = float(a.bed_gain)
+    SFX_GAIN = float(a.sfx_gain)
     video, lang = Path(a.video), a.lang
     assert video.exists()
     tj = json.loads((HERE / "vo_invite" / f"{lang}_timings.json").read_text(encoding="utf-8"))
@@ -92,7 +95,7 @@ def main():
     assert rms_db(vox) > -45, "placed VO silent"
 
     graph = (
-        f"[0:a]aresample=48000,volume=-12dB[sfx];"
+        f"[0:a]aresample=48000,volume={SFX_GAIN:.1f}dB[sfx];"
         f"[1:a]aresample=48000,atrim={BED_START}:{BED_START + TOTAL},asetpts=PTS-STARTPTS,"
         f"volume={BED_GAIN}dB,equalizer=f=300:t=q:w=1:g=-4,equalizer=f=2500:t=q:w=1.5:g=-4,"
         f"afade=t=in:st=0:d=0.6,afade=t=out:st={TOTAL - 1.2}:d=1.2[bed];"
