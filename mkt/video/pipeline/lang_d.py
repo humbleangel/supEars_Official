@@ -28,7 +28,7 @@ LANG_D = {
         "speak_sub": "खुलकर बोलें! लिंक नीचे है।",
     },
     "ur": {
-        "voiceM": "ur-PK-AsadNeural", "voiceF": "ur-PK-GulNeural",
+        "voiceM": "ur-PK-AsadNeural", "voiceF": "ur-PK-UzmaNeural",
         "hook": "بگ دیکھا؟ کوئی آئیڈیا ہے؟ کمنٹ کریں!",
         "cta_full": "آپ کے الفاظ بناتے ہیں supEars",
         "cta_m": "آپ کے الفاظ بناتے ہیں،",

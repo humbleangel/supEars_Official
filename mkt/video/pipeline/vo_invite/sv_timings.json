@@ -1,0 +1,26 @@
+{
+  "hook": {
+    "file": "vo_invite/sv_hook.mp3",
+    "dur": 3.47
+  },
+  "cats": {
+    "file": "vo_invite/sv_cats.mp3",
+    "dur": 3.24
+  },
+  "how": {
+    "file": "vo_invite/sv_how.mp3",
+    "dur": 2.94
+  },
+  "testi": {
+    "file": "vo_invite/sv_testi.mp3",
+    "dur": 2.89
+  },
+  "cta": {
+    "file": "vo_invite/sv_cta.mp3",
+    "dur": 2.11
+  },
+  "open": {
+    "file": "vo_invite/pt_open.mp3",
+    "dur": 2.08
+  }
+}

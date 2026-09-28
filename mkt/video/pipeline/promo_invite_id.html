@@ -251,7 +251,7 @@ function grain(a) {
   x.restore();
 }
 
-const CATS = ['Bug', 'kritik', 'saran', 'pujian'];
+const CATS = ["Bug", "kritik", "saran", "pujian"];
 
 function draw(t) {
   x.setTransform(1, 0, 0, 1, 0, 0);
@@ -287,7 +287,7 @@ function draw(t) {
       if (t < 3.8) FX.whip(x, W, H, t, 3.2, 0.5, 1, '16,185,129');
       ringEar(t, W / 2, 480, 120, a);
       bubble(t, W / 2, 1000, 640, a, 3.5,
-        'Telinga ini menulis semua yang saya katakan!', '👍 1,2 mil · Responder',
+        "Telinga ini menulis semua yang saya katakan!", '👍 1,2 mil · Responder',
         3.6, 2.4, '', -1, 1184, 9, 3.6);
       /* stars perform one by one while Francisca speaks (testi VO 3.5-6.2) */
       x.save();
@@ -355,10 +355,10 @@ function draw(t) {
     if (a > 0.001) {
       ringEar(t, W / 2, 300, 85, a);
       bubble(t, W / 2, 620, 640, a, 13.9,
-        'Komentar Anda di sini!', '👍 0 · Responder', 14.1, 2.0, '', -1, 0, 0.5, 14.1);
-      kline('Tulis komentar Anda di bawah', W / 2, 1080, 72, t, 14.0, 3.0,
+        "Komentar Anda di sini!", '👍 0 · Responder', 14.1, 2.0, '', -1, 0, 0.5, 14.1);
+      kline("Tulis komentar Anda di bawah", W / 2, 1080, 72, t, 14.0, 3.0,
         { weight: 800, track: -1, rgb: TEXT, glow: EMERALD, extrude: 4 });
-      kline('', W / 2, 1200, 72, t, 14.7, 2.7,
+      kline("", W / 2, 1200, 72, t, 14.7, 2.7,
         { weight: 800, track: -1, rgb: GOLD_LT, extrude: 4, hold: 0.99 });
       strip(t, a);
     }
@@ -380,9 +380,9 @@ function draw(t) {
         x.restore();
       }
       ringEar(t, W / 2, 900, 190, e);
-      kline('Kata Anda membangun', W / 2, 860, 64, t, 17.6, 4.5,
+      kline("Kata Anda membangun", W / 2, 860, 64, t, 17.6, 4.5,
         { weight: 800, track: -1, rgb: TEXT, glow: EMERALD, extrude: 4, hold: 0.99 });
-      kline('supEars', W / 2, 990, 74, t, 18.1, 4.1,
+      kline("supEars", W / 2, 990, 74, t, 18.1, 4.1,
         { weight: 800, track: -1, rgb: GOLD_LT, glow: EMERALD, extrude: 5, hold: 0.99 });
       if (FLAGS['id']) {
         x.save(); x.globalAlpha = e;
@@ -390,7 +390,7 @@ function draw(t) {
         x.restore();
       }
       strip(t, e);
-      kline('Rilis · 10 Oktober 2026', W / 2, 1410, 34, t, 18.7, 3.5,
+      kline("Rilis · 10 Oktober 2026", W / 2, 1410, 34, t, 18.7, 3.5,
         { weight: 600, track: 1.2, rgb: GOLD_LT, hold: 0.99 });
     }
   }
@@ -408,7 +408,7 @@ function draw(t) {
       x.fillText('Speak freely. (Link in 1st comment)', W / 2, 1252);
       x.font = '600 44px "Segoe UI",system-ui,sans-serif';
       x.fillStyle = rgba(GOLD_LT, 1);
-      x.fillText('Bicara bebas! Tautan di bawah.', W / 2, 1316);
+      x.fillText("Bicara bebas! Tautan di bawah.", W / 2, 1316);
       x.restore();
     }
   }
