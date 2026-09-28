@@ -11,13 +11,14 @@
 <body>
 <canvas id="c" width="540" height="960"></canvas>
 <div class="off">
+  <img id="crest" src="assets30/crest.png">
   <img id="emblem" src="assets30/emblem.png">
   <img id="appicon" src="assets30/appicon.png">
 </div>
 <script src="ktype.js"></script>
 <script src="fx.js"></script>
 <script src="ring_invite_pt.js"></script>
-<script src="pt_words.js"></script>
+<script src="peaks_pt.js"></script>
 <script>
 {
 'use strict';
@@ -61,84 +62,56 @@ function kline(txt, cx, cy, size, t, t0, dur, opts = {}) {
   }
   ktype(x, txt, cx, cy, size, t, t0, dur, opts);
 }
-function ring(t, cx, cy, R, a, col) {
+/* our art as background: blurred once, cached, low opacity */
+let bgCache = null;
+function bgArt(a) {
   if (a <= 0.001) return;
-  const RD = window.RING_PT;
-  const F = RD ? clamp(Math.floor(t * 30), 0, RD.levels.length - 1) : -1;
-  const level = F >= 0 ? (RD.levels[F] || 0) : 0;
-  const speaking = level > 0.03;
-  const c2 = speaking ? REC : col;
-  const im = A('appicon');
-  x.save(); x.globalAlpha = a;
-  x.fillStyle = 'rgba(0,0,0,0.72)';
-  x.beginPath(); x.arc(cx, cy, R * 1.6, 0, TAU); x.fill();
+  const cr = A('crest');
+  /* build only once the art is decoded, else cache a blank forever */
+  if (!bgCache && cr.complete && cr.naturalWidth) {
+    const o = document.createElement('canvas');
+    o.width = 270; o.height = 480;
+    const c2 = o.getContext('2d');
+    c2.filter = 'blur(14px) brightness(0.55)';
+    c2.drawImage(A('crest'), 0, 0, 270, 480);
+    bgCache = o;
+  }
   x.save();
-  x.globalCompositeOperation = 'lighter';
-  const halo = x.createRadialGradient(cx, cy, R * 0.4, cx, cy, R * 2.0);
-  halo.addColorStop(0, rgba(c2, 0.30)); halo.addColorStop(1, rgba(c2, 0));
-  x.fillStyle = halo;
-  x.beginPath(); x.arc(cx, cy, R * 2.0, 0, TAU); x.fill();
-  x.restore();
-  if (im.naturalWidth) {
-    x.save(); x.filter = 'brightness(1.6)';
-    x.beginPath(); x.arc(cx, cy, R * 0.62, 0, TAU); x.clip();
-    x.drawImage(im, cx - R * 0.62, cy - R * 0.62, R * 1.24, R * 1.24);
-    x.restore();
-  }
-  /* living waveform: envelope ring breathes with the real VO */
-  if (F >= 0) {
-    const bands = RD.bands, off = F * 120;
-    x.save();
-    x.beginPath();
-    for (let i = 0; i <= 120; i++) {
-      const b = bands[off + (i % 120)] || 0;
-      const r = R * (1 + (b / 127) * 0.55);
-      const ang = (i / 120) * TAU - Math.PI / 2;
-      const px = cx + Math.cos(ang) * r, py = cy + Math.sin(ang) * r;
-      if (i === 0) x.moveTo(px, py); else x.lineTo(px, py);
-    }
-    x.closePath();
-    x.strokeStyle = rgba(c2, 0.9); x.lineWidth = 5;
-    x.shadowColor = rgba(c2, 0.8); x.shadowBlur = 22;
-    x.stroke();
-    x.restore();
-  }
-  x.beginPath(); x.arc(cx, cy, R * 1.22, 0, TAU);
-  x.strokeStyle = rgba(col, 0.35); x.lineWidth = 4;
-  x.stroke();
+  x.globalAlpha = a * 0.34;
+  x.drawImage(bgCache, 0, 0, W, H);
   x.restore();
 }
-/* flying icons, synced to word starts: pop at the ring, arc out, fade */
-const ICONS = { 'bug?': '🐛', 'Bug,': '🐛', 'ideia?': '💡', 'sugestão': '💡',
-  'Comenta': '💬', 'aqui!': '💬', 'comentário': '💬', 'aqui': '💬', 'embaixo.': '⬇',
-  'impressão,': '💭', 'crítica,': '⚠️', 'elogio.': '👏', 'palavra': '✍️',
-  'supEars.': '👂', 'constrói': '🔨' };
-const PLACE = { hook: 0.1, cats: 3.6, how: 8.0, cta: 12.0 };
-function flyIcons(t, cx, cy, a) {
-  if (a <= 0.001 || !window.PT_WORDS) return;
-  const FF = '"Segoe UI Emoji","Segoe UI",system-ui,sans-serif';
-  let k = 0;
-  for (const key of ['hook', 'cats', 'how', 'cta']) {
-    for (const w of window.PT_WORDS[key]) {
-      const em = ICONS[w.w];
-      if (!em) continue;
-      const ws = PLACE[key] + w.start, we = ws + w.dur + 0.5;
-      if (t < ws || t > we) { k++; continue; }
-      const p = (t - ws) / (we - ws);
-      const ang = -Math.PI / 2 + (k % 5 - 2) * 0.45;
-      const dist = 150 + p * 320;
-      const px = cx + Math.cos(ang) * dist, py = cy + Math.sin(ang) * dist - p * p * 120;
-      const pop = easeBack(clamp(p / 0.25, 0, 1));
-      x.save();
-      x.globalAlpha = a * clamp(pop, 0, 1) * (1 - smooth(0.6, 1, p));
-      x.translate(px, py); x.scale(Math.max(0.01, pop), Math.max(0.01, pop));
-      x.font = `96px ${FF}`;
-      x.textAlign = 'center'; x.textBaseline = 'middle';
-      x.fillText(em, 0, 0);
-      x.restore();
-      k++;
-    }
+/* the undeniable proof: the voice's OWN samples scrolling under a playhead */
+function strip(t, a) {
+  if (a <= 0.001 || !window.PEAKS_PT) return;
+  const P = window.PEAKS_PT, N = P.mn.length;
+  const yc = 1680, amp = 230;
+  x.save();
+  x.globalAlpha = a;
+  x.fillStyle = 'rgba(0,0,0,0.55)';
+  x.fillRect(40, yc - 300, W - 80, 600);
+  x.strokeStyle = rgba(EMERALD, 0.4); x.lineWidth = 2;
+  x.strokeRect(40, yc - 300, W - 80, 600);
+  const RD = window.RING_PT;
+  const F = RD ? clamp(Math.floor(t * 30), 0, RD.levels.length - 1) : -1;
+  const lvl = F >= 0 ? (RD.levels[F] || 0) : 0;
+  for (let dx = 48; dx < W - 48; dx += 4) {
+    const tt = t - 1.2 + (dx / W) * 1.7;
+    const idx = Math.floor(tt * 100);
+    if (idx < 0 || idx >= N) continue;
+    const past = tt <= t;
+    const heat = past ? 0.55 + 0.45 * clamp(lvl * 5, 0, 1) : 0.22;
+    x.strokeStyle = past ? rgba(EMERALD, heat) : rgba(MUTED, heat);
+    x.lineWidth = 3;
+    const y0 = yc - P.mx[idx] * amp, y1 = yc - P.mn[idx] * amp;
+    x.beginPath(); x.moveTo(dx, y0); x.lineTo(dx, Math.max(y0 + 2, y1)); x.stroke();
   }
+  const px = W * (1.2 / 1.7);
+  x.strokeStyle = rgba(REC, 0.95); x.lineWidth = 4;
+  x.shadowColor = rgba(REC, 0.9); x.shadowBlur = 16;
+  x.beginPath(); x.moveTo(px, yc - 300); x.lineTo(px, yc + 300); x.stroke();
+  x.shadowColor = 'transparent'; x.shadowBlur = 0;
+  x.restore();
 }
 function bubble(t, cx, cy, w, a) {
   if (a <= 0.001) return;
@@ -168,7 +141,7 @@ function grain(a) {
   x.restore();
 }
 
-const CATS = ['BUG', 'IMPRESSÃO', 'CRÍTICA', 'SUGESTÃO', 'ELOGIO'];
+const CATS = ['BUG', 'CRÍTICA', 'SUGESTÃO', 'ELOGIO'];
 
 function draw(t) {
   x.setTransform(1, 0, 0, 1, 0, 0);
@@ -176,35 +149,36 @@ function draw(t) {
   x.fillRect(0, 0, W, H);
   const S = c.width / 1080;
   x.setTransform(S, 0, 0, S, 0, 0);
-  const g0 = x.createLinearGradient(0, 0, 0, H);
-  g0.addColorStop(0, '#030806'); g0.addColorStop(0.55, '#05110D'); g0.addColorStop(1, '#020504');
-  x.fillStyle = g0; x.fillRect(0, 0, W, H);
+  bgArt(1.0);
+  /* readability veil over the art */
+  const veil = x.createLinearGradient(0, 0, 0, H);
+  veil.addColorStop(0, 'rgba(1,4,3,0.62)');
+  veil.addColorStop(0.55, 'rgba(1,4,3,0.45)');
+  veil.addColorStop(1, 'rgba(1,4,3,0.72)');
+  x.fillStyle = veil; x.fillRect(0, 0, W, H);
 
   /* 0-3.8 HOOK */
   if (t < 4.0) {
     const a = env(t, 0, 0.12, 4.0, 0.25);
     if (a > 0.001) {
       if (t < 0.6) FX.whip(x, W, H, t, 0.0, 0.5, 0, '231,76,60');
-      ring(t, W / 2, 560, 150, a, REC);
-      flyIcons(t, W / 2, 560, a);
-      kline('Achou um bug?', W / 2, 1050, 84, t, 0.1, 3.6,
+      kline('Achou um bug?', W / 2, 760, 92, t, 0.1, 3.6,
         { weight: 800, track: -2, rgb: TEXT, glow: REC, extrude: 4 });
-      kline('Tem uma ideia?', W / 2, 1170, 84, t, 0.9, 2.8,
+      kline('Tem uma ideia?', W / 2, 890, 92, t, 0.9, 2.8,
         { weight: 800, track: -2, rgb: TEXT, glow: REC, extrude: 4 });
-      kline('Comenta aqui!', W / 2, 1330, 96, t, 1.8, 1.9,
+      kline('Comenta aqui!', W / 2, 1060, 104, t, 1.8, 1.9,
         { weight: 800, track: -1, rgb: GOLD_LT, glow: REC, extrude: 4 });
+      strip(t, a);
     }
   }
-  /* 3.6-8.2 FIVE DOORS */
+  /* 3.6-8.2 FOUR DOORS */
   if (t >= 3.6 && t < 8.4) {
     const a = env(t, 3.6, 0.2, 8.4, 0.25);
     if (a > 0.001) {
-      ring(t, W / 2, 420, 110, a * 0.9, EMERALD);
-      flyIcons(t, W / 2, 420, a);
       CATS.forEach((ct, k) => {
-        const pop = easeBack(win(t, 3.8 + k * 0.5, 4.3 + k * 0.5));
+        const pop = easeBack(win(t, 3.8 + k * 0.55, 4.35 + k * 0.55));
         if (pop <= 0) return;
-        const cy = 800 + k * 170;
+        const cy = 700 + k * 200;
         x.save();
         x.globalAlpha = a * clamp(pop, 0, 1);
         x.translate(W / 2, cy); x.scale(Math.max(0.01, pop), Math.max(0.01, pop));
@@ -218,6 +192,7 @@ function draw(t) {
         x.fillText(ct, 0, 4);
         x.restore();
       });
+      strip(t, a);
     }
   }
   /* 8-11 HOW */
@@ -225,11 +200,11 @@ function draw(t) {
     const a = env(t, 8.0, 0.2, 11.4, 0.25);
     if (a > 0.001) {
       bubble(t, W / 2, 620, 640, a);
-      flyIcons(t, W / 2, 620, a);
       kline('Deixe seu comentário', W / 2, 1080, 72, t, 8.2, 3.0,
         { weight: 800, track: -1, rgb: TEXT, glow: EMERALD, extrude: 4 });
       kline('aqui embaixo ⬇', W / 2, 1200, 72, t, 8.9, 2.3,
         { weight: 800, track: -1, rgb: GOLD_LT, extrude: 4 });
+      strip(t, a);
     }
   }
   /* 11.5-15 CTA */
@@ -254,7 +229,6 @@ function draw(t) {
         x.drawImage(FLAGS.pt, W / 2 - 110, 880, 220, 143);
         x.restore();
       }
-      flyIcons(t, W / 2, 560, e);
       kline('Tua palavra constrói', W / 2, 1180, 68, t, 11.8, 3.0,
         { weight: 800, track: -1, rgb: TEXT, glow: EMERALD, extrude: 4 });
       kline('o supEars.', W / 2, 1290, 68, t, 12.4, 2.4,
