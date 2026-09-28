@@ -16,6 +16,8 @@
 </div>
 <script src="ktype.js"></script>
 <script src="fx.js"></script>
+<script src="ring_invite_pt.js"></script>
+<script src="pt_words.js"></script>
 <script>
 {
 'use strict';
@@ -61,15 +63,19 @@ function kline(txt, cx, cy, size, t, t0, dur, opts = {}) {
 }
 function ring(t, cx, cy, R, a, col) {
   if (a <= 0.001) return;
-  const pulse = 1 + 0.03 * Math.sin(t * 3);
+  const RD = window.RING_PT;
+  const F = RD ? clamp(Math.floor(t * 30), 0, RD.levels.length - 1) : -1;
+  const level = F >= 0 ? (RD.levels[F] || 0) : 0;
+  const speaking = level > 0.03;
+  const c2 = speaking ? REC : col;
   const im = A('appicon');
   x.save(); x.globalAlpha = a;
   x.fillStyle = 'rgba(0,0,0,0.72)';
-  x.beginPath(); x.arc(cx, cy, R * 1.6 * pulse, 0, TAU); x.fill();
+  x.beginPath(); x.arc(cx, cy, R * 1.6, 0, TAU); x.fill();
   x.save();
   x.globalCompositeOperation = 'lighter';
   const halo = x.createRadialGradient(cx, cy, R * 0.4, cx, cy, R * 2.0);
-  halo.addColorStop(0, rgba(col, 0.30)); halo.addColorStop(1, rgba(col, 0));
+  halo.addColorStop(0, rgba(c2, 0.30)); halo.addColorStop(1, rgba(c2, 0));
   x.fillStyle = halo;
   x.beginPath(); x.arc(cx, cy, R * 2.0, 0, TAU); x.fill();
   x.restore();
@@ -79,11 +85,60 @@ function ring(t, cx, cy, R, a, col) {
     x.drawImage(im, cx - R * 0.62, cy - R * 0.62, R * 1.24, R * 1.24);
     x.restore();
   }
-  x.beginPath(); x.arc(cx, cy, R * 1.22 * pulse, 0, TAU);
-  x.strokeStyle = rgba(col, 0.95); x.lineWidth = 7;
-  x.shadowColor = rgba(col, 0.8); x.shadowBlur = 30;
+  /* living waveform: envelope ring breathes with the real VO */
+  if (F >= 0) {
+    const bands = RD.bands, off = F * 120;
+    x.save();
+    x.beginPath();
+    for (let i = 0; i <= 120; i++) {
+      const b = bands[off + (i % 120)] || 0;
+      const r = R * (1 + (b / 127) * 0.55);
+      const ang = (i / 120) * TAU - Math.PI / 2;
+      const px = cx + Math.cos(ang) * r, py = cy + Math.sin(ang) * r;
+      if (i === 0) x.moveTo(px, py); else x.lineTo(px, py);
+    }
+    x.closePath();
+    x.strokeStyle = rgba(c2, 0.9); x.lineWidth = 5;
+    x.shadowColor = rgba(c2, 0.8); x.shadowBlur = 22;
+    x.stroke();
+    x.restore();
+  }
+  x.beginPath(); x.arc(cx, cy, R * 1.22, 0, TAU);
+  x.strokeStyle = rgba(col, 0.35); x.lineWidth = 4;
   x.stroke();
   x.restore();
+}
+/* flying icons, synced to word starts: pop at the ring, arc out, fade */
+const ICONS = { 'bug?': '🐛', 'Bug,': '🐛', 'ideia?': '💡', 'sugestão': '💡',
+  'Comenta': '💬', 'aqui!': '💬', 'comentário': '💬', 'aqui': '💬', 'embaixo.': '⬇',
+  'impressão,': '💭', 'crítica,': '⚠️', 'elogio.': '👏', 'palavra': '✍️',
+  'supEars.': '👂', 'constrói': '🔨' };
+const PLACE = { hook: 0.1, cats: 3.6, how: 8.0, cta: 12.0 };
+function flyIcons(t, cx, cy, a) {
+  if (a <= 0.001 || !window.PT_WORDS) return;
+  const FF = '"Segoe UI Emoji","Segoe UI",system-ui,sans-serif';
+  let k = 0;
+  for (const key of ['hook', 'cats', 'how', 'cta']) {
+    for (const w of window.PT_WORDS[key]) {
+      const em = ICONS[w.w];
+      if (!em) continue;
+      const ws = PLACE[key] + w.start, we = ws + w.dur + 0.5;
+      if (t < ws || t > we) { k++; continue; }
+      const p = (t - ws) / (we - ws);
+      const ang = -Math.PI / 2 + (k % 5 - 2) * 0.45;
+      const dist = 150 + p * 320;
+      const px = cx + Math.cos(ang) * dist, py = cy + Math.sin(ang) * dist - p * p * 120;
+      const pop = easeBack(clamp(p / 0.25, 0, 1));
+      x.save();
+      x.globalAlpha = a * clamp(pop, 0, 1) * (1 - smooth(0.6, 1, p));
+      x.translate(px, py); x.scale(Math.max(0.01, pop), Math.max(0.01, pop));
+      x.font = `96px ${FF}`;
+      x.textAlign = 'center'; x.textBaseline = 'middle';
+      x.fillText(em, 0, 0);
+      x.restore();
+      k++;
+    }
+  }
 }
 function bubble(t, cx, cy, w, a) {
   if (a <= 0.001) return;
@@ -131,6 +186,7 @@ function draw(t) {
     if (a > 0.001) {
       if (t < 0.6) FX.whip(x, W, H, t, 0.0, 0.5, 0, '231,76,60');
       ring(t, W / 2, 560, 150, a, REC);
+      flyIcons(t, W / 2, 560, a);
       kline('Achou um bug?', W / 2, 1050, 84, t, 0.1, 3.6,
         { weight: 800, track: -2, rgb: TEXT, glow: REC, extrude: 4 });
       kline('Tem uma ideia?', W / 2, 1170, 84, t, 0.9, 2.8,
@@ -144,6 +200,7 @@ function draw(t) {
     const a = env(t, 3.6, 0.2, 8.4, 0.25);
     if (a > 0.001) {
       ring(t, W / 2, 420, 110, a * 0.9, EMERALD);
+      flyIcons(t, W / 2, 420, a);
       CATS.forEach((ct, k) => {
         const pop = easeBack(win(t, 3.8 + k * 0.5, 4.3 + k * 0.5));
         if (pop <= 0) return;
@@ -168,6 +225,7 @@ function draw(t) {
     const a = env(t, 8.0, 0.2, 11.4, 0.25);
     if (a > 0.001) {
       bubble(t, W / 2, 620, 640, a);
+      flyIcons(t, W / 2, 620, a);
       kline('Deixe seu comentário', W / 2, 1080, 72, t, 8.2, 3.0,
         { weight: 800, track: -1, rgb: TEXT, glow: EMERALD, extrude: 4 });
       kline('aqui embaixo ⬇', W / 2, 1200, 72, t, 8.9, 2.3,
@@ -196,6 +254,7 @@ function draw(t) {
         x.drawImage(FLAGS.pt, W / 2 - 110, 880, 220, 143);
         x.restore();
       }
+      flyIcons(t, W / 2, 560, e);
       kline('Tua palavra constrói', W / 2, 1180, 68, t, 11.8, 3.0,
         { weight: 800, track: -1, rgb: TEXT, glow: EMERALD, extrude: 4 });
       kline('o supEars.', W / 2, 1290, 68, t, 12.4, 2.4,

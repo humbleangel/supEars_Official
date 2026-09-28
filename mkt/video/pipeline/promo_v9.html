@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; background: #000; }
+  canvas { display: block; }
+  .off { position: absolute; left: -99999px; }
+</style>
+</head>
+<body>
+<canvas id="c" width="960" height="540"></canvas>
+<div class="off">
+  <img id="emblem" src="assets30/emblem.png">
+  <img id="appicon" src="assets30/appicon.png">
+</div>
+<script src="ktype.js"></script>
+<script src="fx.js"></script>
+<script src="collage_cues.js"></script>
+<script>
+{
+'use strict';
+/* V9 from zero: one hero per beat, negative space, captions only while spoken. */
+const W = 1920, H = 1080;
+const c = document.getElementById('c');
+const x = c.getContext('2d');
+const A = id => document.getElementById(id);
+const TAU = Math.PI * 2;
+
+const EMERALD = [16, 185, 129], EMERALD_LT = [122, 240, 190];
+const REC = [231, 76, 60];
+const GOLD = [201, 162, 39], GOLD_LT = [231, 193, 90];
+const TEXT = [234, 242, 238], MUTED = [143, 167, 155];
+
+const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
+const ease = t => { t = clamp(t, 0, 1); return t * t * (3 - 2 * t); };
+const easeOut = t => 1 - Math.pow(1 - clamp(t, 0, 1), 3);
+const easeBack = t => { t = clamp(t, 0, 1); const k = 1.70158; return 1 + (k + 1) * Math.pow(t - 1, 3) + k * Math.pow(t - 1, 2); };
+const lerp = (a, b, t) => a + (b - a) * t;
+const smooth = (e0, e1, t) => ease((t - e0) / (e1 - e0));
+const win = (t, a, b) => clamp((t - a) / (b - a), 0, 1);
+const frac = v => v - Math.floor(v);
+const rgba = (rgb, a) => `rgba(${rgb[0]},${rgb[1]},${rgb[2]},${a})`;
+const env = (t, s0, fi, s1, fo) => smooth(s0, s0 + fi, t) * (1 - smooth(s1 - fo, s1, t));
+
+const FLAGS = {};
+function loadFlags() {
+  const names = ['pt','en','es','fr','de','it','ru','zh','ja','ko','nl','pl','tr','uk','hi','ar','id','vi','ro','el','sv','cs','hu','ur','th'];
+  return Promise.all(names.map(n => new Promise(res => {
+    if (typeof FLAG_B64 === 'undefined' || !FLAG_B64[n]) return res();
+    const im = new Image();
+    im.onload = () => { FLAGS[n] = im; res(); };
+    im.onerror = () => res();
+    im.src = 'data:image/png;base64,' + FLAG_B64[n];
+  })));
+}
+
+const LANGNAME = { pt:'Portuguese', en:'English', es:'Spanish', fr:'French', de:'German', it:'Italian', ru:'Russian', zh:'Chinese', ja:'Japanese', ko:'Korean', nl:'Dutch', pl:'Polish', tr:'Turkish', uk:'Ukrainian', hi:'Hindi', ar:'Arabic', id:'Indonesian', vi:'Vietnamese', ro:'Romanian', el:'Greek', sv:'Swedish', cs:'Czech', hu:'Hungarian', ur:'Urdu', th:'Thai' };
+const codeOf = lang => (lang || 'en').split('-')[0];
+const HITS = (window.COLLAGE && window.COLLAGE.hits) || [];
+const CAPTIONS = {
+  hook: 'Are you tired of paying subscriptions to talk?',
+  brand_F: 'supEars. The Ear that writes what it hears.',
+  privacy: '100% offline. No account. No cloud.',
+  how_F: 'Tap the ear. Speak. Read what it writes.',
+  cta2: 'supEars. Public release October tenth.'
+};
+const ANCHORS = (window.COLLAGE && window.COLLAGE.anchors) || [];
+const ANDUR = { hook: 2.42, brand_F: 4.13, privacy: 4.87, how_F: 5.14, cta2: 2.4 };
+
+function activeHit(t) {
+  for (const h of HITS) if (t >= h.start && t < h.start + h.dur) return h;
+  return null;
+}
+function activeAnchor(t) {
+  for (const a of ANCHORS) {
+    const d = ANDUR[a.id] || 3;
+    if (t >= a.start && t < a.start + d) return a;
+  }
+  return null;
+}
+/* caption pill: only while someone speaks */
+function caption(t, a) {
+  const an = activeAnchor(t);
+  const h = an ? null : activeHit(t);
+  const text = an ? CAPTIONS[an.id] : (h ? (LANGNAME[codeOf(h.lang)] || h.id) : null);
+  const code = an ? null : (h ? codeOf(h.lang) : null);
+  if (!text || a <= 0.001) return;
+  x.save();
+  x.globalAlpha = a;
+  x.font = '600 40px "Segoe UI",system-ui,sans-serif';
+  const tw = x.measureText(text).width;
+  const pw = tw + (code ? 104 : 64);
+  x.fillStyle = 'rgba(0,0,0,0.72)';
+  x.beginPath();
+  if (x.roundRect) x.roundRect(W / 2 - pw / 2, H - 158, pw, 72, 36); else x.rect(W / 2 - pw / 2, H - 158, pw, 72);
+  x.fill();
+  x.strokeStyle = rgba(EMERALD, 0.7); x.lineWidth = 2; x.stroke();
+  if (code && FLAGS[code]) x.drawImage(FLAGS[code], W / 2 - pw / 2 + 24, H - 142, 56, 38);
+  x.fillStyle = rgba(TEXT, 1);
+  x.textAlign = 'left'; x.textBaseline = 'middle';
+  x.fillText(text, W / 2 - tw / 2 + (code ? 28 : 0), H - 120);
+  x.restore();
+}
+/* kinetic line with a speed-smear during entry (pure f(t)) */
+function kline(txt, cx, cy, size, t, t0, dur, opts = {}) {
+  const hot = win(t, t0, t0 + 0.4);
+  if (t >= t0 && hot < 1) {
+    x.save(); x.globalAlpha = 0.20 * (1 - hot);
+    ktype(x, txt, cx - 30 * (1 - hot), cy, size, t, t0, dur, opts);
+    x.restore();
+  }
+  ktype(x, txt, cx, cy, size, t, t0, dur, opts);
+}
+/* tunnel: rays + approaching rings, nothing else */
+function tunnel(t, a) {
+  if (a <= 0.001) return;
+  const vx = W / 2 + Math.sin(t * 0.5) * 40, hy = H * 0.40;
+  x.save();
+  x.globalAlpha = a;
+  x.globalCompositeOperation = 'lighter';
+  for (let i = 0; i < 24; i++) {
+    const ang = (i / 24) * TAU + t * 0.06;
+    const dx = Math.cos(ang), dy = Math.sin(ang);
+    const g = x.createLinearGradient(vx, hy, vx + dx * 1400, hy + dy * 1400);
+    g.addColorStop(0, rgba(EMERALD, 0));
+    g.addColorStop(0.4, rgba(i % 4 === 0 ? GOLD : EMERALD, 0.4));
+    g.addColorStop(1, rgba(i % 4 === 0 ? GOLD_LT : EMERALD_LT, 0));
+    x.strokeStyle = g; x.lineWidth = 2;
+    x.beginPath(); x.moveTo(vx, hy); x.lineTo(vx + dx * 1400, hy + dy * 1400); x.stroke();
+  }
+  for (let i = 0; i < 14; i++) {
+    const z = frac(i / 14 + t * 0.55);
+    const y = hy + (H - hy) * Math.pow(z, 2.4);
+    x.strokeStyle = rgba(i % 3 === 0 ? GOLD : EMERALD, 0.08 + 0.5 * Math.pow(z, 1.5));
+    x.lineWidth = 1 + 5 * z * z;
+    x.beginPath();
+    x.ellipse(vx, hy, 60 + W * 0.75 * Math.pow(z, 2.2), Math.max(1, (y - hy) * 0.9), 0, 0, TAU);
+    x.stroke();
+  }
+  x.restore();
+}
+/* ear: dark disc guarantees contrast on ANY background, halo is additive */
+function ear(t, cx, cy, R, a) {
+  if (a <= 0.001) return;
+  const im = A('appicon');
+  const pulse = 1 + 0.02 * Math.sin(t * 2.4);
+  x.save();
+  x.globalAlpha = a;
+  x.fillStyle = 'rgba(0,0,0,0.72)';
+  x.beginPath(); x.arc(cx, cy, R * 1.55 * pulse, 0, TAU); x.fill();
+  x.save();
+  x.globalCompositeOperation = 'lighter';
+  const halo = x.createRadialGradient(cx, cy, R * 0.4, cx, cy, R * 1.9);
+  halo.addColorStop(0, rgba(EMERALD, 0.30));
+  halo.addColorStop(0.6, rgba(EMERALD, 0.10));
+  halo.addColorStop(1, rgba(EMERALD, 0));
+  x.fillStyle = halo;
+  x.beginPath(); x.arc(cx, cy, R * 1.9, 0, TAU); x.fill();
+  x.restore();
+  if (im.naturalWidth) {
+    x.save();
+    x.filter = 'brightness(1.6)';
+    x.translate(cx, cy); x.scale(pulse, pulse);
+    x.drawImage(im, -R, -R, R * 2, R * 2);
+    x.restore();
+  }
+  x.beginPath(); x.arc(cx, cy, R * 1.22, 0, TAU);
+  x.strokeStyle = rgba(REC, 0.95); x.lineWidth = 6;
+  x.shadowColor = rgba(REC, 0.8); x.shadowBlur = 30;
+  x.stroke();
+  x.restore();
+}
+function grain(a) {
+  x.save(); x.globalAlpha = a;
+  let s = 7;
+  const r = () => { s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; };
+  for (let i = 0; i < 500; i++) x.fillStyle = r() > 0.5 ? '#fff' : '#000', x.fillRect((r() * W) | 0, (r() * H) | 0, 2, 2);
+  x.restore();
+}
+
+function draw(t) {
+  x.setTransform(1, 0, 0, 1, 0, 0);
+  x.fillStyle = '#000';
+  x.fillRect(0, 0, W, H);
+  x.setTransform(0.5, 0, 0, 0.5, 0, 0);
+  const g0 = x.createLinearGradient(0, 0, 0, H);
+  g0.addColorStop(0, '#030806'); g0.addColorStop(0.55, '#05110D'); g0.addColorStop(1, '#020504');
+  x.fillStyle = g0; x.fillRect(0, 0, W, H);
+
+  /* 0-3 HOOK: black, red pulse, one line at a time */
+  if (t < 3.2) {
+    const a = env(t, 0, 0.12, 3.2, 0.25);
+    if (a > 0.001) {
+      if (t < 0.6) FX.whip(x, W, H, t, 0.0, 0.5, 0, '231,76,60');
+      const vg = x.createRadialGradient(W / 2, H / 2, 100, W / 2, H / 2, 900);
+      vg.addColorStop(0, `rgba(231,76,60,${0.16 * a * (0.7 + 0.3 * Math.sin(t * 5))})`);
+      vg.addColorStop(1, 'rgba(231,76,60,0)');
+      x.fillStyle = vg; x.fillRect(0, 0, W, H);
+      kline('Are you tired', W / 2, H / 2 - 120, 96, t, 0.05, 3.0,
+        { weight: 800, track: -2, rgb: TEXT, glow: REC, extrude: 4 });
+      kline('of paying to talk?', W / 2, H / 2 + 20, 96, t, 0.8, 2.2,
+        { weight: 800, track: -2, rgb: TEXT, glow: REC, extrude: 4 });
+      caption(t, a);
+    }
+  }
+  /* 3-6 CRY: gold card, one slam */
+  if (t >= 3.0 && t < 6.2) {
+    const a = env(t, 3.0, 0.1, 6.2, 0.2);
+    if (a > 0.001) {
+      const slam = easeBack(win(t, 3.05, 3.6));
+      const shake = t < 4.2 ? Math.sin((t - 3.05) * 40) * 14 * Math.exp(-3 * (t - 3.05)) : 0;
+      x.save();
+      x.globalAlpha = a;
+      x.translate(W / 2 + shake, H / 2);
+      const s = 1.25 - 0.25 * slam;
+      x.scale(s, s);
+      x.translate(-W / 2, -H / 2);
+      const gg = x.createLinearGradient(0, 0, W, H);
+      gg.addColorStop(0, '#F0CE6B'); gg.addColorStop(0.5, '#C9A227'); gg.addColorStop(1, '#7A5F1C');
+      x.fillStyle = gg; x.fillRect(0, 0, W, H);
+      x.restore();
+      kline('Escape the Subscriptions Trap.', W / 2 + shake, H / 2, 76, t, 3.15, 2.9,
+        { weight: 800, track: -2, rgb: [10, 13, 11] });
+      caption(t, a);
+    }
+  }
+  /* 6-12 TUNNEL: grid flies, ear dives, captions speak */
+  if (t >= 6.0 && t < 12.2) {
+    const a = env(t, 6.0, 0.2, 12.2, 0.3);
+    if (a > 0.001) {
+      if (t < 6.6) FX.whip(x, W, H, t, 6.0, 0.5, 1, '16,185,129');
+      tunnel(t - 6.0, a);
+      const dive = easeOut(win(t, 6.2, 11.5));
+      ear(t, W / 2, lerp(H / 2 - 260, H / 2 - 40, dive), lerp(90, 210, dive), a);
+      caption(t, a);
+    }
+  }
+  /* 12-18 LANGUAGES: ear left, ONE language flashing big right, synced to voice */
+  if (t >= 12.0 && t < 18.4) {
+    const a = env(t, 12.0, 0.25, 18.4, 0.3);
+    if (a > 0.001) {
+      ear(t, 470, H / 2 - 40, 240, a);
+      const h = activeHit(t);
+      if (h) {
+        const pop = easeBack(win(t, h.start, h.start + 0.35));
+        const fade = 1 - smooth(h.start + h.dur - 0.25, h.start + h.dur, t);
+        const cd = codeOf(h.lang);
+        x.save();
+        x.globalAlpha = a * clamp(pop, 0, 1) * fade;
+        x.translate(1300, H / 2 - 40); x.scale(pop, pop);
+        x.font = '800 110px "Segoe UI",system-ui,sans-serif';
+        x.textAlign = 'center'; x.textBaseline = 'middle';
+        x.shadowColor = rgba(EMERALD, 0.7); x.shadowBlur = 40;
+        x.fillStyle = rgba(TEXT, 1);
+        x.fillText(LANGNAME[cd] || h.id, 0, -60);
+        if (FLAGS[cd]) x.drawImage(FLAGS[cd], -110, 30, 220, 143);
+        x.restore();
+      }
+      caption(t, a);
+    }
+  }
+  /* 18-23 PRIVACY: headline + subline + flags, slow push keeps it alive */
+  if (t >= 18.2 && t < 23.4) {
+    const a = env(t, 18.2, 0.3, 23.4, 0.3);
+    if (a > 0.001) {
+      const push = 1 + 0.035 * win(t, 18.2, 23.4);
+      x.save();
+      x.globalAlpha = a;
+      x.translate(W / 2, H / 2); x.scale(push, push); x.translate(-W / 2, -H / 2);
+      kline('100% offline.', W / 2, H / 2 - 120, 120, t, 18.35, 4.8,
+        { weight: 800, track: -2, rgb: TEXT, glow: EMERALD, extrude: 5 });
+      kline('No account. No cloud.', W / 2, H / 2 + 60, 52, t, 19.3, 3.9,
+        { weight: 600, track: 0.6, rgb: MUTED });
+      const codes = ['pt', 'es', 'de', 'ja', 'fr', 'it'];
+      codes.forEach((cd, k) => {
+        const f = FLAGS[cd];
+        if (!f) return;
+        const pop = easeBack(win(t, 19.6 + k * 0.18, 20.1 + k * 0.18));
+        x.save(); x.globalAlpha = clamp(pop, 0, 1);
+        x.translate(W / 2 + (k - 2.5) * 150, H / 2 + 230); x.scale(Math.max(0.01, pop), Math.max(0.01, pop));
+        x.fillStyle = 'rgba(0,0,0,0.6)';
+        x.fillRect(-62, -30, 124, 78);
+        x.drawImage(f, -46, -21, 92, 60);
+        x.restore();
+      });
+      x.restore();
+      caption(t, a);
+    }
+  }
+  /* 23-27 HOW: three staggered cards */
+  if (t >= 23.2 && t < 27.2) {
+    const a = env(t, 23.2, 0.2, 27.2, 0.25);
+    if (a > 0.001) {
+      const cards = [['1', 'TAP THE EAR'], ['2', 'SPEAK'], ['3', 'READ WHAT IT WRITES']];
+      cards.forEach((cd, k) => {
+        const pop = easeBack(win(t, 23.35 + k * 0.55, 23.85 + k * 0.55));
+        if (pop <= 0) return;
+        x.save();
+        x.globalAlpha = a * clamp(pop, 0, 1);
+        x.translate(W / 2, H / 2 - 180 + k * 180); x.scale(Math.max(0.01, pop), Math.max(0.01, pop));
+        x.fillStyle = 'rgba(2,8,6,0.92)';
+        x.fillRect(-520, -70, 1040, 140);
+        x.strokeStyle = rgba(k === 1 ? GOLD : EMERALD, 0.8); x.lineWidth = 3;
+        x.strokeRect(-520, -70, 1040, 140);
+        x.font = '800 64px "Segoe UI",system-ui,sans-serif';
+        x.textAlign = 'center'; x.textBaseline = 'middle';
+        x.fillStyle = rgba(k === 1 ? GOLD : EMERALD, 1);
+        x.fillText(cd[0], -430, 4);
+        x.font = '800 58px "Segoe UI",system-ui,sans-serif';
+        x.fillStyle = rgba(TEXT, 1);
+        x.fillText(cd[1], 60, 4);
+        x.restore();
+      });
+      caption(t, a);
+    }
+  }
+  /* 27-30 END: emblem + name + date + credit */
+  if (t >= 27.0) {
+    const e = env(t, 27.0, 0.35, 30.0, 0.0);
+    if (e > 0.001) {
+      x.save(); x.globalAlpha = e;
+      x.fillStyle = 'rgba(1,3,2,0.94)';
+      x.fillRect(0, 0, W, H);
+      x.restore();
+      const em = A('emblem');
+      if (em.naturalWidth) {
+        x.save(); x.globalAlpha = e;
+        x.translate(W / 2, H / 2 - 130);
+        x.drawImage(em, -em.naturalWidth / 2, -em.naturalHeight / 2, em.naturalWidth, em.naturalHeight);
+        x.restore();
+      }
+      kline('supEars', W / 2, H / 2 + 230, 96, t, 27.3, 2.6,
+        { weight: 800, track: 2, rgb: TEXT, glow: EMERALD, extrude: 5 });
+      kline('Public release · October 10, 2026', W / 2, H / 2 + 318, 32, t, 27.6, 2.3,
+        { weight: 600, track: 1.4, rgb: GOLD_LT });
+      kline('Developed by HumbleAngel', W / 2, H / 2 + 366, 24, t, 27.9, 2.0,
+        { weight: 500, track: 0.8, rgb: MUTED });
+    }
+  }
+
+  grain(0.03);
+  x.setTransform(1, 0, 0, 1, 0, 0);
+}
+
+window.__draw = draw;
+window.__ready = loadFlags();
+}
+</script>
+</body>
+</html>

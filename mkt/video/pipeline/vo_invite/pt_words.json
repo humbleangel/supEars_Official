@@ -1,0 +1,130 @@
+{
+ "hook": [
+  {
+   "w": "Achou",
+   "start": 0.05,
+   "dur": 0.464
+  },
+  {
+   "w": "um",
+   "start": 0.514,
+   "dur": 0.186
+  },
+  {
+   "w": "bug?",
+   "start": 0.7,
+   "dur": 0.371
+  },
+  {
+   "w": "Tem",
+   "start": 1.071,
+   "dur": 0.279
+  },
+  {
+   "w": "uma",
+   "start": 1.35,
+   "dur": 0.279
+  },
+  {
+   "w": "ideia?",
+   "start": 1.629,
+   "dur": 0.557
+  },
+  {
+   "w": "Comenta",
+   "start": 2.186,
+   "dur": 0.65
+  },
+  {
+   "w": "aqui!",
+   "start": 2.836,
+   "dur": 0.464
+  }
+ ],
+ "cats": [
+  {
+   "w": "Bug,",
+   "start": 0.05,
+   "dur": 0.388
+  },
+  {
+   "w": "impressão,",
+   "start": 0.438,
+   "dur": 0.969
+  },
+  {
+   "w": "crítica,",
+   "start": 1.407,
+   "dur": 0.775
+  },
+  {
+   "w": "sugestão",
+   "start": 2.182,
+   "dur": 0.775
+  },
+  {
+   "w": "ou",
+   "start": 2.958,
+   "dur": 0.194
+  },
+  {
+   "w": "elogio.",
+   "start": 3.152,
+   "dur": 0.678
+  }
+ ],
+ "how": [
+  {
+   "w": "Deixe",
+   "start": 0.05,
+   "dur": 0.42
+  },
+  {
+   "w": "seu",
+   "start": 0.47,
+   "dur": 0.252
+  },
+  {
+   "w": "comentário",
+   "start": 0.722,
+   "dur": 0.84
+  },
+  {
+   "w": "aqui",
+   "start": 1.562,
+   "dur": 0.336
+  },
+  {
+   "w": "embaixo.",
+   "start": 1.898,
+   "dur": 0.672
+  }
+ ],
+ "cta": [
+  {
+   "w": "Tua",
+   "start": 0.05,
+   "dur": 0.284
+  },
+  {
+   "w": "palavra",
+   "start": 0.334,
+   "dur": 0.664
+  },
+  {
+   "w": "constrói",
+   "start": 0.998,
+   "dur": 0.759
+  },
+  {
+   "w": "o",
+   "start": 1.757,
+   "dur": 0.095
+  },
+  {
+   "w": "supEars.",
+   "start": 1.851,
+   "dur": 0.759
+  }
+ ]
+}
