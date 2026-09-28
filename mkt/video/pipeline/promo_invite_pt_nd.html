@@ -412,8 +412,8 @@ function draw(t) {
         x.drawImage(FLAGS.pt, W / 2 - 65, 1257, 130, 85);
         x.restore();
       }
-      /* strip slides down and away as DOWNLOAD NOW! arrives */
-      strip(t, e, 340 * smooth(18.8, 20.2, t));
+      /* strip slides down and fully out before DOWNLOAD NOW! arrives */
+      strip(t, e, 600 * smooth(17.6, 18.8, t));
       kline('Estreia · 10 de outubro de 2026', W / 2, 1410, 34, t, 18.7, 3.5,
         { weight: 600, track: 1.2, rgb: GOLD_LT, hold: 0.99 });
       /* universal CTA: always English, never translated */
