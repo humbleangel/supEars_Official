@@ -179,6 +179,7 @@ function strip(t, a) {
   x.shadowColor = 'transparent'; x.shadowBlur = 0;
   x.restore();
 }
+/* sample fan comment: the action demonstrated, with social proof */
 function bubble(t, cx, cy, w, a) {
   if (a <= 0.001) return;
   const pop = easeBack(win(t, 11.1, 11.6));
@@ -188,15 +189,24 @@ function bubble(t, cx, cy, w, a) {
   x.fillStyle = 'rgba(6,14,11,0.95)';
   x.strokeStyle = rgba(EMERALD, 0.9); x.lineWidth = 4;
   x.beginPath();
-  if (x.roundRect) x.roundRect(-w / 2, -110, w, 220, 44); else x.rect(-w / 2, -110, w, 220);
+  if (x.roundRect) x.roundRect(-w / 2, -130, w, 260, 44); else x.rect(-w / 2, -130, w, 260);
   x.fill(); x.stroke();
-  x.beginPath();
-  x.moveTo(-60, 110); x.lineTo(-30, 170); x.lineTo(10, 110); x.closePath();
-  x.fillStyle = 'rgba(6,14,11,0.95)'; x.fill();
+  x.fillStyle = rgba(EMERALD, 1);
+  x.beginPath(); x.arc(-w / 2 + 90, -50, 44, 0, TAU); x.fill();
+  x.fillStyle = 'rgba(2,8,6,1)';
+  x.font = '800 52px "Segoe UI",system-ui,sans-serif';
+  x.textAlign = 'center'; x.textBaseline = 'middle';
+  x.fillText('M', -w / 2 + 90, -46);
+  x.textAlign = 'left';
   x.fillStyle = rgba(TEXT, 1);
-  for (let i = 0; i < 3; i++) {
-    x.beginPath(); x.arc(-60 + i * 60, 0, 22, 0, TAU); x.fill();
-  }
+  x.font = '700 34px "Segoe UI",system-ui,sans-serif';
+  x.fillText('@maria.ouve', -w / 2 + 156, -72);
+  x.fillStyle = rgba(MUTED, 1);
+  x.font = '400 32px "Segoe UI",system-ui,sans-serif';
+  x.fillText('Esse ouvido escreve tudo!', -w / 2 + 40, 10);
+  x.fillStyle = rgba(GOLD_LT, 1);
+  x.font = '600 30px "Segoe UI",system-ui,sans-serif';
+  x.fillText('👍 1,2 mil · Responder', -w / 2 + 40, 72);
   x.restore();
 }
 function grain(a) {

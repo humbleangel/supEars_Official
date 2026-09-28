@@ -303,6 +303,10 @@ def _render_slice(job):
         page.evaluate("() => { const cv = document.getElementById('c');"
                       " cv.width = window.innerWidth; cv.height = window.innerHeight; }")
         page.evaluate("window.__ready")
+        if page.evaluate("typeof window.__draw") != "function":
+            err = page.evaluate("() => (window.__lastError || 'parse error')")
+            raise SystemExit(f"spine JS broken (__draw missing): {err}\n"
+                             f"capture with: page.on('pageerror') to see the syntax error")
         for i in range(start, end):
             page.evaluate("t => window.__draw(t)", i / fps)
             page.screenshot(path=str(Path(frames_dir) / f"{i:05d}.png"))
@@ -366,6 +370,8 @@ def main() -> int:
             page.evaluate("() => { const cv = document.getElementById('c');"
                           " cv.width = window.innerWidth; cv.height = window.innerHeight; }")
             page.evaluate("window.__ready")
+            if page.evaluate("typeof window.__draw") != "function":
+                raise SystemExit("spine JS broken (__draw missing) — check pageerror for syntax error")
             for i, t in enumerate(times):
                 page.evaluate("t => window.__draw(t)", t)
                 dest = outdir / f"still_{i:02d}_{t:.2f}s.png"
