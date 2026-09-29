@@ -24,6 +24,7 @@
 ## Other platforms — pending creation (tickets 02–09)
 
 - Approved channels, none created yet: X, TikTok, Facebook Page, Instagram (+Threads park), Telegram channel, WhatsApp Channel, Kwai, and **Pinterest business** (owner approved adding, 2026-09-25 12:10 UTC).
+- [x] **Instagram** — LIVE (owner, 2026-09-29 UTC): handle `supears.app`, https://www.instagram.com/supears.app under hub `supears.app@gmail.com`. Bio/link + Threads park pending.
 - Creation guide + links: `mkt/research/2026-09-25-1203-UTC-account-creation-links.md`; tickets: `.scratch/account-creation/issues/`.
 - As each handle is created it gets its own section above with URL + date. Alt-account policy (`2026-09-15-0250-UTC-alt-accounts-policy.md`) applies.
 
