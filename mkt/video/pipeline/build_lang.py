@@ -54,13 +54,16 @@ async def build_voices(lid):
     durs = {}
     durs["hook"] = await gen_voice(lid, "hook", t["hook"], t["voiceM"], SLOTS["hook"])
     durs["cats"] = await gen_voice(lid, "cats", t["cats"], t["voiceM"], SLOTS["cats"])
-    durs["how"] = await gen_voice(lid, "how", t["how"], t["voiceM"], SLOTS["how"])
+    durs["how"] = await gen_voice(lid, "how", t["how"].replace("|", " "), t["voiceM"], SLOTS["how"])
     durs["testi"] = await gen_voice(lid, "testi", t["testi"], t["voiceF"], SLOTS["testi"])
     durs["cta_m"] = await gen_voice(lid, "cta_m", t["cta_m"], t["voiceM"], SLOTS["cta_m"])
     return durs
 
 
 def split_how(s):
+    if "|" in s:  # explicit two-line split for long openers (fr/it/el/hi)
+        a, b = s.split("|", 1)
+        return a.strip(), b.strip()
     parts = split_sentences(s)
     if len(parts) >= 2:
         return parts[0], " ".join(parts[1:])
