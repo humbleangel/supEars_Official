@@ -8,22 +8,6 @@
 Speak in your own native language.<br/>
 supEars translates and transcribes for you.
 
-**Public release: October 10, 2026.**
-
-Escape the Big Tech Corps Subscriptions Traps.<br/>
-100% Offline Transcription. No Credit Card. No Account. No Cloud. No money to MegaCorps.<br/>
-Windows. Mac and Linux are under development.
-
-[YouTube @supEars](https://www.youtube.com/channel/UCznNnUBltWG8lrSXC39e5lw) · [Reddit u/humbleangel](https://www.reddit.com/user/humbleangel)
-
-</div>
-
-- Speak in your language; supEars write in English or in any of the 26 supported languages.
-- Runs on any Desktop or Notebook (even without Graphics Card).
-- Free forever (14 days unlimited use/limited use per day after it/free weeks kindly gifted by the dev, HumbleAngel).
-  50% discount Lifetime License for the first 1000 users. ~US$ 4.99 / 1 month · ~US$ 14.99 / 6 months
-- No subscriptions, no auto-renewal, ever.
-
 <p align="center">
   <img src="mkt/video/flags/ae.png" height="20" alt="ae"/>
   <img src="mkt/video/flags/al.png" height="20" alt="al"/>
@@ -106,6 +90,22 @@ Windows. Mac and Linux are under development.
   <img src="mkt/video/flags/va.png" height="20" alt="va"/>
   <img src="mkt/video/flags/vn.png" height="20" alt="vn"/>
 </p>
+
+**Public release: October 10, 2026.**
+
+Escape the Big Tech Corps Subscriptions Traps.<br/>
+100% Offline Transcription. No Credit Card. No Account. No Cloud. No money to MegaCorps.<br/>
+Windows. Mac and Linux are under development.
+
+[YouTube @supEars](https://www.youtube.com/channel/UCznNnUBltWG8lrSXC39e5lw) · [Reddit u/humbleangel](https://www.reddit.com/user/humbleangel)
+
+</div>
+
+- Speak in your language; supEars write in English or in any of the 26 supported languages.
+- Runs on any Desktop or Notebook (even without Graphics Card).
+- Free forever (14 days unlimited use/limited use per day after it/free weeks kindly gifted by the dev, HumbleAngel).
+  50% discount Lifetime License for the first 1000 users. ~US$ 4.99 / 1 month · ~US$ 14.99 / 6 months
+- No subscriptions, no auto-renewal, ever.
 
 ## Roadmap
 
