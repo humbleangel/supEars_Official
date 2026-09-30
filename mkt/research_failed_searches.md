@@ -86,3 +86,4 @@ Do NOT redo — fix manually or accept. Concise log of what subagents failed.
 73. MY swarm: British Council Malaysia email (site unreachable); named persons EMS/Britannia/ELS/BC MY.
 74. PH swarm: ENTIRE batch 429 — CPILS, CG, Philinter, CIA, EV, Cebu Languages + verifications — RETRY SOLO.
 75. Solo PH retry 2026-09-30: 429 again — PENDING BACKOFF.
+76. MY+SG catch-up (playbook sheets + SG leads + schedule slots): search backend 429 — PENDING BACKOFF, do not fabricate stats.
