@@ -20,7 +20,8 @@ Windows. Mac and Linux are under development.
 
 - Speak in your language; supEars write in English or in any of the 26 supported languages.
 - Runs on any Desktop or Notebook (even without Graphics Card).
-- Free forever (14 days unlimited use). 50% discount Lifetime License for the first 1000 users. ~US$ 4.99 / 1 month · ~US$ 14.99 / 6 months
+- Free forever (14 days unlimited use/limited use per day after it/free weeks kindly gifted by the dev, HumbleAngel).
+  50% discount Lifetime License for the first 1000 users. ~US$ 4.99 / 1 month · ~US$ 14.99 / 6 months
 - No subscriptions, no auto-renewal, ever.
 
 <p align="center">
