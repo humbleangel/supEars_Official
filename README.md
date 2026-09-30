@@ -6,23 +6,21 @@
 
 **[Download the latest release.](https://github.com/humbleangel/supEars_Official/releases/latest)**<br/>
 Speak in your own native language.<br/>
-supEars translates and transcribes pasting where you are.
+supEars translates and transcribes for you.
 
-**Public release: October 10, 2026. [Join the beta group.](https://github.com/humbleangel/supEars_Official/issues)**
+**Public release: October 10, 2026.**
 
 Escape the Big Tech Corps Subscriptions Traps.<br/>
 100% Offline Transcription. No Credit Card. No Account. No Cloud. No money to MegaCorps.<br/>
-Windows only now. Mac and Linux versions planned and under development.
+Windows. Mac and Linux are under development.
 
 [YouTube @supEars](https://www.youtube.com/channel/UCznNnUBltWG8lrSXC39e5lw) · [Reddit u/humbleangel](https://www.reddit.com/user/humbleangel)
 
 </div>
 
 - Speak in your language; supEars write in English or in any of the 26 supported languages.
-- Runs on CPUs from ~2013 on (64-bit Windows with AVX2). No graphics card required.
-- Free for 14 days of unlimited use; founder pricing for early adopters.
-- ~US$ 4.99 / 1 month · ~US$ 14.99 / 6 months · ~US$ 49.99 lifetime license
-- ~US$ 24.48 lifetime license only to early adopters (only to the first 1,000 users).
+- Runs on any Desktop or Notebook (even without Graphics Card).
+- Free forever (14 days unlimited use). 50% discount Lifetime License for the first 1000 users. ~US$ 4.99 / 1 month · ~US$ 14.99 / 6 months
 - No subscriptions, no auto-renewal, ever.
 
 <p align="center">
@@ -108,14 +106,9 @@ Windows only now. Mac and Linux versions planned and under development.
   <img src="mkt/video/flags/vn.png" height="20" alt="vn"/>
 </p>
 
-## This repo is
-
-The public marketing and storefront home — landing pages, videos, demand research, channel register, feedbacks. The product code lives in a private repo. Downloads: [the latest release](https://github.com/humbleangel/supEars_Official/releases).
-
 ## Roadmap
 
-- Mac + Linux builds
-- GPU/Cloud Options
-- Public downloads: beta releases live now
+Quality improvements/bug fixes
+Mac/Linux
 
 supEars (c) · Developed by HumbleAngel 👼
