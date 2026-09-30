@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="mkt/assets/supEarsLogoV3.png" alt="supEars logo"/>
+  <img src="mkt/assets/supEarsLogoV4.jpg" alt="supEars logo"/>
 </p>
 
 <div align="center">
@@ -109,7 +109,7 @@ Windows. Mac and Linux are under development.
 
 ## Roadmap
 
-Quality improvements/bug fixes
-Mac/Linux
+- Quality improvements/bug fixes
+- Mac/Linux
 
 supEars (c) · Developed by HumbleAngel 👼
