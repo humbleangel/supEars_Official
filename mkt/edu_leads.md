@@ -30,7 +30,7 @@ marta.herrero@colegios3a.com | Marta Herrero — Directora de Idiomas e Internac
 direccion@colegio-alameda.com | César Prieto — Director del Colegio | Alameda International School (Madrid)
 gonzalo.redondo@colegio-arcangel.com | Gonzalo Redondo — Director Actividades Extraescolares | Colegio Arcángel (Madrid)
 jginjaume@stpeters.es | Jordi Ginjaume — Director / CEO | St Peter's School Barcelona
-alacarte@stpeters.es | Agustina Lacarte — Head of Primary / PYP Coordinator | St Peter's School Barcelona
+alacarte@stpeters.es | Agustina Lacarte — EXTERNAL now, verify before use (was Head of Primary St Peter's; current Head of PYP: Róisín Barbeito) | St Peter's School Barcelona [STALE]
 lourdes@stpeters.es | Lourdes Barceló — Head of Education | St Peter's School Barcelona
 
 ## MEXICO
@@ -73,7 +73,7 @@ reception@icsparis.fr | Geert Simons — Head of School | ICS International Scho
 jobs@isparis.net | Stéphanie Gilbert — Human Resources Director | International School of Paris
 
 ## GERMANY
-manuela.beck@goethe.de | Dr. Manuela Beck — Institutsleitung | Goethe-Institut Berlin
+katja.kessing@goethe.de | Katja Kessing — Institutsleitung | Goethe-Institut Berlin [UPDATED]
 simone.jore@goethe.de | Simone Jore — Leitung Sprachkurse und Prüfungen | Goethe-Institut Berlin
 imke.mohr@goethe.de | Dr. Imke Mohr — Regionalleiterin Deutschland | Goethe-Institut München
 anke.kleinschmidt@goethe.de | Anke Kleinschmidt — Institutsleitung | Goethe-Institut Göttingen
@@ -214,7 +214,7 @@ lsunity@mail.ru | Anna Spasibukhova — Founder / Head | Unity Language School N
 
 ## UKRAINE
 kyiv@qsi.org | Luke Woodruff — School Director | Kyiv International School
-rachelc@psi.kiev.ua | Rachel Caldwell — Director | Pechersk School International Kyiv
+rachelc@psi.kiev.ua | Trae Holland — Director (email unconfirmed, verify) | Pechersk School International Kyiv [STALE]
 andreww@psi.kyiv.ua | Andrew Weston — Director of Learning & Teaching | Pechersk School International Kyiv
 info@britishschool.ua | Robert Ford — Principal | British International School Ukraine
 info.dn@britishschool.ua | Anton Zastavnyi — CEO | British International School Ukraine
@@ -312,47 +312,202 @@ admissions@jisedu.or.id | Maya Nelson — Head of School | Jakarta Intercultural
 info.school@binus.edu | Isaac Koh — Principal, BINUS SCHOOL Simprug | BINUS SCHOOL Simprug
 mail@ccsbali.com | Ben Voborsky — Headmaster | Canggu Community School Bali
 rreilly@baliis.net | Richard Reilly — Head of School | Bali Island School
-admin@sis.sch.id | Matthew Gaetano — Head of School | Surabaya Intercultural School
+admin@sis.sch.id | Head of School — RECHECK (Matthew Gaetano left 2019) | Surabaya Intercultural School [STALE]
 
 ## EGYPT
-director.6oct@els-egypt.com | Dalia Khalil — School Director | Egyptian Language School 6th October
-clt.cairo@gmail.com | Prof. Manar Abd El Moez Afifi — Center Director | Cairo University Center for Languages Translation
-mahmoud.saad@acic.edu.eg | Eng. Mahmoud Saad — Chairman | ACIC American School New Cairo
-Lobna@acic.edu.eg | Ms. Lobna Abd El Aziz — Middle & High Director | ACIC American School New Cairo
-kg.director@acic.edu.eg | Ms. Olga Soliman — KG Director | ACIC American School New Cairo
-registrar@cacegypt.org | Danya Amin — Director of Admissions and Registrar | Cairo American College
-support@cacegypt.org | Dr. Jared Harris — Head of School / Superintendent | Cairo American College
+director.6oct@els-egypt.com | Dalia Khalil — School Director | Egyptian Language School 6th October [UNVERIFIED — recheck]
+clt.cairo@gmail.com | Prof. Manar Abd El Moez Afifi — Center Director | Cairo University Center for Languages Translation [UNVERIFIED — recheck]
+mahmoud.saad@acic.edu.eg | Eng. Mahmoud Saad — Chairman | ACIC American School New Cairo [UNVERIFIED — recheck]
+Lobna@acic.edu.eg | Ms. Lobna Abd El Aziz — Middle & High Director | ACIC American School New Cairo [UNVERIFIED — recheck]
+kg.director@acic.edu.eg | Ms. Olga Soliman — KG Director | ACIC American School New Cairo [UNVERIFIED — recheck]
+registrar@cacegypt.org | Danya Amin — Director of Admissions and Registrar | Cairo American College [UNVERIFIED — recheck]
+support@cacegypt.org | Dr. Jared Harris — Head of School / Superintendent | Cairo American College [UNVERIFIED — recheck]
 
 ## SAUDI ARABIA
-sbarnwell@aisr.org | Scott Barnwell — Director of Admissions | American International School Riyadh
-principal@iisriyadh.com | Ms. Mymoona Abbas — Principal (Interim) | International Indian School Riyadh
-shameena.razak@mmeis.edu.sa | Shameena Razak — Admissions Contact | Modern Middle East International School Riyadh
-george.srour@kis-riyadh.com | Mr. George Srour — Boys' School Academic Director | Khaled International Schools Riyadh
-johanne.mohanna@kis-riyadh.com | Ms. Johanne Mohanna — Academic Director | Khaled International Schools Riyadh
-a.aljeriwi@psau.edu.sa | Dr. Abdullah Ibrahem Al-Graiwy — Head of Arabic Language Department | Prince Sattam bin Abdulaziz University
-maalrashed@imamu.edu.sa | Dr. Mohammed Alrashed — Vice Dean for Academic Affairs | Imam Muhammad ibn Saud Islamic University
+sbarnwell@aisr.org | Scott Barnwell — Director of Admissions | American International School Riyadh [UNVERIFIED — recheck]
+principal@iisriyadh.com | Ms. Mymoona Abbas — Principal (Interim) | International Indian School Riyadh [UNVERIFIED — recheck]
+shameena.razak@mmeis.edu.sa | Shameena Razak — Admissions Contact | Modern Middle East International School Riyadh [UNVERIFIED — recheck]
+george.srour@kis-riyadh.com | Mr. George Srour — Boys' School Academic Director | Khaled International Schools Riyadh [UNVERIFIED — recheck]
+johanne.mohanna@kis-riyadh.com | Ms. Johanne Mohanna — Academic Director | Khaled International Schools Riyadh [UNVERIFIED — recheck]
+a.aljeriwi@psau.edu.sa | Dr. Abdullah Ibrahem Al-Graiwy — Head of Arabic Language Department | Prince Sattam bin Abdulaziz University [UNVERIFIED — recheck]
+maalrashed@imamu.edu.sa | Dr. Mohammed Alrashed — Vice Dean for Academic Affairs | Imam Muhammad ibn Saud Islamic University [UNVERIFIED — recheck]
 
 ## UAE
-contact.uae@etoninstitute.com | Christina Kallas — General Manager | Eton Institute Dubai & Abu Dhabi
-dischool@dischool.com | Salah Sharara — School Principal | Dubai International Private School
-communications@nasdubai.ae | Kenny Duncan — Principal | Nord Anglia International School Dubai
-info@leadersprivateschool.com | Mrs. Rafia Zafar Ali — Director / Principal | Leaders Private School Sharjah
-info@visstil.ae | Mr. Graeme Naftel — Leadership Team | Victoria International School of Sharjah Tilal
-vinisha.sam@aisschool.net | Ms. Vinisha Sam Paul — Principal Secretary | Australian International School Sharjah
+contact.uae@etoninstitute.com | Christina Kallas — General Manager | Eton Institute Dubai & Abu Dhabi [UNVERIFIED — recheck]
+dischool@dischool.com | Salah Sharara — School Principal | Dubai International Private School [UNVERIFIED — recheck]
+communications@nasdubai.ae | Kenny Duncan — Principal | Nord Anglia International School Dubai [UNVERIFIED — recheck]
+info@leadersprivateschool.com | Mrs. Rafia Zafar Ali — Director / Principal | Leaders Private School Sharjah [UNVERIFIED — recheck]
+info@visstil.ae | Mr. Graeme Naftel — Leadership Team | Victoria International School of Sharjah Tilal [UNVERIFIED — recheck]
+vinisha.sam@aisschool.net | Ms. Vinisha Sam Paul — Principal Secretary | Australian International School Sharjah [UNVERIFIED — recheck]
 
 ## INDIA
-aiisdelhi@aiis.edu.in | Purnima Mehta — Director General | American Institute of Indian Studies Language Programs
-languageprograms@aiis.edu.in | Ahtesham Khan — Coordinator (Programs) | American Institute of Indian Studies Language Programs
-head@english.du.ac.in | Prof. Subarno Chattarji — Head Department of English | University of Delhi
-sachin.labade@english.mu.ac.in | Dr. Sachin Labade — Professor and Head Department of English | University of Mumbai
-sshobha@mail.jnu.ac.in | Prof. Shoba Sivasankaran — Dean SLLS | Jawaharlal Nehru University New Delhi
-info@bischool.in | Dr. Shivananda C.S. — Head of School | Bangalore International School
-admission@tisb.ac.in | Mrs. Kate Reynolds — Principal | The International School Bangalore
+aiisdelhi@aiis.edu.in | Purnima Mehta — Director General | American Institute of Indian Studies Language Programs [UNVERIFIED — recheck]
+languageprograms@aiis.edu.in | Ahtesham Khan — Coordinator (Programs) | American Institute of Indian Studies Language Programs [UNVERIFIED — recheck]
+head@english.du.ac.in | Prof. Subarno Chattarji — Head Department of English | University of Delhi [UNVERIFIED — recheck]
+sachin.labade@english.mu.ac.in | Dr. Sachin Labade — Professor and Head Department of English | University of Mumbai [UNVERIFIED — recheck]
+sshobha@mail.jnu.ac.in | Prof. Shoba Sivasankaran — Dean SLLS | Jawaharlal Nehru University New Delhi [UNVERIFIED — recheck]
+info@bischool.in | Dr. Shivananda C.S. — Head of School | Bangalore International School [UNVERIFIED — recheck]
+admission@tisb.ac.in | Mrs. Kate Reynolds — Principal | The International School Bangalore [UNVERIFIED — recheck]
 
 ## PAKISTAN
-drabdullah@uoj.edu.pk | Dr. Muhammad Abdullah — Head of English Department | University of Jhang
-chairman_english@sbbusba.edu.pk | Dr. Tania Laghari — Chairperson Department of English | Shaheed Benazir Bhutto University
-director.english@pu.edu.pk | Prof. Dr. Shamaila Dodhy — Director Institute of English Studies | University of the Punjab Lahore
-muhammad.umar@cust.edu.pk | Dr. M. Umar Farooq — HoD English | Capital University of Science & Technology Islamabad
-ayesha@vu.edu.pk | Dr. Ayesha Perveen — Founding Head Department of English | Virtual University of Pakistan
-principal@pti.edu.pk | Mr. Khurram Hussain Hidayatallah — Principal | PIFFA Training Institute Karachi
+drabdullah@uoj.edu.pk | Dr. Muhammad Abdullah — Head of English Department | University of Jhang [UNVERIFIED — recheck]
+chairman_english@sbbusba.edu.pk | Dr. Tania Laghari — Chairperson Department of English | Shaheed Benazir Bhutto University [UNVERIFIED — recheck]
+director.english@pu.edu.pk | Prof. Dr. Shamaila Dodhy — Director Institute of English Studies | University of the Punjab Lahore [UNVERIFIED — recheck]
+muhammad.umar@cust.edu.pk | Dr. M. Umar Farooq — HoD English | Capital University of Science & Technology Islamabad [UNVERIFIED — recheck]
+ayesha@vu.edu.pk | Dr. Ayesha Perveen — Founding Head Department of English | Virtual University of Pakistan [UNVERIFIED — recheck]
+principal@pti.edu.pk | Mr. Khurram Hussain Hidayatallah — Principal | PIFFA Training Institute Karachi [UNVERIFIED — recheck]
+
+## GOVERNMENT EDUCATION BODIES
+cgti.mec@mec.gov.br | Ana Úngari Dal Fabbro — Coord. Educação Digital e Inovação | Ministério da Educação do Brasil
+segape@mec.gov.br | Evânio Antônio de Araújo Júnior — Secretário Gestão da Informação | Ministério da Educação do Brasil
+jaquelinemelo@mec.gov.br | Jaqueline dos Santos Melo — Coord. Materiais Didáticos | Ministério da Educação do Brasil
+dirsao@cervantes.es | Daniel Gallego Arcas — Diretor | Instituto Cervantes São Paulo
+dirrec@cervantes.es | Luis Ángel Macías Amigo — Diretor | Instituto Cervantes Recife
+info-saopaulo@goethe.de | Language courses / Exams team | Goethe-Institut São Paulo
+contato@britishcouncil.org.br | Customer Services Team | British Council Brazil
+julio.elizarraras@nube.sep.gob.mx | Julio Elizarraras — Director de área | SEP Formación Continua México
+isabel.aguilar@nube.sep.gob.mx | María Isabel Aguilar Díaz — Subdirectora | SEP México
+paola.chenillo@nube.sep.gob.mx | Paola Chenillo Alazraki — Directora de Sistemas Abiertos | SEP México
+latilano@nube.sep.gob.mx | María de Lourdes Atilano Mireles — Directora de Área Planeación | SEP México
+contacto@britishcouncil.org.mx | English courses / Exams team | British Council Mexico
+info.intef@educacion.gob.es | Julio Albalad — Director de INTEF | Ministerio de Educación España
+caroline.pope@britishcouncil.es | Caroline Pope — Director Examinations Spain | British Council Spain
+jon.kear@britishcouncil.es | Jon Kear — Examinations Services Manager Barcelona | British Council Spain
+cursos.madrid@britishcouncil.es | Sylvia Edvinsson — Country Director Spain | British Council Spain
+france-laure.pons@reseau-canope.fr | Samuel Vitel — Directeur général | Réseau Canopé France
+info@fondation-alliancefr.org | Réseau international team | Fondation Alliance Française Paris
+info@alliancefr.org | Accueil / Vie étudiante team | Alliance Française de Paris
+biasin@ciep.fr | Jean-Philippe Biasin — CIEP contact | France Éducation international
+pospisil@ciep.fr | Virginie Pospisil — CIEP contact | France Éducation international
+info@goethe.de | Gitte Zschoch — Executive Board | Goethe-Institut Head Office Munich
+Jessica.KraatzMagri@goethe.de | Dr. Jessica Kraatz Magri — Head of Communications | Goethe-Institut Head Office Munich
+zabservice@kmk.org | Recognition team | KMK Kultusministerkonferenz Germany
+anu.jain85@nic.in | Ms. Anu Jain — Director | Dept of School Education & Literacy, India
+as-school.edu@gov.in | Anil Kumar Singhal — Additional Secretary Samagra Shiksha-II | Ministry of Education India
+harikumarj.edu@gov.in | Harikumar Janakiraman — Director Digital Education-II | Ministry of Education India
+armstrong.pame@nic.in | Armstrong Pame — Director CBSE / NIOS / Vocational | Ministry of Education India
+IndiaCustomerCare@britishcouncil.org | Alison Barrett MBE — Country Director India | British Council India
+sushma.nair@in.britishcouncil.org | Sushma Nair — Head of Communications India | British Council India
+darmasiswa@kemendikdasmen.go.id | Abdul Mu'ti — Minister of Primary and Secondary Education | Kemendikdasmen Indonesia
+disdik@jakarta.go.id | Education Office team | Dinas Pendidikan Jakarta Indonesia
+education@cairo.gov.eg | Hemmat Abu Kila — Director Education Directorate | Cairo Governorate Egypt
+information@britishcouncil.org.eg | Elizabeth White — Country Director Egypt | British Council Egypt
+hend.kamal@britishcouncil.org.eg | Hend Kamal — Communications Officer | British Council Egypt
+imdatpekdemir@meb.gov.tr | Imdat Pekdemir — Head of Dept EU and Foreign Relations | Ministry of National Education Turkey
+abdigm.uk@meb.gov.tr | Serdar Yilmaz — Section Manager | Ministry of National Education Turkey
+agkaraca@meb.gov.tr | Ayşegül Karaca — Assistant Expert | Ministry of National Education Turkey
+courses@britishcouncil.or.jp | Jim Booth OBE — Director Japan | British Council Japan Tokyo
+exams@britishcouncil.or.jp | Jim Booth OBE — Director Japan / Cultural Counsellor | British Council Japan Tokyo
+
+## TRAVEL & HOSPITALITY
+waldir@diversaturismo.com.br | Waldir Souza — Gerente Atendimento Brasil | Diversa Turismo
+elaine@diversaturismo.com.br | Elaine Abreu — Coordenadora Atendimento Brasil | Diversa Turismo
+annanagy@bebrazildmc.com.br | Anna Nagy — Founder | BeBrazil Travel Partners DMC
+operacao@blumar.com.br | Operations Team | Blumar DMC Brazil
+operations1@alico.com.mx | Operations Team | Alico Tours DMC Mexico
+mexico@dmcprofessionals.com | Mexico Team | Blue Mex DMC Mexico
+bookings@satmexico.com | Bookings Team | SAT Mexico DMC
+ops@siamdmc.com | Operations Team | Siam DMC Thailand
+b2b@siamdmc.com | B2B Team | Guest Relations | Siam DMC Thailand
+info@dmcconnect.com | Bangkok Office | DMC Connect Thailand
+info@dwitours.com | Operations Team | DWI Tour DMC Indonesia
+bali@adventureindonesia.com | Bali Office | Adventure Indonesia Tour Operator
+hello@hig.id | Guest Relations Team | Hotel Indonesia Group
+info.dmc@vietravel.com | DMC Team | Vietravel DMC
+sales@vndmc.com | Sales Team | Vietnam DMC
+contact@indochinaheritage.com | Head Office | Indochina Heritage Vietnam DMC
+samer@egyptdmc.com | Samer — Operations | Egypt DMC
+info@dmcegypt.com | Trade Desk | Discovery Tours Egypt DMC
+groups@impactdmc.com | Groups Team | IMPACT Event & Destination Management Dubai
+uae.support@nexusdmc.com | UAE Support | Nexus DMC UAE
+info@icom-dmc.org | Dubai Office | ICOM DMC Dubai
+thedmc@thedmcistanbul.com | Operations Team | The DMC Istanbul
+operation@istanbuldmc.com | Operations Team | Istanbul DMC
+info@turkeytraveldmc.com | Operations Team | Turkey Travel DMC HTR Tour
+elite@turkdmc.com | Operations Team | TurkDMC Turkish Travel Collective
+info@thedmcgreece.com | Operations Team | The DMC Greece
+info@pam-dmc.gr | Operations Team | PAM DMC Greece
+inquiry@tourgreece.gr | Inquiries Team | TourGreece
+athens@dmcprofessionals.com | Athens Team | MIgreeCE DMC Athens
+dmc@alospain.com | Local Team | ALO Spain DMC
+info@marbelladmc.com | Operations Team | Marbella DMC
+spain@livingtours.com | Spain Team | Living DMC Spain
+groups.cfi@carol-voyages.com | Groups Team | Carol France Incoming
+incoming2@phileasfrance.fr | Incoming Team | Phileas France DMC
+pascal@nacara-dm.com | Pascal — Chief Executive | NACARA DMC Paris France
+enrica@nacara-dm.com | Enrica — Director | NACARA DMC Paris France
+info@loveit-dmc.com | Carolina Mascolo — Operations, Banqueting | Love IT DMC Rome
+info@romeanditaly.it | Giorgia Rocchetti — CEO and Owner | Rome and Italy
+rome@dmcprofessionals.com | Rome Team | Unico DMC Rome Italy
+
+## NGOS & INTEGRATION ORGS
+g.bell@caritas-koblenz.de | Gregor Bell — Leiter Migration und Integration | Caritasverband Koblenz
+heinz.blome@caritasnet.de | Heinz Blome — Bereichsleiter Soziale Integration | Caritas Köln
+felix.baumgartner@caritas-hochrhein.de | Felix Baumgartner — Integrationsmanagement | Caritas Hochrhein
+martina.bihler@caritas-hochrhein.de | Martina Bihler — Integrationsmanagement | Caritas Hochrhein
+infos@lacimade.org | Emeline Hardy — Déléguée nationale Île-de-France | La Cimade
+communication@lacimade.org | Michèle Boumendil — Co-Présidente | La Cimade
+communication@lacimade.org | Philippe Perfetti — Co-Président | La Cimade
+gabriella.fredriksson@imsweden.org | Gabriella Fredriksson — Generalsekreterare | IM Swedish Development Partner
+nkamta@vluchtelingenwerk.nl | Natascha Kamta — Regiomanager | VluchtelingenWerk Nederland
+bestuur@vluchtelingenwerk.nl | Frank Candel — Bestuursvoorzitter | VluchtelingenWerk Nederland
+info@vluchtelingenwerk.nl | Sjoerd Warmerdam — Directeur Strategy & Public Affairs | VluchtelingenWerk Nederland
+cfoxkline@hiaspa.org | Carrie Fox-Kline — Director of Refugee Programming | HIAS Pennsylvania
+biuro@ocalenie.org.pl | Tahmina Rajabova — Dyrektorka programów integracyjnych | Fundacja Ocalenie
+biuro@ocalenie.org.pl | Kristina Stankiewicz — Dyrektorka programów edukacji dorosłych | Fundacja Ocalenie
+biuro@ocalenie.org.pl | Małgorzata Ćwiek — Dyrektorka programów dziecięcych | Fundacja Ocalenie
+biuro@ocalenie.org.pl | Marianna Wartecka — Dyrektorka partnerstw i rzecznictwa | Fundacja Ocalenie
+marcelo.haydu@adus.org.br | Marcelo Haydu — Parcerias / Português para integração | Instituto ADUS São Paulo
+adus@adus.org.br | Equipe integração de refugiados | Instituto ADUS São Paulo
+ibrahimkavlak@sgdd.org.tr | M. Ibrahim Vurgun Kavlak — General Coordinator | SGDD-ASAM
+info@sgdd-asam.org | M. Fulya Kip Barnard — Contact Person | SGDD-ASAM
+info@sharp-pakistan.org | Syed Liaqat Banori — Chairman | SHARP-Pakistan
+
+## BPO & CORPORATE TRAINING
+Grenville.Naidu@wns.com | Grenville Naidu — Group Manager - HR | WNS Global Services India
+neelam.bijlani@teleperformancedibs.com | Neelam Bijlani — HR Recruitment, India Business | Teleperformance India
+barnali.dutta@teleperformancedibs.com | Barnali Dutta — HR | Teleperformance India
+acquire.training@acquirebpo.com | Shereen Labao-Castillo — Senior Training and Quality Manager | Acquire BPO Philippines
+enquiries@acquirebpo.com | Shereen Labao-Castillo — Senior Training and Quality Manager | Acquire BPO Philippines
+protecciondatos@millenium.com.co | Myriam Shirley Rojas Mendez — Gerente Operaciones | Millenium BPO Colombia
+protecciondatos@millenium.com.co | Claudia Liliana Rodriguez Sanchez — Jefe de operaciones | Millenium BPO Colombia
+ldaza@millenium.com.co | Myriam Shirley Rojas Mendez — Gerente Operaciones | Millenium BPO Colombia
+Johann.kunz@WNS.com | Johann Kunz — Managing Director WNS SA | WNS South Africa
+media@transcom.com | Grzegorz Baran — Regional Manager Poland | Transcom Poland
+
+## MORE ASIA SCHOOLS (+ TW / MY / PH)
+annayu@sinolanguage.org | Anna Yu — Director | Sino Language
+LyLy@StepIntoChina.com | LyLy — Director | Huayi Chinese Language School / Step Into China
+generaloffice@tsinglan.org | Wenping Li — Principal | Tsinglan School
+shanghai@ltl-school.com | Tina — Director of Studies | LTL Mandarin School Shanghai
+contact@oja.jp | Goro Nitta — Director & Principal | Osaka Japanese Language Academy
+info@s-i-s-kobe.com | Yoshiko Wakabayashi — Director | Kobe Sumiyoshi International Japanese Language School
+info@mirainomori.ac.jp | Yoko Yuki — Director | Mirai no Mori Gakuen
+info@aoj-ls.jp | Kana Kanazawa — Administration Office | AOJ Language School / Attain Corporation
+greenkoreankr@gmail.com | Inja Kim — President | Green Korean Language School
+lecadmission@ks.ac.kr | Yeongmi Park — Director | Language Education Center Kyungsung University
+connh@vnu.edu.vn | Nguyen Hong Con — Director | Center for Vietnamese Language and Culture VNU Hanoi
+ntt.tam93@hutech.edu.vn | Nguyen Thi Thanh Tam — Vice Director Japanese Language Center | HUTECH University
+Johannes.Hossfeld@goethe.de | Johannes Hossfeld — Director | Goethe-Institut Thailand
+Sascha.Fabri@goethe.de | Sascha Fabri — Deputy Director & Head Language Department | Goethe-Institut Thailand
+ctfl@chula.ac.th | Kiat Thepchuaysuk — Director | Center for Thai as a Foreign Language Chulalongkorn University
+phuket@qsi.org | Chris Fisher — Director | QSI International School of Phuket
+learning@cintabahasa.com | Stephen DeMeulenaere — School Advisor & Co-Founder | Cinta Bahasa Indonesian Language School
+sibschool@sibschool.com | Barry Gassert — Founder & Management Consultant | SIB School of Language
+support@englishhouseacademy.in | Munawar Zama — CEO & Founder | English House Academy
+cambridgeinstitute7001@gmail.com | Cambridge O V Nachimuthu — Principal & Founder | Cambridge Institute of Spoken English Salem
+santoshgthakur04@gmail.com | Santosh Thakur — Founder & Coach | Thakur Classes Buldana
+kuanghua@mail.mcu.edu.tw | Liu Kuang-Hua Nathan — Director | English Language Center Ming Chuan University (Taiwan)
+hhsu@ntu.edu.tw | Hsei-Yung Hsu — Director | Language Center National Taiwan University (Taiwan)
+clec@tea.ntue.edu.tw | Mei-Hui Chou — Director Chinese Language Education Center | NTUE Taipei (Taiwan)
+chene@tas.edu.tw | Evelyn Chen — Director Summer Academy | Taipei American School (Taiwan)
+evatoasty@ms.nnkieh.tn.edu.tw | Eva Yang — Director | Int. Bilingual School at Tainan Science Park (Taiwan)
+info@acelanguagecentre.edu.my | Haroon Shahzad — Founder & CEO | ACE Language Centre (Malaysia)
+info@acelanguagecentre.edu.my | Nor Hafizah — Academic Director & Principal | ACE Language Centre (Malaysia)
+marketing@ems.edu.my | EMS Team — Centre Contact | EMS Language Centre Malaysia
+info@britannia.edu.my | Britannia Team — Centre Contact | Britannia Language Centre Kuala Lumpur
+info@cpils.com | CPILS Team — School Contact | CPILS Cebu (Philippines)
+cgworld@cebucg.com | CG Academy Team — School Contact | CG Academy Cebu (Philippines)
+info@cebulanguages.com | Cebu Languages Team — School Contact | Cebu Languages ESL School (Philippines)
+asopina@ceu.edu.ph | Arlene S Opina — Head Languages Department | Centro Escolar University (Philippines)
+kdelrosario@cis.edu.ph | Kim del Rosario — Academic Secretary | Cebu International School (Philippines)
