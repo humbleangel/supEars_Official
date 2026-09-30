@@ -4,10 +4,10 @@
 
 <div align="center">
 
+**[Download the latest release.](https://github.com/humbleangel/supEars_Official/releases/latest)**<br/>
 Speak in your own native language.<br/>
 supEars translates and transcribes pasting where you are.
 
-**BETA — [download the latest release](https://github.com/humbleangel/supEars_Official/releases/latest).**<br/>
 **Public release: October 10, 2026. [Join the beta group.](https://github.com/humbleangel/supEars_Official/issues)**
 
 Escape the Big Tech Corps Subscriptions Traps.<br/>
