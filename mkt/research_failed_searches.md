@@ -56,3 +56,15 @@ Do NOT redo — fix manually or accept. Concise log of what subagents failed.
 45. RU/UA sweeps: team-inbox rows, persons unverified by design.
 46. VN delacour personal inbox — use enquiries@ for campaigns.
 47. OIS Tomalin, USP, AM, BH items listed above (dupes of 12-14, kept once).
+
+## Solo language-school round (no subagents for research; swarm assistants for drafting)
+48. CL language-school emails (solo) — none found, schools phone/form only.
+49. WSE/ICANA/Interlingua corporate emails (solo) — forms only.
+50. inlingua FR contacts (solo) — phone only.
+51. PT new language schools (solo) — only IH/Cambridge, already listed.
+52. WSE France email (swarm) — form only.
+53. WSE Italy email (swarm) — form only.
+54. UK swarm 429s: Bell Cambridge, Studio Cambridge, British Council UK teaching centres, Kaplan UK, Language in London — RETRY SOLO.
+55. US swarm: FLS International admissions email — RETRY SOLO.
+56. PL swarm: Empik School email, British Council Poland email — RETRY SOLO.
+57. Solo retry 2026-09-30: Bell/Studio Cambridge (transport error, backend throttled) — PENDING.

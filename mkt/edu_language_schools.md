@@ -62,3 +62,51 @@ dataprotection@berlitz-paris.fr | Contact données personnelles (publié) | Berl
 ## GERMANY
 datenschutz@berlitz.de | Contact publié (opt-out) | Berlitz Deutschland GmbH
 service@inlingua.de | Petra Schöttner — Kontakt | inlingua Deutschland HQ (Hamburg)
+
+## ITALY
+info@scuolaleonardo.com | Central Marketing Office Firenze | Scuola Leonardo da Vinci
+florence@scuolaleonardo.com | Sede Firenze | Scuola Leonardo da Vinci Firenze
+milan@scuolaleonardo.com | Sanda Stevanovic / Wolfango Poggi — Managing directors; Enrico Quaroni — Direttore didattico | Scuola Leonardo da Vinci Milano
+rome@scuolaleonardo.com | Sede Roma | Scuola Leonardo da Vinci Roma
+info@scuola-lingue-roma.it | Scuola lingue | Scuola Lingue Roma
+
+## NETHERLANDS
+info@babel.nl | Babel Team | Babel Utrecht
+trainers@uvatalen.nl | UvA Talen Team | UvA Talen Amsterdam
+info@taalhuisamsterdam.nl | Taalhuis Team | Taalhuis Amsterdam
+info@taalthuis.nl | Taalthuis Team | Taalthuis Haarlem
+
+## UNITED KINGDOM
+info@ihlondon.com | General Enquiries team | International House London
+sales@ihlondon.com | Sales team — New Enquiries | International House London
+Shema.Najib@ihlondon.com | Shema Najib — Head of Sales & Customer Experience | International House London
+Yan.Ye@ihlondon.com | Yan Ye — Business Development Manager (Asia) | International House London
+Luisa.proto@ihlondon.com | Luisa Proto — Business Development Manager (Europe) | International House London
+Kamel.Koufi@ihlondon.com | Kamel Koufi — Head of Africa & MENA | International House London
+support@wimbledon-school.ac.uk | Course & Sales Enquiries team | Wimbledon School of English (London)
+hello@ecenglish.com | Partner team — Partnerships | EC English UK (London)
+
+## USA
+info@els.edu | Admissions Team — Student Support Center | ELS Educational Services (Princeton)
+info-ny@lsi.edu | Admissions — LSI New York | LSI New York
+info-san@lsi.edu | Admissions — LSI San Diego | LSI San Diego
+info-bos@lsi.edu | Admissions — LSI Boston | LSI Boston
+info-ber@lsi.edu | Admissions — LSI Berkeley | LSI Berkeley
+northamerica@kaplaninternational.com | USA & Canada Office — Student Advisors | Kaplan International Languages (USA)
+study@ecenglish.com | Admissions — EC English | EC English New York
+info@englishcollege.com | Admissions — College of English Language | CEL San Diego
+intled@smc.edu | International Education Center — Intensive English | Santa Monica College (Los Angeles)
+Adult-Education@hcde-texas.org | Adult Education — ESL Classes | Harris County Dept. of Education (Houston)
+ssosic@mdc.edu | Samila Sosic — Executive Director, International Education | Miami Dade College (Miami)
+
+## POLAND
+info@profilingua.pl | Kontakt ogólny | ProfiLingua (Warszawa)
+info@glossa.pl | Kontakt ogólny | Glossa Kraków
+polonicum@uw.edu.pl | Sekretariat | Polonicum UW (Warszawa)
+aj.jasinska@uw.edu.pl | Agnieszka Jasińska — Specjalistka, lektorka | Polonicum UW (Warszawa)
+aj.pieszko@uw.edu.pl | Agnieszka Pieszko — Pełnomocnik Kwestora | Polonicum UW (Warszawa)
+pawel.smulski@uw.edu.pl | Paweł Smulski — Specjalista | Polonicum UW (Warszawa)
+info@lincoln.edu.pl | Kontakt ogólny | Lincoln (Kraków)
+biuro@archibald.pl | Biuro Obsługi Słuchacza | Archibald (Warszawa)
+szkolenia@archibald.pl | Dział Szkoleń dla Firm | Archibald (Warszawa)
+sale@archibald.pl | Wynajem sal | Archibald (Warszawa)
