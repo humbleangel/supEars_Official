@@ -7,8 +7,8 @@
 Speak in your own native language.<br/>
 supEars translates and transcribes pasting where you are.
 
-**Pre-alpha v0.8.71. Not public yet.**<br/>
-**Beta opens at October 10, 2026. [Join the beta group.](https://github.com/humbleangel/supEars_Official/issues)**
+**BETA v0.9.50 — [download it now](https://github.com/humbleangel/supEars_Official/releases/tag/v0.9.50).**<br/>
+**Public release: October 10, 2026. [Join the beta group.](https://github.com/humbleangel/supEars_Official/issues)**
 
 Escape the Big Tech Corps Subscriptions Traps.<br/>
 100% Offline Transcription. No Credit Card. No Account. No Cloud. No money to MegaCorps.<br/>
@@ -19,10 +19,10 @@ Windows only now. Mac and Linux versions planned and under development.
 </div>
 
 - Speak in your language; supEars write in English or in any of the 26 supported languages.
-- Runs on old and new CPUs. no Graphics Card required
-- Free forever: 30 days; from day 31, 5 phrases/day.
-- Pro $4.99 / 1 month · $14 / 6 months · $39 lifetime license
-- $24.99 lifetime license only to early adopters (only to the first 1,000 users).
+- Runs on CPUs from ~2013 on (64-bit Windows with AVX2). No graphics card required.
+- Free for 14 days of unlimited use; founder pricing for early adopters.
+- ~US$ 4.99 / 1 month · ~US$ 14.99 / 6 months · ~US$ 49.99 lifetime license
+- ~US$ 24.48 lifetime license only to early adopters (only to the first 1,000 users).
 - No subscriptions, no auto-renewal, ever.
 
 <p align="center">
@@ -110,12 +110,12 @@ Windows only now. Mac and Linux versions planned and under development.
 
 ## This repo is
 
-The public marketing and storefront home — landing pages, videos, demand research, channel register, feedbacks. The product code lives in a private repo. Download links soon.
+The public marketing and storefront home — landing pages, videos, demand research, channel register, feedbacks. The product code lives in a private repo. Downloads: [the latest release](https://github.com/humbleangel/supEars_Official/releases).
 
 ## Roadmap
 
 - Mac + Linux builds
 - GPU/Cloud Options
-- Public downloads at alpha 0.90
+- Public downloads: beta v0.9.50 live now
 
 supEars (c) · Developed by HumbleAngel 👼
