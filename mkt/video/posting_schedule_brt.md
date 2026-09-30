@@ -15,13 +15,13 @@ YouTube/VK/natives that deserve quality. Replace [LINK] before posting.
 TITLE: Fale. O supEars escreve. | O ouvido que entende o seu idioma
 DESCRIPTION:
 Fale no seu idioma. O supEars escreve onde você digita — 100% offline, sem conta, sem assinatura.
-Grátis 30 dias ilimitado · depois 5 frases/dia grátis · $25 vitalício para os 1.000 primeiros.
+Grátis 14 dias ilimitado · depois 5 frases/dia grátis · $24.48 vitalício para os 1.000 primeiros.
 Estreia: 10 de outubro de 2026.
 #supEars #ditadoemportugues
 Música: Night Drive — 1000 Handz (1000Handz.com), CC-BY.
 FIRST COMMENT:
 ⬇ BAIXAR: [LINK]
-Grátis 30 dias. Sem assinatura, nunca.
+Grátis 14 dias. Sem assinatura, nunca.
 
 ------------------------------------------------------------------------------
 
@@ -36,13 +36,13 @@ Grátis 30 dias. Sem assinatura, nunca.
 TITLE: Habla. supEars escribe. | El oído que entiende tu idioma
 DESCRIPTION:
 Habla en tu idioma. supEars escribe donde escribes — 100% sin conexión, sin cuenta, sin suscripción.
-Gratis 30 días ilimitado · luego 5 frases/día gratis · $25 de por vida para los primeros 1.000.
+Gratis 14 días ilimitado · luego 5 frases/día gratis · $24.48 de por vida para los primeros 1.000.
 Estreno: 10 de octubre de 2026.
 #supEars #dictado
 Música: Night Drive — 1000 Handz (1000Handz.com), CC-BY.
 FIRST COMMENT:
 ⬇ DESCARGAR: [LINK]
-Gratis 30 días. Sin suscripción, nunca.
+Gratis 14 días. Sin suscripción, nunca.
 
 ------------------------------------------------------------------------------
 
@@ -57,13 +57,13 @@ Gratis 30 días. Sin suscripción, nunca.
 TITLE: Parlez. supEars écrit. | L'oreille qui comprend votre langue
 DESCRIPTION:
 Parlez dans votre langue maternelle. supEars écrit là où vous tapez — 100% hors ligne, sans compte, sans abonnement.
-Gratuit 30 jours illimité · puis 5 phrases/jour gratuites · $25 à vie pour les 1.000 premiers.
+Gratuit 14 jours illimité · puis 5 phrases/jour gratuites · $24.48 à vie pour les 1.000 premiers.
 Sortie : 10 octobre 2026.
 #supEars #dictée
 Musique : Night Drive — 1000 Handz (1000Handz.com), CC-BY.
 FIRST COMMENT:
 ⬇ TÉLÉCHARGER : [LINK]
-Gratuit 30 jours. Sans abonnement, jamais.
+Gratuit 14 jours. Sans abonnement, jamais.
 
 ------------------------------------------------------------------------------
 
@@ -77,13 +77,13 @@ Gratuit 30 jours. Sans abonnement, jamais.
 TITLE: Sprich. supEars schreibt. | Das Ohr, das deine Sprache versteht
 DESCRIPTION:
 Sprich in deiner Muttersprache. supEars schreibt dort, wo du tippst — 100% offline, kein Konto, kein Abo.
-30 Tage gratis unbegrenzt · danach 5 Sätze/Tag gratis · $25 für immer für die ersten 1.000.
+14 Tage gratis unbegrenzt · danach 5 Sätze/Tag gratis · $24.48 für immer für die ersten 1.000.
 Start: 10. Oktober 2026.
 #supEars #diktieren
 Musik: Night Drive — 1000 Handz (1000Handz.com), CC-BY.
 FIRST COMMENT:
 ⬇ DOWNLOAD: [LINK]
-30 Tage gratis. Kein Abo, niemals.
+14 Tage gratis. Kein Abo, niemals.
 
 ------------------------------------------------------------------------------
 
@@ -97,13 +97,13 @@ FIRST COMMENT:
 TITLE: Parla. supEars scrive. | L'orecchio che capisce la tua lingua
 DESCRIPTION:
 Parla nella tua lingua. supEars scrive dove digiti — 100% offline, senza account, senza abbonamento.
-Gratis 30 giorni illimitato · poi 5 frasi/giorno gratis · $25 per sempre per i primi 1.000.
+Gratis 14 giorni illimitato · poi 5 frasi/giorno gratis · $24.48 per sempre per i primi 1.000.
 Uscita: 10 ottobre 2026.
 #supEars #dettatura
 Musica: Night Drive — 1000 Handz (1000Handz.com), CC-BY.
 FIRST COMMENT:
 ⬇ SCARICA: [LINK]
-Gratis 30 giorni. Senza abbonamento, mai.
+Gratis 14 giorni. Senza abbonamento, mai.
 
 ------------------------------------------------------------------------------
 
@@ -117,13 +117,13 @@ Gratis 30 giorni. Senza abbonamento, mai.
 TITLE: Spreek. supEars schrijft. | Het oor dat jouw taal verstaat
 DESCRIPTION:
 Spreek in je eigen moedertaal. supEars schrijft waar jij typt — 100% offline, geen account, geen abonnement.
-30 dagen gratis onbeperkt · daarna 5 zinnen/dag gratis · $25 voor altijd voor de eerste 1.000.
+14 dagen gratis onbeperkt · daarna 5 zinnen/dag gratis · $24.48 voor altijd voor de eerste 1.000.
 Lancering: 10 oktober 2026.
 #supEars #dicteren
 Muziek: Night Drive — 1000 Handz (1000Handz.com), CC-BY.
 FIRST COMMENT:
 ⬇ DOWNLOAD: [LINK]
-30 dagen gratis. Geen abonnement, nooit.
+14 dagen gratis. Geen abonnement, nooit.
 
 ------------------------------------------------------------------------------
 
@@ -137,13 +137,13 @@ FIRST COMMENT:
 TITLE: Speak. supEars types. | The Ear that understands your language
 DESCRIPTION:
 Speak in your own native language. supEars types where you type — 100% offline, no account, no subscription.
-Free 30 days unlimited · then 5 phrases/day free · $25 forever for the first 1,000.
+Free 14 days unlimited · then 5 phrases/day free · $24.48 forever for the first 1,000.
 Launch: October 10, 2026.
 #supEars #dictation #nosubscription
 Music: Night Drive — 1000 Handz (1000Handz.com), CC-BY.
 FIRST COMMENT:
 ⬇ DOWNLOAD: [LINK]
-Free 30 days. No auto-renewal, ever.
+Free 14 days. No auto-renewal, ever.
 
 ------------------------------------------------------------------------------
 
@@ -157,13 +157,13 @@ Free 30 days. No auto-renewal, ever.
 TITLE: Говори. supEars пишет. | Ухо, которое понимает твой язык
 DESCRIPTION:
 Говорите на родном языке. supEars печатает там, где печатаете вы, — 100% офлайн, без аккаунта, без подписки.
-30 дней бесплатно без лимита · потом 5 фраз/день бесплатно · $25 навсегда для первой 1.000.
+14 дней бесплатно без лимита · потом 5 фраз/день бесплатно · $24.48 навсегда для первой 1.000.
 Запуск: 10 октября 2026.
 #supEars #диктовка
 Музыка: Night Drive — 1000 Handz (1000Handz.com), CC-BY.
 FIRST COMMENT:
 ⬇ СКАЧАТЬ: [LINK]
-30 дней бесплатно. Без подписки, никогда.
+14 дней бесплатно. Без подписки, никогда.
 
 ------------------------------------------------------------------------------
 
@@ -177,13 +177,13 @@ FIRST COMMENT:
 TITLE: Говори. supEars пише. | Вухо, яке розуміє твою мову
 DESCRIPTION:
 Говоріть рідною мовою. supEars друкує там, де друкуєте ви, — 100% офлайн, без акаунта, без підписки.
-30 днів безкоштовно без ліміту · потім 5 фраз/день безкоштовно · $25 назавжди для першої 1.000.
+14 днів безкоштовно без ліміту · потім 5 фраз/день безкоштовно · $24.48 назавжди для першої 1.000.
 Запуск: 10 жовтня 2026.
 #supEars #диктування
 Музика: Night Drive — 1000 Handz (1000Handz.com), CC-BY.
 FIRST COMMENT:
 ⬇ ЗАВАНТАЖИТИ: [LINK]
-30 днів безкоштовно. Без підписки, ніколи.
+14 днів безкоштовно. Без підписки, ніколи.
 
 ------------------------------------------------------------------------------
 
@@ -197,13 +197,13 @@ FIRST COMMENT:
 TITLE: Mów. supEars pisze. | Ucho, które rozumie twój język
 DESCRIPTION:
 Mów w swoim języku. supEars pisze tam, gdzie piszesz — 100% offline, bez konta, bez subskrypcji.
-30 dni za darmo bez limitu · potem 5 fraz/dzień za darmo · $25 na zawsze dla pierwszego 1.000.
+14 dni za darmo bez limitu · potem 5 fraz/dzień za darmo · $24.48 na zawsze dla pierwszego 1.000.
 Premiera: 10 października 2026.
 #supEars #dyktowanie
 Muzyka: Night Drive — 1000 Handz (1000Handz.com), CC-BY.
 FIRST COMMENT:
 ⬇ POBIERZ: [LINK]
-30 dni za darmo. Bez subskrypcji, nigdy.
+14 dni za darmo. Bez subskrypcji, nigdy.
 
 ------------------------------------------------------------------------------
 
@@ -217,13 +217,13 @@ FIRST COMMENT:
 TITLE: Mluv. supEars píše. | Ucho, které rozumí tvému jazyku
 DESCRIPTION:
 Mluvte svým jazykem. supEars píše tam, kde píšete — 100% offline, bez účtu, bez předplatného.
-30 dní zdarma bez limitu · pak 5 frází/denně zdarma · $25 napořád pro prvních 1.000.
+14 dní zdarma bez limitu · pak 5 frází/denně zdarma · $24.48 napořád pro prvních 1.000.
 Start: 10. října 2026.
 #supEars #diktování
 Hudba: Night Drive — 1000 Handz (1000Handz.com), CC-BY.
 FIRST COMMENT:
 ⬇ STÁHNOUT: [LINK]
-30 dní zdarma. Bez předplatného, nikdy.
+14 dní zdarma. Bez předplatného, nikdy.
 
 ------------------------------------------------------------------------------
 
@@ -237,13 +237,13 @@ FIRST COMMENT:
 TITLE: Beszélj. A supEars ír. | A fül, amely érti a nyelved
 DESCRIPTION:
 Beszélj anyanyelveden. A supEars oda ír, ahová te gépsz — 100% offline, fiók nélkül, előfizetés nélkül.
-30 napig ingyen korlátlanul · utána napi 5 mondat ingyen · $25 örökre az első 1.000-nek.
+14 napig ingyen korlátlanul · utána napi 5 mondat ingyen · $24.48 örökre az első 1.000-nek.
 Start: 2026. október 10.
 #supEars #diktálás
 Zene: Night Drive — 1000 Handz (1000Handz.com), CC-BY.
 FIRST COMMENT:
 ⬇ LETÖLTÉS: [LINK]
-30 napig ingyen. Előfizetés nélkül, soha.
+14 napig ingyen. Előfizetés nélkül, soha.
 
 ------------------------------------------------------------------------------
 
@@ -257,13 +257,13 @@ FIRST COMMENT:
 TITLE: Μίλα. Το supEars γράφει. | Το αυτί που καταλαβαίνει τη γλώσσα σου
 DESCRIPTION:
 Μίλα στη μητρική σου γλώσσα. Το supEars γράφει εκεί που πληκτρολογείς — 100% offline, χωρίς λογαριασμό, χωρίς συνδρομή.
-30 μέρες δωρεάν απεριόριστα · μετά 5 φράσεις/μέρα δωρεάν · $25 για πάντα για τους πρώτους 1.000.
+14 μέρες δωρεάν απεριόριστα · μετά 5 φράσεις/μέρα δωρεάν · $24.48 για πάντα για τους πρώτους 1.000.
 Έναρξη: 10 Οκτωβρίου 2026.
 #supEars #υπαγόρευση
 Μουσική: Night Drive — 1000 Handz (1000Handz.com), CC-BY.
 FIRST COMMENT:
 ⬇ ΚΑΤΕΒΑΣΕ: [LINK]
-30 μέρες δωρεάν. Χωρίς συνδρομή, ποτέ.
+14 μέρες δωρεάν. Χωρίς συνδρομή, ποτέ.
 
 ------------------------------------------------------------------------------
 
@@ -277,13 +277,13 @@ FIRST COMMENT:
 TITLE: 说话，supEars 帮你写 | 懂你语言的耳朵
 DESCRIPTION:
 用母语说话。supEars 在你打字的地方写字——100% 离线，无需账号，无需订阅。
-30 天免费无限使用 · 之后每天 5 句免费 · 前 1,000 名 $25 永久买断。
+14 天免费无限使用 · 之后每天 5 句免费 · 前 1,000 名 $24.48 永久买断。
 发布：2026 年 10 月 10 日。
 #supEars #语音输入
 音乐：Night Drive — 1000 Handz (1000Handz.com)，CC-BY。
 FIRST COMMENT:
 ⬇ 下载：[LINK]
-30 天免费。绝无自动续费。
+14 天免费。绝无自动续费。
 
 ------------------------------------------------------------------------------
 
@@ -296,13 +296,13 @@ FIRST COMMENT:
 TITLE: 話すだけ。supEars が書く | あなたの言語を理解する耳
 DESCRIPTION:
 母語で話してください。supEars が入力場所に書き込みます——100% オフライン、アカウント不要、サブスク不要。
-30 日間無料・無制限 · その後 1 日 5 文まで無料 · 先着 1,000 名は $25 で永久版。
+14 日間無料・無制限 · その後 1 日 5 文まで無料 · 先着 1,000 名は $24.48 で永久版。
 公開：2026 年 10 月 10 日。
 #supEars #音声入力
 音楽：Night Drive — 1000 Handz (1000Handz.com)、CC-BY。
 FIRST COMMENT:
 ⬇ ダウンロード：[LINK]
-30 日間無料。自動更新なし。
+14 日間無料。自動更新なし。
 
 ------------------------------------------------------------------------------
 
@@ -315,13 +315,13 @@ FIRST COMMENT:
 TITLE: 말하세요. supEars가 씁니다 | 당신의 언어를 이해하는 귀
 DESCRIPTION:
 편한 언어로 말하세요. supEars가 입력하는 곳에 씁니다——100% 오프라인, 계정 불필요, 구독 불필요.
-30일 무료 무제한 · 이후 하루 5문장 무료 · 선착순 1,000명 $25 평생.
+14일 무료 무제한 · 이후 하루 5문장 무료 · 선착순 1,000명 $24.48 평생.
 출시: 2026년 10월 10일.
 #supEars #음성입력
 음악: Night Drive — 1000 Handz (1000Handz.com), CC-BY.
 FIRST COMMENT:
 ⬇ 다운로드: [LINK]
-30일 무료. 자동 갱신 없음.
+14일 무료. 자동 갱신 없음.
 
 ------------------------------------------------------------------------------
 
@@ -334,13 +334,13 @@ FIRST COMMENT:
 TITLE: Nói đi. supEars viết. | Chiếc tai hiểu ngôn ngữ của bạn
 DESCRIPTION:
 Hãy nói bằng tiếng mẹ đẻ của bạn. supEars viết ngay nơi bạn gõ — 100% offline, không tài khoản, không thuê bao.
-30 ngày miễn phí không giới hạn · sau đó 5 câu/ngày miễn phí · $25 vĩnh viễn cho 1.000 người đầu tiên.
+14 ngày miễn phí không giới hạn · sau đó 5 câu/ngày miễn phí · $24.48 vĩnh viễn cho 1.000 người đầu tiên.
 Ra mắt: 10/10/2026.
 #supEars #nhapgiongnoi
 Nhạc: Night Drive — 1000 Handz (1000Handz.com), CC-BY.
 FIRST COMMENT:
 ⬇ TẢI VỀ: [LINK]
-30 ngày miễn phí. Không tự gia hạn, bao giờ.
+14 ngày miễn phí. Không tự gia hạn, bao giờ.
 
 ------------------------------------------------------------------------------
 
@@ -353,13 +353,13 @@ FIRST COMMENT:
 TITLE: พูดเลย supEars เขียนให้ | หูที่เข้าใจภาษาของคุณ
 DESCRIPTION:
 พูดด้วยภาษาของคุณ supEars จะเขียนตรงที่คุณพิมพ์ — 100% ออฟไลน์ ไม่ต้องมีบัญชี ไม่ต้องสมัครสมาชิก
-ฟรี 30 วันไม่จำกัด · หลังจากนั้นวันละ 5 ประโยคฟรี · $25 ตลอดชีพสำหรับ 1,000 คนแรก
+ฟรี 14 วันไม่จำกัด · หลังจากนั้นวันละ 5 ประโยคฟรี · $24.48 ตลอดชีพสำหรับ 1,000 คนแรก
 เปิดตัว: 10 ตุลาคม 2026
 #supEars #พูดแทนพิมพ์
 เพลง: Night Drive — 1000 Handz (1000Handz.com), CC-BY
 FIRST COMMENT:
 ⬇ ดาวน์โหลด: [LINK]
-ฟรี 30 วัน ไม่มีการต่ออายุอัตโนมัติ
+ฟรี 14 วัน ไม่มีการต่ออายุอัตโนมัติ
 
 ------------------------------------------------------------------------------
 
@@ -372,13 +372,13 @@ FIRST COMMENT:
 TITLE: Bicara. supEars menulis. | Telinga yang memahami bahasamu
 DESCRIPTION:
 Bicara dalam bahasa ibu Anda. supEars menulis di tempat Anda mengetik — 100% offline, tanpa akun, tanpa langganan.
-30 hari gratis tanpa batas · lalu 5 kalimat/hari gratis · $25 selamanya untuk 1.000 pertama.
+14 hari gratis tanpa batas · lalu 5 kalimat/hari gratis · $24.48 selamanya untuk 1.000 pertama.
 Rilis: 10 Oktober 2026.
 #supEars #dikte
 Musik: Night Drive — 1000 Handz (1000Handz.com), CC-BY.
 FIRST COMMENT:
 ⬇ UNDUH: [LINK]
-30 hari gratis. Tanpa perpanjangan otomatis.
+14 hari gratis. Tanpa perpanjangan otomatis.
 
 ------------------------------------------------------------------------------
 
@@ -391,13 +391,13 @@ FIRST COMMENT:
 TITLE: تحدث. supEars يكتب. | الأذن التي تفهم لغتك
 DESCRIPTION:
 تحدث بلغتك الأم. supEars يكتب حيث تكتب — 100% دون إنترنت، دون حساب، دون اشتراك.
-30 يومًا مجانًا بلا حدود · ثم 5 جمل يوميًا مجانًا · $25 للأبد لأول 1.000.
+14 يومًا مجانًا بلا حدود · ثم 5 جمل يوميًا مجانًا · $24.48 للأبد لأول 1.000.
 الإطلاق: 10 أكتوبر 2026.
 #supEars #إملاء_صوتي
 الموسيقى: Night Drive — 1000 Handz (1000Handz.com)، CC-BY.
 FIRST COMMENT:
 ⬇ تحميل: [LINK]
-30 يومًا مجانًا. دون تجديد تلقائي، أبدًا.
+14 يومًا مجانًا. دون تجديد تلقائي، أبدًا.
 
 ------------------------------------------------------------------------------
 
@@ -410,13 +410,13 @@ FIRST COMMENT:
 TITLE: बोलिए. supEars लिखेगा. | आपकी भाषा समझने वाला कान
 DESCRIPTION:
 अपनी भाषा में बोलें। supEars वहीं लिखता है जहाँ आप लिखते हैं — 100% ऑफ़लाइन, बिना अकाउंट, बिना सब्सक्रिप्शन।
-30 दिन मुफ़्त, असीमित · फिर रोज़ 5 वाक्य मुफ़्त · पहले 1,000 के लिए $25 में हमेशा के लिए।
+14 दिन मुफ़्त, असीमित · फिर रोज़ 5 वाक्य मुफ़्त · पहले 1,000 के लिए $24.48 में हमेशा के लिए।
 लॉन्च: 10 अक्टूबर 2026.
 #supEars #voice typing
 संगीत: Night Drive — 1000 Handz (1000Handz.com), CC-BY.
 FIRST COMMENT:
 ⬇ डाउनलोड: [LINK]
-30 दिन मुफ़्त। कोई ऑटो-रिन्यूअल नहीं, कभी नहीं।
+14 दिन मुफ़्त। कोई ऑटो-रिन्यूअल नहीं, कभी नहीं।
 
 ------------------------------------------------------------------------------
 
@@ -429,13 +429,13 @@ FIRST COMMENT:
 TITLE: بولیں۔ supEars لکھے گا۔ | آپ کی زبان سمجھنے والا کان
 DESCRIPTION:
 اپنی زبان میں بات کریں۔ supEars وہیں لکھتا ہے جہاں آپ لکھتے ہیں — 100% آف لائن، بغیر اکاؤنٹ، بغیر سبسکرپشن۔
-30 دن مفت، لامحدود · پھر روز 5 جملے مفت · پہلے 1,000 کے لیے $25 میں ہمیشہ کے لیے۔
+14 دن مفت، لامحدود · پھر روز 5 جملے مفت · پہلے 1,000 کے لیے $24.48 میں ہمیشہ کے لیے۔
 لانچ: 10 اکتوبر 2026.
 #supEars
 موسیقی: Night Drive — 1000 Handz (1000Handz.com)، CC-BY.
 FIRST COMMENT:
 ⬇ ڈاؤن لوڈ: [LINK]
-30 دن مفت۔ کوئی آٹو رینیو نہیں، کبھی نہیں۔
+14 دن مفت۔ کوئی آٹو رینیو نہیں، کبھی نہیں۔
 
 ------------------------------------------------------------------------------
 
@@ -448,13 +448,13 @@ FIRST COMMENT:
 TITLE: Konuş. supEars yazsın. | Dilini anlayan kulak
 DESCRIPTION:
 Kendi dilinde konuş. supEars yazdığın yere yazar — %100 çevrimdışı, hesap yok, abonelik yok.
-30 gün sınırsız ücretsiz · sonra günde 5 cümle ücretsiz · ilk 1.000 kişiye $25 ömür boyu.
+14 gün sınırsız ücretsiz · sonra günde 5 cümle ücretsiz · ilk 1.000 kişiye $24.48 ömür boyu.
 Çıkış: 10 Ekim 2026.
 #supEars #dikte
 Müzik: Night Drive — 1000 Handz (1000Handz.com), CC-BY.
 FIRST COMMENT:
 ⬇ İNDİR: [LINK]
-30 gün ücretsiz. Otomatik yenileme yok, asla.
+14 gün ücretsiz. Otomatik yenileme yok, asla.
 
 ------------------------------------------------------------------------------
 
@@ -467,13 +467,13 @@ FIRST COMMENT:
 TITLE: Vorbește. supEars scrie. | Urechea care îți înțelege limba
 DESCRIPTION:
 Vorbește în limba ta maternă. supEars scrie acolo unde scrii — 100% offline, fără cont, fără abonament.
-30 de zile gratis nelimitat · apoi 5 fraze/zi gratis · $25 pe viață pentru primii 1.000.
+14 de zile gratis nelimitat · apoi 5 fraze/zi gratis · $24.48 pe viață pentru primii 1.000.
 Lansare: 10 octombrie 2026.
 #supEars #dictare
 Muzica: Night Drive — 1000 Handz (1000Handz.com), CC-BY.
 FIRST COMMENT:
 ⬇ DESCARCĂ: [LINK]
-30 de zile gratis. Fără reînnoire automată, niciodată.
+14 de zile gratis. Fără reînnoire automată, niciodată.
 
 ------------------------------------------------------------------------------
 
@@ -486,10 +486,10 @@ FIRST COMMENT:
 TITLE: Tala. supEars skriver. | Örat som förstår ditt språk
 DESCRIPTION:
 Tala på ditt modersmål. supEars skriver där du skriver — 100% offline, inget konto, ingen prenumeration.
-30 dagar gratis obegränsat · sedan 5 meningar/dag gratis · $25 för alltid för de första 1.000.
+14 dagar gratis obegränsat · sedan 5 meningar/dag gratis · $24.48 för alltid för de första 1.000.
 Lansering: 10 oktober 2026.
 #supEars #diktering
 Musik: Night Drive — 1000 Handz (1000Handz.com), CC-BY.
 FIRST COMMENT:
 ⬇ LADDA NER: [LINK]
-30 dagar gratis. Ingen automatisk förnyelse, aldrig.
+14 dagar gratis. Ingen automatisk förnyelse, aldrig.
