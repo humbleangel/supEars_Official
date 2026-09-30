@@ -68,3 +68,21 @@ Do NOT redo — fix manually or accept. Concise log of what subagents failed.
 55. US swarm: FLS International admissions email — RETRY SOLO.
 56. PL swarm: Empik School email, British Council Poland email — RETRY SOLO.
 57. Solo retry 2026-09-30: Bell/Studio Cambridge (transport error, backend throttled) — PENDING.
+58. RO swarm: Eurolingua email, Fides Iași (only Bucharest published).
+59. CS swarm: Glossa + Jipka named personal emails unfindable.
+60. HU swarm: Hatos/Katedra/IH/BC/Origó/BME named persons unfindable (team inboxes kept).
+61. EL swarm: Axios frontistiria + Ifestia language school do not exist in public sources.
+62. SV swarm: SFI Malmö + SFI Göteborg dedicated provider emails unfindable.
+63. UA swarm: Green Forest email (phones/form only); Nasha Shkola + Nota Bene are not language schools.
+64. IN swarm: British Council India centres email (fetch blocked); VETA email (domains unreachable); Kota/Delhi coaching English wings (no verifiable page).
+65. SA/UAE swarm: New Horizons Saudi KSA email; Al-Jazeera Academy KSA/UAE email (only Doha out of scope); BC/Eton/Berlitz named-person directs (general inboxes only).
+66. CN swarm (rate-limited): Wall Street English China, EF China (phone only), New Oriental language emails.
+67. JP swarm (rate-limited): KAI, Human Academy, Sendagaya, ECC, NOVA, Tokyo YMCA emails.
+68. KR swarm (rate-limited): YBM, Pagoda, Hackers, Yonsei KLI, KU KLC, Hanyang IIE, EBS, Danuri emails.
+69. VN swarm: British Council Vietnam email (fetch timed out, 429).
+70. TH swarm: AUA, British Council Thailand, inlingua Bangkok, ECC Thailand emails.
+71. ID swarm: EF Indonesia email (phones only); TBI email (site irretrievable).
+72. TW swarm: KOJEN email (webform/phone only); Taipei European School email (site unreachable).
+73. MY swarm: British Council Malaysia email (site unreachable); named persons EMS/Britannia/ELS/BC MY.
+74. PH swarm: ENTIRE batch 429 — CPILS, CG, Philinter, CIA, EV, Cebu Languages + verifications — RETRY SOLO.
+75. Solo PH retry 2026-09-30: 429 again — PENDING BACKOFF.
