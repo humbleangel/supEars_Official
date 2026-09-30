@@ -91,7 +91,7 @@ supEars translates and transcribes for you.
   <img src="mkt/video/flags/vn.png" height="20" alt="vn"/>
 </p>
 
-**Public release: October 10, 2026.**
+**Beta Available. Official Release: October 10, 2026.**
 
 Escape the Big Tech Corps Subscriptions Traps.<br/>
 100% Offline Transcription. No Credit Card. No Account. No Cloud. No money to MegaCorps.<br/>
