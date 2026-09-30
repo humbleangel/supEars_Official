@@ -7,7 +7,7 @@
 Speak in your own native language.<br/>
 supEars translates and transcribes pasting where you are.
 
-**BETA v0.9.50 — [download it now](https://github.com/humbleangel/supEars_Official/releases/tag/v0.9.50).**<br/>
+**BETA — [download the latest release](https://github.com/humbleangel/supEars_Official/releases/latest).**<br/>
 **Public release: October 10, 2026. [Join the beta group.](https://github.com/humbleangel/supEars_Official/issues)**
 
 Escape the Big Tech Corps Subscriptions Traps.<br/>
@@ -116,6 +116,6 @@ The public marketing and storefront home — landing pages, videos, demand resea
 
 - Mac + Linux builds
 - GPU/Cloud Options
-- Public downloads: beta v0.9.50 live now
+- Public downloads: beta releases live now
 
 supEars (c) · Developed by HumbleAngel 👼
