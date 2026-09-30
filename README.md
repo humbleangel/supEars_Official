@@ -95,7 +95,7 @@ supEars translates and transcribes for you.
 
 Escape the Big Tech Corps Subscriptions Traps.<br/>
 100% Offline Transcription. No Credit Card. No Account. No Cloud. No money to MegaCorps.<br/>
-Windows. Mac and Linux are under development.
+Windows Ready. Mac and Linux are under development.
 
 [YouTube @supEars](https://www.youtube.com/channel/UCznNnUBltWG8lrSXC39e5lw) · [Reddit u/humbleangel](https://www.reddit.com/user/humbleangel)
 
