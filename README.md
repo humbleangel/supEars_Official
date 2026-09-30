@@ -4,7 +4,7 @@
 
 <div align="center">
 
-**[Download the latest release.](https://github.com/humbleangel/supEars_Official/releases/latest)**<br/>
+**[Click Here to Download supEars Now.](https://github.com/humbleangel/supEars_Official/releases/latest)**<br/>
 Speak in your own native language.<br/>
 supEars translates and transcribes for you.
 
