@@ -24,3 +24,34 @@ fortalezapqmanibura.ce@escolasfisk.com.br | Equipe Unidade Parque Manibura | Fis
 cacapavacentro.sp@escolasfisk.com.br | Equipe Unidade Caçapava | Fisk Caçapava (SP)
 taubatecentro.sp@escolasfisk.com.br | Equipe Unidade Taubaté | Fisk Taubaté (SP)
 secretaria@fisksl.com.br | Equipe Unidade São Leopoldo | Fisk São Leopoldo (RS)
+
+## MEXICO
+ruth.montanez@harmonhall.edu.mx | Equipe Harmon Hall Tijuana | Harmon Hall Tijuana
+servicios@berlitz.com.mx | Contato/privacidade | Berlitz México
+francisco@angloaleman.edu.mx | Francisco Rodriguez de León — Coord. Psicopedagógico | Colegio Anglo Alemán
+idiomas@angloaleman.edu.mx | Jorge Esteban Ayala Chisum — Coord. Idiomas | Colegio Anglo Alemán
+frida.galindo@theanglo.mx | F. Casandra Galindo — Centre Exams Manager | The Anglo Assessment
+aldo.gonzalez@theanglo.mx | Aldo Gonzalez — Assessment Subcentre Coordinator | The Anglo Assessment
+supportassessment@theanglo.mx | Contact Centre | The Anglo Assessment
+ielts.enquiries@theanglo.mx | Quejas y sugerencias | The Anglo
+
+## ARGENTINA
+consultas@aaci.org.ar | Central | Asociación Argentina de Cultura Inglesa (CABA)
+ddasuipacha@aaci.org.ar | Sede Retiro — inscripciones | AACI Retiro (CABA)
+lomas@aaci.org.ar | Sede Lomas de Zamora | AACI Lomas de Zamora
+rmejia@aaci.org.ar | Sede Ramos Mejía | AACI Ramos Mejía
+casacentral@aaci.org.ar | Sede Retiro | AACI Retiro (CABA)
+belgrano@culturalinglesaweb.com.ar | Sede Belgrano | Cultural Inglesa de Buenos Aires
+info@academiabuenosaires.com | Spanish courses team | Academia Buenos Aires
+
+## COLOMBIA
+mercadeo@colombobogota.edu.co | Mercadeo | Centro Colombo Americano Bogotá
+lrey@colombobogota.edu.co | Contacto SIET registrado | Centro Colombo Americano Bogotá
+humanresources@colomboworld.com | Recursos Humanos (hiring) | Centro Colombo Americano Medellín
+
+## PERU
+informes@icpna.edu.pe | Informes matrícula | ICPNA Lima
+informes@icpnarc.edu.pe | Informes Región Centro | ICPNA Región Centro (Huancayo/Huánuco)
+
+## SPAIN
+rvilalta@kidsandus.com | Ramon Vilalta — International expansion manager | Kids&Us (Manresa)
