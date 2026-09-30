@@ -55,3 +55,10 @@ informes@icpnarc.edu.pe | Informes Región Centro | ICPNA Región Centro (Huanca
 
 ## SPAIN
 rvilalta@kidsandus.com | Ramon Vilalta — International expansion manager | Kids&Us (Manresa)
+
+## FRANCE
+dataprotection@berlitz-paris.fr | Contact données personnelles (publié) | Berlitz France
+
+## GERMANY
+datenschutz@berlitz.de | Contact publié (opt-out) | Berlitz Deutschland GmbH
+service@inlingua.de | Petra Schöttner — Kontakt | inlingua Deutschland HQ (Hamburg)
