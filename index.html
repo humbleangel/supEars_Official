@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>supEars — 10 out of 10, 2026-10-10</title>
+<title>supEars - 10 out of 10, 2026-10-10</title>
 <meta name="description" content="supEars. The Ear that understands your language. Launch day 2026-10-10. Join the waitlist.">
 <style>
   :root { --bg: #000; --fg: #fff; --mut: #bbb; }
@@ -41,7 +41,7 @@
 <body>
   <img class="bg" src="mkt/assets/supEarsLogoV3.png" alt="">
   <main class="page">
-    <img class="ear" src="mkt/assets/supEarsEmblem.png" alt="supEars — the floating ear">
+    <img class="ear" src="mkt/assets/supEarsEmblem.png" alt="supEars - the floating ear">
     <div class="brand">supEars</div>
     <div class="tag">The Ear that understands your language.</div>
     <p class="sell">Speak naturally in your own native language. supEars understands you. Total privacy, 100% offline.</p>
@@ -92,9 +92,21 @@
     e.preventDefault();
     var mail = document.getElementById("email").value.trim();
     if (!mail) return;
-    window.location.href = "mailto:supears.app@gmail.com"
-      + "?subject=" + encodeURIComponent("supEars waitlist")
-      + "&body=" + encodeURIComponent("Please notify me at launch: " + mail);
+    var btn = this.querySelector("button");
+    btn.disabled = true;
+    btn.textContent = "Joining...";
+    fetch("https://supears-fulfill.supears-app.workers.dev/waitlist", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({email: mail})
+    }).then(function (r) {
+      if (!r.ok) throw 0;
+      document.getElementById("join").innerHTML = "<p style='color:#fff;font-weight:bold;'>You are on the list. See you at launch.</p>";
+    }).catch(function () {
+      btn.disabled = false;
+      btn.textContent = "Join the waitlist";
+      alert("That did not go through. Try again, or email supears.app@gmail.com");
+    });
   });
 })();
 </script>
