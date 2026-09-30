@@ -5,14 +5,14 @@ Columns: email | person — role | institution.
 
 ## BRAZIL
 contato@onewaylinguas.com.br | Mary Megale — Diretora | One Way Línguas (Suzano)
-marketing@systemidiomas.com.br | Fátima Tenório — Sócia-fundadora / Diretora | System Idiomas (Maceió)
-marketing@systemidiomas.com.br | Lia Tenório Palmeira — Diretora | System Idiomas (Maceió)
-flalanguages@hotmail.com | Denir Oliveira — Coordenador de Curso | FLA Foreign Languages Academy (Guarulhos)
-clinguas@usp.br | Heloísa Albuquerque Costa — Diretora do Centro Interdepartamental de Línguas | USP FFLCH (São Paulo)
+marketing@systemidiomas.com.br | Fátima Tenório / Lia Tenório Palmeira — duplicate inbox, split + site form | System Idiomas (Maceió) [RECHECK]
+marketing@systemidiomas.com.br | (duplicate — see Fátima row) | System Idiomas (Maceió) [DEAD]
+flalanguages@hotmail.com | Denir Oliveira — free-mail high-bounce risk, use site form | FLA Academy (Guarulhos) [DEAD]
+clinguas@usp.br | Diretoria rotativa FFLCH 2 anos, recheck holder | USP FFLCH (São Paulo) [RECHECK]
 atendimento@magister.com.br | Katia Martinho — Diretora Pedagógica | Colégio Magister Bilingual School (São Paulo)
-imprensa_isp@fsb.com.br | Alessandra Pellegrino Casquel Lopes — Fundadora e Diretora Executiva | Brazilian International School (São Paulo)
-imprensa_isp@fsb.com.br | Audrey Pellegrino Taguti — Diretora Pedagógica e Geral | Brazilian International School (São Paulo)
-imprensa_isp@fsb.com.br | Carlos Maffia — Diretor da Escola | Escola Internacional de Alphaville (Barueri)
+imprensa_isp@fsb.com.br | Alessandra Pellegrino Casquel Lopes — press-agency inbox (FSB Holding), verify before bulk | Brazilian International School [RECHECK]
+imprensa_isp@fsb.com.br | Audrey Pellegrino Taguti — press-agency inbox (FSB Holding), verify before bulk | Brazilian International School [RECHECK]
+imprensa_isp@fsb.com.br | Carlos Maffia — press-agency inbox (FSB Holding), verify before bulk | Escola Internacional de Alphaville [RECHECK]
 icce@icce.com.br | Isabel Matos — Director | ICCE Intercâmbio Cultural (Rio de Janeiro)
 
 ## PORTUGAL
@@ -21,7 +21,7 @@ admissions@the-lisboan.school | Elizabeth Acomb — Founding Head of Primary | T
 human.resources@unitedlisbon.school | Martin Harris — Executive Director | United Lisbon International School (Lisboa)
 head@stjulians.com | Paul Morgan — Head / CEO | St. Julian's School (Carcavelos)
 info@caislisbon.org | Nate Chapman — Director | Carlucci American International School of Lisbon (Sintra)
-robert.tomalin@ois.pt | Robert Tomalin — Principal | Oeiras International School (Barcarena)
+office@ois.pt | OIS Team - verify Principal (Tomalin unconfirmed) | Oeiras International School (Barcarena) [RECHECK]
 
 ## SPAIN
 laura.anton@colegio-arcangel.com | Laura Antón — Directora de Secundaria y Bachillerato | Arcángel International School (Madrid)
@@ -67,10 +67,10 @@ mariopalacio@itm.edu.co | Mario David Palacio Pulgarín — Líder Agencia de Tr
 info@fondation-alliancefr.org | Yves Bigot — Président | Fondation des Alliances Françaises
 vbret@fondation-alliancefr.org | Victoire Bret — Responsable Communication et Événements | Fondation des Alliances Françaises
 info@ila-france.com | Claudia Adenet — Co-fondatrice et Directrice | Institut Linguistique Adenet ILA Montpellier
-contact@berlitz-paris.fr | Éric Castelain — Président | Berlitz France
-contact@berlitz-hdf.fr | Isabelle Huart — Dirigeante | Berlitz Hauts-de-France
-reception@icsparis.fr | Geert Simons — Head of School | ICS International School Paris
-jobs@isparis.net | Stéphanie Gilbert — Human Resources Director | International School of Paris
+contact@berlitz-paris.fr | Berlitz France Team - verify President (Castelain unconfirmed) | Berlitz France [RECHECK]
+contact@berlitz-hdf.fr | Berlitz HDF Team - verify Dirigeante (Huart unconfirmed) | Berlitz Hauts-de-France [RECHECK]
+reception@icsparis.fr | ICS Paris Team - verify Head (Simons unconfirmed) | ICS International School Paris [RECHECK]
+jobs@isparis.net | ISP Team - verify HR Director (Gilbert unconfirmed) | International School of Paris [RECHECK]
 
 ## GERMANY
 katja.kessing@goethe.de | Katja Kessing — Institutsleitung | Goethe-Institut Berlin [UPDATED]
@@ -81,8 +81,8 @@ k.agostoni@sprachschule-aktiv.de | Kateryna Agostoni — Inhaberin | Sprachschul
 florian.burkhardt@sprachschule-aktiv.de | Florian Burkhardt — International Relations Manager | Sprachschule Aktiv München
 drobny@sprachinstitut-bonn.de | Christof Drobny — Inhaber und Geschäftsführer | Sprach- & Bildungs-Institut Bonn
 manjiri.palicha@ba-mitte.berlin.de | Manjiri Palicha — Direktorin | Volkshochschule Berlin Mitte
-frankfurt@sprachschule-aktiv.de | Johanna Pojda — Unternehmensinhaber | Sprachschule Aktiv Frankfurt
-service@deutschakademie.com | Patrick Grona — Managing Director | DeutschAkademie
+frankfurt@sprachschule-aktiv.de | Branch inbox - verify role vs generic | Sprachschule Aktiv Frankfurt [RECHECK]
+service@deutschakademie.com | Team inbox, no named person - verify before bulk | DeutschAkademie [RECHECK]
 
 ## ITALY
 bagna@unistrasi.it | Carla Bagna — Direttore del Centro Linguistico | Università per Stranieri di Siena
@@ -92,16 +92,16 @@ segreteria@cla.uniroma2.it | Elisabetta Marino — Direttrice | Centro Linguisti
 didattica_milano@scuolaleonardo.com | Enrico Quaroni — Direttore didattico | Scuola Leonardo da Vinci Milano
 milan@scuolaleonardo.com | Sanda Stevanovic — Director of Studies | Scuola Leonardo da Vinci Milano
 info@dante.global | Andrea Riccardi — Presidente | Società Dante Alighieri Roma
-corsi@britishcouncil.it | Brian Young — Country Director Italy | British Council Italy
+corsi@britishcouncil.it | Courses Team - verify Country Director (Young unconfirmed) | British Council Italy [RECHECK]
 admissions@ism-ac.it | Rebecca Glover — Head of School / Principal | International School of Milan
 
 ## NETHERLANDS
 g.c.hakker@hum.leidenuniv.nl | Gea Hakker-Prins — Director Academic Language Centre | Leiden University
-directors_office@isa.nl | Bernadette Carmody — Director | International School of Amsterdam
-trainers@uvatalen.nl | Marcus Hilbers — Director | UvA Talen Amsterdam
+directors_office@isa.nl | Director Office Team - recheck person | International School of Amsterdam [RECHECK]
+trainers@uvatalen.nl | UvA Talen Team - recheck inbox, fallback info@uvatalen.nl | UvA Talen Amsterdam [RECHECK]
 info@taalhuisamsterdam.nl | Myrte Jansen — Co-founder / Owner | Taalhuis Amsterdam
 info@kickstartschool.nl | Josien Deknatel — Founder | Kickstart School The Hague
-hildy@babel.nl | Hildy van Marle — Directeur | Babel Language Courses Utrecht
+info@babel.nl | Babel Team - Maud Beersmans / Jeroen Persoons (Hildy van Marle unconfirmed) | Babel Utrecht [RECHECK]
 i.vanvuuren@viertaal.nl | Ine van Vuuren — Locatiedirecteur | Alexander Roozendaalschool Amsterdam
 v.laan@viertaal.nl | Viola Laan — Locatiedirecteur | Alexander Roozendaalschool Amsterdam
 
@@ -110,31 +110,31 @@ vittoria.telo@queen-english.co.uk | Maria-Vittoria Telo — School Principal and
 Hauke.Tallon@londonschool.com | Hauke Tallon — Chief Executive | The London School of English
 Shirley.Norton@londonschool.com | Shirley Norton — Director of Operations | The London School of English
 Ben.Butler@londonschool.com | Ben Butler — Head of Courses | The London School of English
-nr236@cam.ac.uk | Prof Nebojša Radić — Director, Language Programmes | University of Cambridge Language Centre
-ko201@cam.ac.uk | Prof Karen Ottewell — Acting Director, Language Centre | University of Cambridge Language Centre
+nr236@cam.ac.uk | Language Centre CLOSED 2019 - do not mail | University of Cambridge [DEAD]
+ko201@cam.ac.uk | Language Centre CLOSED 2019 - do not mail | University of Cambridge [DEAD]
 study@lewis-school.co.uk | Alistair Walker — Director | Lewis School of English Southampton
-mail@isllondon.org | Jed Petsinger — Secondary School Principal | International School of London
-info@bathacademy.co.uk | Tim Naylor — Principal | Bath Academy
+mail@isllondon.org | Admissions Team - Enquiries (role unconfirmed) | International School of London
+info@bathacademy.co.uk | Admissions Team - Enquiries (role unconfirmed) | Bath Academy
 
 ## USA
-ALYSSA.MARTOCCIO@UCDENVER.EDU | Alyssa Martoccio — Department Chair, Modern Languages | University of Colorado Denver
+alyssa.martoccio@ucdenver.edu | Alyssa Martoccio — Department Chair, Modern Languages | University of Colorado Denver
 catoman@ua.edu | Cheryl Toman — Department Chair, Modern Languages & Classics | University of Alabama
 shangler@marshall.edu | Dr Nicholas Shangler — Chair, Modern Languages | Marshall University
 nfraser@fiu.edu | Dr Nicki Fraser — Chair, Modern Languages | Florida International University
 fgreen@sfsu.edu | Frederik Green — Chair, Modern Languages and Literatures | San Francisco State University
-JSchimmel@schools.nyc.gov | Jill Schimmel — Director of World Languages | NYC Public Schools
-MAnderson16@schools.nyc.gov | Mark Anderson — Director of Elementary ENL/ELA | NYC Public Schools
+jschimmel@schools.nyc.gov | Jill Schimmel — Director of World Languages (verify still in role) | NYC Public Schools [RECHECK]
+manderson16@schools.nyc.gov | Mark Anderson — Director of Elementary ENL/ELA (verify still in role) | NYC Public Schools [RECHECK]
 info@nylanguagecenter.com | Barbara Dick — Founder and Executive Director | New York Language Center
-MLLadvising@fsu.edu | Dr Reinier Leushuis — Department Chair | Florida State University
-JBaez6@schools.nyc.gov | Jamie Baez — Director of Secondary ENL/ELA | NYC Public Schools
+mlladvising@fsu.edu | Advising Team — Undergraduate Advising (chair direct unconfirmed) | Florida State University [RECHECK]
+jbaez6@schools.nyc.gov | Jamie Baez — Director of Secondary ENL/ELA (verify still in role) | NYC Public Schools [RECHECK]
 
 ## POLAND
 british@thebritishschool.pl | John Brett — Principal | The British School Warsaw
 admissions@aswarsaw.org | Dr Michelle Kleiss — School Director | American School of Warsaw
-talk@polenglot.com | Izabela Lunn — Admin | Polenglot Language School
+talk@polenglot.com | Izabela Lunn - Admin (verify domain vs poliglot) | Polenglot Language School [RECHECK]
 agnieszka.aleksandrowicz@glossa.pl | Agnieszka Aleksandrowicz — Contact | GLOSSA Polish Language School Krakow
-barbara.dzieza@glossa.pl | Barbara Dzieża — Contact | GLOSSA Polish Language School Krakow
-zawisla@uw.edu.pl | Magdalena Zawisławska — Director, Institute of Polish Language | University of Warsaw
+barbara.dzieza@glossa.pl | Barbara Dzieza - Contact (verify inbox prefix) | GLOSSA Polish Language School Krakow [RECHECK]
+zawisla@uw.edu.pl | Magdalena Zawislawska — verify inbox prefix before bulk | University of Warsaw [RECHECK]
 j.lachnik@uw.edu.pl | Jarosław Łachnik — Deputy Director for Teaching | University of Warsaw
 kontakt@quicktalk.pl | Katarzyna Wierzchowska — Owner | Quick Talk Language School Świdnik
 info@bswilanow.org | Tom McGrath — Principal | British Primary School of Wilanow Warsaw
@@ -196,9 +196,9 @@ annika.bergqvist@staff.isgr.se | Annika Simonsson Bergqvist — CEO / Head of Sc
 lee.brown@staff.isgr.se | Lee Brown — PYP Principal | ISGR Gothenburg
 corinna.ljungberg@staff.isgr.se | Corinna Ljungberg — LgrM Principal | ISGR Gothenburg
 linda.tiger@folkuniversitetet.se | Linda Tiger — Regionchef Skolor | Folkuniversitetet Stockholm
-david.hakansson@nordiska.uu.se | David Håkansson — Dean, Faculty of Languages | Uppsala University
+david.hakansson@nordiska.uu.se | David Hakansson - Professor, Dept of Nordic Languages (was Dean) | Uppsala University
 mona.lanneskog@folkuniversitetet.se | Mona Lanneskog — Marketing Manager | Folkuniversitetet Stockholm
-issr@edu.stockholm.se | Karin Henrekson Ahlberg — Head of School | Int. School of the Stockholm Region
+issr@edu.stockholm.se | Rektorsexpedition Team - verify head before mail | Int. School of the Stockholm Region
 
 ## RUSSIA
 a.zolan@oxford-russia.ru | Anastasia Zolan — General Director | Oxford Russia School St Petersburg
@@ -252,9 +252,9 @@ admissions@concordiashanghai.org | Regina Hur — Director of Enrollment Managem
 ## JAPAN
 headofschool@asij.ac.jp | Eric F Niles — Head of School | American School in Japan
 communications@asij.ac.jp | Matt Wilce — Director of Communications | American School in Japan
-yis@yis.ac.jp | Carla Marschall — Head of School | Yokohama International School
-admissions@yis.ac.jp | Susie Clifford — Director of Learning | Yokohama International School
-info@tokyois.com | Lorraine Izzard — Head of School | Tokyo International School
+yis@yis.ac.jp | Head of School — RECHECK mandate 2025-26 | Yokohama International School [RECHECK]
+admissions@yis.ac.jp | Director of Learning — RECHECK role | Yokohama International School [RECHECK]
+info@tokyois.com | Head of School — RECHECK mandate | Tokyo International School [RECHECK]
 elp@hiroshima-is.ac.jp | Daisuke Akiyama — English Language Programme Manager | Hiroshima International School
 jlp@hiroshima-is.ac.jp | Yoko Kato — Japanese Language Programme Manager | Hiroshima International School
 info@stmaur.ac.jp | Dornehl Kitching — Director of Teaching & Learning | Saint Maur International School
@@ -265,14 +265,14 @@ abrown@soismail.jp | Andrew Brown — K-12 Principal Learning | Osaka Internatio
 
 ## SOUTH KOREA
 admissions@siskorea.org | Nirmala Jayaram — Director of Admissions & Advancement | Seoul International School
-info@isbusan.org | Kelly Kramer — Interim Head of School | International School of Busan
+info@isbusan.org | Interim Head — verify current head before use | International School of Busan [RECHECK]
 esprincipal@bfs.or.kr | Lauren Harvey — Early Childhood and Elementary Principal | Busan Foreign School
 mshsprincipal@bfs.or.kr | Carl Brenneman — Middle and High School Principal | Busan Foreign School
 admissions@bfs.or.kr | Glenn Saunders — Director of Admissions and College Counseling | Busan Foreign School
 sfs@seoulforeign.org | Colm Flanagan — Head of School | Seoul Foreign School
 admissions@seoulforeign.org | Madeleine Kim — Director of Admissions | Seoul Foreign School
 nancy.lenezet@seoulforeign.org | Nancy Le Nezet — HS Principal | Seoul Foreign School
-ipartners@yonsei.ac.kr | Kileun Oh — Director International Affairs Team | Yonsei University
+ipartners@yonsei.ac.kr | Verify inbox (oia@yonsei.ac.kr canonical) | Yonsei University [RECHECK]
 kuoia@korea.ac.kr | SangKee Song — Vice President International Affairs | Korea University
 
 ## VIETNAM
@@ -281,7 +281,7 @@ sarahc@sna.edu.vn | Sarah Campbell — Deputy Head of School | SNA Saigon South
 danielm@sna.edu.vn | Daniel Mannering — PYP Coordinator | SNA Saigon South
 juancpa@sna.edu.vn | Juan Carlos Pulido Amador — DP Coordinator | SNA Saigon South
 academics@snamarianapolis.edu.vn | Joseph Cloutier — Head of School | SNA Marianapolis Bien Hoa
-christopher.delacour@rmit.edu.vn | Dr. Christopher Delacour — Senior Lecturer, Languages | RMIT University Vietnam
+christopher.delacour@rmit.edu.vn | Use enquiries@rmit.edu.vn for campaigns (personal inbox) | RMIT University Vietnam [RECHECK]
 fl_center@usth.edu.vn | Tran Thi Phuong Thao — Director, Foreign Language Center | Univ. of Science and Technology Hanoi
 enquiry@bvishanoi.com | Paul Holyome — Principal | British Vietnamese International School Hanoi
 dlong@ssis.edu.vn | Dr. Dan Long — Director of Activities and Community Engagement | Saigon South International School
@@ -312,7 +312,7 @@ admissions@jisedu.or.id | Maya Nelson — Head of School | Jakarta Intercultural
 info.school@binus.edu | Isaac Koh — Principal, BINUS SCHOOL Simprug | BINUS SCHOOL Simprug
 mail@ccsbali.com | Ben Voborsky — Headmaster | Canggu Community School Bali
 rreilly@baliis.net | Richard Reilly — Head of School | Bali Island School
-admin@sis.sch.id | Head of School — RECHECK (Matthew Gaetano left 2019) | Surabaya Intercultural School [STALE]
+info@sis.sch.id | Admissions Team - Head unverified (Gaetano left 2019) | Surabaya Intercultural School [STALE]
 
 ## EGYPT
 director.6oct@els-egypt.com | Dalia Khalil — School Director | Egyptian Language School 6th October [UNVERIFIED — recheck]
@@ -341,13 +341,13 @@ info@visstil.ae | Mr. Graeme Naftel — Leadership Team | Victoria International
 vinisha.sam@aisschool.net | Ms. Vinisha Sam Paul — Principal Secretary | Australian International School Sharjah [UNVERIFIED — recheck]
 
 ## INDIA
-aiisdelhi@aiis.edu.in | Purnima Mehta — Director General | American Institute of Indian Studies Language Programs [UNVERIFIED — recheck]
-languageprograms@aiis.edu.in | Ahtesham Khan — Coordinator (Programs) | American Institute of Indian Studies Language Programs [UNVERIFIED — recheck]
-head@english.du.ac.in | Prof. Subarno Chattarji — Head Department of English | University of Delhi [UNVERIFIED — recheck]
+aiisdelhi@aiis.edu.in | Director General Office team — verify Purnima Mehta | AIIS Delhi [RECHECK]
+languageprograms@aiis.edu.in | Language Programs team — verify vs aiislanguageprograms.org | AIIS Language Programs [RECHECK]
+head@english.du.ac.in | Head of Department - TERM ENDED, verify current Head | University of Delhi [STALE]
 sachin.labade@english.mu.ac.in | Dr. Sachin Labade — Professor and Head Department of English | University of Mumbai [UNVERIFIED — recheck]
 sshobha@mail.jnu.ac.in | Prof. Shoba Sivasankaran — Dean SLLS | Jawaharlal Nehru University New Delhi [UNVERIFIED — recheck]
 info@bischool.in | Dr. Shivananda C.S. — Head of School | Bangalore International School [UNVERIFIED — recheck]
-admission@tisb.ac.in | Mrs. Kate Reynolds — Principal | The International School Bangalore [UNVERIFIED — recheck]
+admission@tisb.ac.in | Admissions Team - Kate Reynolds former Principal, verify current | The International School Bangalore [STALE]
 
 ## PAKISTAN
 drabdullah@uoj.edu.pk | Dr. Muhammad Abdullah — Head of English Department | University of Jhang [UNVERIFIED — recheck]
@@ -374,21 +374,21 @@ info.intef@educacion.gob.es | Julio Albalad — Director de INTEF | Ministerio d
 caroline.pope@britishcouncil.es | Caroline Pope — Director Examinations Spain | British Council Spain
 jon.kear@britishcouncil.es | Jon Kear — Examinations Services Manager Barcelona | British Council Spain
 cursos.madrid@britishcouncil.es | Sylvia Edvinsson — Country Director Spain | British Council Spain
-france-laure.pons@reseau-canope.fr | Samuel Vitel — Directeur général | Réseau Canopé France
+contact@reseau-canope.fr | Direction generale Team - verify DG name before mail | Reseau Canope France
 info@fondation-alliancefr.org | Réseau international team | Fondation Alliance Française Paris
 info@alliancefr.org | Accueil / Vie étudiante team | Alliance Française de Paris
-biasin@ciep.fr | Jean-Philippe Biasin — CIEP contact | France Éducation international
-pospisil@ciep.fr | Virginie Pospisil — CIEP contact | France Éducation international
+biasin@ciep.fr | Jean-Philippe Biasin - recheck @france-education-international.fr | France Education international [STALE domain]
+pospisil@ciep.fr | Virginie Pospisil - recheck @france-education-international.fr | France Education international [STALE domain]
 info@goethe.de | Gitte Zschoch — Executive Board | Goethe-Institut Head Office Munich
 Jessica.KraatzMagri@goethe.de | Dr. Jessica Kraatz Magri — Head of Communications | Goethe-Institut Head Office Munich
-zabservice@kmk.org | Recognition team | KMK Kultusministerkonferenz Germany
+zabservice@kmk.org | Recognition team inbox, no named person - verify | KMK [RECHECK]
 anu.jain85@nic.in | Ms. Anu Jain — Director | Dept of School Education & Literacy, India
 as-school.edu@gov.in | Anil Kumar Singhal — Additional Secretary Samagra Shiksha-II | Ministry of Education India
 harikumarj.edu@gov.in | Harikumar Janakiraman — Director Digital Education-II | Ministry of Education India
 armstrong.pame@nic.in | Armstrong Pame — Director CBSE / NIOS / Vocational | Ministry of Education India
-IndiaCustomerCare@britishcouncil.org | Alison Barrett MBE — Country Director India | British Council India
-sushma.nair@in.britishcouncil.org | Sushma Nair — Head of Communications India | British Council India
-darmasiswa@kemendikdasmen.go.id | Abdul Mu'ti — Minister of Primary and Secondary Education | Kemendikdasmen Indonesia
+IndiaCustomerCare@britishcouncil.org | verify Country Director India (Barrett unconfirmed) | British Council India [RECHECK]
+sushma.nair@in.britishcouncil.org | verify Head Communications India 2025-26 mandate | British Council India [RECHECK]
+darmasiswa@kemendikdasmen.go.id | Kemendikdasmen Team — role was Minister, verify current | Kemendikdasmen Indonesia [RECHECK]
 disdik@jakarta.go.id | Education Office team | Dinas Pendidikan Jakarta Indonesia
 education@cairo.gov.eg | Hemmat Abu Kila — Director Education Directorate | Cairo Governorate Egypt
 information@britishcouncil.org.eg | Elizabeth White — Country Director Egypt | British Council Egypt
@@ -396,8 +396,8 @@ hend.kamal@britishcouncil.org.eg | Hend Kamal — Communications Officer | Briti
 imdatpekdemir@meb.gov.tr | Imdat Pekdemir — Head of Dept EU and Foreign Relations | Ministry of National Education Turkey
 abdigm.uk@meb.gov.tr | Serdar Yilmaz — Section Manager | Ministry of National Education Turkey
 agkaraca@meb.gov.tr | Ayşegül Karaca — Assistant Expert | Ministry of National Education Turkey
-courses@britishcouncil.or.jp | Jim Booth OBE — Director Japan | British Council Japan Tokyo
-exams@britishcouncil.or.jp | Jim Booth OBE — Director Japan / Cultural Counsellor | British Council Japan Tokyo
+courses@britishcouncil.or.jp | Director Japan — RECHECK rotation | British Council Japan [RECHECK]
+exams@britishcouncil.or.jp | Director Japan — RECHECK rotation | British Council Japan [RECHECK]
 
 ## TRAVEL & HOSPITALITY
 waldir@diversaturismo.com.br | Waldir Souza — Gerente Atendimento Brasil | Diversa Turismo

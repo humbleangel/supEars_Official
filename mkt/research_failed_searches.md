@@ -1,0 +1,58 @@
+# Failed / partial searches — all lead-research rounds (2026-09-30 UTC)
+
+Do NOT redo — fix manually or accept. Concise log of what subagents failed.
+
+## Hard failures (wrong data produced)
+1. RU/UA micro hunt: 22 fabricated rows (formulaic info@city-studio domains, all NXDOMAIN) — PURGED from micro file.
+2. TR micro hunt: 5 fabricated kurs rows (kapadokyadil et al., NXDOMAIN) — PURGED.
+3. Cambridge rows (UK wave): Language Centre closed 2019, persons stale — marked DEAD.
+4. UNC Córdoba dean: Graciela → Gloria Ferrero (name drift) — corrected, recheck mandate.
+5. St Peter's Agustina Lacarte: left Head PYP role — marked STALE.
+6. PSI Kyiv Rachel Caldwell: left Jul 2023 (now AIS Bucharest, already listed) — replaced with Trae Holland, email unconfirmed.
+7. Surabaya Matthew Gaetano: left 2019 — replaced with info@ inbox, STALE.
+8. Goethe Berlin Manuela Beck: replaced with Katja Kessing.
+9. Surabaya admin@sis → info@sis (inbox fix).
+10. Cinta Bahasa duplicate advisor row — deduped.
+11. ID darmasiswa role was Minister, not program officer — flagged.
+12. BH cmebh inbox = Conselho, not SMED outreach — 3 rows DEAD, use smed@.
+13. UTRAMIG incorporated into UEMG 2023-2024 — presidency row STALE.
+14. AM SEDUC 2024-2025 mandate turnover — STALE.
+15. USP clinguas rotativa directorship — RECHECK.
+16. Canopé Samuel Vitel email/person mismatch — replaced with generic contact.
+17. ciep.fr domain retired — 2 rows STALE-domain.
+18. TR bozok.edu.tr SERVFAIL 2026-09-30 — RECHECK.
+19. IN Chattarji term ended / TISB Reynolds former principal — STALE.
+20. MX Colegio Alemán person/email mismatch (Johanna Freyria) — RECHECK.
+
+## Throttled (HTTP 429, needs manual recheck)
+21. Wave-2 verify part 4: ~30 EG/SA/UAE/IN/PK rows never verified — flagged [UNVERIFIED] in file.
+
+## Thin hunts (low yield, gaps later partially filled)
+22. Micro UK/US/PL/RO: only 3 rows (UK); US + RO zero.
+23. Micro CN/JP/KR/TW: only 6 rows (TW); CN + JP + KR zero.
+24. Micro MENA: only 10 rows (EG-heavy; SA/UAE thin).
+25. Micro CS/HU/EL/SV: zero HU + zero EL rows.
+26. EL HI IT FR v12 hand-split wiped by v13 regen (pipeline lesson, fixed via `|` marker).
+
+## Whole-batch unverified (agent could not confirm, kept with flags)
+27. MX sweep: all 19 new rows [UNVERIFIED].
+28. TH sweep: all 20 rows [UNVERIFIED].
+29. RO sweep: most ISJ/CCD rows [UNVERIFIED]/[PARTIAL].
+30. IT sweep: 12 CPIA/Dante/WSE rows [UNVERIFIED].
+31. PT agrupamentos: 2 rows [UNVERIFIED].
+32. JP sweep: 6 mandate/rotation rows [RECHECK].
+33. KR sweep: IS Busan head + Yonsei inbox [RECHECK].
+34. FR sweep: 8 person rows [UNVERIFIED person] (BM Lyon, Berlitz, ICS, ISP).
+35. DE sweep: 5 shared/generic inbox rows [RECHECK].
+36. NL sweep: Babel/ISA/UvA persons [RECHECK].
+37. PL sweep: Early Stage person, UW prefix, Polenglot domain [RECHECK].
+38. UK sweep: ISL/Bath roles unconfirmed, literacytrust inbox-only.
+39. US sweep: NYC Schools roles + NYLC person [RECHECK].
+40. SE sweep: ISSR head [RECHECK].
+41. TR sweep: NEVU/Aksaray persons [reverify person].
+42. ID sweep: darmasiswa + Cinta duplicates noted above.
+43. EL sweep: 11 PDE/frontistiria/refugee rows [UNVERIFIED].
+44. IN sweep: AIIS + British Council persons [RECHECK].
+45. RU/UA sweeps: team-inbox rows, persons unverified by design.
+46. VN delacour personal inbox — use enquiries@ for campaigns.
+47. OIS Tomalin, USP, AM, BH items listed above (dupes of 12-14, kept once).
