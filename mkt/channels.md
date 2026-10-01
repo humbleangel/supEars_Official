@@ -26,6 +26,10 @@
 - Approved channels, none created yet: X, TikTok, Facebook Page, Instagram (+Threads park), Telegram channel, WhatsApp Channel, Kwai, and **Pinterest business** (owner approved adding, 2026-09-25 12:10 UTC).
 - [x] **Instagram** — LIVE (owner, 2026-09-29 UTC, confirmed): handle `supears.app`, https://www.instagram.com/supears.app under hub `supears.app@gmail.com`. Bio/link + Threads park pending.
 - [x] **Kwai** — LIVE (owner, 2026-09-29 UTC): username `supEars`, https://www.kwai.com/@supEars (Google login on hub).
+- [x] **TikTok** — handle claimed (site footer links it, 2026-09-30): `@supEars`, https://www.tiktok.com/@supEars. Posting readiness (Personal/Creator type, clean IP) still to verify at first upload.
+- [x] **X** — handle claimed (site footer links it, 2026-09-30): https://x.com/supEars.
+- [x] **Facebook** — page linked (site footer, 2026-09-30): https://www.facebook.com/supEars (creation block appears resolved; verify admin access).
+- [x] **Reddit** — holding (owner account `humbleangel`): https://www.reddit.com/user/humbleangel/ (no supEars subreddit yet).
 - Creation guide + links: `mkt/research/2026-09-25-1203-UTC-account-creation-links.md`; tickets: `.scratch/account-creation/issues/`.
 - As each handle is created it gets its own section above with URL + date. Alt-account policy (`2026-09-15-0250-UTC-alt-accounts-policy.md`) applies.
 
