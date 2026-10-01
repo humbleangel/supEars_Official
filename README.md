@@ -112,5 +112,6 @@ Windows Ready. Mac and Linux are under development.
 - Quality improvements/bug fixes
 - Mac/Linux
 - Full Interface in all available languages
+- Streaming (words appear as you talk)
 
 supEars (c) · Developed by HumbleAngel 👼
