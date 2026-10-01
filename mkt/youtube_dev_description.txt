@@ -1,0 +1,31 @@
+🎧 supEars — The Ear that understands your language. | [EPISODE TITLE]
+
+Building supEars in the open: speech translation that listens in your own native language. In this episode: [1–2 lines on what was built/fixed in this video].
+
+Try the beta today (free, no account needed):
+✅ Free 14 days, unlimited — full app, no credit card
+✅ Public release: October 10, 2026
+✅ 64-bit Windows, any CPU from ~2013 on (AVX2)
+⬇️ Download: https://humbleangel.github.io/supEars_Official/
+
+Fair pricing, no subscription traps:
+~US$ 4.99 / 1 month · ~US$ 14.99 / 6 months · ~US$ 49.99 lifetime · ~US$ 24.48 for the first 1,000 users. Pay once, keep it forever. No auto-renewal, ever.
+
+In this video:
+[00:00] — [timestamp topic]
+[MM:SS] — [timestamp topic]
+[MM:SS] — [timestamp topic]
+
+Follow the build:
+▶️ YouTube: https://www.youtube.com/@supEars
+📸 Instagram: https://www.instagram.com/supears.app
+🎬 Kwai: https://www.kwai.com/@supEars
+📩 Contact: supears.app@gmail.com
+
+💬 Want a language, a feature, or a bug fix? Comment below — your comment decides what gets built next.
+
+🔔 Subscribe + turn on notifications to follow the journey to launch day.
+
+🎵 Music: [Artist — Title (link)] / License: [license]
+
+#supEars #RealTimeTranslation #SpeechTranslation #LearnLanguages #IndieDev #BuildInPublic #WindowsApp #AIVoice #LanguageLearning #TechForGood
