@@ -34,6 +34,19 @@ LIVE = {"ES", "FR", "JA", "KO", "EN"}
 CATEGORY_SCIENCE_TECH = "28"
 DEFAULT_LINK = "https://github.com/humbleangel/supEars_Official/releases"
 
+# BCP-47 for snippet language flags (upload language == video language).
+BCP47 = {"PT": "pt", "DE": "de", "IT": "it", "NL": "nl", "RU": "ru",
+         "UK": "uk", "PL": "pl", "CS": "cs", "HU": "hu", "EL": "el",
+         "ZH": "zh", "JA": "ja", "VI": "vi", "TH": "th", "ID": "id",
+         "AR": "ar", "HI": "hi", "UR": "ur", "TR": "tr", "RO": "ro",
+         "SV": "sv"}
+
+# Evergreen English tags backing every upload (titles/descriptions already
+# carry the native-language discovery; these cover EN search).
+BASE_TAGS = ["supEars", "shorts", "offline dictation", "voice typing",
+             "speech to text", "no subscription", "windows app",
+             "indie dev"]
+
 
 def parse_post_texts(path):
     """Parse post_texts_25langs.txt -> {LANG: {title, description, comment}}."""
@@ -89,9 +102,12 @@ def plan(meta, langs, link):
         desc = meta[lang]["description"].replace("[LINK]", link)
         if "#Shorts" not in desc and "#shorts" not in desc:
             desc += "\n#Shorts"
+        native_tags = re.findall(r"#(\w+)", desc, re.UNICODE)
+        tags = list(dict.fromkeys(BASE_TAGS + native_tags))[:30]
         items.append({"lang": lang, "file": f,
                       "title": meta[lang]["title"],
-                      "description": desc,
+                      "description": desc, "tags": tags,
+                      "bcp47": BCP47.get(lang, lang.lower()),
                       "comment": meta[lang]["comment"].replace("[LINK]", link)})
     return items
 
@@ -122,7 +138,10 @@ def do_upload(items, secrets):
     for it in items:
         body = {"snippet": {"title": it["title"],
                             "description": it["description"],
-                            "categoryId": CATEGORY_SCIENCE_TECH},
+                            "tags": it["tags"],
+                            "categoryId": CATEGORY_SCIENCE_TECH,
+                            "defaultLanguage": it["bcp47"],
+                            "defaultAudioLanguage": it["bcp47"]},
                 "status": {"privacyStatus": "private",
                            "selfDeclaredMadeForKids": False}}
         media = MediaFileUpload(it["file"], chunksize=-1, resumable=True)
