@@ -1,3 +1,7 @@
 __pycache__/
 *.pyc
+client_secrets.json
+token.json
+upload_log.txt
+
 
