@@ -1,7 +1,8 @@
 # Cloudflare Web Analytics for the Pages site (research 2026-10-03 07:14 UTC)
 
 Owner found it in the dashboard (Observability -> Analytics -> Web analytics).
-Verdict: ENABLE it. It complements our Worker beacon; it does not replace it.
+Status 2026-10-03: DOCUMENTED ONLY, not enabled — owner decision. If it is
+ever switched on, it complements our Worker beacon; it does not replace it.
 
 ## What it is
 Free, privacy-first analytics: one JS snippet, no DNS change, no proxy
