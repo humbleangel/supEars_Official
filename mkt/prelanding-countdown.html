@@ -100,7 +100,7 @@
 </script>
 <script>
 addEventListener('load', () => {
-  const body = JSON.stringify({ page: location.pathname,
+  const body = JSON.stringify({ page: location.pathname + location.search,
     referrer: document.referrer || '', lang: navigator.language || '' });
   if (navigator.sendBeacon)
     navigator.sendBeacon('https://supears-fulfill.supears-app.workers.dev/visit', body);
