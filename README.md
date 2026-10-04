@@ -116,7 +116,11 @@ Windows Ready. Mac and Linux are under development.
 
 ## Version history
 
-- v0.9.63 (current): Clearer messages while you dictate; a new window shows progress while the app gets ready; faster long recordings; reliability wave.
+- v0.9.63 (current):
+  - Much faster listening and transcription.
+  - Clearer messages while you dictate.
+  - New window shows progress while the app gets ready.
+  - Many small reliability fixes.
 - v0.9.61: The ESC key stops a recording and cancels work, anytime.
 - v0.9.57: Five new language engines (Cantonese, Thai, Serbian, Danish, Norwegian); better Swedish engine.
 - v0.9.56: License window rework (clearer status, per-tier buying, PIX QR window).
