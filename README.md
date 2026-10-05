@@ -114,6 +114,10 @@ Windows Ready. Mac and Linux are under development.
 - Full Interface in all available languages
 - Streaming (words appear as you talk)
 
+## Known Issues
+
+- App crashes when changing quality. After a restart it works again with the new selected quality.
+
 ## Version history
 
 - v0.9.63 (current):
