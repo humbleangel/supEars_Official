@@ -116,14 +116,18 @@ Windows Ready. Mac and Linux are under development.
 
 ## Known Issues
 
-- App crashes when changing quality. After a restart it works again with the new selected quality.
+- Very short takes (one or two words) can mistranslate: a single word may come out wrong in the translation while the transcription stays correct.
 
 ## Version history
 
-- v0.9.63 (current):
-  - Much faster listening and transcription.
-  - Clearer messages while you dictate.
-  - New window shows progress while the app gets ready.
+- v0.9.64 (current):
+  - Major bug fix: Quality switching no longer freezes the app.
+  - Faster switches: no download window when the engine is already on disk.
+  - Many small reliability fixes.
+- v0.9.63:
+  - Clearer messages while you dictate and paste.
+  - A new window shows progress while the app gets ready.
+  - Engine downloads with progress you can watch and a cancel that answers.
   - Many small reliability fixes.
 - v0.9.61:
   - The ESC key stops a recording and cancels work, anytime.
