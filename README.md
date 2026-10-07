@@ -120,7 +120,11 @@ Windows Ready. Mac and Linux are under development.
 
 ## Version history
 
-- v0.9.64 (current):
+- v0.9.65 (current):
+  - Recording sessions rebuilt on one clean flow.
+  - Update checks tell the truth when something fails.
+  - The app watches its own heartbeat and recovers silently.
+- v0.9.64:
   - Major bug fix: Quality switching no longer freezes the app.
   - Faster switches: no download window when the engine is already on disk.
   - Many small reliability fixes.
