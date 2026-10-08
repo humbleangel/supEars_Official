@@ -120,7 +120,11 @@ Windows Ready. Mac and Linux are under development.
 
 ## Version history
 
-- v0.9.65 (current):
+- v0.9.66 (current):
+  - Major bug fix: the app starts on fresh machines without closing.
+  - New: live stream window shows your words while you talk.
+  - Faster and safer takes behind the scenes.
+- v0.9.65:
   - Recording sessions rebuilt on one clean flow.
   - Update checks tell the truth when something fails.
   - The app watches its own heartbeat and recovers silently.
