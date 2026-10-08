@@ -121,8 +121,7 @@ Windows Ready. Mac and Linux are under development.
 ## Version history
 
 - v0.9.67 (current):
-  - New: live streaming shows your words while you talk, in 9 languages.
-  - Stream engine built into the app, other voices download once.
+  - New: live streaming shows your words while you talk.
   - Many small reliability fixes under the hood.
 - v0.9.66:
   - Major bug fix: the app starts on fresh machines without closing.
