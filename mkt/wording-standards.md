@@ -26,3 +26,12 @@
   ZERO AI-model "model" — clean on arrival. App quality selector already
   shows Fast/Balance/Precise/PRO — clean. Open item: past GitHub release
   notes (dev-written) unchecked — owner/dev to verify.
+
+## Rule 2 — describe, never announce (owner, 2026-10-08)
+
+- Public words never say a feature "shipped", "is released", "is launched",
+  or any dev-side announcement. We are the devs; the user is not a dev.
+- Instead describe what the feature DOES in buyer words.
+  Examples: "your words appear while you talk" not "streaming shipped";
+  "it understands Portuguese" not "PT engine released".
+- Applies to: site, README, release notes, video copy, social posts.
