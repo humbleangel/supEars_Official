@@ -120,7 +120,11 @@ Windows Ready. Mac and Linux are under development.
 
 ## Version history
 
-- v0.9.67 (current):
+- v0.9.68 (current):
+  - Words appear while you talk, in 9 languages.
+  - More languages to talk in: Persian, Kazakh, Sundanese, Uzbek, Azerbaijani, Armenian, Zulu, Pashto, Hebrew, Nepali.
+  - Many small reliability fixes under the hood.
+- v0.9.67:
   - New: live streaming shows your words while you talk.
   - Many small reliability fixes under the hood.
 - v0.9.66:
