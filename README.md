@@ -121,7 +121,7 @@ Windows Ready. Mac and Linux are under development.
 ## Version history
 
 - v0.9.68 (current):
-  - Words appear while you talk in more 9 languages.
+  - Words appear while you talk in more 9 languages (Portuguese, English, German, Spanish, French, Italian, Turkish, Chinese, Korean).
   - More languages to talk in: Persian, Kazakh, Sundanese, Uzbek, Azerbaijani, Armenian, Zulu, Pashto, Hebrew, Nepali.
   - Many small reliability fixes under the hood.
 - v0.9.67:
