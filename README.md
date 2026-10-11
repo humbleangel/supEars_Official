@@ -120,7 +120,12 @@ Windows Ready. Mac and Linux are under development.
 
 ## Version history
 
-- v0.9.69 (current):
+- v1.0.0 (current):
+  - First official release, out of beta.
+  - Live words while you speak, back in Settings.
+  - Your history and settings save faster and safer.
+  - Your license key stays locked to this machine.
+- v0.9.69:
   - Security enhancements.
   - Small bug fixes.
 - v0.9.68:
