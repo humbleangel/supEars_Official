@@ -120,7 +120,13 @@ Windows Ready. Mac and Linux are under development.
 
 ## Version history
 
-- v1.0.0 (current):
+- v1.0.210 (current):
+  - 9 new languages for writing.
+  - Double streaming with live words in two rows.
+  - Security and privacy enhancements.
+  - Internationalization of interface.
+  - 30 minor bug fixes.
+- v1.0.0:
   - First official release, out of beta.
   - Live words while you speak, back in Settings.
   - Your history and settings save faster and safer.
